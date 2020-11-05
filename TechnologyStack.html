@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Technology Stack</title>
+    <link href="Content/Style.css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.9.1/themes/hot-sneaks/jquery-ui.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery-ui-1.9.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#accordion").accordion({
+                icons: {
+                    header: "ui-icon-circle-arrow-e",
+                    activeHeader: "ui-icon-circle-arrow-s"
+                },
+                autoHeight: false,
+                collapsible: true,
+                active: false
+            });
+
+            $(".ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default").css({
+                'background': '#eea236 repeat scroll 50% 50%',
+                'border': '1px solid #f0ad4e',
+                'color': '#ffffff'
+            });
+        });
+    </script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="Images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center">Enterprise Technology Stack For Application Development</h2>
+    </section>
+    <div id="accordion-resizer" class="ui-widget-content">
+        <div id="accordion">
+            <h3 style="font-weight:bold;">Microsoft .NET</h3>
+            <div>
+                <p>
+                    The .NET Framework is a managed execution environment that provides a variety of services to its running applications. It consists of two major components: the common language runtime (CLR), which is the execution engine that handles running applications; and the .NET Framework Class Library, which provides a library of tested, reusable code that developers can call from their own applications. The services that the .NET Framework provides to running applications include the following:
+                </p>
+                <ul style="margin-left:2.5em;">
+                    <li>
+                        <b>Memory management.</b> In many programming languages, programmers are responsible for allocating and releasing memory and for handling object lifetimes. In .NET Framework applications, the CLR provides these services on behalf of the application.
+                    </li>
+                    <li>
+                        A <b>common type system.</b> In traditional programming languages, basic types are defined by the compiler, which complicates cross-language interoperability. In the .NET Framework, basic types are defined by the .NET Framework type system and are common to all languages that target the .NET Framework.
+                    </li>
+                    <li>
+                        An <b>extensive class library.</b> Instead of having to write vast amounts of code to handle common low-level programming operations, programmers can use a readily accessible library of types and their members from the .NET Framework Class Library.
+                    </li>
+                    <li>
+                        <b>Development frameworks and technologies.</b> The .NET Framework includes libraries for specific areas of application development, such as ASP.NET for web applications, ADO.NET for data access, and Windows Communication Foundation for service-oriented applications.
+                    </li>
+                    <li>
+                        <b>Language interoperability.</b> Language compilers that target the .NET Framework emit an intermediate code named Common Intermediate Language (CIL), which, in turn, is compiled at run time by the common language runtime. With this feature, routines written in one language are accessible to other languages, and programmers can focus on creating applications in their preferred language or languages.
+                    </li>
+                    <li>
+                        <b>Version compatibility.</b> With rare exceptions, applications that are developed by using a particular version of the .NET Framework can run without modification on a later version.
+                    </li>
+                    <li>
+                        <b>Side-by-side execution.</b> The .NET Framework helps resolve version conflicts by allowing multiple versions of the common language runtime to exist on the same computer. This means that multiple versions of applications can also coexist, and that an application can run on the version of the .NET Framework with which it was built.
+                    </li>
+                    <li>
+                        <b>Multitargeting.</b> By targeting the .NET Framework Portable Class Library, developers can create assemblies that work on multiple .NET Framework platforms, such as Windows 7, Windows 8, Windows 8.1, Windows 10, Windows Phone, and Xbox 360.
+                    </li>
+                </ul>
+                <p>
+                    The .NET Framework consists of the common language runtime and the .NET Framework class library. The common language runtime is the foundation of the .NET Framework. You can think of the runtime as an agent that manages code at execution time, providing core services such as memory management, thread management, and remoting, while also enforcing strict type safety and other forms of code accuracy that promote security and robustness. In fact, the concept of code management is a fundamental principle of the runtime. Code that targets the runtime is known as managed code, while code that does not target the runtime is known as unmanaged code. The class library is a comprehensive, object-oriented collection of reusable types that you can use to develop applications ranging from traditional command-line or graphical user interface (GUI) applications to applications based on the latest innovations provided by ASP.NET, such as Web Forms and XML Web services.
+                </p>
+                <p>
+                    The .NET Framework can be hosted by unmanaged components that load the common language runtime into their processes and initiate the execution of managed code, thereby creating a software environment that can exploit both managed and unmanaged features. The .NET Framework not only provides several runtime hosts, but also supports the development of third-party runtime hosts.
+                </p>
+                <p>
+                    For example, ASP.NET hosts the runtime to provide a scalable, server-side environment for managed code. ASP.NET works directly with the runtime to enable ASP.NET applications and XML Web services, both of which are discussed later in this topic.
+                </p>
+                <p>
+                    Internet Explorer is an example of an unmanaged application that hosts the runtime (in the form of a MIME type extension). Using Internet Explorer to host the runtime enables you to embed managed components or Windows Forms controls in HTML documents. Hosting the runtime in this way makes managed mobile code possible, but with significant improvements that only managed code can offer, such as semi-trusted execution and isolated file storage.
+                </p>
+                <p>
+                    The following illustration shows the relationship of the common language runtime and the class library to your applications and to the overall system. The illustration also shows how managed code operates within a larger architecture.
+                    <br />
+                    <img src="Images/DotNetFramework.jpg" style="margin-left:35%; width:30%;" />
+                </p>
+                <table class="table table-bordered">
+                    <tr>
+                        <td style="text-align:center; width:50%;"><a href="Pages/DotNet/Framework.html" class="techstack btn btn-warning" target="_blank">Framework</a> </td>
+                        <td style="text-align:center; width:50%;"><a href="Pages/DotNet/ReusableComponent.html" class="techstack btn btn-warning" target="_blank">Reusable Components</a></td>
+                        <!--<td style="text-align:center; width:33%;"><a href="Pages/DotNet/Plugin.html" class="techstack btn btn-warning" target="_blank">Plugins</a></td>-->
+                    </tr>
+                </table>
+            </div>
+            <h3 style="font-weight:bold;">Sun Microsystems Java</h3>
+            <div>
+                <p>
+                    Java technology is both a programming language and a platform. The Java programming language is a high-level language that can be characterized by all of the following buzzwords:
+                </p>
+                <div class="row">
+                    <div class="col-md-2">
+                        <ul style="margin-left:20px">
+                            <li>Simple</li>
+                            <li>Object oriented</li>
+                            <li>Distributed</li>
+                            <li>Multithreaded</li>
+                            <li>Dynamic</li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-10">
+                        <ul>
+                            <li>Architecture neutral</li>
+                            <li>Portable</li>
+                            <li>High performance</li>
+                            <li>Robust</li>
+                            <li>Secure</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    In the Java programming language, all source code is first written in plain text files ending with the <em style="font-family:'Courier New'">.java</em> extension. Those source files are then compiled into .class files by the javac compiler. A .class file does not contain code that is native to your processor; it instead contains bytecodes — the machine language of the Java Virtual Machine1 (Java VM). The java launcher tool then runs your application with an instance of the Java Virtual Machine.
+                </p>
+                <p>
+                    Figure showing MyProgram.java, compiler, MyProgram.class, Java VM, and My Program running on a computer.
+                    <br />
+                    <img src="Images/javacompiler.jpg" style="margin-left:400px;" />
+                </p>
+                <p>
+                    Because the Java VM is available on many different operating systems, the same .class files are capable of running on Microsoft Windows, the Solaris™ Operating System (Solaris OS), Linux, or Mac OS. Some virtual machines, such as the Java SE HotSpot at a Glance, perform additional steps at runtime to give your application a performance boost. This includes various tasks such as finding performance bottlenecks and recompiling (to native code) frequently used sections of code.
+                    <br />
+                    <img src="Images/JavaHelloWorld.jpg" style="margin-left:500px;" />
+                </p>
+                <h5>Java Platform</h5>
+                <p>
+                    A platform is the hardware or software environment in which a program runs. We've already mentioned some of the most popular platforms like Microsoft Windows, Linux, Solaris OS, and Mac OS. Most platforms can be described as a combination of the operating system and underlying hardware. The Java platform differs from most other platforms in that it's a software-only platform that runs on top of other hardware-based platforms.
+                </p>
+                <p>
+                    The Java platform has two components: (1) The Java Virtual Machine and (2) The Java Application Programming Interface (API)
+                </p>
+                <table class="table table-bordered">
+                    <tr>
+                        <td style="text-align:center; width:50%;"><a href="Pages/Java/Framework.html" class="techstack btn btn-warning" target="_blank">Framework</a> </td>
+                        <td style="text-align:center; width:50%;"><a href="Pages/Java/ReusableComponent.html" class="techstack btn btn-warning" target="_blank">Reusable Components</a></td>
+                        <!--<td style="text-align:center; width:33%;"><a href="Pages/Java/Plugin.html" class="techstack btn btn-warning" target="_blank">Plugins</a></td>-->
+                    </tr>
+                </table>
+            </div>
+            <h3 style="font-weight:bold;">IBM Mainframe</h3>
+            <div>
+                <ul>
+                    <li>
+                        Mainframes are a type of computer which is generally known for their large size, amount of storage, processing power and high level of reliability. They are primarily used by large organizations for mission-critical applications requiring high volumes of data processing. In general, there are a few characteristics of mainframes that are common among all mainframe vendors: Nearly all mainframes have the ability to run (or host) multiple operating systems. Mainframes can add or hot swap system capacity without disruption. Mainframes are designed to handle very high volume input and output (I/O) and emphasize throughput computing. A single mainframe can replace dozens or even hundreds of smaller servers.
+                    </li>
+                    <li>
+                        Today, mainframe computers play a central role in the daily operations of most of the world’s largest corporations, including many Fortune 1000 companies. Although other forms of computing are used extensively in business in various capacities, the mainframe occupies a coveted place in today’s e-business environment. In banking, finance, health care, insurance, utilities, government, and a multitude of other public and private enterprises, the mainframe computer continues to form the foundation of modern business.
+                    </li>
+                    <li>
+                        The new mainframe owes much of its popularity and longevity to its inherent richness in reliability and stability, a result of continuous technological advances since the introduction of the IBM System/360 in 1964. No other computer architecture in existence can claim as much continuous, evolutionary improvement, while maintaining compatibility with existing applications. The term mainframe has gradually moved from a physical description of the IBM larger computers to the categorization of a style of computing. One defining characteristic of the mainframe has been a continuing compatibility that spans decades.
+                    </li>
+                    <li>
+                        A mainframe is the central data repository, or hub, in a corporation’s data processing center, linked to users through less powerful devices such as workstations or terminals. The presence of a mainframe often implies a centralized form of computing, as opposed to a distributed form of computing.
+                    </li>
+                    <li>
+                        Businesses today rely on the mainframe to:
+                        <ul style="margin-left:30px;">
+                            <li>
+                                Perform large-scale transaction processing (thousands of transactions per second)
+                            </li>
+                            <li>
+                                Support thousands of users and application programs concurrently accessing numerous resources
+                            </li>
+                            <li>
+                                Manage terabytes of information in databases
+                            </li>
+                            <li>
+                                Handle large-bandwidth communication
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Mainframe is a high performance multi-user computer system which is the most scalable, available, reliable and secured machine in the world capable of performing some million instructions per second (upto 569,632 MIPS) with the following characteristics:
+                        <ol style="margin-left:30px;">
+                            <li>Reliable single-thread performance, which is essential for reasonable operations against a database.</li>
+                            <li>Maximum I/O connectivity, which means mainframes excel at providing for huge disk farms.</li>
+                            <li>Maximum I/O bandwidth, so connections between drives and processors have few choke-points.</li>
+                            <li>Reliability, mainframes often allow for "graceful degradation" and service while the system is running. </li>
+                        </ol>
+                    </li>
+                </ul>
+                <table class="table table-bordered">
+                    <tr>
+                        <td style="text-align:center; width:25%;"><a href="Pages/Mainframe/ProgrammingLanguages.html" class="techstack btn btn-warning" target="_blank">Programming Languages</a> </td>
+                        <td style="text-align:center; width:25%;"><a href="Pages/Mainframe/Databases.html" class="techstack btn btn-warning" target="_blank">Databases</a></td>
+                        <td style="text-align:center; width:25%;"><a href="Pages/Mainframe/ToolsAndUtilities.html" class="techstack btn btn-warning" target="_blank">Tools and Utilities</a></td>
+                        <td style="text-align:center; width:25%;"><a href="Pages/Mainframe/Sub-systems.html" class="techstack btn btn-warning" target="_blank">Sub-systems</a> </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        ©
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+        Optum, Inc. All rights reserved.
+    </div>
+</body>
+</html>

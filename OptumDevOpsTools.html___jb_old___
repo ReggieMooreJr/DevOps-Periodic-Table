@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <title>Periodic Table</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/StyleOpt.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/ManageDevOpsScript.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        <div class="headingdeco">PERIODIC TABLE OF DEVOPS TOOLS</div>
+        <ul class="main">
+
+            <!-- ROW 1 -->
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li data-pos="1" data-nb="En" class="type-16 cat-4">Ff<span>Fortify</span></li>
+			<li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li class="empty"></li>
+            <li data-pos="2" data-nb="Os" class="type-6 cat-0">Ay<span>Artifactory</span></li>
+            <li data-pos="3" data-nb="Pd" class="type-13 cat-3">Tfs<span style="padding:0px">TeamFound- ationServer</span></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <!-- ROW 2 -->
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li data-pos="4" data-nb="Os" class="type-2 cat-0">Gt<span>Git</span></li>
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li class="empty"></li>
+            <li data-pos="5" data-nb="Pd" class="type-11 cat-3">Az<span>Azure</span></li>
+            <li data-pos="6" data-nb="Pd" class="type-13 cat-3">Jr<span>Jira</span></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li> 
+
+            <!-- ROW 3 -->
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li data-pos="7" data-nb="Os" class="type-2 cat-0">Sv<span>Subversion</span></li>
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li class="empty"></li>
+            <li data-pos="8" data-nb="En" class="type-11 cat-4">Os<span>OpenShift</span></li>
+            <li data-pos="9" data-nb="En" class="type-13 cat-4">Sn<span>ServiceNow</span></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <!-- ROW 4 -->
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li data-pos="10" data-nb="Os" class="type-4 cat-0">Mv<span>Maven</span></li>
+
+            <li data-pos="11" data-nb="Fr" class="type-5 cat-1">Se<span>Selenium</span></li>
+            <li data-pos="12" data-nb="Os" class="type-5 cat-0">Ga<span>Gatling</span></li>
+            <li data-pos="13" data-nb="Fr" class="type-5 cat-1">Jt<span>JUnit</span></li>
+            <li data-pos="14" data-nb="Os" class="type-5 cat-0">Mc<span>Mocha</span></li>
+            <li data-pos="15" data-nb="Os" class="type-7 cat-0">Jn<span>Jenkins</span></li>
+
+            <li data-pos="16" data-nb="En" class="type-12 cat-4">Xlr<span>XL Release</span></li>
+            <li data-pos="17" data-nb="En" class="type-8 cat-4">Xld<span>XL Deploy</span></li>
+            <li data-pos="18" data-nb="En" class="type-15 cat-4">Sp<span>Splunk</span></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <!-- ROW 5 -->
+
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+
+            <li data-pos="19" data-nb="Os" class="type-4 cat-0">At<span>ANT</span></li>
+
+            <li data-pos="20" data-nb="Fr" class="type-5 cat-1">Cu<span>Cucumber</span></li>
+            <li data-pos="21" data-nb="Os" class="type-5 cat-0">Mk<span>Mockito</span></li>
+            <li data-pos="22" data-nb="Os" class="type-5 cat-0">Ja<span>Jasmine</span></li>
+            <li data-pos="23" data-nb="Fr" class="type-5 cat-1">Jm<span>JMeter</span></li>
+
+            <li data-pos="24" data-nb="Os" class="type-7 cat-0">Cc<span>CruiseControl</span></li>
+
+            <li data-pos="25" data-nb="En" class="type-12 cat-4">Ur<span style="padding:0px">UrbanCode Release</span></li>
+            <li data-pos="26" data-nb="En" class="type-8 cat-4">Ud<span style="padding:0px">UrbanCode Deploy</span></li>
+            <li data-pos="27" data-nb="Fm" class="type-15 cat-2">Le<span>Logentries</span></li>
+         
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+			  <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+            <li class="empty"></li>
+	
+            <li data-pos="28" data-nb="Os" class="type-9 cat-0">An<span>Ansible</span></li>
+			
+            <li data-pos="29" data-nb="Os" class="type-10 cat-0">Dk<span>Docker</span></li>
+            <!--<li data-pos="30" data-nb="Os" class="type-10 cat-0">Rk<span>Rkt</span></li>-->
+            <li data-pos="30" data-nb="Os" class="type-10 cat-0">Kb<span>Kubernetes</span></li>
+            <!--<li data-pos="32" data-nb="Fm" class="type-14 cat-2">Nr<span>NewRelic</span></li>-->
+            <li data-pos="31" data-nb="En" class="type-14 cat-">Dt<span>Dynatrace</span></li>
+            <li data-pos="32" data-nb="Fm" class="type-14 cat-2">Ad<span>AppDynamics</span></li>			
+			
+			<li data-pos="37" data-nb="Pd" class="type-16 cat-3">CS<span>Contrast Security Assess</span></li>
+			
+        </ul>
+		
+		   <div class="logoalign">
+            <img src="Images/logo.PNG" class="logo" />
+        </div> 
+
+        <div class="legend">
+
+            <!--<hr style="margin-bottom: 3px;" />-->
+            <ul class="list-1">
+                <li class="cat-0"><span>Os</span>Open Source</li>
+                <li class="cat-1"><span>Fr</span>Free</li>
+                <li class="cat-2"><span>Fm</span>Freemium</li>
+                <li class="cat-3"><span>Pd</span>Paid</li>
+                <li class="cat-4"><span>En</span>Enterprise</li>
+            </ul>
+
+            <ul class="list-2">
+                <li class="type-16">Security</li>
+                <li class="type-2">SCM</li>
+                <!--<li class="type-3">Database Mgmt</li>-->
+                <li class="type-4">Build</li>
+
+                <li class="type-5">Testing</li>
+                <li class="type-7">CI</li>
+                <li class="type-12">Release Mgmt</li>
+
+                <li class="type-6">Repo Mgmt</li>  
+                <li class="type-11">Cloud/IaaS/PaaS</li>
+                <li class="type-8">Deployment</li>
+
+                <li class="type-13">Collaboration </li>
+                <li class="type-15">Logging</li>
+               
+                <li class="type-9">Config/Provisioning</li>               
+                <li class="type-10">Containerization</li>
+                <li class="type-14">BI/Monitoring</li>
+                
+
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="description" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width:945px; ">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!--<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>-->
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
