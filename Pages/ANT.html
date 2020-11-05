@@ -1,0 +1,647 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>ANT</h4>
+            <p>
+                Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications.
+            </p>
+            <p>
+                Apache Ant (Ant) is a general purpose build tool. Ant is an abbreviation for Another Neat Tool. Ant is primarily used for building and deploying Java projects but can be used for every possible repetitive task, e.g. generating documentation
+            </p>
+            <p>
+                The result is a tool that can now be used for building and managing any Java-based project. We hope that we have created something that will make the day-to-day work of Java developers easier and generally help with the comprehension of any Java-based project.
+            </p>
+            <p>
+                Ant is a software tool for automating software build processes, which originated from the Apache Tomcat project in early 2000.
+            </p>
+            <p>
+                It was a replacement for the Unix make build tool, and was created due to a number of problems with Unix's make. It is similar to Make but is implemented using the Java language, requires the Java platform, and is best suited to building Java projects.
+            </p>
+            <h4>Features of Apache Ant</h4>
+            <p>
+                •	Ant is the most complete Java build and deployment tool available. It is platform neutral and can handle platform specific properties such as file separators.
+            </p>
+            <p>
+                •	Ant can be used to perform platform specific tasks such as modifying the modified time of a file using 'touch' command.
+            </p>
+            <p>
+                •	Ant scripts are written using plain XML. If you are already familiar with XML, you can learn Ant pretty quickly.
+            </p>
+            <p>
+                •	Ant is good at automating complicated repetitive tasks.
+            </p>
+            <p>
+                •	Ant comes with a big list of predefined tasks.
+            </p>
+            <h4>Default Life Cycle</h4>
+            <p>
+                Standard build types import the default lifecycle. It's build type responsibility to wire plugins on the default lifecycle.
+            </p>
+            <p>
+                Users can bind or rebind targets on it. This can be achieved with bind target ant task.
+            </p>
+            <p>
+                Plugins can provide additional extension points. Plugins typically add low-level tasks to one or more extension-points. For example, a plugin can contribute to processing sources before compilation, you will in that case plug your own target to "abstract-compile: compile-ready" extension-point". This contributes to have a dynamic lifecycle.
+            </p>
+            <p class="text-center">
+                <img src="Images/AntLifeCycle.png" width="60%" />
+            </p>
+            <h4>General Flow</h4>
+            <p>
+                Following are the general flow for the Ant build
+            </p>
+            <p>
+                •	At the execution of this build.xml the default target specified is get called first.
+            </p>
+            <p>
+                •	Target all depends on target dist.
+            </p>
+            <p>
+                •	Target dist depends on target compile at this step. In order to create a bundled WAR file we need   set of compiled class files and web pages.
+            </p>
+            <p>
+                •	Before proceeding with compilation part, we must create a directory structure to place this class files and web project related JSP files.
+            </p>
+            <p>
+                •	To make sure that all old files and folders are cleared, just proceed with clean up activity before preparation.
+            </p>
+            <p class="text-center">
+                <img src="Images/AntGeneralFlow.png" width="20%" />
+            </p>
+            <h4>System Requirements</h4>
+            <p>
+                Ant has been used successfully on many platforms, including Linux, commercial flavours of Unix such as Solaris and HP-UX, Windows NT-platforms, OS/2 Warp, Novell Netware 6, OpenVMS and MacOS X. The platforms used most for development are, in no particular order, Linux, MacOS X, Windows XP and Unix; these are therefore that platforms that tend to work best. As of Ant1.7, Windows 9x is no longer supported.
+            </p>
+            <p>
+                For the current version of Ant, you will also need a JDK installed on your system, version 1.4 or later required, 1.7 or later strongly recommended. The more up-to-date the version of Java , the more Ant tasks you get.
+            </p>
+            <p>
+                Note: If a JDK is not present, only the JRE runtime, then many tasks will not work.
+            </p>
+            <p>
+                Note: Ant 1.8.* works with jdk1.4 and higher, Ant 1.7.* works with jdk1.3 and higher, Ant 1.6.* works with jdk 1.2 and higher, Ant 1.2 to Ant 1.5.* work with jdk 1.1 and higher.
+            </p>
+            <h4>Useful Link(s): Optum Developer</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    <a href="https://bdcodecenter.uhc.com/" target="_blank">Code Center</a>
+                </li>
+                <li>
+                    <a href="https://oneconnect.uhg.com/groups/continuous-integration-services" target="_blank">Continuous Integration site in OneConnect</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installing Apache Ant</h4>
+            <p class="pagetxt">
+                Access the UnitedHealth Group AWS (<a href="http://avs.uhc.com/">http://avs.uhc.com/</a>)
+            </p>
+            <p class="pagetxt">
+                Enter Apache Ant in the search field and wait for a result.
+            </p>
+            <p class="pagetxt">
+                Click the result listing for Apache Ant 1.8.2 .
+            </p>
+            <p>
+                Click the Request Approval button and fill-up the required details.
+            </p>
+            <p>
+                Once your request get approved, the installation will automatically.
+            </p>
+            <p>Click on the <b>Apache Ant</b> logo below to download the instructions for <u><i>Installing Apache Ant</i></u><p>
+                <a href="Documents/Installing Apache Ant.pdf" download="Apache Ant Installation Guide" target="_blank">
+                    <img src="Images/apacheant-logo.png" alt="Apache Ant" />
+                </a>
+                <h4>Verifying Apache Ant Installation</h4>
+            <p>
+                To verify the successful installation of Apache Ant on your computer, type ant on your command prompt. You should see an output similar to:
+            </p><p style="font-family:'Courier New'">
+                C:\>ant -version
+            </p><p style="font-family:'Courier New'">
+                Apache Ant(TM) version 1.8.2 compiled on December 20 2010
+            </p>
+            <h4>Build Files</h4>
+            <p>
+                Typically, Ant’s build file called build.xml should reside in the base directory of the project. However there is no restriction on the file name or its location. You are free to use other file names or save the build file in some other location.
+            </p>
+            <p>
+                For this exercise, create a file called build.xml anywhere in your computer with the following contents in it:
+            </p><p style="font-family:'Courier New'">
+                &lt;?xml version="1.0" ?&gt;
+            </p><p style="font-family:'Courier New'">
+                &lt;project name="Hello World Project" default="info"&gt;
+            </p><p style="font-family:'Courier New'">
+                &lt;target name="info"&gt;
+            </p><p style="font-family:'Courier New'">
+                &lt;echo&gt;Hello World - Welcome to Apache Ant!&lt;/echo &gt;
+            </p><p style="font-family:'Courier New'">
+                &lt;/target&gt;
+            </p><p style="font-family:'Courier New'">
+                &lt;/project&gt;
+            </p>
+            <p>The XML element project has three attributes:</p>
+            <p>
+                <img src="Images/at1.PNG" />
+            </p>
+            <p>
+                A target is a collection of tasks that you want to run as one unit. In our example, we have a simple target to provide an informational message to the user.
+            </p>
+            <p>Targets can have dependencies on other targets. For example, a deploy target may have a dependency on the package target, the package target may have a dependency on the compile target, and so forth. Dependencies are denoted using the depends attribute. For example:</p>
+            <p>
+                <img src="Images/at2.PNG" />
+            </p>
+            <p>The target element has the following attributes:</p>
+            <p>
+                <img src="Images/at3.PNG" />
+            </p>
+            <p>
+                The echo task in the above example is a trivial task that prints a message. In our example, it prints the message Hello World.
+            </p>
+            <p>
+                To run the Ant build file, open up command prompt and navigate to the folder where the build.xml resides, and type ant info. You could also type ant instead.Both will work, because info is the default target in the build file. You should see the following output:
+            </p>
+            <p>
+                <img src="Images/at4.PNG" />
+            </p>
+            <h4>PROPERTY TASK</h4>
+            <p>
+                Ant build files are written in XML, which does not allow declaring variables as you do in your favorite programming language. However, as you may have imagined, it would be useful if Ant allowed declaring variables such as project name, project source directory, etc.
+            </p>
+            <p>
+                Ant uses the property element which allows you to specify properties. This allows the properties to be changed from one build to another, or from one environment to another.
+            </p>
+            <p>
+                By default, Ant provides the following predefined properties that can be used in the build file:
+            </p>
+            <p>
+                <img src="Images/at5.PNG" />
+            </p>
+            <p>
+                Ant also makes the system properties (Example: file.separator) available to the build file.
+            </p>
+            <p>
+                In addition to the above, the user can define additional properties using the property element. The following example shows how to define a property called sitename:
+            </p>
+            <p>
+                <img src="Images/at6.PNG" />
+            </p>
+            <p>Running Ant on the above build file produces the following output:</p>
+            <p>
+                <img src="Images/at7.PNG" />
+            </p>
+            <h4>PROPERTY FILES</h4>
+            <p>
+                Setting properties directly in the build file is fine, if you are working with a handful of properties. However, for a large project, it makes sense to store the properties in a separate property file.
+            </p>
+            <p>
+                Storing the properties in a separate file offers the following benefits:
+            </p>
+            <p>
+                •	It allows you to reuse the same build file, with different property settings for different execution environment. For example, build properties file can be maintained separately for DEV, TEST, and PROD environments.
+            </p>
+            <p>
+                •	It is useful when you do not know the values for a property (in a particular environment) upfront. This allows you to perform the build in other environments where the property value is known.
+            </p>
+            <p>
+                There is no hard-and-fast rule, but typically the property file is named build.properties and is placed alongside the build.xml file. You could create multiple build properties files based on the deployment environment - such as build.properties.dev and build.properties.test.
+            </p>
+            <p>
+                The contents of the build property file are similar to the normal java property file. They contain one property per line. Each property is represented by a name and a value pair. The name and value pairs are separated by an equals (=) sign. It is highly recommended that the properties are annotated with proper comments. Comments are listed using the hash (#) character.
+            </p>
+            <p>
+                The following example shows a build.xml file and its associated build.properties file:
+            </p>
+            <p>
+                <img src="Images/at8.PNG" />
+            </p>
+            <p>
+                <img src="Images/at9.PNG" />
+            </p>
+            <h4>DATA TYPES</h4>
+            <p>
+                Ant provides a number of predefined data types. Do not confuse the term "data types" with those that are available in the programming language, instead, consider them as a set of services that are built into the product already. The following data types are provided by Apache Ant
+            </p>
+            <h5>Fileset</h5>
+            <p>The fileset data type represents a collection of files. It is used as a filter to include or exclude files that match a particular pattern.</p>
+            <h5>Patternset</h5>
+            <p>
+                A patternset is a pattern that allows to filter files or folders easily based on certain patterns. Patterns can be created using the following meta characters:
+            </p>
+            <p>
+                ? - Matches one character only
+            </p>
+            <p>
+                * - Matches zero or many characters
+            </p>
+            <p>
+                ** - Matches zero or many directories recursively
+            </p>
+            <h5>Filelist</h5>
+            <p>
+                The filelist data type is similar to the fileset except the following differences:
+            </p>
+            <p>
+                filelist contains explicitly named lists of files and it does not support wild cards.
+            </p>
+            <p>
+                filelist data type can be applied for existing or non-existing files.
+            </p>
+            <h5>Filterset</h5>
+            <p>Using a filterset data type along with the copy task, you can replace certain text in all files that matches the pattern with a replacement value.</p>
+            <h5>Path</h5>
+            <p>The path data type is commonly used to represent a classpath. Entries in the path are separated using semicolons or colons. However, these characters are replaced at the runtime by the executing system's path separator character.</p>
+            <h4>BUILDING PROJECTS</h4>
+            <p>
+                Now that we have learnt about the data types in Ant, it is time to put that knowledge into action. We will build a project in this chapter. The aim of this chapter is to build an Ant file that compiles the java classes and places them in the WEB-INF\classes folder.
+            </p>
+            <p>
+                Consider the following project structure:
+            </p>
+            <p>
+                •	The database scripts are stored in the db folder.
+            </p>
+            <p>
+                •	The java source code is stored in the src folder.
+            </p>
+            <p>
+                •	The images, js, META-INF, styles (css) are stored in the war folder.
+            </p>
+            <p>
+                •	The JSPs are stored in the jsp folder.
+            </p>
+            <p>
+                •	The third party jar files are stored in the lib folder.
+            </p>
+            <p>
+                •	The java class files are stored in the WEB-INF\classes folder.
+            </p>
+            <p>
+                This project forms the Hello World Fax Application for the rest of this tutorial.
+            </p>
+            <p>
+                <img src="Images/at10.PNG" />
+            </p>
+            <p>
+                <img src="Images/at11.PNG" />
+            </p>
+            <p>First, let us declare some properties for the source, web, and build folders.</p>
+            <p>
+                <img src="Images/at12.PNG" />
+            </p>
+            <p>
+                Properties can refer to other properties. As shown in the above example, the build.dir property makes a reference to the web.dir property.
+            </p>
+            <p>
+                In this example, the src.dir refers to the source folder of the project. The default target of our project is the compile target. But first let us look at the clean target. The clean target, as the name suggests, deletes the files in the build folder.
+            </p>
+            <p>
+                <img src="Images/at13.PNG" />
+            </p>
+            <p>The master-classpath holds the classpath information. In this case, it includes the classes in the build folder and the jar files in the lib folder.</p>
+            <p>
+                <img src="Images/at14.PNG" />
+            </p>
+            <p>Finally, the build target to build the files. First of all, we create the build directory, if it does not exist. Then we execute the javac command specifying jdk1.5 as our target compilation. We supply the source folder and the classpath to the javac task and ask it to drop the class files in the build folder.</p>
+            <p>
+                <img src="Images/at15.PNG" />
+            </p>
+            <p>
+                Executing Ant on this file compiles the java source files and places the classes in the build folder.
+            </p>
+            <p>The following outcome is the result of running the Ant file:</p>
+            <p>
+                <img src="Images/at16.PNG" />
+            </p>
+            <p>The files are compiled and placed in the build.dir folder.</p>
+            <h4>CREATING JAR FILES</h4>
+            <p>The next logical step after compiling your java source files is to build the java archive, i.e., the JAR file. Creating JAR files with Ant is quite easy with the jar task.The commonly used attributes of the jar task are as follows:</p>
+            <p>
+                <img src="Images/at17.PNG" />
+            </p>
+            <p>Continuing our Hello World Fax Application project, let us add a new target to produce the jar files. But before that, let us consider the jar task given below.</p>
+            <p>
+                <img src="Images/at18.PNG" />
+            </p>
+            <p>
+                Here, the web.dir property points to the path of the web source files. In our case, this is where the util.jar will be placed. The build.dir property in this example points to the build folder where the class files for the util.jar can be found.
+            </p>
+            <p>
+                In this example, we create a jar file called util.jar using the classes from the faxapp.util.*package. However, we are excluding the classes that end with the name Test. The output jar file will be placed in the web application lib folder.If we want to make the util.jar an executable jar file we need to add the manifest with the Main-Class meta attribute. Therefore, the above example will be updated as:
+            </p>
+            <p>
+                <img src="Images/at19.PNG" />
+            </p>
+            <p>
+                To execute the jar task, wrap it inside a target, most commonly the build or package target, and execute them.
+            </p>
+            <p>
+                <img src="Images/at20.PNG" />
+            </p>
+            <p>
+                Running Ant on this file creates the util.jar file for us.
+            </p>
+            <p>
+                The following outcome is the result of running the Ant file:
+            </p>
+            <p>
+                <img src="Images/at21.PNG" />
+            </p>
+            <p>The util.jar file is now placed in the output folder.</p>
+            <h4>PACKAGING APPLICATIONS</h4>
+            <p>
+                We have learnt the different aspects of Ant using the Hello World Fax web application in bits and pieces.
+            </p>
+            <p>
+                Now it is time to put everything together to create a full and co
+            </p>
+
+            <h5>
+                build.properties
+            </h5> <p style="font-family:'Courier New'"> deploy.path=c:\tomcat6\webapps</p>
+            <h5>build.xml</h5>
+            <p>
+                <img src="Images/at22.PNG" />
+            </p>
+            <p>
+                <img src="Images/at23.PNG" />
+            </p>
+            <p>
+                <img src="Images/at24.PNG" />
+            </p>
+            <p>
+                In this example:
+            </p>
+            <p>
+                1. We first declare the path to the webapps folder in Tomcat in the build properties file as the deploy.path variable.
+            </p>
+            <p>
+                2. We also declare the source folder for the java files in the src.dir variable.
+            </p>
+            <p>
+                3. Then we declare the source folder for the web files in the web.dir variable. javadoc.dir is the folder for storing the java documentation, and build.dir is the path for storing the build output files.
+            </p>
+            <p>
+                4. Then we declare the name of the web application, which is fax in our case.
+            </p>
+            <p>
+                5. We also define the master class path which contains the JAR files present in the WEB-INF/lib folder of the project.
+            </p>
+            <p>
+                6. We also include the class files present in the build.dir in the master class path.
+            </p>
+            <p>
+                7. The Javadoc target produces the javadoc required for the project and the usage target is used to print the common targets that are present in the build file.
+            </p>
+            <p>
+                The above example shows two deployment targets: deploy and deploywar.
+            </p>
+            <p>
+                The deploy target copies the files from the web directory to the deploy directory preserving the last modified date time stamp. This is useful when deploying to a server that supports hot deployment.
+            </p>
+            <p>
+                The clean target clears all the previously built files.
+            </p>
+            <p>
+                The deploywar target builds the war file and then copies the war file to the deploy directory of the application server.
+            </p>
+            <h4>DEPLOYING APPLICATIONS</h4>
+            <p>In this section we deploy the web application directly to the application server deploy folder, then we are going to add a few Ant targets to start and stop the services.</p>
+            <h5>build.properties</h5>
+            <p>
+                <img src="Images/at25.PNG" />
+            </p>
+            <h5>build.xml</h5>
+            <p>
+                <img src="Images/at26.PNG" />
+            </p>
+            <p>
+                <img src="Images/at27.PNG" />
+            </p>
+            <p>
+                <img src="Images/at28.PNG" />
+            </p>
+            <p>
+                <img src="Images/at29.PNG" />
+            </p>
+            <p>
+                <img src="Images/at30.PNG" />
+            </p>
+            <p>
+                In this example, we have used Tomcat as our application server. First, in the build properties file, we have defined some additional properties.
+            </p>
+            <p>
+                •	The appserver.home points to the installation path to the Tomcat application server.
+            </p>
+            <p>
+                •	The appserver.lib points to the library files in the Tomcat installation folder.
+            </p>
+            <p>
+                •	The deploy.path variable now points to the webapp folder in Tomcat.
+            </p>
+            <p>
+                Applications in Tomcat can be stopped and started using the Tomcat manager application. The URL for the manager application, username, and password are also specified in the build.properties file. Next, we declare a new CLASSPATH that contains the catalina-ant.jar. This jar file is required to execute Tomcat tasks through Apache Ant.
+            </p>
+            <p>
+                The reload task requires the following additional parameters:
+            </p>
+            <p>
+                •	URL to the manager application
+            </p>
+            <p>
+                •	Username to restart the web application
+            </p>
+            <p>
+                •	Password to restart the web application
+            </p>
+            <p>
+                •	Name of the web application to be restarted
+            </p>
+            <p>
+                Let us issue the deploy-war command to copy the webapp to the Tomcat webapps folder and then let us reload the Fax Web application. The following outcome is the result of running the Ant file:
+            </p>
+            <p>
+                <img src="Images/at31.PNG" />
+            </p>
+            <h4>EXECUTING JAVA CODE</h4>
+            <p>
+                You can use Ant to execute Java code. In the following example, the java class takes in an argument (administrator's email address) and sends out an email.
+            </p>
+            <p>
+                <img src="Images/at32.PNG" />
+            </p>
+            <p>Here is a simple build that executes this java class.</p>
+            <p>
+                <img src="Images/at33.PNG" />
+            </p>
+            <p>
+                When the build is executed, it produces the following outcome:
+            </p>
+            <p>
+                <img src="Images/at34.PNG" />
+            </p>
+            <h4>ECLIPSE INTEGRATION</h4>
+            <p>
+                If you have downloaded and installed Eclipse already, you have very little to do to get started. Eclipse comes pre-bundled with the Ant plugin, ready to use.
+            </p>
+            <p>
+                Follow the simple steps to integrate Ant into Eclipse.
+            </p>
+            <p>
+                •	Make sure that the build.xml is a part of your java project, and does not reside at a location that is external to the project.
+            </p>
+            <p>
+                •	Enable Ant View by following Window > Show View > Other > Ant > Ant.
+            </p>
+            <p>
+                •	Open Project Explorer, drag the build.xml into the Ant View.
+            </p>
+            <p>
+                Your Ant View looks similar to:
+            </p>
+            <p>
+                <img src="Images/at35.PNG" />
+            </p>
+            <p>
+                Clicking on the targets, build / clean / usage will run Ant with the target.
+            </p>
+            <p>
+                Clicking fax will execute the default target – usage.
+            </p>
+            <p>
+                The Ant Eclipse plugin also comes with a good editor for editing build.xml files. The editor is aware of the build.xml schema and can assist you with code completion.
+            </p>
+            <p>
+                To use the Ant editor, right click your build.xml from the Project Explorer and select Open with > Ant Editor. The Ant editor should look something similar to:
+            </p>
+            <p>
+                <img src="Images/at36.PNG" style="width:70%" />
+            </p>
+            <p>The Ant editor lists the targets on the right hand side. The target list serves as a bookmark that allows you to jump straight into editing a particular target.</p>
+            <h4>JUNIT INTEGRATION</h4>
+            <p>
+                Junit is the commonly used unit testing framework for Java-based developments. It is easy to use and easy to extend. There are a number of JUnit extensions available. If you are unfamiliar with JUnit, you should download it from www.junit.org and read its manual.
+            </p>
+            <p>
+                This chapter shows how to execute Junit tests using Ant. Ant makes it straightforward through the JUnit task.
+            </p>
+            <p>
+                The attributes of the JUnit task are presented below.
+            </p>
+            <p>
+                <img src="Images/at37.PNG" />
+            </p>
+            <p>
+                Let us continue the theme of the Hello World Fax web application and add a UUnit target.
+            </p>
+            <p>
+                The following example shows a simple JUnit test execution:
+            </p>
+            <p>
+                <img src="Images/at38.PNG" />
+            </p>
+            <p>
+                This example shows the execution of JUnit on the com.tutorialspoint.UtilsTest junit class. Running the above code produces the following output:
+            </p>
+            <p>
+                <img src="Images/at39.PNG" />
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    Ant is the most complete Java build and deployment tool available.
+                </li>
+                <li>
+                    Ant is platform neutral and can handle platform-specific properties such as file separators.
+                </li>
+                <li>
+                    Ant can be used to perform platform-specific tasks such as modifying the modified time of a file using 'touch' command.
+                </li>
+                <li>
+                    Ant scripts are written using plain XML. If you are already familiar with XML, you can learn Ant pretty quickly.
+                </li>
+                <li>
+                    Ant is good at automating complicated repetitive tasks.
+                </li>
+                <li>
+                    Ant comes with a big list of predefined tasks.
+                </li>
+                <li>
+                    Ant provides an interface to develop custom tasks.
+                </li>
+                <li>
+                    Ant can be easily invoked from the command line and it can integrate with free and commercial IDEs.
+                </li>
+            </ul>
+            <h4>Limitations</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    Ant build files, which are written in XML, can be complex and verbose. The complex structure (hierarchical, partly ordered, and pervasively cross-linked) of Ant documents can be a barrier to learning. The build files of large or complex projects can become unmanageably large. Good design and modularization of build files can improve readability but not necessarily reduce size. Other build tools, such as Gradle or Maven, use more concise scripts at the expense of generality and flexibility.
+                </li>
+                <li>
+                    Many of the older tasks—the core ones that are used every day, such as &lt;javac&gt;, &lt;exec&gt; and &lt;java&gt; - use default values for options that are not consistent with more recent versions of the tasks. Changing those defaults would break existing Ant scripts.
+                </li>
+                <li>
+                    When expanding properties in a string or text element, undefined properties are not raised as an error, but left as an unexpanded reference (e.g. ${unassigned.property}).
+                </li>
+                <li>
+                    Ant has limited fault handling rules, and no persistence of state, so it cannot be used as a workflow tool for any workflow other than classic build and test processes.
+                </li>
+                <li>
+                    Lazy property evaluation is not supported. For instance, when working within an Antcontrib &lt;for&gt; loop, a property cannot be re-evaluated for a sub-value which may be part of the iteration. (some third-party extensions facilitate a workaround; antxtras flow-control tasksets do provide for cursor redefinition for loops.)
+                </li>
+                <li>
+                    In makefiles, any rule to create one file type from another can be written inline within the makefile. For example, you may transform a document into some other format by using rules to execute another tool. Creating a similar task in Ant is more complex: a separate task must be written in Java and included with the Ant build file in order to handle the same type of functionality. However, this separation can enhance the readability of the Ant script by hiding some of the details of how a task is executed on different platforms.
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Apache Ant 1.9.9 and 1.10.1 </h4>
+            <p>
+                Apache Ant 1.9.9 and 1.10.1 are now available for download as source or binary from <a href="http://ant.apache.org/bindownload.cgi" target="_blank">here</a>.
+            </p><p>
+                The Apache Ant team currently maintains two lines of development. The 1.9.x releases require Java5 at runtime and 1.10.x requires Java8 at runtime. Both lines are based off of Ant 1.9.7 and the 1.9.x releases are mostly bug fix releases while additional new features are developed for 1.10.x. We recommend using 1.10.x unless you are required to use versions of Java prior to Java8 during the build process.
+            </p><p>
+                Ant 1.10.1 contains a superset of 1.9.9 - with the exception of a few tasks and features that no longer work with Java8 anyway (like the apt task).
+            </p><p>
+                The new releases revert a change to 1.9.8 and 1.10.0 that broke Eclipse integration and also fixes the ant wrapper script for Solaris 10. In addition 1.10.1 adds tasks and types that support XZ compression with the help of the XZ for Java library.
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Optum Developer - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/quality-tools/apache-ant.html" target="_blank">Build Tool - ANT</a>
+                </li>
+                <li>
+                    Apache ANT Project - <a href="http://ant.apache.org" target="_blank">http://ant.apache.org</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

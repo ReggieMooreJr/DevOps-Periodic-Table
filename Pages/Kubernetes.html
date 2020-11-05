@@ -1,0 +1,445 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Kubernetes</h4>
+            Kubernetes is an open-source platform for automating deployment, scaling, and operations of application containers across clusters of hosts, providing container-centric infrastructure.
+            <br />
+            With Kubernetes, you are able to quickly and efficiently respond to customer demand:
+            <ul style="margin-left:25px">
+                <li>
+                    Deploy your applications quickly and predictably.
+                </li>
+                <li>
+                    Scale your applications on the fly.
+                </li>
+                <li>
+                    Roll out new features seamlessly.
+                </li>
+                <li>
+                    Limit hardware usage to required resources only.
+                </li>
+            </ul>
+
+            <h4> Kubernetes is:</h4>
+
+            <strong>Portable:</strong> public, private, hybrid, multi-cloud<br />
+            <strong> Extensible: </strong> modular, pluggable, hookable, composable<br />
+            <strong>Self-healing:</strong> auto-placement, auto-restart, auto-replication, auto-scaling<br /><br />
+
+            Google started the Kubernetes project in 2014. Kubernetes builds upon a decade and a half of experience that Google has with running production workloads at scale, combined with best-of-breed ideas and practices from the community.
+
+            <h4>Why containers?</h4>
+
+            <p><img src="Images/kb1.PNG" style="width:75%" /></p>
+
+            <p>The <em>Old Way</em> to deploy applications was to install the applications on a host using the operating system package manager. This had the disadvantage of entangling the applications’ executables, configuration, libraries, and lifecycles with each other and with the host OS. One could build immutable virtual-machine images in order to achieve predictable rollouts and rollbacks, but VMs are heavyweight and non-portable.</p>
+
+            <p>The <em>New Way</em> is to deploy containers based on operating-system-level virtualization rather than hardware virtualization. These containers are isolated from each other and from the host: they have their own filesystems, they can’t see each others’ processes, and their computational resource usage can be bounded. They are easier to build than VMs, and because they are decoupled from the underlying infrastructure and from the host filesystem, they are portable across clouds and OS distributions.</p>
+
+            <p>
+                Because containers are small and fast, one application can be packed in each container image. This one-to-one application-to-image relationship unlocks the full benefits of containers. With containers, immutable container images can be created at build/release time rather than deployment time, since each application doesn’t need to be composed with the rest of the application stack, nor married to the production infrastructure environment. Generating container images at build/release time enables a consistent environment to be carried from development into production.
+                Similarly, containers are vastly more transparent than VMs, which facilitates monitoring and management. This is especially true when the containers’ process lifecycles are managed by the infrastructure rather than hidden by a process supervisor inside the container. Finally, with a single application per container, managing the containers becomes tantamount to managing deployment of the application.
+            </p>
+
+            <p>Summary of container benefits:</p>
+
+            <ul style="margin-left:25px">
+                <li>
+                    <strong>Agile application creation and deployment</strong>:
+                    Increased ease and efficiency of container image creation compared to VM image use.
+                </li>
+                <li>
+                    <strong>Continuous development, integration, and deployment</strong>:
+                    Provides for reliable and frequent container image build and deployment with quick and easy rollbacks (due to image immutability).
+                </li>
+                <li>
+                    <strong>Dev and Ops separation of concerns</strong>:
+                    Create application container images at build/release time rather than deployment time, thereby decoupling applications from infrastructure.
+                </li>
+                <li>
+                    <strong>Environmental consistency across development, testing, and production</strong>:
+                    Runs the same on a laptop as it does in the cloud.
+                </li>
+                <li>
+                    <strong>Cloud and OS distribution portability</strong>:
+                    Runs on Ubuntu, RHEL, CoreOS, on-prem, Google Container Engine, and anywhere else.
+                </li>
+                <li>
+                    <strong>Application-centric management</strong>:
+                    Raises the level of abstraction from running an OS on virtual hardware to run an application on an OS using logical resources.
+                </li>
+                <li>
+                    <strong>Loosely coupled, distributed, elastic, liberated micro-services</strong>:
+                    Applications are broken into smaller, independent pieces and can be deployed and managed dynamically – not a fat monolithic stack running on one big single-purpose machine.
+                </li>
+                <li>
+                    <strong>Resource isolation</strong>:
+                    Predictable application performance.
+                </li>
+                <li>
+                    <strong>Resource utilization</strong>:
+                    High efficiency and density.
+                </li>
+            </ul>
+            <h4>Why do I need Kubernetes and what can it do?</h4>
+
+            <p>At a minimum, Kubernetes can schedule and run application containers on clusters of physical or virtual machines. However, Kubernetes also allows developers to ‘cut the cord’ to physical and virtual machines, moving from a <strong>host-centric</strong> infrastructure to a <strong>container-centric</strong> infrastructure, which provides the full advantages and benefits inherent to containers. Kubernetes provides the infrastructure to build a truly <strong>container-centric</strong> development environment.</p>
+
+            <p>Kubernetes satisfies a number of common needs of applications running in production, such as:</p>
+            <ul style="margin-left:25px">
+                <li>
+                    Co-locating helper processes, facilitating composite applications and preserving the one-application-per-container model
+                </li>
+                <li>
+                    Mounting storage systems
+                </li>
+                <li>
+                    Distributing secrets
+                </li>
+                <li>
+                    Checking application health
+                </li>
+                <li>
+                    Replicating application instances
+                </li>
+                <li>
+                    Using Horizontal Pod Autoscaling
+                </li>
+                <li>
+                    Naming and discovering
+                </li>
+                <li>
+                    Balancing loads
+                </li>
+                <li>
+                    Rolling updates
+                </li>
+                <li>
+                    Monitoring resources
+                </li>
+                <li>
+                    Accessing and ingesting logs
+                </li>
+                <li>
+                    Debugging applications
+                </li>
+                <li>
+                    Providing authentication and authorization
+                </li>
+            </ul>
+
+
+            <p>This provides the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and facilitates portability across infrastructure providers.</p>
+
+            <h4>How is Kubernetes a platform?</h4>
+
+            <p>Even though Kubernetes provides a lot of functionality, there are always new scenarios that would benefit from new features. Application-specific workflows can be streamlined to accelerate developer velocity. Ad hoc orchestration that is acceptable initially often requires robust automation at scale. This is why Kubernetes was also designed to serve as a platform for building an ecosystem of components and tools to make it easier to deploy, scale, and manage applications.</p>
+
+            <p>Labels empower users to organize their resources however they please. Annotations enable users to decorate resources with custom information to facilitate their workflows and provide an easy way for management tools to checkpoint state.</p>
+
+            <p>Additionally, the Kubernetes control plane is built upon the same APIs that are available to developers and users. Users can write their own controllers, such as schedulers, with their own APIs that can be targeted by a general-purpose command-line tool.</p>
+            <p>This design has enabled a number of other systems to build atop Kubernetes.</p>
+
+            <h4>What does <em>Kubernetes</em> mean? K8s?</h4>
+
+            <p>The name <strong>Kubernetes</strong> originates from Greek, meaning <em>helmsman</em> or <em>pilot</em>, and is the root of <em>governor</em> and cybernetic. <em>K8s</em> is an abbreviation derived by replacing the 8 letters “ubernete” with “8”.</p>
+
+
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>
+                Picking the Right Solution
+            </h4>
+            <p>Kubernetes can run on various platforms: from your laptop, to VMs on a cloud provider, to rack of bare metal servers. The effort required to set up a cluster varies from running a single command to crafting your own customized cluster. Use this guide to choose a solution that fits your needs.</p>
+            <ul style="margin-left:25px">
+                <li>
+                    Local-machine Solutions
+                </li>
+                <li>
+                    Hosted Solutions
+                </li>
+                <li>
+                    Turnkey Cloud Solutions
+                </li>
+                <li>
+                    Custom Solutions
+                </li>
+            </ul>
+            <h4>Local-machine Solutions</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Minikube is the recommended method for creating a local, single-node Kubernetes cluster for development and testing. Setup is completely automated and doesn’t require a cloud provider account.
+                </li>
+                <li>
+                    Ubuntu on LXD supports a nine-instance deployment on localhost.
+                </li>
+                <li>
+                    IBM Spectrum Conductor for Containers can use VirtualBox on your machine to deploy Kubernetes to one or more VMs. Scales to full multi-node cluster. Free distribution.
+                </li>
+            </ul>
+            <h4>Hosted Solutions</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Google Container Engine offers managed Kubernetes clusters.
+                </li>
+                <li>
+                    Azure Container Service can easily deploy Kubernetes clusters.
+                </li>
+                <li>
+                    Stackpoint.io provides Kubernetes infrastructure automation and management for multiple public clouds.
+                </li>
+                <li>
+                    AppsCode.com provides managed Kubernetes clusters for various public clouds, including AWS and Google Cloud Platform.
+                </li>
+                <li>
+                    KCluster.io provides highly available and scalable managed Kubernetes clusters for AWS.
+                </li>
+                <li>
+                    KUBE2GO.io get started with highly available Kubernetes clusters on multiple public clouds along with useful tools for development, debugging, monitoring.
+                </li>
+                <li>
+                    Madcore.Ai is devops-focused CLI tool for deploying Kubernetes infrastructure in AWS. Master, auto-scaling group nodes with spot-instances, ingress-ssl-lego, Heapster, and Grafana.
+                </li>
+                <li>
+                    Platform9 offers managed Kubernetes on-premises or on any public cloud, and provides 24/7 health monitoring and alerting.
+                </li>
+                <li>
+                    OpenShift Dedicated offers managed Kubernetes clusters powered by OpenShift.
+                </li>
+                <li>
+                    OpenShift Online provides free hosted access for Kubernetes applications.
+                </li>
+                <li>
+                    IBM Bluemix Container Service offers managed Kubernetes clusters with isolation choice, operational tools, integrated security insight into images and containers, and integration with Watson, IoT, and data.
+                </li>
+                <li>
+                    Giant Swarm offers managed Kubernetes clusters in their own datacenter, on-premises, or on public clouds.
+                </li>
+            </ul>
+            <h4>Turnkey Cloud Solutions</h4>
+            <p>
+                These solutions allow you to create Kubernetes clusters on a range of Cloud IaaS providers with only a few commands. These solutions are actively developed and have active community support.
+            </p>
+            <ul style="margin-left:25px">
+                <li>
+                    Google Compute Engine (GCE)
+                </li>
+                <li>
+                    AWS
+                </li>
+                <li>
+                    Azure
+                </li>
+                <li>
+                    Tectonic by CoreOS
+                </li>
+                <li>
+                    CenturyLink Cloud
+                </li>
+                <li>
+                    IBM Bluemix
+                </li>
+                <li>
+                    Stackpoint.io
+                </li>
+                <li>
+                    KUBE2GO.io
+                </li>
+                <li>
+                    Madcore.Ai
+                </li>
+            </ul>
+            <h4>Custom Solutions</h4>
+            <p>
+                Kubernetes can run on a wide range of Cloud providers and bare-metal environments, and with many base operating systems.
+            </p><p>
+                If you can find a guide below that matches your needs, use it. It may be a little out of date, but it will be easier than starting from scratch. If you do want to start from scratch, either because you have special requirements, or just because you want to understand what is underneath a Kubernetes cluster, try the Getting Started from Scratch guide.
+            </p><p>
+                If you are interested in supporting Kubernetes on a new platform, see Writing a Getting Started Guide.
+            </p>
+            <h5>Universal</h5>
+            <p>
+                If you already have a way to configure hosting resources, use kubeadm to easily bring up a cluster with a single command per machine.
+            </p> <h5>Cloud</h5>
+            <p>
+                These solutions are combinations of cloud providers and operating systems not covered by the above solutions.
+            </p>
+            <ul style="margin-left:25px">
+                <li>
+                    CoreOS on AWS or GCE
+                </li>
+                <li>
+                    Kubernetes on Ubuntu
+                </li>
+            </ul>
+            <h5> On-Premises VMs</h5>
+            <ul style="margin-left:25px">
+                <li>
+                    Vagrant (uses CoreOS and flannel)
+                </li>
+                <li>
+                    CloudStack (uses Ansible, CoreOS and flannel)
+                </li>
+                <li>
+                    Vmware vSphere (uses Debian)
+                </li>
+                <li>
+                    Vmware Photon Controller (uses Debian)
+                </li>
+                <li>
+                    Vmware vSphere, OpenStack, or Bare Metal (uses Juju, Ubuntu and flannel)
+                </li>
+                <li>
+                    Vmware (uses CoreOS and flannel)
+                </li>
+                <li>
+                    CoreOS on libvirt (uses CoreOS)
+                </li>
+                <li>
+                    oVirt
+                </li>
+                <li>
+                    OpenStack Heat (uses CentOS and flannel)
+                </li>
+                <li>
+                    Fedora (Multi Node) (uses Fedora and flannel)
+                </li>
+            </ul>
+            <h5> Bare Metal</h5>
+            <ul style="margin-left:25px">
+                <li>
+                    Offline (no internet required. Uses CoreOS and Flannel)
+                </li>
+                <li>
+                    Fedora via Ansible
+                </li>
+                <li>
+                    Fedora (Single Node)
+                </li>
+                <li>
+                    Fedora (Multi Node)
+                </li>
+                <li>
+                    CentOS
+                </li>
+                <li>
+                    Kubernetes on Ubuntu
+                </li>
+                <li>
+                    Manually Deploying Kubernetes on Ubuntu Nodes
+                </li>
+                <li>
+                    CoreOS on AWS or GCE
+                </li>
+            </ul>
+            <h5> Integrations</h5>
+            <p>
+                These solutions provide integration with third-party schedulers, resource managers, and/or lower level platforms.
+            </p>
+            <ul style="margin-left:25px">
+                <li>
+                    Kubernetes on Mesos
+                    <ul style="margin-left:25px">
+                        <li>
+                            Instructions specify GCE, but are generic enough to be adapted to most existing Mesos clusters
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    DCOS
+                    <ul style="margin-left:25px">
+                        <li>
+                            Community Edition DCOS uses AWS<br />
+                        </li>
+                        <li>
+                            Enterprise Edition DCOS supports cloud hosting, on-premise VMs, and bare metal
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    <strong>Broader purview.</strong> Kubernetes was originally developed by Google before containers were a major part of enterprise computing. You can use Kubernetes to manage any kind of cluster. That makes it handy if part of your infrastructure is containerized, part of it is composed of traditional clusters, and you don’t want to have multiple orchestration tools running.
+                </li>
+                <li>
+                    <strong>It’s not tied to Docker.</strong> A number of commercial vendors contribute heavily to Kubernetes development, but Kubernetes itself is an open source project under the auspices of the Cloud Native Computing Foundation. That means that, unlike Swarm, it’s not closely tied to any single company. So if you’re really into neutrality, you might like Kubernetes better. (In fairness, I should note that Swarm is also an open source tool, and Docker has shown no signs of wanting to lock users in. But the fact remains that Swarm is a Docker project.)
+                </li>
+            </ul>
+            <h4>Disadvantages</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    <strong>Setup is arguably more complicated.</strong> Because Kubernetes supports a broader set of cluster scenarios and platforms, setup can be tricky. That’s not universally true—on some hosted cloud platforms, like AWS and GCE, Kubernetes is basically already set up for you. But if you  want to run it on-premises, things will probably be more complicated.
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <br /><br />
+            <h4>Kubernetes v1.7.0-beta.1</h4>
+            <h5>Changelog since v1.7.0 </h5>
+            <ul style="margin-left:25px">
+                <li>
+                    Added new flag to kubeadm init: --node-name, that lets you specify the name of the Node object that will be created
+                </li>
+                <li>
+                    Added new flag to kubeadm join: --node-name, that lets you specify the name of the Node object that's gonna be created
+                </li>
+                <li>
+                    Fixes issue where you could not mount NFS or glusterFS volumes using hostnames on GCI/GKE with COS images.
+                </li>
+                <li>
+                    Reduce amount of noise in Stackdriver Logging, generated by the event-exporter component in the fluentd-gcp addon.
+                </li>
+                <li>
+                    Add generic NoSchedule toleration to fluentd in gcp config.
+                </li>
+                <li>
+                    RBAC role and role-binding reconciliation now ensures namespaces exist when reconciling on startup.
+                </li>
+                <li>
+                    Support NoSchedule taints correctly in DaemonSet controller.
+                </li>
+                <li>
+                    kubeadm: Expose only the cluster-info ConfigMap in the kube-public ns
+                </li>
+            </ul>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Kubernetes - <a href="https://kubernetes.io/docs/home/" target="_blank">https://kubernetes.io/docs/home/</a>
+                </li>
+                <li>
+                    Kubernetes release information - <a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md" target="_blank">https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

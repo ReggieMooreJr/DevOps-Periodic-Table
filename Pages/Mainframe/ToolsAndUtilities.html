@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IBM Mainframe - Tools and Utilities</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js"></script>
+
+    <script>
+        $(function () {
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style type="text/css">
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="../../Images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Tools and Utilities</h2>
+    </section>
+    <div style="background-color:white; padding:10px; height:35em;">
+        <div class="row">
+            <div class="col-md-12">
+                <ul style="margin-left:30px;">
+                    <li style="padding:5px;">
+                        <strong>ENDEVOR</strong>: ENDEVOR is an integrated set of management tools used to automate,Control, and monitor your applications development process. ENDEVOR runs under MVS, within the TSO/ISPF environment, and in batch.
+                    </li>
+                    <li style="padding:5px;">
+                        <strong>Control-M</strong>: Control-M is a workload automation software i.e. it is a batch scheduling software. We can schedule workloads on daily, weekly or monthly intervals depending on our requirements. Control-M can automate JCL, batch files, shell scripts, database stored procedures, file transfer and web services functions.
+                    </li>
+                    <li style="padding:5px;">
+                        <strong>File Aid</strong>: This tool is used to browse, edit, allocate, compare, copy, delete, and print files of any standard MVS access method. For a partitioned database (PDS), you can browse, edit, and copy an individual member or the entire dataset. We can do all these activities on VSAM files also. It provides a formatted mode that allows you to browse and edit one record at a time, field-by-field, using your COBOL or PL/I record layout field names to describe each field. It also provides a vertical formatted mode that allows you to browse and edit records on a field-by-field basis using the record layout field names as column headers. It also allows us to filter the file data on different conditions (consisting of AND and OR conditions).
+                    </li>
+                    <li style="padding:5px;">
+                        <strong>SORT</strong>: SORT is a mainframe utility which allows us to sort data in a file. It also helps us format data in a file. SORT utility can also filter data on basis of different conditions.
+                    </li>
+                    <li style="padding:5px;">
+                        <strong>FTP</strong>: File Transfer Protocol is a mainframe tool which can be used for transferring mainframe files from one region to different region.
+                    </li>
+                    <li style="padding:5px;">
+                        <strong>Xpeditor</strong>: Xpeditor is a mainframe debugging tool used to understand execution flow of a program. This can be used to debug both batch and online programs.
+                    </li>
+                    <li style="padding:5px;">
+                        <strong>ICETOOL</strong>: ICETOOL is a mainframe utility that uses capabilities of DFSORT to perform multiple sort and formatting operations on one or more datasets in a single step.
+                    </li>
+                    <li style="padding:5px;">
+                        <strong>IEBGENER</strong>: IEBGENER is a mainframe utility which allows us to copy one dataset to another. IEBGENER also can filter data; change a data set's logical record length (LRECL) and block size (BLKSIZE); and generate records.
+                    </li>
+                </ul>
+            </div>
+        </div>        
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>
+

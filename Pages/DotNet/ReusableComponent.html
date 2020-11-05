@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>.NET - Reusable Components</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js"></script>
+
+    <script>
+        $(function () {
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style type="text/css">
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+
+        @media (min-width: 992px) {
+            .equal {
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+            }
+        }
+
+        .panel {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="../../Images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Resuable Components</h2>
+    </section>    
+    <div class="container-fluid">
+        <div class="row equal">
+            <div class="col-md-4">
+                <div class="panel-custom panel-primary-custom">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Excel Reporter</h1>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                This console application is used to export data from any database which supports OLEDB (Oracle, SQL Server, Access etc) to excel Sheet.
+                            </li>
+                            <li class="list-group-item">
+                                All the queries, worksheet names, connection settings and mail settings can be configured in xml configuration file.
+                            </li>
+                            <li class="list-group-item">
+                                Handy Document(s): <a href="../../Documents/Excel Reporter.pdf" download="Excel Reporter" target="_blank">Excel Reporter</a>
+                            </li>
+                            <li class="list-group-item">
+                                Sample Application: <a href="../../SampleApplications/ExcelReporter.zip" download="Excel Reporter" target="_blank">ExcelReporter.zip</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel-custom panel-primary-custom">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Date Control</h1>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Visual Studio ships in with Calendar Control for selecting Date. But this Calendar control inherently has its own limitations.
+                            </li>
+                            <li class="list-group-item">
+                                It does not allow the following:
+                                <ul style="margin-left:2em;">
+                                    <li>To edit Dates; it allows only selection of Dates.</li>
+                                    <li>Inbuilt Validations.</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                We can enhance the existing Month Calendar by coupling it with a TextBox and a Button Control and overcome the above limitations by building a reusable custom Date Input Control which has inbuilt regular expression validators.
+                            </li>
+                            <li class="list-group-item">
+                                Handy Document(s): <a href="../../Documents/Date Control.pdf">Date Control</a>
+                            </li>
+                            <li class="list-group-item">
+                                Sample Application: <a href="../../SampleApplications/DateControlDemo.zip">DateControlDemo.zip</a>
+                            </li>
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel-custom panel-primary-custom">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Script Builder</h1>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Script Builder is a comprehensive and easy to use tool to script sql server database tables, views, stored procedures, user-defined functions, and even data, making it easy to synchronize the  databases. And to creates script for database deployment. It can also create C# code and basic sql stored procedures.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Features</strong>
+                                <ul style="margin-left:2em;">
+                                    <li>
+                                        Generates SQL scripts for tables, user defined functions, views and stored procedures. Along with constraints on these database objects. It can also create C# code and basic sql stored procedures.
+                                    </li>
+                                    <li>
+                                        It can create a scripts that reproduce the tables and the data contained in it. It can create  insert statements to populate data in tables.
+                                    </li>
+                                    <li>
+                                        It gives the option to generate script of selected objects. User can select the objects from checkboxes or to load the list from a feed file.
+                                    </li>
+                                    <li>
+                                        Generates log file to validate the objects in the scripts.
+                                    </li>
+                                    <li>
+                                        Generates print statements within the scripts to help in error debugging.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                Handy Document(s): <a href="../../Documents/Script Builder.pdf">Script Builder</a>
+                            </li>
+                            <li class="list-group-item">
+                                Sample Application: <a href="../../SampleApplications/ScriptBuilder.zip">ScriptBuilder.zip</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>

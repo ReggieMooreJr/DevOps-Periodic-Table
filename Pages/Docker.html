@@ -1,0 +1,211 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is Docker?</h4>
+            <p>
+                Docker is an open-source project that automates the deployment of applications inside software containers. It is promoted by the company Docker, Inc.
+            </p><p>
+                Docker provides an additional layer of abstraction and automation of operating-system-level virtualization on Windows and Linux. Docker uses the resource isolation features of the Linux kernel such as cgroups and kernel namespaces, and a union-capable file system such as OverlayFS and others to allow independent "containers" to run within a single Linux instance, avoiding the overhead of starting and maintaining virtual machines.
+            </p><p>
+                The Linux kernel's support for namespaces mostly isolates an application's view of the operating environment, including process trees, network, user IDs and mounted file systems, while the kernel's cgroups provide resource limiting, including the CPU, memory, block I/O, and network. Since version 0.9, Docker includes the libcontainer library as its own way to directly use virtualization facilities provided by the Linux kernel, in addition to using abstracted virtualization interfaces via libvirt, LXC (Linux Containers) and systemd-nspawn.
+            </p>
+
+            <h5>Features and Benefits</h5>
+            <ul style="margin-left:25px">
+                <li>
+                    Easy installation and setup of a complete Docker development environment for the Mac
+                </li>
+                <li>
+                    Integrated Docker platform and tools Docker command line, Docker Compose, and Docker Notary command line.
+                </li>
+                <li>
+                    Automatic updates with channels for monthly Edge and quarterly Stable versions of Docker
+                </li>
+                <li>
+                    Fast and reliable performance with native macOS virtualization running a custom minimal Linux distro.
+                </li>
+                <li>
+                    Seamless volume mounting for code and data, including file change notifications that unlock fast edit-test cycles.
+                </li>
+                <li>
+                    Native Mac security with support for the MacOS sandbox security model.
+                </li>
+                <li>
+                    Enterprise network support allows Docker for Mac to with with VPNs and proxies.
+                </li>
+                <li>
+                    In container development and debugging with supported IDEs.
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Install Docker for Windows</h4>
+            <p>
+                Docker for Windows is a Docker Community Edition (CE) app. The Docker for Windows install package includes everything you need to run Docker on a Windows system. This topic describes pre-install considerations, and how to download and install Docker for Windows.
+            </p>
+            <h4>What to know before you install</h4>
+            <p>
+                If your system does not satisfy these requirements, you can install Docker Toolbox, which uses Oracle Virtual Box instead of Hyper-V.
+            </p>
+            <ul style="margin-left:25px">
+                <li>
+                    README FIRST for Docker Toolbox and Docker Machine users: Docker for Windows requires Microsoft Hyper-V to run. The Docker for Windows installer will enable it for you, if needed, which requires a reboot. After Hyper-V is enabled, VirtualBox will no longer work, but any VirtualBox VM images will remain. VirtualBox VMs created with docker-machine (including the default one typically created during Toolbox install) will no longer start. These VMs cannot be used side-by-side with Docker for Windows. However, you can still use docker-machine to manage remote VMs.
+                </li>
+                <li>
+                    Virtualization must be enabled. Typically, virtualization is enabled by default. (Note that this is different from having Hyper-V enabled.) For more detail see Virtualization must be enabled in Troubleshooting.
+                </li>
+                <li>
+                    The current version of Docker for Windows runs on 64bit Windows 10 Pro, Enterprise and Education (1511 November update, Build 10586 or later). In the future we will support more versions of Windows 10.
+                </li>
+                <li>
+                    Containers and images created with Docker for Windows are shared between all user accounts on machines where it is installed. This is because all Windows accounts will use the same VM to build and run containers. In the future, Docker for Windows will better isolate user content.
+                </li>
+                <li>
+                    Nested virtualization scenarios, such as running Docker for Windows on a VMWare or Parallels instance, might work, but come with no guarantees (i.e., not officially supported). For more information, see Running Docker for Windows in nested virtualization scenarios
+                </li>
+                <li>
+                    <strong>What the Docker for Windows install includes:</strong> The installation provides Docker Engine, Docker CLI client, Docker Compose, Docker Machine, and Kitematic.
+                </li>
+            </ul>
+            <h4>Install Docker for Windows</h4>
+            <ol style="margin-left:25px">
+
+                <li>
+                    Double-click InstallDocker.msi to run the installer.
+                    <br />
+                    If you haven’t already downloaded the installer (InstallDocker.msi), you can get it here. It typically downloads to your Downloads folder, or you can run it from the recent downloads bar at the bottom of your web browser.
+                </li>
+                <li>
+                    Follow the install wizard to accept the license, authorize the installer, and proceed with the install.
+                    <br />
+                    You will be asked to authorize Docker.app with your system password during the install process. Privileged access is needed to install networking components, links to the Docker apps, and manage the Hyper-V VMs.
+
+                </li>
+                <li>
+                    Click Finish on the setup complete dialog to launch Docker.
+                    <br />
+                    <img src="Images/dk1.png" />
+                </li>
+            </ol>
+            <h4>Start Docker for Windows</h4>
+            <p>
+                When the installation finishes, Docker starts automatically.
+            </p>
+            <p>
+                The whale in the status bar indicates that Docker is running, and accessible from a terminal.
+            </p>
+            <p>
+                If you just installed the app, you also get a popup success message with suggested next steps, and a link to this documentation.
+            </p>
+            <p>
+                <img src="Images/dk2.png" />
+            </p>
+
+            <p>
+                When initialization is complete, select About Docker from the notification area icon to verify that you have the latest version.
+            </p>
+            <p>
+                Congratulations! You are up and running with Docker for Windows.
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Full control over the execution environment of the application. This includes the necessary infrastructure like the JRE, the application server, VM arguments and other environment variables the application needs to run. The infrastructure can be changed easily and independently by the development team, because they don’t have to wait for the operations team to change the environment.
+                    <br />
+                    <img src="Images/dk3.png" style="width:60%" /><br />
+                    A Docker image contains everything our application needs to run (except external resources like the database).
+
+                </li>
+                <li>
+                    Reduced Risk. The tests run against the same image that will finally run on the production server. This increases the reliability of the tests. Moreover, releases become less scary, because we just run the same image on the production server as we did for the tests or the other stages of the build pipeline (e.g. pre-production-system, acceptance tests, capacity tests etc.).
+                    <br />
+                    <img src="Images/dk4.png" style="width:60%" /><br />
+                    Once the Docker image is built, we use the image in all stages of the (continuous) delivery pipeline. This increases the reliability of our delivery.
+                </li>
+            </ul>
+            <h5>Advantages for the Operations Team</h5>
+            <ul style="margin-left:25px">
+                <li>
+                    Less effort for maintaining environments for the application. The creation of an environment is automated. Hence, less manual actions are necessary. This reduces the risks and increases the reliability.
+                </li>
+                <li>
+                    Manually maintaining a consistent environment on multiple servers is error-prone and can be a nightmare. With Docker it’s easy to create several instances of an environment, because we just have to execute the image on the servers. This way it is easy to add further nodes to a cluster and to scale horizontally.
+                </li>
+                <li>
+                    Easy updating of an existing application and environment. Using traditional approaches for setting up an environment (like install scripts) run into trouble when there is already an existing environment. Considering the update path in the script can be a very complex task (e.g. checking the existence of files and clean up unused files). With Docker we don’t have to take an existing environment into account (except for the database). We just stop the running container and start the new updated one. This simplifies the setup because we always start with an empty environment.
+                </li>
+            </ul>
+            <h4>disadvantages</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Increased complexity due to an additional layer. This affects not only the deployment but also the development and build.
+                </li>
+                <li>
+                    In addition, managing a huge amount of containers is challenging – especially when it comes to clustering containers. Tools like Google Kubernetes and Apache Mesos can help here.
+                </li>
+                <li>
+                    The containers share the same kernel and are therefore less isolated than real VMs. A bug in the kernel affects every container.
+                </li>
+                <li>
+                    Docker bases on Linux Containers (LXU), which is a Linux technology. Therefore, we can’t run Docker on other systems and our container is always a Linux system. But Boot2Docker enables the usage of Docker on Windows and Mac OS X by using VirtualBox. The Docker client runs on the host OS and communicates with the Docker daemon inside the VirtualBox. Unfortunately, this is less comfortable and makes daily use clumsy and more complicated than running Docker natively.
+                </li>
+                <li>
+                    Introducing Docker can be a demanding and time-consuming task. We have to evaluate if it is worth the effort and the increased complexity. In a past project of mine, the management rejected Docker with the argument, that 3 nodes (production, pre-production and experimental) are not enough to justify the effort… However, when you have a cluster of nodes (when scaling horizontally) or use Continuous Delivery you need an approach to reproduce environments and Docker is brilliant in this. Moreover, Continuous Delivery reduces the time-to-market (new features can be brought to production faster because the deployment and environment setup is automated), which can be used to convince the management.
+                </li>
+                <li>
+                    I also made the experience that there are also reservations about Docker in strictly regulated domains (like the banking sector):
+                    <ul style="margin-left:25px">
+                        <li>
+                            To run a container you need root rights. This can be a problem for some companies, in which the colleagues that are supposed to run and update the application on the production server must not have root rights.
+                        </li>
+                        <li>
+                            It is unclear if the usage of Docker agrees with certain security standards which have to be fulfilled (like PCI).
+                        </li>
+                        <li>
+                            In some companies, there is the questionable rule, that only software from official/trusted sources can be installed on the machines. For instance, Docker is not included in Red Hat Enterprise Linux 6 and therefore needs to be installed from docker.com, which is an “untrusted source”.
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Docker 1.13</h4>
+            <strong>Features</strong>
+            <ul style="margin-left:25px">
+                <li>	Use compose-files to deploy swarm mode services</li>
+                <li>	Improved CLI backwards compatibility</li>
+                <li>	Clean-up commands</li>
+                <li>	CLI restructured</li>
+                <li>	Monitoring improvements</li>
+                <li>	Build improvements</li>
+                <li>	Docker for AWS and Azure out of beta</li>
+            </ul>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Docker - <a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank">https://en.wikipedia.org/wiki/Docker_(software)</a>
+                </li>
+                <li>
+                    Docker overview and installation - <a href="https://docs.docker.com/engine/docker-overview/#container-format" target="_blank">https://docs.docker.com/engine/docker-overview/#container-format</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>

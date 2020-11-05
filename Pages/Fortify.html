@@ -1,0 +1,177 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is Fortify ?</h4>
+            <p>
+                Fortify Static Code Analyzer identifies security vulnerabilities in your source code early in the software development lifecycle and provides best practices so developers can code more securely.
+            </p>
+            <p>
+                The Fortify offering is a software-based solution which is also a CASE (computer aided software engineering) utility. Any source code can be reviewed with the Source Code Analysis (SCA) suite. This ties tightly to the PCI-DSS standards, which require code reviews, and also should be part of a SDLC (system development life cycle). The use of source code analysis is, of course, the best way to spot flaws and, unlike most of the products we tested, is not a black box test.
+            </p>
+            <p>
+                Source Code Analysis (SCA) suite supports many languages — including ASP.NET, C/C++, C#, ColdFusion, Java, JSP, PL/SQL, T-SQL, XML, VB.NET and other .NET languages. Source Code Analysis (SCA) suite also supports several development environments, such as Microsoft Visual Studio, Eclipse, WebSphere Application Developer and IBM Rational Application Developer. Source Code Analysis (SCA) suite can be installed on a variety of operating systems, including Windows, Mac, Solaris, Linux, AIX and HPUX.
+            </p>
+            <h4>
+                How it works
+            </h4>
+            <p>
+                HP Fortify SCA has 6 analyzers: data flow, control flow, semantic, structural, configuration, and buffer. Each analyzer finds different types of vulnerabilities.
+            </p><p>
+                <b> Data Flow</b> This analyzer detects potential vulnerabilities that involve tainted data (user-controlled input) put to potentially dangerous use. The data flow analyzer uses global, inter-procedural taint propagation analysis to detect the flow of data between a source (site of user input) and a sink (dangerous function call or operation). For example, the data flow analyzer detects whether a user-controlled input string of unbounded length is being copied into a statically sized buffer, and detects whether a user controlled string is being used to construct SQL query text.
+            </p><p>
+                <b> Control Flow</b> This analyzer detects potentially dangerous sequences of operations. By analyzing control flow paths in a program, the control flow analyzer determines whether a set of operations are executed in a certain order. For example, the control flow analyzer detects time of check/time of use issues and uninitialized variables, and checks whether utilities, such as XML readers, are configured properly before being used.
+            </p><p>
+                <b>Structural</b> This detects potentially dangerous flaws in the structure or definition of the program. For example, the structural analyzer detects assignment to member variables in Java servlets, identifies the use of loggers that are not declared static final, and flags instances of dead code that will never be executed because of a predicate that is always false.
+            </p><p>
+                <b>Semantic</b> This analyzer detects potentially dangerous uses of functions and APIs at the intra-procedural level. Basically a smart GREP.
+            </p><p>
+                <b> Configuration</b> This analyzer searches for mistakes, weaknesses, and policy violations in an application's deployment configuration files.
+            </p><p>
+                <b> Buffer</b> This analyzer detects buffer overflow vulnerabilities that involve writing or reading more data than a buffer can hold.
+            </p>
+            <h4>Understanding with example intensely</h4>
+            <ol style="margin-left:30px">
+                <li>
+                    Your source code is translated into an intermediate model, which is optimized for analysis by SCA.
+                </li>
+                <li>
+                    Some types of code require multiple stages of translation. For instance, a C# file needs first to be compiled into a debug .DLL or .EXE, and then that .NET binary file disassembled into Microsoft Intermediate Language (MSIL) by the .NET SDK utility ildasm.exe. Whereas other files like a Java file or ASP file are translated in one pass by the appropriate Fortify SCA translator for that language.
+                </li>
+                <li>
+                    SCA loads the model into memory and loads the analyzers. Each analyzer loads rules and applies those roles to functions in your program model, in a coordinated manner.
+                </li>
+                <li>
+                    The matches are written into an FPR file, with the vulnerability match information, security advice, source code, source cross-reference and code navigation information, user filtering specification, any custom rules, and digital signatures all zipped into the package.
+                </li>
+            </ol>
+            <h4>Key Features</h4>
+            <strong>Efficient</strong>
+            <p>
+                Improve scan times, get results faster, and accelerate the time it takes to get software into production by helping developers improve their programming productivity with incremental scanning.
+            </p>
+            <strong>Comprehensive</strong>
+            <p>
+                Supports a wide variety of development environments, languages, platforms, and frameworks to enable security reviews in mixed development and production environments.
+            </p>
+            <strong>Accurate</strong>
+            <p>
+                Guided by the largest and most complete set of security coding rules that are expanded and automatically updated by the Fortify Software Security Research team.
+            </p>
+            <strong>Easy to use</strong>
+            <p>
+                Integrate into any environment through scripts, plugins, and tools so developers can get up and running quickly and easily.
+            </p>
+            <strong>Scales to any Application</strong>
+            <p>
+                With support for the most programming languages, Fortify SCA identifies the risk in all types of applications and scales with the growing demands of the business.
+            </p>
+            <strong>Visibility</strong>
+            <p>
+                Fortify Software Security Center is a centralized management repository providing visibility and reports for your entire appsec testing program. Dashboards highlight the risk in your applications and helps to review, manage and track your security testing activities, prioritize remediation efforts and control your software portfolio.
+            </p>
+            <h4>Useful Link(s): Optum Developer</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    Hub Connect Group: <a href="https://hubconnect.uhg.com/groups/threat-and-vulnerability-management" target="_blank">Threat and Vulnerability Management</a>
+                </li>
+                <li>
+                    <a href="https://scar.uhc.com/ssc/login.jsp#/%20" target="_blank">Source Code Analysis Repository</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installation</h4>
+            <p>
+                To install the Fortify on your machine, raise the request in <b>AppStore</b> by clicking <a href="http://appstore.uhc.com/AppInfo/AppVersionId/12153?BackToList=/AppList/AppList" target="_blank">here</a>
+            </p>
+            <h4>Configuration</h4>
+            <p>Click on the <b>Fortify</b> logo below to download the instructions for <u><i>Configuring Fortify</i></u><p>
+                <a href="Documents/Installing and Configuring Fortify.pdf" download="Installing and Configuring Fortify" target="_blank">
+                    <img src="Images/Fortify-logo.png" alt="Fortify" />
+                </a>
+                <h4>Useful Links</h4>
+            <p>•	<a href="Documents/Performing Fortify Scan Through Jenkins.pdf" download="Performing Fortify Scan Through Jenkins" target="_blank">Performing Fortify Scan Through Jenkins</a><p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Benefits</h4>
+            <ul style="margin-left:30px">
+                <li>
+                    	 It is used to do security scans.
+                </li>
+                <li>
+                    	 It can be integrated with IDE to view the results.
+                </li>
+                <li>
+                    	 Simple to integrate.
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Fortify Software Version 16.20 Released</h4>
+            <p>
+                Updates in this release include:
+            </p>
+            <p>
+                •	Added support for languages and frameworks
+            </p>
+            <p style="margin-left:2.5em;">
+                o	Extended support for Swift v2.2
+            </p>
+            <p style="margin-left:2.5em;">
+                o	Redesigned .NET frontend
+            </p>
+            <p style="margin-left:2.5em;">
+                o	Gradle integration & automation
+            </p>
+            <p style="margin-left:2.5em;">
+                o	Incremental Analysis (Phase I of III)
+            </p>
+            <p style="margin-left:2.5em;">
+                o	Support for Xcode 8.1 for Objective C
+            </p>
+            <p>
+                •	Enhancements for:
+            </p>
+            <p style="margin-left:2.5em;">
+                o	Quality improvements in Java and Javascript translators and dataflow analyzer
+            </p>
+            <p style="margin-left:2.5em;">
+                o	Improved ABAP and TSQL support and more
+            </p>
+            <p>
+                Release notes with additional details can be viewed <a href="Documents/What's New in Fortify Software Version 16.20.pdf" download="What's New in Fortify Software Version 16.20" target="_blank">here</a>.
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Optum Developer - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/quality-tools/fortify.html" target="_blank">Fortify Static Code Analyzer (SCA)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

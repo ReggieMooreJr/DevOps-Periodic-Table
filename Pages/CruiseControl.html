@@ -1,0 +1,115 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>CruiseControl</h4>
+            <p>
+                In software development, CruiseControl is a Java-based framework for a continuous build process. It includes, but is not limited to, plugins for email notification, Ant, and various source control tools. A web interface is provided to view the details of the current and previous builds. It allows one to perform a continuous integration of any software development process.
+            </p><p>
+                CruiseControl is free, open-source software, distributed under a BSD-style license. It was originally created by employees of ThoughtWorks to allow for continuous integration on a project they were working on. It was later extracted into a stand-alone application.
+            </p><p>
+                There is a version of CruiseControl for .NET called CruiseControl.NET (aka CCNet) and a version for Ruby called CruiseControl.rb.
+            </p>
+            <p>
+                <strong> CruiseControl is composed of 3 main modules:</strong>
+            </p>
+            <ul style="margin-left:20px;">
+                <li>
+                    The build loop: core of the system, it triggers build cycles then notifies various listeners (users) using various publishing techniques. The trigger can be internal (scheduled or upon changes in a SCM) or external. It is configured in a xml file which maps the build cycles to certain tasks, thanks to a system of plugins. Depending on configuration, it may produce build artifacts.
+                </li>
+                <li>
+                    The jsp reporting application allows the users to browse the results of the builds and access the artifacts
+                </li>
+                <li>
+                    The dashboard provides a visual representation of all project build statuses.
+                </li>
+            </ul>
+            <h4>Architecture Diagram</h4>
+            <p>
+                <img src="Images/cc1.png" />
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>How to install and build CruiseControl?</h4>
+            <p>
+                Click on the <b>CruiseControl&trade;</b> logo below to download the instructions for Installing and build CruiseControl
+            </p>
+            <p>
+                <a href="Documents/Install And Build CruiseControl.pdf" target="_blank">
+                    <img border="0" src="Images/cc2.png" alt="CruiseControl&trade;" style="margin-left:1em; width:20%; height:10%;" />
+                </a>
+            </p>
+
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+
+            <strong> Continuous integration has many advantages:</strong>
+
+            <p>
+                •  When unit tests fail or a bug emerges, developers might revert the codebase back to a bug-free state, without wasting time debugging
+            </p><p>
+                •  Developers detect and fix integration problems continuously - avoiding last-minute chaos at release dates, (when everyone tries to check in their slightly incompatible versions).
+            </p><p>
+                •  Early warning of broken/incompatible code
+            </p><p>
+                •  Early warning of conflicting changes
+            </p><p>
+                •  Immediate unit testing of all changes
+            </p><p>
+                •  Constant availability of a "current" build for testing, demo, or release purposes
+            </p><p>
+                •  Immediate feedback to developers on the quality, functionality, or system-wide impact of code they are writing
+            </p>
+
+            <h4>Disadvantages</h4>
+            <p>
+                •  Initial setup time required
+            </p><p>
+                •  Well-developed test-suite required to achieve automated testing advantages
+            </p><p>
+                •  Large-scale refactoring can be troublesome due to continuously changing code base
+            </p><p>
+                •  Hardware costs for build machines can be significant
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>CuriseControl 2.8.4 released on 15 Sep 2010</h4>
+            <strong>Highlights : </strong>Fixes for live build output in Dashboard with concurrent builds. Added LiveOutput support to non-Ant Builders, including LiveOutput from remote Build Agents
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    CruiseControl Home - <a href="http://cruisecontrol.sourceforge.net/" target="_blank">Continuous Integration Tool</a>
+                </li>
+                <li>
+                    CruiseControl.NET - <a href="http://www.cruisecontrolnet.org/" target="_blank">Automated Continuous Integration server, implemented using the .NET Framework</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

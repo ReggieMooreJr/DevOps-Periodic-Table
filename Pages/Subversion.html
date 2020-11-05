@@ -1,0 +1,211 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is Subversion ?</h4>
+            <p>
+                Subversion is a centralized version control system (VCS) that helps teams manage changes to files and directories over time. UHG-IT offers support for Subversion as a part of the Continuous Integration Services.
+            </p>
+            <p>
+                Subversion can operate across networks, which allows it to be used by people on different computers. At some level, the ability for various people to modify and manage the same set of data from their respective locations fosters collaboration. Progress can occur more quickly without a single conduit through which all modifications must occur. And because the work is versioned, you need not fear that quality is the trade-off for losing that conduit—if some incorrect change is made to the data, just undo that change.
+            </p>
+            <p>
+                Some version control systems are also <i>software configuration management</i> (SCM) systems. These systems are specifically tailored to manage trees of source code and have many features that are specific to software development—such as natively understanding programming languages, or supplying tools for building software. Subversion, however, is not one of these systems. It is a general system that can be used to manage any collection of files. For you, those files might be source code—for others, anything from grocery shopping lists to digital video mixdowns and beyond.
+            </p>
+            <h4>Subversion's Architecture</h4>
+            <p>
+                <img src="Images/sv1.png" style="width:70%" />
+            </p>
+            <p>
+                On one end is a Subversion repository that holds all of your versioned data. On the other end is your Subversion client program, which manages local reflections of portions of that versioned data. Between these extremes are multiple routes through a Repository Access (RA) layer, some of which go across computer networks and through network servers which then access the repository, others of which bypass the network altogether and access the repository directly.
+            </p>
+            <h4>Subversion's Components</h4>
+            <p>
+                Subversion, once installed, has a number of different pieces. The following is a quick overview of what you get. Don't be alarmed if the brief descriptions leave you scratching your head—plenty more pages in this book are devoted to alleviating that confusion.
+            </p>
+            <ul style="margin-left:30px">
+                <li>
+                    <b>svn</b>  : The command-line client program
+                </li>
+                <li>
+                    <b>svnversion</b>  : A program for reporting the state (in terms of revisions of the items present) of a working copy
+                </li>
+                <li>
+                    <b>svnlook</b>  : A tool for directly inspecting a Subversion repository
+                </li>
+                <li>
+                    <b>svnadmin</b>  : A tool for creating, tweaking, or repairing a Subversion repository
+                </li>
+                <li>
+                    <b>mod_dav_svn</b>  : A plug-in module for the Apache HTTP Server, used to make your repository available to others over a network
+                </li>
+                <li>
+                    <b>svnserve</b>  : A custom standalone server program, runnable as a daemon process or invokable by SSH; another way to make your repository available to others over a network
+                </li>
+                <li>
+                    <b>svndumpfilter</b>  : A program for filtering Subversion repository dump streams
+                </li>
+                <li>
+                    <b>svnsync</b>  : A program for incrementally mirroring one repository to another over a network
+                </li>
+                <li>
+                    <b>svnrdump</b>  : A program for performing repository history dumps and loads over a network
+                </li>
+            </ul>
+            <h4>Useful Link(s): Optum Developer</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    For more information, visit the <a href="" target="_blank">Continuous Integration Services</a>group in OneConnect.
+                </li>
+                <li>
+                    There is no charge specifically for SVN, however usage of CIs services does involve a chargeback.  See <a href="https://hubconnect.uhg.com/docs/DOC-61287" target="_blank">ChargeBacks for CIS Services</a> for more details.
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>How to install and configure Subversion for version control?</h4>
+            <p>Click on the <b>SUBVERSION&reg;</b> logo below to download the instructions for <u><i>Installing and Configuring Subversion for Version Control</i></u><p>
+                <a href="Documents/Installing and Configuring Subversion for Version Control.pdf" download="Installing and Configuring Subversion for Version Control" target="_blank">
+                    <img border="0" src="Images/sv2.png" alt="SUBVERSION&reg;">
+                </a>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Core features/Benefits</h4>
+            <p>
+                •	Atomic commits
+            </p>
+            <p style="margin-left:2em;">
+                -	one transaction to add/update/delete files
+            </p>
+            <p style="margin-left:2em;">
+                -	promotes grouping related changes together in one commit to easily identify and revert
+            </p>
+            <p>
+                •	Full revision history retained for files that are renamed, copied, moved or removed
+            </p>
+            <p style="margin-left:2em;">
+                -	SVN's automatic merging and conflict resolution tools make locking unnecessary
+            </p>
+            <p>
+                •	Working copy of files are always writable and all changes are local until committed
+            </p>
+            <p style="margin-left:2em;">
+                -	allows you to easily revert unwanted changes at commit time
+            </p>
+            <p>
+                •	Fast and flexible update/commits
+            </p>
+            <p style="margin-left:2em;">
+                -	all tasks can be done from any level easily (updates, commits, merges, reverts, etc)
+            </p>
+            <p>
+                •	Branching and Tagging are cheap operations
+            </p>
+            <p style="margin-left:2em;">
+                -	simple to create a tag/branch and merge between them
+            </p>
+            <p>
+                •	Ease of access to the commit log
+            </p>
+            <p style="margin-left:2em;">
+                -	provides high visibility to changes, file history, integrated file comparison
+            </p>
+            <p style="margin-left:2em;">
+                -	ease of reverting changes to a file or an entire commit
+            </p>
+            <p>
+                •	Easy to setup email triggers (on checkins to keep team informed of changes, etc)
+            </p>
+            <p>
+                •	Integrates with everything
+            </p>
+            <p style="margin-left:2em;">
+                -	windows explorer integration via Tortoise
+            </p>
+            <p style="margin-left:2em;">
+                -	with leading IDEs (Eclipse, IntelliJ)
+            </p>
+            <p style="margin-left:2em;">
+                -	Agile/continuous integration tools (Atlassian, Jira, Fisheye, TeamCity, Hudson, etc.)
+            </p>
+            <p style="margin-left:2em;">
+                -	various websites to provide project/committer stats (Ohloh, etc)
+            </p>
+            <p>
+                •	Ease of setup and administration
+            </p>
+            <h4>Limitations</h4>
+            <p>
+                •	Locking
+            </p>
+            <p style="margin-left:2em;">
+                Subversion currently has no support for file locking, to prevent more than one person from working on a particular file at a given point in time. In most cases, locking isn't the desired behavior anyway, so this is not a major missing feature. It can become a problem, though, when dealing with binary files that are not easily merged. Locking can be partially implemented through properties and hooks, but the result is somewhat fragile. According to the Subversion developers, however, locking is on the list of features to be implemented in the next few releases of the system.
+            </p>
+            <p>
+                •	Distributed Repository
+            </p>
+            <p style="margin-left:2em;">
+                Some version control systems (such as the open source Arch system) have support for distributed repositories, which can be extremely important for some larger projects, especially open source projects. Subversion does not currently have any support for distributed repositories, but there is a secondary project, called SVK, that does provide a distributed wrapper for a Subversion repository. There are also some ways to do hot backups of a repository to provide some of the redundancy afforded a distributed system.
+            </p>
+            <p>
+                •	Visualization Tools
+            </p>
+            <p style="margin-left:2em;">
+                In terms of ease of use and comprehensibility, Subversion's copy paradigm is far above the branching and tagging functionality built into CVS. In its current implementation, though, the copy paradigm makes tracking the path a file takes, as it branches and merges over time, difficult at best. In fact, Subversion puts the task of tracking file history trees on the shoulders of the user. In order to maintain information that should be available automatically, the Subversion user must manually track using information entered into the logs at commit time.
+            </p>
+            <p style="margin-left:2em;">
+                For example, look at the complex repository tree in figure below. The <b>svn log</b> command would make it easy for me to see all of the changes that were made to the third revision on the main trunk of the repository, but if I want to see that two of the changes occurred on the main trunk and two occurred on branch 2, it would be impossible, unless I had the foresight to keep careful notes in the log entries about which branch a change occurred on.
+            </p>
+            <p style="margin-left:10em;">
+                <img src="Images/sv3.png" style="width:70%" />
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Apache Subversion 1.9.5 Released</h4>
+            <ul style="margin-left:30px">
+                <li>
+                    This is the most complete Subversion release to date, and we encourage users of Subversion to upgrade as soon as reasonable. Please see the <a href="https://lists.apache.org/thread.html/8faecb6e9856dcd5b78fdc9ca00e9fd073d206c2b62d1c50cd8eeb6e@%3Cannounce.subversion.apache.org%3E" target="_blank">release announcement</a> and the <a href="https://svn.apache.org/repos/asf/subversion/tags/1.9.5/CHANGES" target="_blank">change log</a> for more information about this release
+                </li>
+                <li>
+                    To get this release from the nearest mirror, please visit our <a href="http://subversion.apache.org/download.cgi#recommended-release" target="_blank">download page</a>.
+                </li>
+            </ul>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Optum Developer - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/quality-tools/subversion.html" target="_blank">Source Code Repository - Subversion</a>
+                </li>
+                <li>
+                    Subversion Documentation - <a href="https://subversion.apache.org/docs/" target="_blank">https://subversion.apache.org/docs/</a>
+                </li>
+                <li>
+                    TortoiseSVN - <a href="https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/" target="_blank">Subversion client for Windows</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

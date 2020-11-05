@@ -1,0 +1,170 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>JUnit</h4>
+            <p>
+                JUnit is a unit testing framework for Java programming language. JUnit has been important in the development of test-driven development, and is one of a family of unit testing frameworks collectively known as xUnit, that originated with JUnit.
+            </p>
+
+            <h4> What is JUnit ?</h4>
+            <p>
+                JUnit is a unit testing framework for Java programming language. It plays a crucial role test-driven development, and is a family of unit testing frameworks collectively known as xUnit.
+            </p><p>
+                JUnit promotes the idea of "first testing then coding", which emphasizes on setting up the test data for a piece of code that can be tested first and then implemented. This approach is like "test a little, code a little, test a little, code a little." It increases the productivity of the programmer and the stability of program code, which in turn reduces the stress on the programmer and the time spent on debugging.
+            </p>
+
+            <h4> Unit Test Case</h4>
+            <p>
+                A Unit Test Case is a part of code, which ensures that another part of code (method) works as expected. To achieve the desired results quickly, a test framework is required. JUnit is a perfect unit test framework for Java programming language.
+            </p><p>
+                A formal written unit test case is characterized by a known input and an expected output, which is worked out before the test is executed. The known input should test a precondition and the expected output should test a post-condition.
+            </p><p>
+                There must be at least two unit test cases for each requirement − one positive test and one negative test. If a requirement has sub-requirements, each sub-requirement must have at least two test cases as positive and negative.
+            </p>
+
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installation and Configuration</h4>
+            <p>Click on the <b>JUnit</b> logo below to download the instructions for <u><i>Installing and Configuring JUnit</i></u><p>
+                <a href="Documents/Installing and Configuring JUnit.pdf" download="Installing and Configuring JUnit" target="_blank">
+                    <img src="Images/junit-logo.png" alt="Fortify" />
+                </a>
+            <h4>Verify Java Installation in Your Machine</h4>
+            <p>Before this install java sdk 1.5 or above in your system.  To verify the java installation, open the console and execute a java command based on the operating system you are working on.</p>
+            <p>
+                <img src="Images/jt5.PNG" style="width:60%" />
+            </p>
+            <h4> Set JUnit Environment</h4>
+            <p>
+                Set the JUNIT_HOME environment variable to point to the base directory location where JUNIT jar is stored on your machine. Let’s assuming we've stored junit.jar in the JUNIT folder.
+            </p>
+            <p>
+                <img src="Images/jt1.PNG" style="width:60%" />
+            </p>
+            <h4>Set CLASSPATH Variable</h4>
+            <p>
+                Set the CLASSPATH environment variable to point to the JUNIT jar location.
+            </p>
+            <p>
+                <img src="Images/jt2.PNG" style="width:60%" />
+            </p>
+            <h4>Test JUnit Setup</h4>
+            <p>Create a java class file name TestJunit in C:\>JUNIT_WORKSPACE</p>
+            <p>
+                <img src="Images/jt3.PNG" style="width:80%" />
+            </p>
+            <p>
+                Create a java class file name TestRunner in C:\>JUNIT_WORKSPACE to execute test case(s).
+            </p>
+            <p>
+                <img src="Images/jt4.PNG" style="width:80%" />
+            </p>
+            <h4>Verify the Result</h4>
+            <p>
+                Compile the classes using javac compiler as follows −
+            </p><p style="font-family:'Courier New'">
+                C:\JUNIT_WORKSPACE>javac TestJunit.java TestRunner.java
+            </p><p>
+                Now run the Test Runner to see the result as follows −
+            </p><p style="font-family:'Courier New'">
+                C:\JUNIT_WORKSPACE>java TestRunner
+            </p><p>
+                Verify the output.
+            </p><p style="font-family:'Courier New'">
+                true
+
+            </p>
+
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <p>
+                •	Quick and easy generation of test cases and test data.
+            </p><p>
+                •	Ability to reuse the older test cases as well as the test data for making a new test case.
+            </p><p>
+                •	Generate test cases which stick on to their previous test values.
+            </p><p>
+                •	Promote TDD, i.e. Test Driven Development
+            </p><p>
+                •	Enhance productivity and reduce production cost.
+            </p><p>
+                •	Excellent and highly comprehensive reporting technique.
+            </p><p>
+                •	Easy contrast between expected output and the output displayed on the console.
+            </p><p>
+                •	Logical aggregation of test cases.
+            </p><p>
+                •	Add the JUnit.jar package in the class path environment variable of you system.
+            </p><p>
+                •	Make a subclass of “TestCase”.
+            </p><p>
+                •	In the subclass, define the actual test method you want to add. You may add multiple test methods.
+            </p><p>
+                •	In the above methods write the assert methods.
+            </p><p>
+                •	Test methods are declared public and have a void return type because they do not actually return a value after their execution.
+            </p><p>
+                •	They have standard naming system with the name string pattern as “testXYZ”.
+            </p>
+            <h4>Limitation</h4>
+            <p>
+                •	Tests that verify the integrity of a small unit are useful but limited. Experience has taught us that most bugs are found in the integration phase. These problems range from two modules that fail to work together, all the way to two separate applications that are acting up. Whether it is two application servers, a client/server environment, or even a peer-to-peer scenario, it is highly important to test these complex scenarios because of the tricky bugs that can be found in them. But it is nearly impossible to do so with JUnit.
+            </p><p>
+                •	Although Java is platform-independent, it is wise to check an application on more than one operating system. Your application may work very well on all operating systems, but it may not function exactly the way you expect it to work on some of them. Running the same set of tests over and over again for every OS is time-consuming, and with JUnit you cannot perform distributed tests, so you don’t have a way to run the same series of tests simultaneously on several JVMs each running on different OSes.
+            </p><p>
+                •	Some units of code can only be tested in a multiple-JVM scenario. For example, testing the opening of a connection (TCP socket or HTTP connection) and the integrity of the information retrieved from it is not possible (or very hard) to test with only one JVM, which is the only option that exists with JUnit.
+            </p><p>
+                •	JUnit was designed to have all tests run within a single process within a single class. It is also designed with the constraint that all tests are atomic and independent of any other code outside the test being run and that the lifecycle for these tests are independent for each test. This is all great for testing low level units of code, but not for client/server scenario tests.
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>JUnit 5</h4>
+            <p>
+                JUnit 5 is the next generation of JUnit. The goal is to create an up-to-date foundation for developer-side testing on the JVM. This includes focusing on Java 8 and above, as well as enabling many different styles of testing.
+            </p><p>
+                JUnit 5 is the result of JUnit Lambda and its crowdfunding campaign on Indiegogo.
+            </p><p>
+                The JUnit 5 team released Milestone 4 on April 1, 2017, and is currently working on additional milestones and ultimately a GA release.
+
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Optum Developer - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/quality-tools/junit.html" target="_blank">Simple framework to write repeatable tests - JUnit</a>
+                </li>
+                <li>
+                    JUnit Tutorial - <a href="https://www.tutorialspoint.com/junit/" target="_blank">https://www.tutorialspoint.com/junit</a>
+                </li>
+                <li>
+                    JUnit Website - <a href="http://junit.org/junit4/" target="_blank">http://junit.org/junit4/</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

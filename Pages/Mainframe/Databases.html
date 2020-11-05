@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IBM Mainframe - Databases</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js"></script>
+
+    <script>
+        $(function () {
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style type="text/css">
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="../../Images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Databases</h2>
+    </section>
+    <div style="background-color:white; padding:10px; height:35em;">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>DB2</h4>
+                <hr style="height:1px; background-color:black;" />
+                <p>
+                    DB2 is a database product from IBM. It is a Relational Database Management System (RDBMS). DB2 is designed to store, analyze and retrieve the data efficiently. DB2 product is extended with the support of Object-Oriented features and non-relational structures with XML. There are two types of storage structure based on the type of storage: Table space and Index space. A table space is a set of volumes or disks where the tables are actually stored. One table space can contain one or more tables. A table is a set of rows and columns that are logically related. Index space is used to store indexes for the table space. Index is the link to access the data from database in a much faster way.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>IMS DB</h4>
+                <hr style="height:1px; background-color:black;" />
+                <p>
+                    IMS stands for Information Management System. It started the database management system revolution and still continues to evolve to meet data processing requirements. Database is a collection of correlated data items. These data items are organized and stored in a manner to provide fast and easy access. IMS database is a hierarchical database where data is stored at different levels and each entity is dependent on higher level entities.
+                </p>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>
+

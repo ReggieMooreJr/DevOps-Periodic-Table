@@ -1,0 +1,199 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>AppDynamics Application Intelligence Platform</h4>
+            <p>
+                The AppDynamics Application Intelligence Platform lets you monitor and manage your entire application-delivery ecosystem, from the mobile app or browser client request through your network, backend databases and application servers and more. It gives you a broad view of your application landscape but lets you drill down to the code execution level on a given application tier and node.
+            </p>
+            <p style="font-weight:bold;">
+                Application Performance Monitoring
+            </p>
+            <p>
+                At the tier level, AppDynamics gives you a view of the runtime operation of your code via an AppDynamics App Server agent. The agent detects calls to a service entry point at the tier and follows the execution path for the call through the call stack. It sends data about usage metrics, code exceptions, error conditions, exit calls to backend systems to the Controller, either a SaaS or on-premises.
+            </p>
+            <p>
+                <img src="Images/ad1.png" style="width:60%" />
+            </p>
+            <p>
+                Most application environments consist of more than a single application server. They may contain multiple, distributed, and interconnected servers and processes that participate in fulfilling a given user request. In this context, AppDynamics tracks transactions across distributed, heterogenous services.
+            </p>
+            <p style="font-weight:bold;">
+                Infrastructure Visibility with Database Monitoring
+            </p>
+            <p>
+                For greater visibility into your application delivery environment, you can add AppDynamics Database Monitoring to the deployment.
+            </p>
+            <p>
+                App agents can tell you about calls to backend databases, including errors and call counts. The Database Monitoring module extends that visibility to the workings of the database server itself. It gives you detailed information on query execution and performance, with an agent-less profile.
+            </p>
+            <p>
+                AppDynamics Server Monitoring adds to your view of the data center, with rich performance information on the performance of the machines and network in your environment.
+            </p>
+            <p>
+                <img src="Images/ad2.png" style="width:60%" />
+            </p>
+            <p>
+                In this deployment, the database agent collects information from the database servers and sends it to the Controller, which persists some of that information in the Events Service. Database analytics features may use the Events Service, the document storage component of the platform that is optimized for searching and storing of high volumes of information.
+            </p>
+            <p style="font-weight:bold;">
+                End User Monitoring for Client Experience
+            </p>
+            <p>
+                While server side monitoring can tell you a great deal about how end users experience your application's performance and especially how to improve that performance from the server side, end user monitoring can extend that insight all the way from the initial client request through to the response on the client device. With AppDynamics End User Monitoring, you can collect information on where in the world your requests are coming from and what devices and channels are being used, as well as the performance of your code once it's on your user's device. You can even investigate mobile crashes by seeing stack traces and other contextual data at the moment of the crash. And that data can be tied to business transaction data from the server side.
+            </p>
+            <p style="font-weight:bold;">
+                Application Analytics for Business Impact
+            </p>
+            <p>
+                How does the overall performance of your application environment affect your business? AppDynamics Application Analytics can help you understand how the performance of your application environment and end user applications ties to the business data of the transactions. It lets you sort, order, and understand the data that composes the business transactions.  It also lets you drill into the varieties of log data that your environment generates.
+            </p>
+            <p>
+                The following figure shows a complete AppDynamics deployment, including the connection points between the agent-side components and the backend platform.
+            </p>
+            <p>
+                <img src="Images/ad3.png" style="width:60%" />
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>AppDynamics Agent Installation and Instrumentation</h4>
+            <p>
+                Instrumenting an application adds the AppDynamics application agent (app agent) into the runtime process of the application.
+            </p><p>
+                This section describes how to instrument applications on different platforms and in different types of application environments. The pages here cover installing, upgrading, uninstalling and administering the application agents.
+            </p><p>
+                <a href="https://docs.appdynamics.com/display/PRO42/Install+and+Administer+Agents" target="_blank">Install and Administer Agents</a> covers common topics relating to app agent installation and administration. For specific information by application environment, see the subsection for your platform.
+            </p>
+            This section describes how to instrument the application for APM. For other types of instrumentation and monitoring, see:
+            <ul style="margin-left:25px">
+                <li>
+                    <a href="https://docs.appdynamics.com/display/PRO42/End-User+Monitoring" target="_blank">End-User</a> Monitoring for EUM agents.
+                </li>
+                <li>
+                    <a href="https://docs.appdynamics.com/display/PRO42/Standalone+Machine+Agent" target="_blank">Standalone Machine Agent</a> for standalone machine agents.
+                </li>
+                <li>
+                    <a href="https://docs.appdynamics.com/display/PRO42/Database+Monitoring" target="_blank">Database Monitoring</a> for database monitoring.
+                </li>
+            </ul>
+            <p>Click on the <b>AppDynamics</b> logo below to download the instructions for <u><i>Instrument AppDynamic .NET Applications </i></u><p>
+                <a href="Documents/Instrument AppDynamic .NET Applications.pdf" download="Instrument AppDynamic .NET Applications" target="_blank">
+                    <img src="Images/AppDynamic-logo.png" alt="AppDynamic" style="width:30%" />
+                </a>
+            </p>
+            <p>To download the instruction for the installation of AppDynamics .net agent <a href="Documents/Install the AppDynamics .NET Agent.pdf" download="Install the AppDynamics .NET Agent" target="_blank">click here</a> </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Benefits</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Unified monitoring across many application types
+                </li>
+                <li>
+                    Real time alerting and Track performance 24/7
+                </li>
+                <li>
+                    Complete visibility into distributed transactions
+                </li>
+                <li>
+                    Drill down to code detail and SQL
+                </li>
+                <li>
+                    Quickly get to root cause of errors and slowdowns
+                </li>
+                <li>
+                    Track end user experience for browser and mobile apps
+                </li>
+                <li>
+                    Monitor infrastructure and databases
+                </li>
+                <li>
+                    Build Business and Technical Dashboards
+                </li>
+                <li>
+                    Supported platforms - Java, .NET, PHP, Node.js, Python, C/C++, iOS, Android
+                </li>
+            </ul>
+            <h4>Limitations</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Licence required for Enterprise version
+                </li>
+                <li>
+                    Needs to be added to code base
+                </li>
+                <li>
+                    Doesn't plug into CI/CD - Ran every time the site is in use
+                </li>
+                <li>
+                    Expensive, so should be used only on staging and/or production environments
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Welcome to version 4.3 of the AppDynamics App iQ Platform!</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    This release adds support for new languages, frameworks, and components, while expanding administrative capabilities for agents and licenses to help you deal with the complexity of today's distributed, heterogeneous application environments.
+                </li>
+                <li>
+                    This page describes selected highlights of this release. For more information about this release, see the <a href="https://docs.appdynamics.com/display/PRO43/Release+Notes" target="_blank">Release Notes</a>.
+                </li>
+            </ul>
+            <h4>License Management</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    The App iQ Controller uses licensing to determine the features that are available in an App iQ deployment and the scale of the deployment. The new License Management module gives you great visibility into your license consumption model, allows you to easily manage entitlements from your license pools, and manage and distribute your access keys usage so you can scale out your different applications.
+                </li>
+                <li>
+                    License Management Scope configuration allows you to assign licenses to specific applications and machines. Using scopes to configure licenses allows you to easily express and scale the configuration modules as required.
+                </li>
+            </ul>
+            <h4>Other Resources</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    <a href="https://community.appdynamics.com/" target="_blank">Community Forums and Knowledge Base</a>
+                </li>
+                <li>
+                    <a href="https://www.appdynamics.com/opscentral/" target="_blank">OpsCentral</a>
+                </li>
+                <li>
+                    <a href="https://www.appdynamics.com/community/exchange/" target="_blank">AppDynamics Exchange</a>
+                </li>
+                <li>
+                    <a href="https://community.appdynamics.com/" target="_blank">Support (login account required)</a>
+                </li>
+            </ul>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    AppDynamics - <a href="https://docs.appdynamics.com/display/PRO42/AppDynamics+Concepts" target="_blank">https://docs.appdynamics.com/display/PRO42/AppDynamics+Concepts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

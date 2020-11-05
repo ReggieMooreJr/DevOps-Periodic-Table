@@ -1,0 +1,176 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Git</h4>
+            <p class="pagetxt">
+                Git is a distributed revision control and source code management system with an emphasis on speed, data integrity and support for distributed & non-linear workflows. Git was initially designed and developed by Linus Torvalds for Linux kernel development. Git is free and open source software distributed under the terms of the GNU General Public License version 2.
+            </p>
+            <h4>Why Git ?</h4>
+            <p class="pagetxt">
+                As a version control system, Git does a great job of keeping track of file versions. Git's real strengths are in the workflows that can be built on top of it. Git makes it easy to work on your own branch of code and then merge it into a master copy, with usually very little difficulty compared to other version control systems.
+            </p>
+            <p>
+                There are several web-based services that host Git repositories – such as GitHub – that make collaboration easy, and offer additional visual tools and features for managing projects.
+            </p>
+            <p>
+                Git provides you with a staging area to prepare commits, before actually committing to them. This enables you to easily select specific files – or even just specific lines of code – and lineup changes with a meaningful description. It makes changes much more visible, and gives you greater control over how you track the history of your work.
+            </p>
+            <!--<p>
+                For any kind of documentation on Git, please refer to the following link <a href="https://git-scm.com/doc">here</a>
+            </p>-->
+            <h4>Basic workflow of Git</h4>
+            <p>
+                Step 1: You modify a file from the working directory.
+            </p>
+            <p>Step 2: You add these files to the staging area.</p>
+            <p>Step 3: You perform commit operation that moves the files from the staging area. After push operation, it stores the changes permanently to the Git repository. </p>
+            <p style="text-align:center">
+                <img src="Images/gitworkflow.jpg" style="width:30%" />
+            </p>
+            <h4>Git Life Cycle</h4>
+            <p>General workflow is as follows:</p>
+            <ul>
+                <li>
+                    You clone the Git repository as a working copy.
+                </li>
+                <li>
+                    You modify the working copy by adding/editing files.
+                </li>
+                <li>
+                    If necessary, you also update the working copy by taking other developer's changes.
+                </li>
+                <li>
+                    You review the changes before commit.
+                </li>
+                <li>
+                    You commit changes. If everything is fine, then you push the changes to the repository.
+                </li>
+                <li>
+                    After committing, if you realize something is wrong, then you correct the last commit and push the changes to the repository.
+                </li>
+            </ul>
+            <p style="text-align:center">
+                <img src="Images/GitLifeCycle.png.jpg" style="width:50%" />
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installation</h4>
+            <ol style="margin-left:1.5em;">
+                <li>Access the UnitedHealth Group AppStore (<a href="http://appstore.uhc.com" target="_blank">http://appstore.uhc.com</a>)</li>
+                <li>Enter Git in the search field and wait for a result.</li>
+                <li>Click the result listing for Git 2.11.0.3.</li>
+                <li>Ensure that your computer name is listed in the Machine ID section on the Request This App tab. If it is not, click the button labeled Select Devices and select the machine to which you are installing the software.</li>
+                <li>Click on Submit Request.</li>
+                <li>Check your email for an automated communication from AppStore and click the link in the email to schedule your installation. If you do not receive an AppStore email, return to AppStore, click the Requests dropdown, and then select My Requests. Locate your request and click the button labeled Schedule. Schedule your installation for an immediate start or for a time that is more convenient.</li>
+                <li>Once installation is complete, you will receive an automated email from AppStore. Your computer should automatically reboot after installation.</li>
+            </ol>
+            <p class="pagetxt">
+                <strong>Note</strong>: If you have followed these instructions and continue to have difficulties, please call the Help Desk (<a href="http://helpdesk.uhc.com">http://helpdesk.uhc.com</a> for further assistance.
+            </p>
+            <h4>Configuration</h4>
+            <p>Click on the <b>Git</b> logo below for <u><i>Configuring the Git on local machine.</i></u><p>
+                <a href="Documents/Get started with GitHub.pdf" target="_blank" download="Get started with GitHub">
+                    <img src="Images/Git-Logo.png" alt="Git-Logo" />
+                </a>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <ol style="margin-left:1.5em;">
+                <li>
+                    <strong>Free and open source</strong><br />
+                    Git is released under GPL’s open source license. It is available freely over the internet. You can use Git to manage property projects without paying a single penny. As it is an open source, you can download its source code and also perform changes according to your requirements.
+                </li>
+                <li>
+                    <strong>Fast and small</strong><br />
+                    As most of the operations are performed locally, it gives a huge benefit in terms of speed. Git does not rely on the central server; that is why; there is no need to interact with the remote server for every operation. The core part of Git is written in C, which avoids runtime overheads associated with other high-level languages. Though Git mirrors entire repository, the size of the data on the client side is small. This illustrates the efficiency of Git at compressing and storing data on the client side.
+                </li>
+                <li>
+                    <strong>Implicit backup</strong><br />
+                    The chances of losing data are very rare when there are multiple copies of it. Data present on any client side mirrors the repository; hence it can be used in the event of a crash or disk corruption.
+                </li>
+                <li>
+                    <strong>Security</strong><br />
+                    Git uses a common cryptographic hash function called secure hash function (SHA1), to name and identify objects within its database. Every file and commit is check-summed and retrieved by its checksum at the time of checkout. It implies that, it is impossible to change file, date, and commit message and any other data from the Git database without knowing Git.
+                </li>
+                <li>
+                    <strong>No need of powerful hardware</strong><br />
+                    In case of Centralized version control system (CVCS), the central server needs to be powerful enough to serve requests of the entire team. For smaller teams, it is not an issue, but as the team size grows, the hardware limitations of the server can be a performance bottleneck. In case of Distributed/Decentralized version control system (DVCS), developers don’t interact with the server unless they need to push or pull changes. All the heavy lifting happens on the client side, so the server hardware can be very simple indeed.
+                </li>
+                <li>
+                    <strong>Easier branching</strong><br />
+                    Centralized version control system (CVCS) uses cheap copy mechanism, if we create a new branch, it will copy all the codes to the new branch, so it is time-consuming and not efficient. Also, deletion and merging of branches in CVCS is complicated and time-consuming. But branch management with Git is very simple. It takes only a few seconds to create, delete, and merge branches.
+                </li>
+            </ol>
+            <p class="pagetxt">
+                <h4> Limitation(s)/Shortcoming(s)</h4>
+            </p>
+            <ol style="margin-left:1.5em;">
+                <li>
+                    <strong>Complex information model</strong><br />
+                    The information model is complicated – you have files, a working tree, an index, a local repository, a remote repository, remotes (pointers to remote repositories), commits, trees (pointers to commits), branches, a stash and you need to know all of it.
+                </li>
+                <li>
+                    <strong>Crazy command line syntax</strong><br />
+                    The command line syntax is completely arbitrary and inconsistent. Some “shortcuts” are graced with top level commands: “git pull” is exactly equivalent to “git fetch” followed by “git merge”. But the shortcut for “git branch” combined with “git checkout”? “git checkout -b”. Specifying filenames completely changes the semantics of some commands (“git commit” ignores local, unstaged changes in foo.txt; “git commit foo.txt” doesn’t). The various options of “git reset” do completely different things.
+                </li>
+            </ol>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Git 2.13 is out now !</h4>
+            <strong>Release Notes</strong>
+            <ul style="margin-left:1.5em;">
+                <li>
+                    Use of an empty string as a pathspec element that is used for 'everything matches' is still warned and Git asks users to use a more explicit '.' for that instead. The hope is that existing users will not mind this change, and eventually the warning can be turned into a hard error, upgrading the deprecation into removal of this (mis)feature. That is not scheduled to happen in the upcoming release (yet).
+                </li>
+                <li>
+                    The historical argument order "git merge <msg> HEAD <commit>..." has been deprecated for quite some time, and is now removed.
+                </li>
+                <li>
+                    The default location "~/.git-credential-cache/socket" for the socket used to communicate with the credential-cache daemon has been moved to "~/.cache/git/credential/socket".
+                </li>
+                <li>
+                    Git now avoids blindly falling back to ".git" when the setup sequence said we are _not_ in Git repository.  A corner case that happens to work right now may be broken by a call to die("BUG"). We've tried hard to locate such cases and fixed them, but there might still be cases that need to be addressed--bug reports are greatly appreciated.
+                </li>
+            </ul>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Optum Developer - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/quality-tools/git.html" target="_blank">Source Code Repository - Git</a>
+                </li>
+                <li>
+                    Git Documentation - <a href="https://git-scm.com/documentation" target="_blank">https://git-scm.com/documentation</a>
+                </li>
+                <li>
+                    GitHub Help - <a href="https://help.github.com" target="_blank">https://help.github.com</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

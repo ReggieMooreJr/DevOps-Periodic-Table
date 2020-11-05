@@ -1,0 +1,254 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>UrbanCode Release</h4>
+            <p>
+                IBM UrbanCode Release, formerly called uRelease, is a collaborative release management tool that helps you handle the growing number and complexity of releases. You can plan, execute, and track a release through every stage of the delivery lifecycle. Based on lessons learned from working with our customers, UrbanCode Release reduces errors, while making large releases faster and more agile.
+            </p>
+            <h4>UrbanCode Release provides</h4>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Collaborative, web based release day planning and execution
+                </li>
+                <li>
+                    Insight into which projects in a release are on time
+                </li>
+                <li>
+                    Clear visibility into which versions of each app are in each environment
+                </li>
+                <li>
+                    Enforced quality gates governing advancement into environments
+                </li>
+            </ul>
+            <h4>Uses</h4>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Identify Release Dependencies: From initial planning through discovery in testing, easily identify and track release dependencies across applications and infrastructure.
+                </li>
+                <li>
+                    Release Planning and Tracking: Map applications, changes, and initiatives to releases, and track the completion of Application changes and attainment of quality certifications for applications in a release.
+                </li>
+                <li>
+                    Easier Release Days: Build an executable deployment plan that seamlessly notifies team members of work to do, and triggers automated tasks while providing up-to-date status that everyone can see.
+                </li>
+                <li>
+                    Handle More Releases: Accommodate a growing number of release using more templates, automatic rules, and visibility that mitigates risk.
+                </li>
+                <li>
+                    Multi-Application Continuous Delivery: Rules for automatic promotion across groups of applications enables applications to take advantage of continuous delivery techniques.
+                </li>
+            </ul>
+            <h4>Features</h4>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Multi-Application Continuous Delivery
+                </li>
+                <li>
+                    Impact Analysis
+                </li>
+                <li>
+                    Release Pipeline Visualization
+                </li>
+                <li>
+                    Release Gates
+                </li>
+                <li>
+                    Deployment Plans and Templates
+                </li>
+                <li>
+                    Federated Release Dashboard
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>System requirements</h4>
+            <p>
+                The IBM® UrbanCode™ Release server requires a 64-bit operating system and JRE. If you plan to install the server in a production environment, a supporting database is required. If you do not plan to install the server in a production environment, you can use the Apache Derby database, which is bundled with the product.
+            </p><p>
+                You must have a Rational® Common Licensing server with available licenses. The server must be able to initiate connections to the license server. The default port for Rational Common Licensing is 27000. The server might require access to other ports if you connect to external systems, such as an SMTP server for notifications.
+            </p><p>
+                For best performance, follow these guidelines:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    When possible, install the server as a dedicated user account. However, IBM UrbanCode Release runs well as a root user (or local system user on Windows), and running this way is the easiest method to avoid permission errors.
+                </li>
+                <li>
+                    For best server performance, install the server on a system that is dedicated to the server and does not run any other major software.
+                </li>
+                <li>
+                    For best performance, set the Java heap size to at least 2GB, -Xmx2G.
+                </li>
+                <li>
+                    For servers on Linux or UNIX, increase the process and file limit for the server. Add the following lines to the /etc/security/limits.conf file and then restarting the server computer:
+                </li>
+            </ul><p style="margin-left:20px">
+                releaseUser 	soft	nofile	65535<br />
+                releaseUser 	hard	nofile	65535<br />
+                releaseUser	    soft	nproc 	65535<br />
+                releaseUser 	hard	nproc	65535
+            </p>
+            <h4>Installation</h4>
+            <p>
+                The steps for installing your product.
+            </p>
+            <ol style="margin-left:25px">
+                <li>
+                    Verify that your computer meets the minimum hardware and software requirements for installing the product.
+                </li>
+                <li>
+                    Verify that your user ID meets the requirements for installing and configuring the product.
+                </li>
+                <li>
+                    Install a database.
+                    <ul style="margin-left:20px">
+                        <li>
+                            If you are installing the server in a production environment, a supporting database is required. Whether you install a database or use an existing installation of a database, you need the connection information for the database when you install the IBM UrbanCode Release server.
+
+                        </li>
+                        <li>
+                            If you are not installing in a production environment, you can install an instance of Apache Derby, which is bundled with the product, when you install the IBM UrbanCode Release server. Details for the Apache Derby database are within the server installation procedure details.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Install a Rational Common Licensing server and add licenses to it.
+                </li>
+                <li>
+                    Download the product files from IBM Passport Advantage.<br />
+                    Download and extract the files for IBM UrbanCode Release to a directory that contains no spaces or double-byte characters.
+                </li>
+                <li>
+                    Install or update IBM Installation Manager, if necessary. See the appropriate What's new information to determine the IBM Installation Manager version required.
+                </li>
+                <li>
+                    Install the server.<br />
+
+                    There are three methods that you can use to install the product.<br />
+
+                    <ul style="margin-left:20px">
+                        <li>
+                            If installing in interactive mode.
+                        </li>
+                        <li>
+                            If installing in silent mode.
+                        </li>
+                        <li>
+                            If installing using the command line.<br /><br />
+                            <b>Note</b>
+                        </li>
+                    </ul>
+
+                    <ul style="margin-left:20px">
+                        <li>
+                            If you are installing on a Windows Server 2008 or Windows Server 2012, install IBM UrbanCode Release as a service to avoid problems with permissions. If you do not install as a IBM UrbanCode Release service or you start the Tomcat server using the command line, you must disable Windows User Account Control (UAC) manually.
+
+                        </li>
+                        <li>
+                            Apache Tomcat application server is used by IBM UrbanCode Release. If you currently have Apache Tomcat 7 installed, you can use it or you can install another instance during the installation process.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    If you are installing IBM UrbanCode Release on multiple servers, you will need to repeat the installation process for each server. After installation is complete on all servers, configure the servers to work in synchronization.
+                </li>
+                <li>
+                    After the installation is complete, you can start the IBM UrbanCode Release server and access user interface.
+                </li>
+                <li>
+                    Perform any necessary post-installation task such as managing licenses and installing IBM UrbanCode Sync.
+                </li>
+            </ol>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Collaborative release planning
+                </li>
+                <li>
+                    Environment management
+                </li>
+                <li>
+                    Streamlined release execution
+                </li>
+                <li>
+                    Integration capabilities
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>What's New in UrbanCode Release 6.2.1.3</h4>
+            <h5>Service level agreement tasks (beta feature)</h5>
+            <p>
+                You can use three new task types to manage service level agreements (SLA), such as time-critical events, and planned outages.
+            </p><h5> Outage tasks</h5>
+            <p>
+
+                Use outage tasks to manage systems that can only be down for a specified time period. When you create an outage, a begin task and an end task are inserted into the deployment plan. You can add related tasks between the begin and end tasks, and you are alerted if the total duration exceeds the planned-for time. In the following figure, you can see that the outage of 1 hour is exceeded by 5 minutes due to the duration of the related tasks.
+            </p><h5>
+                Critical event tasks
+            </h5>
+            <p>
+
+                Use critical event tasks to manage service level agreements that require events to occur at specified times. If tasks are expected to be late, an alert suggests an earlier start time. In the following figure, the server must be back online by 11:30 but the deployment is running behind schedule.
+            </p><h5>
+                Wait-for-time tasks
+            </h5>
+            <p>
+                Wait-for-time tasks do not complete until a specified time. You can use wait-for-time tasks as buffers to control the deployment pace.
+            </p><h5>
+                SLA reports
+            </h5>
+            <p>
+                The scheduled deployment’s Overview tab now lists all outages and critical events, and alerts you when they are running ahead or behind schedule, as shown in the following figure. The Overview tab displays progress bars for tasks that fall within an outage or that are on the path of critical events. You can export reports that compare actual to planned service level agreements.
+            </p><h5>
+                SLA notifications
+            </h5>
+            <p>
+                There are four new notification rules for service level agreement tasks that let you know when SLA-related events happen in your scheduled deployments. You can configure notifications to be sent when outages or critical events finish late or if they are estimated to be more than x minutes late.
+            </p><h5>
+                Banner messages
+            </h5>
+            <p>
+                Messages can be displayed in page headers that notify users about important events. Links can be included in the messages. Banner messages are managed on the System Settings page.
+            </p><h5>
+                User dashboard
+            </h5>
+            <p>
+                The user dashboard is your IBM UrbanCode Release home page. The dashboard home page displays information that is customized for you. From the dashboard, you can access your applications and tasks, schedule deployments, and provide approvals.
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    UrbanCode Release Website - <a href="https://developer.ibm.com/urbancode/products/urbancode-release/" target="_blank">Release Management</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

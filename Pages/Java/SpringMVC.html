@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spring MVC</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style>
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="../../Images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Spring MVC</h2>
+    </section>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Overview</a></li>
+            <li><a href="#tabs-2">Architecture</a></li>
+            <li><a href="#tabs-3">Spring Web MVC</a></li>
+            <li><a href="#tabs-4">Handy Articles and Sample Application</a></li>
+        </ul>
+        <div id="tabs-1">
+            <h4>Spring MVC</h4>
+            <hr />
+            <p>
+                Spring is the most popular application development framework for enterprise Java. Millions of developers around the world use Spring Framework to create high performing, easily testable, and reusable code.
+            </p>
+            <p>
+                Spring framework is an open source Java platform. It was initially written by Rod Johnson and was first released under the Apache 2.0 license in June 2003.
+            </p>
+            <p>
+                Spring is lightweight when it comes to size and transparency. The basic version of Spring framework is around 2MB.
+            </p>
+            <p>
+                The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make J2EE development easier to use and promotes good programming practices by enabling a POJO-based programming model.
+            </p>
+            <h4>Benefits of Spring MVC Framework</h4>
+            Following is the list of few of the great benefits of using Spring Framework −
+            <div style="margin-left:20px">
+                <ul>
+                    <li>
+                        Spring enables developers to develop enterprise-class applications using POJOs. The benefit of using only POJOs is that you do not need an EJB container product such as an application server but you have the option of using only a robust servlet container such as Tomcat or some commercial product.
+                    </li>
+                    <li>
+                        Spring is organized in a modular fashion. Even though the number of packages and classes are substantial, you have to worry only about the ones you need and ignore the rest.
+                    </li>
+                    <li>
+                        Spring does not reinvent the wheel, instead it truly makes use of some of the existing technologies like several ORM frameworks, logging frameworks, JEE, Quartz and JDK timers, and other view technologies.
+                    </li>
+                    <li>
+                        Testing an application written with Spring is simple because environment-dependent code is moved into this framework. Furthermore, by using JavaBeanstyle POJOs, it becomes easier to use dependency injection for injecting test data.
+                    </li>
+                    <li>
+                        Spring's web framework is a well-designed web MVC framework, which provides a great alternative to web frameworks such as Struts or other over-engineered or less popular web frameworks.
+                    </li>
+                    <li>
+                        Spring provides a convenient API to translate technology-specific exceptions (thrown by JDBC, Hibernate, or JDO, for example) into consistent, unchecked exceptions.
+                    </li>
+                    <li>
+                        Lightweight IoC containers tend to be lightweight, especially when compared to EJB containers, for example. This is beneficial for developing and deploying applications on computers with limited memory and CPU resources.
+                    </li>
+                    <li>
+                        Spring provides a consistent transaction management interface that can scale down to a local transaction (using a single database, for example) and scale up to global transactions (using JTA, for example).
+                    </li>
+                </ul>
+            </div>
+            <h4>Dependency Injection (DI)</h4>
+            <p>
+                The technology that Spring is most identified with is the Dependency Injection (DI) flavor of Inversion of Control. The Inversion of Control (IoC) is a general concept, and it can be expressed in many different ways. Dependency Injection is merely one concrete example of Inversion of Control.
+            </p>
+            <p>
+                When writing a complex Java application, application classes should be as independent as possible of other Java classes to increase the possibility to reuse these classes and to test them independently of other classes while unit testing. Dependency Injection helps in gluing these classes together and at the same time keeping them independent.
+            </p>
+            <p>
+                What is dependency injection exactly? Let's look at these two words separately. Here the dependency part translates into an association between two classes. For example, class A is dependent of class B. Now, let's look at the second part, injection. All this means is, class B will get injected into class A by the IoC.
+            </p>
+            <p>
+                Dependency injection can happen in the way of passing parameters to the constructor or by post-construction using setter methods.
+            </p>
+            <h4>Aspect Oriented Programming (AOP)</h4>
+            <p>
+                One of the key components of Spring is the Aspect Oriented Programming (AOP) framework. The functions that span multiple points of an application are called cross-cutting concerns and these cross-cutting concerns are conceptually separate from the application's business logic. There are various common good examples of aspects including logging, declarative transactions, security, caching, etc.
+            </p>
+            <p>
+                The key unit of modularity in OOP is the class, whereas in AOP the unit of modularity is the aspect. DI helps you decouple your application objects from each other, while AOP helps you decouple cross-cutting concerns from the objects that they affect.
+            </p>
+            <p>
+                The AOP module of Spring Framework provides an aspect-oriented programming implementation allowing you to define method-interceptors and pointcuts to cleanly decouple code that implements functionality that should be separated.
+            </p>
+        </div>
+        <div id="tabs-2">
+            <h4>Architecture</h4>
+            <hr />
+            <p>
+                Spring could potentially be a one-stop shop for all your enterprise applications. However, Spring is modular, allowing you to pick and choose which modules are applicable to you, without having to bring in the rest. The following section provides details about all the modules available in Spring Framework.
+            </p>
+            <p>
+                The Spring Framework provides about 20 modules which can be used based on an application requirement.
+            </p>
+            <div style="margin-left:30px">
+                <img src="../../Images/spring_architecture.png" />
+            </div>
+            <h4>Core Container</h4>
+            <p>The Core Container consists of the Core, Beans, Context, and Expression Language modules the details of which are as follows −</p>
+            <ul style="margin-left:20px">
+                <li>
+                    The <strong>Core</strong> module provides the fundamental parts of the framework, including the IoC and Dependency Injection features.
+                </li>
+                <li>
+                    The <strong>Bean</strong> module provides BeanFactory, which is a sophisticated implementation of the factory pattern.
+                </li>
+                <li>
+                    The <strong>Context</strong> module builds on the solid base provided by the Core and Beans modules and it is a medium to access any objects defined and configured. The ApplicationContext interface is the focal point of the Context module.
+                </li>
+                <li>
+                    The <strong>SpEL</strong> module provides a powerful expression language for querying and manipulating an object graph at runtime.
+
+                </li>
+            </ul>
+            <h4>Data Access/Integration</h4>
+            <p>The Data Access/Integration layer consists of the JDBC, ORM, OXM, JMS and Transaction modules whose detail is as follows −</p>
+            <ul style="margin-left:20px">
+                <li>
+                    The <strong>JDBC</strong> module provides a JDBC-abstraction layer that removes the need for tedious JDBC related coding.
+                </li>
+                <li>
+                    The <strong>ORM</strong> module provides integration layers for popular object-relational mapping APIs, including JPA, JDO, Hibernate, and iBatis.
+                </li>
+                <li>
+                    The <strong>OXM</strong> module provides an abstraction layer that supports Object/XML mapping implementations for JAXB, Castor, XMLBeans, JiBX and XStream.
+                </li>
+                <li>
+                    The Java Messaging Service <strong>JMS</strong> module contains features for producing and consuming messages.
+                </li>
+                <li>
+                    The <strong>Transaction</strong> module supports programmatic and declarative transaction management for classes that implement special interfaces and for all your POJOs.
+                </li>
+            </ul>
+            <h4>Web</h4>
+            <p>The Web layer consists of the Web, Web-MVC, Web-Socket, and Web-Portlet modules the details of which are as follows −</p>
+            <ul style="margin-left:20px">
+                <li>
+                    The <strong>Web</strong> module provides basic web-oriented integration features such as multipart file-upload functionality and the initialization of the IoC container using servlet listeners and a web-oriented application context.
+                </li>
+                <li>
+                    The <strong>Web-MVC</strong> module contains Spring's Model-View-Controller (MVC) implementation for web applications.
+                </li>
+                <li>
+                    The <strong>Web-Socket</strong> module provides support for WebSocket-based, two-way communication between the client and the server in web applications.
+                </li>
+                <li>
+                    The <strong>Web-Portlet</strong> module provides the MVC implementation to be used in a portlet environment and mirrors the functionality of Web-Servlet module.
+                </li>
+            </ul>
+            <h4>Miscellaneous</h4>
+            <p>There are few other important modules like AOP, Aspects, Instrumentation, Web and Test modules the details of which are as follows −</p>
+            <ul style="margin-left:20px">
+                <li>
+                    The <strong>AOP</strong> module provides an aspect-oriented programming implementation allowing you to define method-interceptors and pointcuts to cleanly decouple code that implements functionality that should be separated.
+                </li>
+                <li>
+                    The <strong>Aspects</strong> module provides integration with AspectJ, which is again a powerful and mature AOP framework.
+                </li>
+                <li>
+                    The <strong>Instrumentation</strong> module provides class instrumentation support and class loader implementations to be used in certain application servers.
+                </li>
+                <li>
+                    The <strong>Messaging</strong> module provides support for STOMP as the WebSocket sub-protocol to use in applications. It also supports an annotation programming model for routing and processing STOMP messages from WebSocket clients.
+                </li>
+                <li>
+                    The <strong>Test</strong> module supports the testing of Spring components with JUnit or TestNG frameworks.
+                </li>
+            </ul>
+        </div>
+        <div id="tabs-3">
+            <h4>Spring Web MVC framework</h4>
+            <p>
+                The Spring Web MVC framework provides Model-View-Controller (MVC) architecture and ready components that can be used to develop flexible and loosely coupled web applications. The MVC pattern results in separating the different aspects of the application (input logic, business logic, and UI logic), while providing a loose coupling between these elements.
+            </p>
+            <ul style="margin-left:20px">
+                <li>
+                    The Model encapsulates the application data and in general they will consist of POJO.
+                </li>
+                <li>
+                    The View is responsible for rendering the model data and in general it generates HTML output that the client's browser can interpret.
+                </li>
+                <li>
+                    The Controller is responsible for processing user requests and building an appropriate model and passes it to the view for rendering.
+                </li>
+            </ul>
+            <h4>The DispatcherServlet</h4>
+            <p>The Spring Web model-view-controller (MVC) framework is designed around a DispatcherServlet that handles all the HTTP requests and responses. The request processing workflow of the Spring Web MVC DispatcherServlet is illustrated in the following diagram −</p>
+            <div style="margin-left:30px"><img src="../../Images/spring_dispatcherservlet.png" style="width:650px" /></div>
+            <p>
+                Following is the sequence of events corresponding to an incoming HTTP request to DispatcherServlet −
+            </p>
+            <ul style="margin-left:20px">
+                <li>
+                    After receiving an HTTP request, DispatcherServlet consults the HandlerMapping to call the appropriate Controller.
+                </li>
+                <li>
+                    The Controller takes the request and calls the appropriate service methods based on used GET or POST method. The service method will set model data based on defined business logic and returns view name to the DispatcherServlet.
+                </li>
+                <li>
+                    The DispatcherServlet will take help from ViewResolver to pickup the defined view for the request.
+                </li>
+                <li>
+                    Once view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser.
+                </li>
+            </ul>
+            <p>
+                All the above-mentioned components, i.e. HandlerMapping, Controller, and ViewResolver are parts of WebApplicationContext w which is an extension of the plainApplicationContext with some extra features necessary for web applications.
+            </p>
+            <h4>Required Configuration</h4>
+            <p>
+                You need to map requests that you want the DispatcherServlet to handle, by using a URL mapping in the <strong>web.xml</strong> file. The following is an example to show declaration and mapping for <strong>HelloWeb</strong> DispatcherServlet example −
+            </p>
+            <div style="margin-left:30px">
+                <img src="../../Images/springMvc1.PNG" style="width:650px" />
+            </div>
+            <p>
+                The <strong>web.xml</strong> file will be kept in the WebContent/WEB-INF directory of your web application. Upon initialization of <strong>HelloWeb</strong> DispatcherServlet, the framework will try to load the application context from a file named <strong>[servlet-name]-servlet.xml</strong> located in the application's WebContent/WEB-INFdirectory. In this case, our file will be <strong>HelloWebservlet.xml</strong>.
+            </p><p>
+                Next, &lt;servlet-mapping&gt; tag indicates what URLs will be handled by which DispatcherServlet. Here all the HTTP requests ending with <strong>.jsp</strong> will be handled by the <strong>HelloWeb</strong> DispatcherServlet.
+            </p><p>
+                If you do not want to go with default filename as [servlet-name]-servlet.xml and default location as WebContent/WEB-INF, you can customize this file name and location by adding the servlet listener ContextLoaderListener in your web.xml file as follows −
+            </p>
+            <div style="margin-left:30px">
+                <img src="../../Images/springMvc2.PNG" style="width:650px" />
+            </div>
+            <p>Now, let us check the required configuration for HelloWeb-servlet.xml file, placed in your web application's WebContent/WEB-INF directory −</p>
+            <div style="margin-left:30px">
+                <img src="../../Images/springMvc3.PNG" style="width:650px" />
+            </div>
+            <p>
+                Following are the important points about <strong>HelloWeb-servlet.xml</strong> file −
+            </p>
+            <ul>
+                <li>
+                    The [servlet-name]-servlet.xml file will be used to create the beans defined, overriding the definitions of any beans defined with the same name in the global scope.
+                </li>
+                <li>
+                    The &lt;context:component-scan...&gt; tag will be use to activate Spring MVC annotation scanning capability which allows to make use of annotations like @Controller and @RequestMapping etc.
+                </li>
+                <li>
+                    The InternalResourceViewResolver will have rules defined to resolve the view names. As per the above defined rule, a logical view named <strong>hello</strong> is delegated to a view implementation located at /WEB-INF/jsp/hello.jsp .
+                </li>
+            </ul>
+            <p>
+                The following section will show you how to create your actual components, i.e., Controller, Model, and View.
+            </p>
+            <h4>Defining a Controller</h4>
+            <p>The DispatcherServlet delegates the request to the controllers to execute the functionality specific to it. The <strong>@Controller</strong> annotation indicates that a particular class serves the role of a controller. The <strong>@RequestMapping</strong> annotation is used to map a URL to either an entire class or a particular handler method.</p>
+            <div style="margin-left:30px">
+                <img src="../../Images/springMvc4.PNG" style="width:650px" />
+            </div>
+            <p>
+                The <strong>@Controller</strong> annotation defines the class as a Spring MVC controller. Here, the first usage of <strong>@RequestMapping</strong> indicates that all handling methods on this controller are relative to the /hello path. Next annotation <strong>@RequestMapping(method = RequestMethod.GET)</strong> is used to declare theprintHello() method as the controller's default service method to handle HTTP GET request. You can define another method to handle any POST request at the same URL.
+            </p><p>
+                You can write the above controller in another form where you can add additional attributes in @RequestMapping as follows −
+            </p>
+            <div style="margin-left:30px">
+                <img src="../../Images/springMvc5.PNG" style="width:650px" />
+            </div>
+            <p>
+                The <strong>value</strong> attribute indicates the URL to which the handler method is mapped and the <strong>method</strong> attribute defines the service method to handle HTTP GET request. The following important points are to be noted about the controller defined above −
+            </p>
+            <ul style="margin-left:20px">
+                <li>
+                    You will define required business logic inside a service method. You can call another method inside this method as per requirement.
+                </li>
+                <li>
+                    Based on the business logic defined, you will create a model within this method. You can use setter different model attributes and these attributes will be accessed by the view to present the final result. This example creates a model with its attribute "message".
+                </li>
+                <li>
+                    A defined service method can return a String, which contains the name of the <strong>view</strong> to be used to render the model. This example returns "hello" as logical view name.
+                </li>
+            </ul>
+            <h4>Creating JSP Views</h4>
+            <p>
+                Spring MVC supports many types of views for different presentation technologies. These include - JSPs, HTML, PDF, Excel worksheets, XML, Velocity templates, XSLT, JSON, Atom and RSS feeds, JasperReports, etc. But most commonly we use JSP templates written with JSTL.
+            </p><p>
+                Let us write a simple <strong>hello</strong> view in /WEB-INF/hello/hello.jsp −
+            </p>
+            <div style="margin-left:30px">
+                <img src="../../Images/springMvc6.PNG" style="width:650px" />
+            </div>
+            <p>
+                Here <strong>${message}</strong> is the attribute which we have set up inside the Controller. You can have multiple attributes to be displayed inside your view.
+            </p>
+            <h4>Project creation using Spring MVC – Configuring the Application</h4>
+            To get started with using the first application, please read the attached setup guide.
+            <a href="../../Documents/Spring%20MVC%20Setup.pdf" style="color:blue; font-style:italic;" download="Installing and Configuring Spring MVC" target="_blank">Spring MVC Setup</a>
+        </div>
+        <div id="tabs-4" style="height:35em;">
+            <table class="table table-hover table-bordered">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>#</th>
+                        <th>Article(s)</th>
+                        <th>Sample Application(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><a href="../../Documents/SpringFramework(UHG).pdf" target="_blank">Spring MVC at UnitedHealth Group</a></td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><a href="../../Documents/Getting Started with Spring MVC.pdf" target="_blank">Getting Started with Spring MVC</a></td>
+                        <td><a href="../../SampleApplications/CalculaterApplication.zip" target="_blank">CalculaterApplication.zip</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><a href="../../Documents/Spring Batch Framework.pdf" target="_blank">Spring Batch Framework</a></td>
+                        <td><a href="../../SampleApplications/SampleApplication.zip" target="_blank">SampleApplication.zip</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>

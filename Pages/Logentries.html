@@ -1,0 +1,500 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Logentries</h4>
+            <p>
+                Logentries is a leading SaaS-delivered log management and real-time analytics service, making business insights from machine-generated log data simply accessible to development, IT and business operations teams of all sizes. While traditional log management tools require advanced technical skills to use, and are costly to set-up, Logentries provides a simply accessible alternative for managing huge amounts of data, visualizing insights that matter, and sharing that information across its global user community.
+            </p><p>
+                The Logentries real-time user monitoring capability uses client side libraries (supporting iOS, Android, HTML5, JavaScript and Windows Mobile) to gather event data from a user's browser or client device, and sends it directly to the Logentries service. Unlike traditional web analytics tools that only show high level aggregate views of visitor activity, Logentries enables customers to track events at the individual user level, capturing specific event activity in real-time. Logentries also allows customers to include custom payload information in order to capture performance and business-related information on specified user events. With this breadth of log data captured, for example, customers can associate the context of logged user events with relevant metrics such as response time or the monetary value of a given user action.
+            </p><p>
+                "Tracking our customers' actions is extremely important to improving Codeship's continuous deployment technology, "said Moritz Plassnig, CEO, Codeship. "Now that Logentries supports user tracking with log data and analysis, we can get insight into every user action, follow high-priority accounts and see trends across groups of users in real-time."
+            </p><p>
+                "This is an exciting technology that enables our customers to understand their users' experience and behavior, in real-time as the events occur on their websites, and in their web applications," said Dr. Trevor Parsons, Logentries Co-founder and Chief Scientist. "It is a great example of using logs as data and is more flexible and scalable than traditional web analytics tools. We set this up internally in minutes and are now using it to understand which features customers are using and if individual users are experiencing any performance issues."
+            </p><p>
+                Logentries is featuring the auto-log capability in its internal sign-up process for all new users. Once a new user has started a free account, an auto-log is immediately created and begins capturing an audit trail of the user's own activity.
+            </p><p>
+                Logentries is offering a quick-start technical session with a designated technical specialist to discuss best practices and technical audits for real-time user monitoring using log data. Learn more about <a href="https://logentries.com/doc/best-practices-user-tracking/" target="_blank">real-time user tracking</a>  and <a href="mailto:t.smit@logentries.com" target="_blank">contact Logentries</a> to schedule a 30-minute, 1:1 quick-start session.
+            </p>
+
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4></h4>
+            <p>
+                Logentries is an easy-to-use, self-hosted log management and analytics service for teams of all sizes.
+            </p><p>
+                The Getting Started docs are tailored to users who are ready to create a free Logentries account and begin exploring the basic functionality of Logentries. In-depth documentation on individual feature sets can be found by navigating <a href="https://docs.logentries.com/"> docs.logentries.com</a>
+            </p>
+            <h4>Getting Started with LogEntries</h4>
+            <ol style="margin-left:25px">
+                <li>
+                    Create Your Account.<br />
+                    In most cases, users can create and set up their Logentries account in less than 5 minutes. Simply visit the <a href="https://logentries.com/get-started-now/">account creation</a> page. upon clicking the “create account” button, you’ll be automatically logged into your account.
+                    <h5>What You'll See When You First Log In </h5>
+                    <p>When you log in for the first time, you’ll be asked to select an option for how you’ll send your logs. Follow the on-screen instructions for easy set-up or refer to our 5-minute setup docs for further details.</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le1.png" style="width:85%" />
+                    </div>
+                </li>
+                <li>
+                    Adding a Log.<br />
+                    Sending your log data to Logentries is as easy as clicking the “Add New Log” button found in the menu.
+                    <div style="margin-left:30px">
+                        <img src="Images/le2.png" style="width:45%" />
+                    </div>
+                    <p>
+                        Choose which method to send your logs on the Add a Log Screen then follow the on screen instructions. The differences between the various methods are detailed below.
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le3.png" style="width:95%" />
+                    </div>
+                    <h5> Agent Based Logging</h5><p>
+                        Logentries provides agents that will help simplify and automate log collection in your environment. These agents are compatible with the following operating systems: Linux (and many of its distros), Windows and Mac. The lightweight agents combine ease of use with powerful command line capabilities
+                    </p>
+                    <h5>Syslog Forwarding</h5><p>
+                        Use your operating systems’ log forwarder to send logs from your operating system directly to your Logentries account. The following docs pages will help you configure forwarding for Linux based (Rsyslog, Syslog-D, Syslog-NG) operating systems
+                    </p>
+                    <p>
+                        If you are using Rsyslog in a large or autoscaling environment we have created this guide
+                    </p>
+                    <h5> Docker Logging Container</h5>
+                    <p>
+                        Our Logging Container built for Docker features easy collection and analysis of container-level performance stats and system-level log data. The new Logentries Container features Docker’s new stats API and addresses existing challenges with logging on Docker, enabling easy access to collecting and visualising important server and resources usage stats.
+                    </p>
+                    <h5>Application Logging</h5>
+                    <p>
+                        Logentries supports in-application logging from a wide variety of programming languages such as Python, PHP, Java, iOS, Android, JavaScript, HTML5, NodeJS, .NET and many others.
+                    </p><h5>Token Based Logging</h5>
+                    <p>
+                        Token-based logging will allow you to easily route data from multiple instances of an application into a single container in the Logentries UI. This method can be used with various integration strategies called out above such as syslog or our API forwarders. This is the recommended method for autoscaling environments, large environments or from sources where the public IP address will change.
+                    </p>
+                </li>
+                <li>
+                    Navigating Your Account<br />
+                    <p>
+                        This section will introduce you to some of the key terminology and navigation techniques that will allow you to easily find important events in your account.
+                    </p>
+                    <h5>Key Terminology </h5>
+                    <p>
+                        During the setup process you organised your log events into Log Sets and Logs in the Logentries UI. Now we will cover some of the basics for effectively navigating your account and managing your Log Sets. Beyond the essentials of navigation we will cover three other important topics.
+                    </p>
+                    <ul style="margin-left:20px">
+                        <li>
+                            Log Sets – Are the top level of the hierarchy, they provide structure and contain one or more Logs. They can represent a wide variety of groupings from Individual hosts to Autoscaling groups.
+                        </li>
+                        <li>
+                            Logs – Contain the log entries which you will be viewing, searching and analysing
+                        </li>
+                        <li>
+                            Log Shortcuts – Provide a mechanism to view an aggregate set of logs with a single click
+                            <br />
+                            Your account will always have the default Log Shortcuts for “All” and “None”, later in this document you will see how to configure custom shortcuts.
+                        </li>
+                    </ul>
+                    <div style="margin-left:30px">
+                        <img src="Images/le4.png" style="width:35%" />
+                    </div>
+                    <h5>Essentials of Navigation </h5>
+                    <p>When Logging in you’ll be presented with the top level list of log sets. You can quickly navigate to the list of logs by clicking the icon next to the Log Set in the Log Selector (left pane) or by clicking the Log Set name in the main workspace</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le5.png" style="width:85%" />
+                    </div>
+                    <p>
+                        You can view the logs events contained within a log event in a few different ways. If you follows the step above to view the list of logs you can click the log name in the main workspace. You can also use the log selector checkboxes to view multiple logs at one time. Clicking the log set checkbox will display the aggregated events of all underlying logs.
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le6.png" style="width:85%" />
+                    </div>
+                    <p>
+                        If I want to quickly find Log Sets or Logs in the Log Selector I can use the search bar at the bottom. I can filter to a specific Log Set and quickly select all of the logs from that log set.
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le7.png" style="width:35%" />
+                    </div>
+                    <p>
+                        I could also filter by the Log name, this would allow me for instance to easily view my all of my access logs from my web server. Anytime I want to navigate back to the main list of Log Sets I can click Log Sets above the Log Selector or in the breadcrumb.
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le8.png" style="width:85%" />
+                    </div>
+                    <h5>  Log Shortcuts</h5>
+                    <p>
+                        A Log Shortcut is a predefined aggregate view of the Logs in your account. This allows the user to access the specified logs in a single click. Using Log Shortcuts will greatly increase the efficiency for users who often view and analyze log data against a similar set of logs.
+                    </p><h5>Create a Log Shortcut</h5>
+                    <p>
+                        Click the Add new button located above the Log Sets
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le9.png" style="width:45%" />
+                    </div>
+                    <ul style="margin-left:25px">
+                        <li>
+                            Shortcut Name: Name that will be displayed in the list of log shortcuts.
+                        </li>
+                        <li>
+                            Which logs should be included: The first text field allows you to filter the log sets and logs displayed to ensure easy log shortcut management in large environments. The lower field allows you to select all of the logs that you want included in the log shortcut. Logs included in the log shortcut will always be visible in this space.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Live Tail and Viewing Logs.
+                    <p>In the previous section we reviewed the basics of navigation and important terminology. This section covers the various options for viewing your log events. When viewing log events of interest, all options can be found in the top right corner of the screen.</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le10.png" style="width:65%" />
+                    </div>
+                    <h5> Live Tail</h5>
+                    <p>
+                        Live tail will allow you to view your live log data as it streams into your account. This is very useful for testing during development and troubleshooting operational issues. The live tail consists of three buttons:
+                    </p>
+                    <h5>Enter Live Tail</h5>
+                    <div style="margin-left:30px">
+                        <img src="Images/le11.png" style="width:20%" />
+                    </div>
+                    <p>
+                        Clicking the live tail button will allow you to view the events as they stream into your account. The most recent events will appear at the bottom of the screen
+                    </p>
+                    <h5> Pause Live Tail</h5>
+                    <div style="margin-left:30px">
+                        <img src="Images/le12.png" style="width:20%" />
+                    </div>
+                    <p>Clicking the pause button will freeze the current view allowing you view a snapshot of the log events at that moment in time</p>
+                    <h5>Exit Live Tail </h5>
+                    <div style="margin-left:30px">
+                        <img src="Images/le13.png" style="width:20%" />
+                    </div>
+                    <p>Clicking the exit live tail button will return you to the standard view of your log data</p>
+                    <h5>Viewing Options </h5>
+                    <p>There are a variety of options that will make viewing your log events easier:</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le14.png" style="width:35%" />
+                    </div>
+                    <h5>Display Timestamp</h5>
+                    <p>
+                        Quickly toggle whether to display the Logentries timestamp at the start of your logs. These will be localised to your timezone based on the settings in your account eliminating the need to correlate regional timezone of geographically dispersed infrastructure.
+                    </p>
+                    <h5>Expand JSON</h5>
+                    <p>JSON structured logs can be prettified to easily view the event hierarchy.</p>
+                    <h5>Wrap Text</h5>
+                    <p>
+                        By default long log events will trail off the right side of the screen, enabling this option will cause them to wrap and continue on the next line.
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le15.png" style="width:45%" />
+                    </div>
+                    <p>For a detailed overview of navigating and managing logs and log sets please see the [detailed documentation found here]. This will cover how to rename and delete log sets</p>
+                </li>
+                <li>
+                    Search Your Logs
+                    <p>
+                        Logentries’ search capabilities are both powerful and flexible. You can search by simple keywords or use regular expressions directly in the search bar for advanced pattern matching. Logical operators and calculation functions are also available for adding logic, grouping data and calculating values.
+                    </p>
+                    <h5>Keyword AND KVP search </h5>
+                    <p>Searching by keyword is just like searching with Google. Simply type what you want to see and click the Find button. Keyword search is particularly useful when searching for a specific key or value within a key-value pair. In the example below, searching the keyword “clicked” returns events containing the word “clicked”.</p>
+                    <div style="margin-left:30px">
+                        <a href="Images/le16.png" target="_blank" title="click to enlarge"><img src="Images/le16.png" style="width:100%" /></a>
+                    </div>
+                    <h5>Logical Operators </h5>
+                    <p>Using logical operators, you can narrow your search to more specific results. AND, OR and NOT are available and should always be capitalised when used. In the example below, using the AND operator returns only results that include click events where id=log-list. For more information on using logical operators, review our dedicated logical operators documentation.</p>
+                    <div style="margin-left:30px">
+                        <a href="Images/le17.png" target="_blank" title="click to enlarge"><img src="Images/le17.png" style="width:100%" /></a>
+                    </div>
+                    <h5>RegEx Search </h5>
+                    <p>
+                        Logentries search supports regular expressions (RegEx) for advanced pattern matching. If you’re comfortable with RegEx, you can build powerful searches to find patterns in event data like IP addresses. For more information on RegEx, consider visiting regexr.com. In the example below, we use regular expressions to match a pattern of digits. For more information on how to use RegEx within Logentries, review our dedicated RegEx search documentation
+                    </p>
+                    <div style="margin-left:30px">
+                        <a href="Images/le18.png" target="_blank" title="click to enlarge"><img src="Images/le18.png" style="width:100%" /></a>
+                    </div>
+                    <h5>Calculation Functions </h5>
+                    <p>
+                        Calculation functions enable users to group event types and calculate values for deeper analysis. Calculation functions include SUM, COUNT, COUNT UNIQUE, AVERAGE and GROUP BY. In the example below, we COUNT the number of click events where id=live_tail. For more information on function syntax, review our dedicated search documentation
+                    </p>
+                    <div style="margin-left:30px">
+                        <a href="Images/le19.png" target="_blank" title="click to enlarge"><img src="Images/le19.png" style="width:100%" /></a>
+                    </div>
+                    <h5>Saved Searches </h5>
+                    <p>You can save searches for later use and for generating charts & graphs by clicking the star next to the query field.</p>
+                    <div style="margin-left:30px">
+                        <a href="Images/le20.png" target="_blank" title="click to enlarge"><img src="Images/le20.png" style="width:100%" /></a>
+                    </div>
+                    <h5>Import Saved Searches </h5>
+                    <p>
+                        Not sure which searches are worth saving? Logentries <a href="https://community.logentries.com/packs/">community packs</a> contain pre-defined technology specific searches that can be added to your account in seconds
+                    </p>
+                </li>
+                <li>
+                    Tags and Alerts
+                    <p>
+                        This section will cover tags and alerts, tags will allow you to more efficiently identify and understand important log events. Alerts can be easily configured to notify you when important events occur in your environment.
+                    </p>
+                    <h5>Create a Tag</h5>
+                    <p>
+                        To create a tag begin by clicking the Tags & Alerts icon on the main Navigation Bar on the left side of the Web UI.
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le21.png" style="width:45%" />
+                    </div>
+                    <p>
+                        From here you will enter the Tag & Alerts creation page. To set up a Basic Tag, you will enter a Tag Name, a Pattern, and a Label.
+                    </p>
+                    <ul style="margin-left:25px">
+                        <li>
+                            Tag Name: Defines the name that will be displayed in the tag list.
+                        </li>
+                        <li>
+                            Pattern: Defines the query used to match the log events that should be tagged. Enter the following pattern to tag the log event that is produced when a user clicks the Live Tail button.
+                        </li>
+                    </ul>
+                    <p>
+                        clicked AND id=btn_live_tail<br />
+                        <strong>Note:</strong> You do not have to use the 'where' clause when creating a Tag or Alert
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le22.png" style="width:55%" />
+                    </div>
+                    <p><strong>Label:</strong> This is how the tag will display in your logs. Create a new label by clicking the Create New Label button.</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le23.png" style="width:55%" />
+                    </div>
+                    <p>Name the label “My Test Label” and click Done</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le24.png" style="width:55%" />
+                    </div>
+                    <p>The last step is to choose which logs this tag will apply to, select the Usage_trail log.</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le25.png" style="width:55%" />
+                    </div>
+                    <h5>Create An Alert </h5>
+                    <p>Alerts will automatically notify you when important events happen within your system.</p>
+                    <ul style="margin-left:25px">
+                        <li>
+                            Match: How many times the event must occur in a given timeframe to trigger an alert
+                        </li>
+                        <li>
+                            Report: Sets a limit for the maximum amount of alert notifications you want to receive in the selected time frame.
+                        </li>
+                        <li>
+                            Send to: Send the alert to any email address or choose another pre-integrated method.
+                        </li>
+                    </ul>
+                    <div style="margin-left:30px">
+                        <img src="Images/le26.png" style="width:55%" />
+                    </div>
+                    <p>
+                        Now click the save button at the bottom of the page and navigate to the Useage_trail log in the UI. When you click the Live Tail button the system will tag the event and send you an email notification in real time
+                    </p>
+                    <h5>Import Best Practice Tags and Alerts</h5>
+                    <p>
+                        Not sure which tags and alerts to create in your account? Logentries <a href="https://community.logentries.com/packs/">community packs</a> contain pre-defined technology specific tags and alerts that can be added to your account in seconds.
+                    </p>
+                </li>
+                <li>
+                    Viewing Dashboards
+                    <p>
+                        Dashboards provide a convenient, centralised location to visualise your log data. These visualisations can reveal important trends and anomalies.
+                    </p>
+                    <h5> Viewing Dashboards</h5>
+                    <p>
+                        The dashboard icon will display all the dashboards that have been created in your account. When you first register the system creates a Default Dashboard
+
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le27.png" style="width:45%" />
+                    </div>
+                    <h5>Creating Dashboard Graphs </h5>
+                    <p>Graphs are created from saved queries, if you save a query during the Search Your Logs section of the getting started docs please go back and complete that. Start by navigating to the Default Dashboard in the Dashboard menu.</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le28.png" style="width:45%" />
+                    </div>
+                    <p>To add a graph click the New Chart button in the top right of the screen</p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le29.png" style="width:85%" />
+                    </div>
+                    <p>Now follow the 3 step wizard mode to create the graph.</p>
+                    <h5>Edit Visualization – Define Widget </h5>
+                    <p>
+                        <b> Widget Name:</b> Defines the name that will be displayed on the dashboard
+                    </p>
+                    <p>
+                        <b>Select a saved query on which to base your graph:</b> allows you to select one of your previously saved queries to create a graph. Select the query where(clicked AND id=btn_live_tail) calculate(COUNT) that you created during the search your logs section.
+                    </p>
+                    <h5> Edit Visualization – Select Logs</h5>
+                    <p>
+                        Select the logs from which you want to pull data: This determines the log data that will be included in the graph. Select the Usage_trail under Demoset and click Continue.
+                    </p>
+                    <h5>Edit Visualization – Select Graph</h5>
+                    <p>
+                        Select Graph: Depending on the data generated by your saved query applicable graph types will be displayed. There are many potential graph types, for the purpose of this guide select Line Chart. Click Save Changes.
+                        <br />  The new chart in your dashboard now plots the number of live tail clicks in your account over time.
+                    </p>
+                    <h5> Dashboard Management</h5>
+                    <p>
+                        Dashboards are highly configurable to provide the most effective display of information. Charts can be moved around by dragging them to their desired location. There is also a drop down menu on the top right of every chart that provides a variety of options such as edit, resize and delete. You can see the detailed dashboard documentation here
+                    </p>
+                    <h5>  Import Best Practice Dashboard Graphs</h5>
+                    <p>
+                        Not sure which graphs to add to your dashboards? Logentries <a href="https://community.logentries.com/packs/"> community packs</a> contain pre-defined technology specific dashboard graphs that can be added to your account in seconds
+                    </p>
+                </li>
+                <li>
+                    Export and Archiving Log Data
+                    <p>Getting data out of Logentries is just as easy as getting data into the platform. Plus we also give you the ability to compress, store, and archive all your logs long-term via Amazon S3 Archiving, a must for compliance, security, or capacity planning initiatives.</p>
+                    <h5>Exporting Log Data </h5>
+                    <p>
+                        Your logs can be exported from Logentries via the UI or using our API.
+                    </p>
+                    <p>
+                        To export a log to your local system, navigate to the specific log you want to export. Once there click on the Options button on the top right, and then Download ZIP. If you have filtered to a subset of log events using the search only those events will be downloaded.
+                    </p>
+                    <p>
+                        <b> NOTE:</b> Events can only be downloaded from a single log at a time.
+                    </p>
+                    <div style="margin-left:30px">
+                        <img src="Images/le30.png" style="width:35%" />
+                    </div>
+                    <p>
+                        If you select Configure from the bottom of the options menu it will allow you to choose which log format and compression method to use for downloading log events
+                    </p> <h5>
+                        Export via the API
+                    </h5>
+                    <p>
+                        Log events can be easily downloaded using the Logentries API. Please see the API download documentation for details on how to download your log events.
+                    </p> <h5>
+                        Archiving Log Data
+                    </h5>
+                    <p>
+                        Logentries offers the ability to easily backup all log data from your account in AWS S3 storage. The backup is performed on a nightly basis, for details on how to setup this functionality please see the S3 Archiving doc page.
+                    </p>
+                    <h4>
+                        Configuring Logentries with Java
+                    </h4>
+                    <p>
+                        Logentries supports a number of Java logging libraries which allow you to forward your log data to your account. From Logback, Log4j and Util Logging we have you covered for all of your Java logging needs.
+                        <br />    Click on the following link for Java logging needs
+                        <br />   <a href="https://docs.logentries.com/docs/java"> https://docs.logentries.com/docs/java</a>
+
+                    </p>
+                    <h4>
+                        Configuring LogEntries with AWS
+                    </h4>
+                    <p>
+                        Click on the following link for Logging rom AWS<br />
+                        <a href="https://docs.logentries.com/docs/aws-cloudwatch-with-lambda"> https://docs.logentries.com/docs/aws-cloudwatch-with-lambda</a>
+                    </p>
+                </li>
+            </ol>
+
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <p>Free upto 5 GB- Logentries free product allows uploading up to 5 GB of logs a month</p>
+
+            <h5>
+                Real-time alerts
+            </h5>
+            <p>
+                Alerts can be created based on tags or by setting criteria via the intuitive and powerful search capabilities of LogEntries. To not flood notifications it's possible to specify limitations for alerts, such as how many times an hour an event has to happen for it to trigger a notification. Notifications can be sent by email, mobile messaging or via webhooks (webhooks are sent server in real-time, so there's no need for polling for changes).
+            </p>
+            <h5>
+                Works with multiple PaaS and IaaS-
+            </h5>
+            <p>
+                Logentries works with Amazon Web Services (AWS), Heroku, AppFog, Engine Yard and other platform as a service (PaaS) providers, along with Amazon Web Services, Rackspace, Microsoft Azure and other infrastructure as a service (IaaS) providers.
+            </p>
+            <h5>
+                Event and search updates can be viewed in real-time-
+            </h5>
+            <p>
+                In Live Tail mode events and searches update in real-time. Live Tail mode can be used in Aggregate View, that allows selecting a combination of logfiles to be viewed together, and with any log groups created. These events are supplemented with tags to allows getting an overview of current events quickly at a glance.
+            </p>
+            <h5>
+                Great search
+            </h5>
+            <p>
+                LogEntries has human readable, intuitive and powerful search with support for logical expressions, comparison expressions, regular expressions and ability to search based on field, group based on approximations over time, use functions such as count, sum, average and unique as well as save searches.
+            </p>
+            <h5>
+                Supports a diverse set of programming languages
+            </h5>
+            <p>
+                Including Java, .Net, Ruby, PHP, node.js, Python.
+            </p>
+            <h5>
+                Easy to set up
+            </h5>
+            <p>
+                Logentries can be set up quickly and with relative ease.
+            </p>
+            <h5>
+                Offers an easy way of visualizing data via graphs
+            </h5>
+            <p>
+                LogEntries allows each logfile to have a separate dashboard of various graphs & widgets put together for visualizing data. A dashboard is put together by dragging & dropping graphs and widgets into place. Graphs and widgets include charts, tables, gauges, event counts among other forms of data visualization.
+            </p>
+            <h5>
+                Timestamps are displayed in the local time zone
+            </h5>
+            <p>
+                Unlike Loggly, LogEntries displays timestamps in your timezone. You don't even have to configure anything.
+            </p>
+            <h5>
+                Excellent documentation
+            </h5>
+            <p>
+                LogEntries has comprehensive documentation that's easy to read and understand and includes lots of screenshots and examples.
+            </p>
+            <h4>
+                Disadvantages
+            </h4>
+            <ul style="margin-left:25px">
+                <li>
+                    No specialized reporting for JavaScript- No stack trace, or XHR recording. Compare with UserSnap or Rollbar or TrackJS.
+                </li>
+                <li>
+                    Signing up requires phone number
+                </li>
+                <li>
+                    No CDN for the web client logger
+                </li>
+                <li>
+                    TypeErrors (X is not a function) are not tracked- LogEntries doesn't seem to catch them even if catchall is set to true. See the GitHub issue.
+                </li>
+                <li>
+                    Character limit for each log entry - Currently log entries are limited to 8192 characters, if your log entry runs over this amount then it will be truncated where the excess log will be a new entry in the UI. This can easily cause a problem JSON structure with java stacktraces.
+                </li>
+                <li>
+                    Expensive - The average plan is over $1.5 per GB, which can get very expensive for any sort of reasonable volume.
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4> Logentries plugin for Log4net</h4><br />
+            <a href="https://www.nuget.org/packages/logentries.log4net/"> https://www.nuget.org/packages/logentries.log4net/</a>
+
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Logentries - <a href="https://logentries.com/real-user-monitoring/" target="_blank">https://logentries.com/real-user-monitoring/</a>
+                </li>
+                <li>
+                    Logentries configuration and Installation - <a href="https://docs.logentries.com/docs" target="_blank">https://docs.logentries.com/docs</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>

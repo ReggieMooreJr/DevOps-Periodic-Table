@@ -1,0 +1,244 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is Maven ?</h4>
+            <p>
+                Maven is a project management and comprehension tool. Maven provides developers a complete build lifecycle framework. Development team can automate the project's build infrastructure in almost no time as Maven uses a standard directory layout and a default build lifecycle.
+            </p>
+            <p>
+                In case of multiple development teams environment, Maven can set-up the way to work as per standards in a very short time. As most of the project setups are simple and reusable, Maven makes life of developer easy while creating reports, checks, build and testing automation setups.
+            </p>
+            <p>
+                Maven provides developers ways to manage following:
+            </p>
+            <ul style="margin-left:25px">
+                <li>
+                    Builds
+                </li>
+                <li>
+                    Documentation
+                </li>
+                <li>
+                    Reporting
+                </li>
+                <li>
+                    Dependencies
+                </li>
+                <li>
+                    SCMs
+                </li>
+                <li>
+                    Releases
+                </li>
+                <li>
+                    Distribution
+                </li>
+                <li>
+                    Mailing list
+                </li>
+            </ul>
+            <p>
+                To summarize, Maven simplifies and standardizes the project build process. It handles compilation, distribution, documentation, team collaboration and other tasks seamlessly. Maven increases reusability and takes care of most of build related tasks.
+            </p>
+            <h4>Maven’s Objectives</h4>
+            <p>
+                Maven’s primary goal is to allow a developer to comprehend the complete state of a development effort in the shortest period of time. In order to attain this goal there are several areas of concern that Maven attempts to deal with:
+            </p>
+            <ul style="margin-left:25px">
+                <li>
+                    Making the build process easy
+                </li>
+                <li>
+                    Providing a uniform build system
+                </li>
+                <li>
+                    Providing quality project information
+                </li>
+                <li>
+                    Providing guidelines for best practices development
+                </li>
+                <li>
+                    Allowing transparent migration to new features
+                </li>
+            </ul>
+            <h4>Process Flow</h4>
+            <p>
+                The POM contains information about the project and various configuration detail used by Maven to build the project(s). Following is the process flow diagram of the POM execution in order to build the project.
+            </p>
+            <div style="margin-left:30px;">
+                <img src="Images/mv1.png" style="width:55%" />
+            </div>
+            <h4>POM Build Life Cycle</h4>
+            <p>
+                A Build Lifecycle is a well-defined sequence of phases which define the order in which the goals are to be executed. Here phase represents a stage in life cycle.
+            </p>
+            <p>
+                As an example, a typical Maven Build Lifecycle consists of following sequence of phases
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Phase
+                        </th>
+                        <th>
+                            Handles
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            prepare-resources
+                        </td>
+                        <td>
+                            resource copying
+                        </td>
+                        <td>
+                            Resource copying can be customized in this phase.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>compile</td>
+                        <td>compilation</td>
+                        <td>Source code compilation is done in this phase.</td>
+                    </tr>
+                    <tr>
+                        <td>package</td>
+                        <td>packaging</td>
+                        <td>This phase creates the JAR / WAR package as mentioned in packaging in POM.xml.</td>
+                    </tr>
+                    <tr>
+                        <td>install</td>
+                        <td>installation</td>
+                        <td>This phase installs the package in local / remote maven repository.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>POM Example</h4>
+            <div style="margin-left:30px;">
+                <img src="Images/mv2.png" style="width:85%" />
+            </div>
+            <h4>POM Project Structure</h4>
+            <div style="margin-left:30px;">
+                <img src="Images/mv3.png" style="width:25%" />
+            </div>
+            <h4>Example to build the maven project</h4>
+            <div style="margin-left:30px;">
+                <img src="Images/mv4.png" style="width:85%" />
+            </div>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>How to install and configure Maven?</h4>
+            <p>Click on the <b>Maven&trade;</b> logo below to download the instructions for <u><i>Installing and Configuring Maven</i></u><p>
+                <a href="Documents/Installing and Configuring Maven.pdf" download="Installing and Configuring Maven" target="_blank">
+                    <img border="0" src="Images/maven-logo.png" alt="Maven&trade;" style="margin-left:1em; width:20%; height:10%;" />
+                </a>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Benefits</h4>
+            <ul style=" margin-left:30px">
+                <li>
+                    <b>Repeatable builds</b>: if you can build the project, your colleagues will always be able to on their machines. It'll also be repeatable on the build server.
+                </li>
+                <li>
+                    <b>Standardisation of the build system</b>: new developers who understad Maven will instantly know how to build, release, test etc, removing a lot of learning overhead.
+                </li>
+                <li>
+                    <b>Focus on automation</b>: Maven puts you in a mindset of automating processes around your software development.
+                </li>
+                <li>
+                    <b>Convention over configuration</b>: no setup or minimal configuration required to build artifacts.
+                </li>
+                <li>
+                    <b>Dependency management</b>: Maven will resolve and manage your dependencies for you.
+                </li>
+                <li>
+                    <b>Testing</b>: the ability to run tests and integration tests as part of your project lifecycle.
+                </li>
+                <li>
+                    <b>Plugins</b>: there are thousands of plugins to carry out various tasks. These are simply configured in just by adding a reference into the POM.
+                </li>
+            </ul>
+            <h4>Limitations</h4>
+            <ul style=" margin-left:30px">
+                <li>
+                    Library repositories are not always safe - In maven, you can define one or severeal repositories of library on the net. However, sometimes if the management of library are bad, you can have compile error or differences between jar on different repositories.
+                </li>
+                <li>
+                    Maven support for Android is not that great yet.
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Maven 3.5.0 is out now !</h4>
+            <p> Depending on your use case and your preference, some of these reasons will be more compelling than others. Here's the list</p>
+            <ul style="margin-left:30px">
+                <li>
+                    Isolates Project Dependencies and Plugin Dependencies
+                </li>
+                <li>
+                    Supports Extensions for Alternative Repository Layouts
+                </li>
+                <li>
+                    Easier to Embed
+                </li>
+                <li>
+                    Improved Artifact/Dependency Resolution
+                </li>
+                <li>
+                    Improved Logging
+                </li>
+                <li>
+                    More Intelligent Class Loading for Multi-module Builds
+                </li>
+                <li>
+                    Higher Standards for POMs
+                </li>
+                <li>
+                    Supports Parallel Builds
+                </li>
+                <li>
+                    Builds are much faster
+                </li>
+            </ul>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Optum Developer - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/developer-centers/java/development-and-standards/cloud-sdk/catalog-reference-library/open-source-catalog/apache-maven.html" target="_blank">Build Automation Tool - Maven</a>
+                </li>
+                <li>
+                    Apache Maven Project - <a href="https://maven.apache.org" target="_blank">https://maven.apache.org</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

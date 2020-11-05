@@ -1,0 +1,421 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is Selenium ?</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Selenium is a robust set of tools that supports rapid development of test automation for web-based applications.
+                </li>
+                <li>
+                    JavaScript framework that runs in web-browser.
+                </li>
+                <li>
+                    Works anywhere Javascript is supported.
+                </li>
+                <li>
+                    Hooks for many other languages-Java, Ruby, Python.
+                </li>
+                <li>
+                    Selenium operations are highly flexible, allowing many options for locating UI elements and comparing expected test results against actual application behavior.
+                </li>
+            </ul>
+            <h4>Selenium</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    You can use open source - Selenium tool
+                </li>
+                <li>
+                    Selenium IDE is a plug-in to Firefox to record and playback tests (like WinRunner, QTP).
+                </li>
+                <li>
+                    You can then export the recorded test in most language e.g. HTML, Java , .NET , Perl , Ruby etc.
+                </li>
+                <li>
+                    Selenium-IDE can be used to record test Cases which can be used later.
+                </li>
+                <li>
+                    You can record how an app is being used and then playback those recordings followed by asserts.
+                </li>
+            </ul>
+            <h4>Selenium - IDE</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Integrated Development Environment for building Selenium test cases.
+                </li>
+                <li>
+                    Operates as a Firefox add-on and provides an interface for developing and running individual test cases or entire test suites.
+                </li>
+                <li>
+                    Selenium-IDE has a recording feature, which will keep account of user actions as they are performed and store them as a reusable script to play back.
+                </li>
+                <li>
+                    Offers full editing of test cases.
+                </li>
+                <li>
+                    Although it is a Firefox only add-on, tests created in it can also be run against other browsers by using Selenium-RC & specifying the name of the test suite on the command line.
+                </li>
+            </ul>
+            <h4>Selenium Commands</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    In general, Selenium commands come in three types: <b>Actions</b>, <b>Accessors</b>, and <b>Assertions</b>.
+                </li>
+                <li>
+                    Actions do thing like <b>"Click this link"</b>, <b>"ClickAndWait"</b>, <b>"WaitForPageToLoad"</b> and select that option. If an action fails, or has an error, the execution of the current test is stopped. Actions are generally used for human action simulation when interacting with web elements.
+                </li>
+                <li>
+                    Accessors are used to store the results in variables. For example, <b>"StoreTitle"</b>, <b>"StoreVariable"</b>. They are also used to automatically generate Assertions.
+                </li>
+                <li>
+                    Assertion are like Accessors, but they verify that the state of the application conforms to what is expected. Examples include <b>"make sure the page title is X"</b> and <b>"verify that this checkbox is checked"</b>.
+                </li>
+            </ul>
+            <h4>Selenium WebDriver</h4>
+            <p>
+                WebDriver is one of the most powerful and popular tools of Selenium toolkit. WebDriver comes as an extended version to Selenium RC with superfluous advantages and addresses many of its limitations. WebDriver extends its support to many latest browsers and platforms unlike Selenium IDE. WebDriver also doesn’t require Selenium server to be started prior to execution of the test scripts unlike Selenium RC.
+            </p>
+            <p>
+                Selenium RC in aggregation with WebDriver API is known as Selenium 2.0. Selenium was so developed in order to support dynamic web pages and Ajax calls. It also supports various drivers to exercise web based mobile testing.
+            </p>
+            <h5>Architecture</h5>
+            <p>
+                WebDriver is a web-based testing tool with a subtle difference with Selenium RC. Since, the tool was built on the fundamental where an isolated client was created for each of the web browser; no JavaScript Heavy lifting was required as we discussed in our very first tutorial.
+            </p>
+            <p>
+                WebDriver makes direct calls to the Web browser and the entire test script is executed in this fashion. WebDriver uses the browsers support and capabilities to automation.
+            </p>
+            <div>
+                <img src="Images/se5.jpg" style="width:75%; margin-left:30px; margin-left:30px" />
+            </div>
+            <p>
+                Unlike Selenium RC, Selenium WebDriver doesn’t essentially require Selenium Server to be started before launching the test script execution. User can leverage the benefit and may or may not require Selenium Server if he/she desires to perform the test execution on the same machine where the browser is residing.
+            </p>
+            <b>Exceptional Cases when Selenium Server is required with WebDriver:</b>
+            <ul style="margin-left:25px">
+                <li>
+                    When the user wish to execute test scripts on the remote machine.
+                </li>
+                <li>
+                    When the user wish to execute test scripts on HtmlUnit Driver.
+                </li>
+                <li>
+                    When the user wish to execute test scripts on multiple platforms.
+                </li>
+            </ul>
+            <p>
+                WebDriver is a purely object oriented framework that works on OS layer. It utilizes the browser’s native compatibility to automation without using any peripheral entity.
+                With the increasing demand it has gained a large popularity, user base and has become by far one of the most extensively used open source automation testing tool.
+            </p>
+            <h5>Features of Selenium WebDriver </h5>
+            <strong>Browser Compatibility</strong>
+            <div>
+                <img src="Images/se6.jpg" style="width:75%; margin-left:30px" />
+            </div>
+            <p>
+                WebDriver supports diverse range of web browsers and their versions. It supports all the conventional browsers in addition to some unique and rare browsers like HtmlUnit browser unlike Selenium RC and Selenium IDE.
+            </p><p>
+                HtmlUnit Browser executes the test scripts analogous to other browsers except the fact that it runs in the headless mode i.e. GUI-less mode and the user won’t be able to view the test script execution. Said that the test script execution transpires in headless mode, thus the execution speed takes a roll and quickens the execution.
+            </p><p>
+                WebDriver also supports web based mobile testing. Thus it provides AndroidDriver and IphoneDriver to back web based mobile testing.
+            </p><p>
+                <strong> Note:</strong> WebDriver doesn’t readily support new browsers.
+            </p>
+            <strong>Language Support</strong>
+            <p>Some of the limitations imposed by Selenium IDE are:</p>
+            <ul style="margin-left:25px">
+                <li>
+                    Doesn’t support iterations and conditional statements
+                </li>
+                <li>
+                    Doesn’t support loops
+                </li>
+                <li>
+                    Doesn’t support error handling
+                </li>
+                <li>
+                    Doesn’t support test script dependency
+                </li>
+            </ul>
+            <p>
+                The above impediments can be troubleshot programmatically. WebDriver facilitates the user to choose within the different programming languages and build their test script in the designated language.
+            </p>
+            <p>Selenium WebDriver supported programming languages are:</p>
+            <ul style="margin-left:25px">
+                <li>
+                    Java
+                </li>
+                <li>
+                    C#
+                </li>
+                <li>
+                    PHP
+                </li>
+                <li>
+                    Pearl
+                </li>
+                <li>
+                    Ruby
+                </li>
+                <li>
+                    Python
+                </li>
+            </ul>
+            <strong>Speed</strong>
+            <p>When compared to other tools of Selenium suite, WebDriver turns out to be the fastest tool amongst all. The communication is not channelized via any external intervention; rather the tool directly communicates with the browser same as that of any user. Thus, WebDriver takes advantage of the browser’s native compatibility towards automation.</p>
+            <div>
+                <img src="Images/se7.jpg" style="width:75%; margin-left:30px" />
+            </div>
+            <p>
+                Other tools from Selenium suite like Selenium RC don’t communicate directly with the web browser. Client libraries (test scripts written in any programming language) communicate with Selenium Remote Control Server and Remote Control communicates with a Selenium Core (JavaScript Program) which in turn communicates with the web browser. Hence, this sort of twisted communication results as a hindrance on execution speed.
+            </p>
+            <div>
+                <img src="Images/se8.jpg" style="width:75%; margin-left:30px" />
+            </div>
+            <strong>Drivers, Methods and Classes</strong>
+            <p>WebDriver offers a wide range of solutions to some potential challenges in Automation Testing. It helps us to deal with complex types of web elements like checkboxes, dropdowns, and alerts with the help of dynamic finders.</p>
+            <div>
+                <img src="Images/se9.jpg" style="width:75%; margin-left:30px" />
+            </div>
+            <p>
+                With the advent of mobile era, WebDriver API has also matured and introduced some of the key technologies to enter this horizon. WebDriver enables user to perform web based mobile testing. It provides two of the essentials drivers to perform web based mobile testing.
+            </p>
+            <ul style="margin-left:25px">
+                <li>
+                    AndriodDriver
+                </li>
+                <li>
+                    IphoneDriver
+                </li>
+            </ul>
+            <p>
+                Moreover, WebDriver API is fairly simple and easy. It doesn’t include repetitious commands. On the contrary, Selenium RC embodies many of the tautological commands.
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Selenium - IDE Installation</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Using Firefox, first, download the IDE from the <a href="http://www.seleniumhq.org/download/" target="_blank">SeleniumHQ</a> page. When downloading from Firefox, you’ll be presented with the below window.
+                    <div>
+                        <img src="Images/se1.png" style="width:85%" />
+                    </div>
+                </li>
+                <li>
+                    Select Install Now. The Firefox Add-ons window pops up, first showing a progress bar, and when the download is complete, it displays the below window.
+                    <div>
+                        <img src="Images/se2.png" style="width:85%" />
+                    </div>
+                </li>
+
+                <li>
+                    Restart Firefox. After Firefox reboots you will find the Selenium-IDE listed under the Firefox Tools menu.
+                </li>
+            </ul>
+            <h4>Recording a Selenium Test Case</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Open Firefox and Selenium IDE after it is installed.
+                </li>
+                <li>
+                    Open the base URL of the application to record.
+                </li>
+                <li>
+                    Keep the application in a common base state.
+                </li>
+                <li>
+                    Go To Tools --> Selenium IDE and the IDE will be opened
+                </li>
+                <li>
+                    Now perform the operations on the application as you are testing the application.
+                </li>
+                <li>
+                    Once you are done with the recording click on the stop recording button and save the test case through the file menu. By default it will be saved as a selenese script (HTML format)
+                </li>
+            </ul>
+            <h4>Creating a Test Suite</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    In the Selenium IDE you can create any number of test cases and save them as test suite.
+                </li>
+                <li>
+                    To Run the test Suite click on the “Play entire test suite” button as shown below.
+                    <div>
+                        <img src="Images/se3.png" style="width:48%" />
+                    </div>
+                </li>
+
+            </ul>
+            <h4>Running First Selenium Script</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Make sure the application is in the common base state.
+                </li>
+                <li>
+                    Click on the run button.
+                </li>
+                <li>
+                    Here you can also control the speed of the execution using the toolbar.
+                    <div>
+                        <img src="Images/se4.png" style="width:20%" />
+                    </div>
+                </li>
+
+                <li>
+                    Once the test is run you can view the test log in the bottom of the IDE window
+                </li>
+            </ul>
+            <h4>Running Options</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Run a Test Case
+
+                    <ul style="margin-left:25px">
+                        <li>
+                            Click the Run button to run the currently displayed test case.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Run a Test Suite
+                    <ul style="margin-left:25px">
+                        <li>
+                            Click the Run All button to run all the test cases in the currently loaded test suite.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Stop and Start
+                    <ul style="margin-left:25px">
+                        <li>
+                            The Pause button can be used to stop the test case while it is running. The icon of this button then changes to indicate the Resume button. To continue click Resume.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Stop in the Middle
+                    <ul style="margin-left:25px">
+                        <li>
+                            You can set a breakpoint in the test case to cause it to stop on a particular command. This is useful for debugging your test case. To set a breakpoint, select a command, right-click, and from the context menu select Toggle Breakpoint.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Selenium has no upfront, out-of-pocket costs. It is a free download and support is free too, although it is community-based.
+                </li>
+                <li>
+                    Selenium tests are, in principle, able to run under multiple browsers.
+                </li>
+                <li>
+                    Although Selenium has its own script language, you are not limited to writing in that language since it can work with language bindings to support whatever your developers/testers are comfortable with including C#, Java, JavaScript, PHP, Python and others.
+                </li>
+                <li>
+                    Selenium scripts are created by recording actions using the web application under test running in a browser. These scripts can be saved and re-run at any time. Selenium tests can be created manually through the use of web development tools such as Firebug also.
+                </li>
+                <li>
+                    Selenium does not restrict QA’s choice of reporting tools, build systems or any other aspect of their testing framework. It integrates well with popular tools such as Hudson, SauceLabs, Selenium-Grid, QMetry and others.
+                </li>
+                <li>
+                    It also supports web applications that implement part of their functionality within the browser using JavaScript and AJAX technologies.
+                </li>
+            </ul>
+            <h4>Disadvantages</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Selenium is not a complete, comprehensive solution to fully automating the testing of web applications. It requires third-party frameworks, language bindings and so on to be truly effective.
+                </li>
+                <li>
+                    Despite its acceptance of other test script languages, it demands higher-level technical skills, such as programming, from QA team members.
+                </li>
+                <li>
+                    It has no test management facilities. Test scripts are saved as simple files without attributes. Organizing individual scripts in any fashion via a user interface requires a third-party tool or a custom application.
+                </li>
+                <li>
+                    Because native “Selenese” test scripts are not user-friendly in terms of readability, they are difficult to modify. Many testers simply resort to discarding the original scripts and recording them again, which can be time consuming.
+                </li>
+                <li>
+                    Selenium does not support test and result sharing in anything but a manual way.
+                </li>
+                <li>
+                    There is no support for running tests in parallel on a single computer.
+                </li>
+                <li>
+                    Selenium has technical issues with browsers other than Firefox. Furthermore, it does not support conditionals, loops and has trouble finding locators without the help of additional tools such as Firebug.
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Selenium 3.0: Out Now!</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    <b>Reference link</b> : <a href="https://raw.githubusercontent.com/SeleniumHQ/selenium/master/java/CHANGELOG" target="_blank">Selenium Changelog</a>
+                </li>
+                <li>
+                    Firefox is only fully supported at version 47.0.1 or earlier. Support for later versions of firefox is provided by geckodriver, which is based on the evolving W3C WebDriver spec, and uses the wire protocol in that spec, which is liable to change without notice.
+                </li>
+                <li>
+                    You may wish to choose an ESR release such as 45.4.0esr or earlier.
+                </li>
+                <li>
+                    Firefox 47.0.0 is not supported at all.
+                </li>
+                <li>
+                    Stability fixes in Grid.
+                </li>
+                <li>
+                    All Grid nodes can now offer help
+                </li>
+                <li>
+                    Updated to the latest version of <a href="https://github.com/SeleniumHQ/htmlunit-driver" target="_blank">HtmlUnitDriver</a>
+                </li>
+                <li>
+                    Re-enabled log gathering for the standalone server.
+                </li>
+                <li>
+                    Firefox profile is passed to both the legacy FirefoxDriver and geckodriver
+                </li>
+                <li>
+                    <a href="http://www.seleniumhq.org/download" target="_blank">Selenium3.X</a> is no longer capable of running <a href="http://www.seleniumhq.org/projects/remote-control" target="_blank">Selenium RC</a> directly, rather it does it through emulation and the <a href="http://www.seleniumhq.org/docs/appendix_migrating_from_rc_to_webdriver.jsp" target="_blank">WebDriverBackedSelenium</a> interface.
+                </li>
+            </ul>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Optum Developer - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/quality-tools/selenium.html" target="_blank">Software Testing Framework - Selenium</a>
+                </li>
+                <li>
+                    Selenium Documentation - <a href="http://www.seleniumhq.org/docs/" target="_blank">http://www.seleniumhq.org/docs</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

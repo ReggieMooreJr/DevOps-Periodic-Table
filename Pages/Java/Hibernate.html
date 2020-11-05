@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hibernate</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js">
+    </script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js">
+    </script>
+
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style>
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="../../Images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Hibernate</h2>
+    </section>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Overview</a></li>
+            <li><a href="#tabs-2">Architecture</a></li>
+            <li><a href="#tabs-3">Configuration</a></li>
+        </ul>
+        <div id="tabs-1">
+            <h4> Hibernate</h4>
+            <hr />
+            <p>
+                Hibernate is an Object-Relational Mapping(ORM) solution for JAVA and it raised as an open source persistent framework created by Gavin King in 2001. It is a powerful, high performance Object-Relational Persistence and Query service for any Java Application.
+            </p><p>
+                Hibernate maps Java classes to database tables and from Java data types to SQL data types and relieve the developer from 95% of common data persistence related programming tasks.
+            </p><p>
+                Hibernate sits between traditional Java objects and database server to handle all the work in persisting those objects based on the appropriate O/R mechanisms and patterns.
+            </p>
+            <div style="margin-left:30px">
+                <img src="../../Images/hibernate1.jpg" style="width:650px" />
+            </div>
+            <h4>  Hibernate Advantages:</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Hibernate takes care of mapping Java classes to database tables using XML files and without writing any line of code.
+                </li>
+                <li>
+                    Provides simple APIs for storing and retrieving Java objects directly to and from the database.
+                </li>
+                <li>
+                    If there is change in Database or in any table then the only need to change XML file properties.
+                </li>
+                <li>
+                    Abstract away the unfamiliar SQL types and provide us to work around familiar Java Objects.
+                </li>
+                <li>
+                    Hibernate does not require an application server to operate.
+                </li>
+                <li>
+                    Manipulates Complex associations of objects of your database.
+                </li>
+                <li>
+                    Minimize database access with smart fetching strategies.
+                </li>
+                <li>
+                    Provides Simple querying of data.
+                </li>
+            </ul>
+            <h4> Supported Databases:</h4>
+
+            Hibernate supports almost all the major RDBMS. Following is list of few of the database engines supported by Hibernate.
+            <ul style="margin-left:20px">
+                <li>
+                    HSQL Database Engine
+                </li>
+                <li>
+                    DB2/NT
+                </li>
+                <li>
+                    MySQL
+                </li>
+                <li>
+                    PostgreSQL
+                </li>
+                <li>
+                    FrontBase
+                </li>
+                <li>
+                    Oracle
+                </li>
+                <li>
+                    Microsoft SQL Server Database
+                </li>
+                <li>
+                    Sybase SQL Server
+                </li>
+                <li>
+                    Informix Dynamic Server
+                </li>
+            </ul>
+            <h4> Supported Technologies:</h4>
+
+            Hibernate supports a variety of other technologies, including the following:
+            <ul style="margin-left:20px">
+                <li>
+                    XDoclet Spring
+                </li>
+                <li>
+                    J2EE
+                </li>
+                <li>
+                    Eclipse plug-ins
+                </li>
+                <li>
+                    Maven
+                </li>
+            </ul>
+        </div>
+        <div id="tabs-2">
+            <p>
+                The Hibernate architecture is layered to keep you isolated from having to know the underlying APIs. Hibernate makes use of the database and configuration data to provide persistence services (and persistent objects) to the application.
+            </p><p>
+                Following is a very high level view of the Hibernate Application Architecture.
+            </p>
+            <div style="margin-left:30px">
+                <img src="../../Images/hibernate2.jpg" style="width:500px" />
+            </div>
+            <p>Following is a detailed view of the Hibernate Application Architecture with few important core classes.</p>
+            <div style="margin-left:30px">
+                <img src="../../Images/hibernate3.jpg" style="width:500px" />
+            </div>
+            <p>
+                Hibernate uses various existing Java APIs, like JDBC, Java Transaction API(JTA), and Java Naming and Directory Interface (JNDI). JDBC provides a rudimentary level of abstraction of functionality common to relational databases, allowing almost any database with a JDBC driver to be supported by Hibernate. JNDI and JTA allow Hibernate to be integrated with J2EE application servers.
+            </p><p>
+                Following section gives brief description of each of the class objects involved in Hibernate Application Architecture.
+            </p>
+            <h4>Configuration Object:</h4>
+            <p>
+                The Configuration object is the first Hibernate object you create in any Hibernate application and usually created only once during application initialization. It represents a configuration or properties file required by the Hibernate. The Configuration object provides two keys components:
+            </p>
+            <ul style="margin-left:20px">
+                <li>
+                    Database Connection: This is handled through one or more configuration files supported by Hibernate. These files are hibernate.properties and hibernate.cfg.xml.
+                </li>
+                <li>
+                    Class Mapping Setup
+                </li>
+            </ul>
+            <p style="margin-left:20px">
+                This component creates the connection between the Java classes and database tables..
+            </p>
+            <h4> SessionFactory Object:</h4>
+            <p>
+                Configuration object is used to create a SessionFactory object which inturn configures Hibernate for the application using the supplied configuration file and allows for a Session object to be instantiated. The SessionFactory is a thread safe object and used by all the threads of an application.
+            </p><p>
+                The SessionFactory is heavyweight object so usually it is created during application start up and kept for later use. You would need one SessionFactory object per database using a separate configuration file. So if you are using multiple databases then you would have to create multiple SessionFactory objects.
+            </p>
+            <h4>
+                Session Object:
+            </h4>
+            <p>
+
+                A Session is used to get a physical connection with a database. The Session object is lightweight and designed to be instantiated each time an interaction is needed with the database. Persistent objects are saved and retrieved through a Session object.
+            </p><p>
+                The session objects should not be kept open for a long time because they are not usually thread safe and they should be created and destroyed them as needed.
+            </p>
+            <h4>
+                Transaction Object:
+            </h4>
+            <p>
+                A Transaction represents a unit of work with the database and most of the RDBMS supports transaction functionality. Transactions in Hibernate are handled by an underlying transaction manager and transaction (from JDBC or JTA).
+            </p><p>
+                This is an optional object and Hibernate applications may choose not to use this interface, instead managing transactions in their own application code.
+            </p>
+            <h4>
+                Query Object:
+            </h4>
+            <p>
+                Query objects use SQL or Hibernate Query Language (HQL) string to retrieve data from the database and create objects. A Query instance is used to bind query parameters, limit the number of results returned by the query, and finally to execute the query.
+            </p>
+            <h4>
+                Criteria Object:
+            </h4>
+            <p>
+                Criteria object are used to create and execute object oriented criteria queries to retrieve objects.
+            </p>
+        </div>
+        <div id="tabs-3">
+            <p>
+                Hibernate requires to know in advance where to find the mapping information that defines how your Java classes relate to the database tables. Hibernate also requires a set of configuration settings related to database and other related parameters. All such information is usually supplied as a standard Java properties file called hibernate.properties, or as an XML file named hibernate.cfg.xml.
+            </p><p>
+                I will consider XML formatted file hibernate.cfg.xml to specify required Hibernate properties in my examples. Most of the properties take their default values and it is not required to specify them in the property file unless it is really required. This file is kept in the root directory of your application's classpath.
+            </p>
+            <h4>Hibernate Properties:</h4>
+            <p>Following is the list of important properties you would require to configure for a databases in a standalone situation:</p>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width:5%">S.N.</th>
+                        <th>Properties and Description</th>
+                    </tr>
+                    <tr><td>1</td><td><b>hibernate.dialect</b> <br> This property makes Hibernate generate the appropriate SQL for the chosen database.</td></tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <b>hibernate.connection.driver_class</b>
+                            <p>The JDBC driver class.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <b>hibernate.connection.url</b>
+                            <p>The JDBC URL to the database instance.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <b>hibernate.connection.username</b>
+                            <p>The database username.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <b>hibernate.connection.password</b>
+                            <p>The database password.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <b>hibernate.connection.pool_size</b>
+                            <p>Limits the number of connections waiting in the Hibernate database connection pool.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            <b>hibernate.connection.autocommit</b>
+                            <p>Allows autocommit mode to be used for the JDBC connection.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>If you are using a database along with an application server and JNDI then you would have to configure the following properties:</p>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width:5%">S.N.</th>
+                        <th>Properties and Description</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <b>hibernate.connection.datasource</b>
+                            <p>The JNDI name defined in the application server context you are using for the application.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <b>hibernate.jndi.class</b>
+                            <p>The InitialContext class for JNDI.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <b>hibernate.jndi.&lt;JNDIpropertyname&gt;</b>
+                            <p>Passes any JNDI property you like to the JNDI <i>InitialContext</i>.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <b>hibernate.jndi.url</b>
+                            <p>Provides the URL for JNDI.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <b>hibernate.connection.username</b>
+                            <p>The database username.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <b>hibernate.connection.password</b>
+                            <p>The database password.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4> Hibernate with MySQL Database:</h4>
+            <p>
+                MySQL is one of the most popular open-source database systems available today. Let us create hibernate.cfg.xml configuration file and place it in the root of your application's classpath. You would have to make sure that you have testdb database available in your MySQL database and you have a user test available to access the database.
+            </p><p>
+                The XML configuration file must conform to the Hibernate 3 Configuration DTD, which is available from http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd.
+            </p>
+            <div style="margin-left:30px">
+                <img src="../../Images/hibernate4.jpg" style="width:650px" />
+            </div>
+            <p> Following is the list of various important databases dialect property type:</p>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width:30%">Database</th>
+                        <th>Dialect Property</th>
+                    </tr>
+                    <tr>
+                        <td>DB2 </td>
+                        <td>org.hibernate.dialect.DB2Dialect</td>
+                    </tr>
+                    <tr>
+                        <td>HSQLDB  </td>
+                        <td>org.hibernate.dialect.HSQLDialect</td>
+                    </tr>
+                    <tr>
+                        <td>HypersonicSQL</td>
+                        <td>org.hibernate.dialect.HSQLDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Informix </td>
+                        <td>org.hibernate.dialect.InformixDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Ingres </td>
+                        <td>org.hibernate.dialect.IngresDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Interbase </td>
+                        <td>org.hibernate.dialect.InterbaseDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft SQL Server 2000 </td>
+                        <td>org.hibernate.dialect.SQLServerDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft SQL Server 2005</td>
+                        <td>org.hibernate.dialect.SQLServer2005Dialect</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft SQL Server 2008</td>
+                        <td>org.hibernate.dialect.SQLServer2008Dialect</td>
+                    </tr>
+                    <tr>
+                        <td>MySQL </td>
+                        <td>org.hibernate.dialect.MySQLDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Oracle (any version)</td>
+                        <td>org.hibernate.dialect.OracleDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Oracle 11g</td>
+                        <td>org.hibernate.dialect.Oracle10gDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Oracle 10g</td>
+                        <td>org.hibernate.dialect.Oracle10gDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Oracle 9i</td>
+                        <td>org.hibernate.dialect.Oracle9iDialect</td>
+                    </tr>
+                    <tr>
+                        <td>PostgreSQL </td>
+                        <td>org.hibernate.dialect.PostgreSQLDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Progress </td>
+                        <td>org.hibernate.dialect.ProgressDialect</td>
+                    </tr>
+                    <tr>
+                        <td>SAP DB </td>
+                        <td>org.hibernate.dialect.SAPDBDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Sybase </td>
+                        <td>org.hibernate.dialect.SybaseDialect</td>
+                    </tr>
+                    <tr>
+                        <td>Sybase Anywhere </td>
+                        <td>org.hibernate.dialect.SybaseAnywhereDialect</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>
