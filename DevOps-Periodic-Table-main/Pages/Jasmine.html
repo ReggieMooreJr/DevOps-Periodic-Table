@@ -1,0 +1,204 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is Jasmine ?</h4>
+            <p>
+                •	Jasmine is an open source testing framework for JavaScript. It aims to run on any JavaScript-enabled platform, to not intrude on the application nor the IDE, and to have easy-to-read syntax. It is heavily influenced by other unit testing frameworks, such as ScrewUnit, JSSpec, JSpec, and RSpec.
+            </p>
+            <h4>Features</h4>
+            <p>
+                •	Supports asynchronous testing
+            </p>
+            <p>
+                •	Makes use of 'spies' for implementing test doubles
+            </p>
+            <p>
+                •	Supports testing of front-end code through a front-end extension of Jasmine called Jasmine-jQuery
+            </p>
+            <h4>Usage</h4>
+            <p>
+                •	Jasmine aims to be easy to read. A simple hello world test looks like the code below, where describe() describes a suite of tests and it() is an individual test specification. The name "it()" follows the idea of behavior-driven development and serves as the first word in the test name, which should be a complete sentence. Usage follows syntax similar to that of RSpec.
+            </p>
+            <p>
+                The code below tests this function
+            </p>
+            <p>
+                <img src="/static/images/ja1.png" style="width:25%" />
+            </p>
+            <p>
+                and verifies that its output is indeed the text "Hello world!".
+            </p>
+            <p>
+                <img src="/static/images/ja2.png" style="width:50%" />
+            </p>
+            <p>
+                •	Jasmine provides a rich set of built-in matchers. In the above example, toEqual checks the equality between the value returned from the helloWorld() function and the 'Hello world!' string. This is the same as assertions used in other testing frameworks. Jasmine matchers simply return a Boolean value: true if the expectation is matched (a way to indicate that the test has passed) or false if the expectation doesn’t match. A good practice is to put a single expectation in an individual it() test specification.
+            </p>
+            <p>
+                •	Other built-in matchers include toBe, toBeTruthy, toBeFalsy, toContain, toBeDefined, toBeUndefined, toBeNull, toBeNaN, toBeGreaterThan, toBeLessThan, toBeCloseTo. The identity matcher toBe checks if two things are the same object. The condition matchers toBeTruthy, toBeFalsy evaluate if something is true or false and toBeDefined, toBeUndefined check if something is defined or undefined. As the name suggests toBeNull checks if something is null and toBeNaN checks if something is NotANumber(NaN). Precision matcher toBeCloseTo accepts two parameters and checks if a number is close to the first parameter, given a certain amount of decimal precision as indicated by the second parameter. Matcher toContain is used to verify that an element, object or sub-string is contained in an array, list or string.
+            </p>
+            <p>
+                •	The special built-in matcher toThrow is used to verify that an exception has been thrown. The code below verifies that "Some exception" is thrown.
+            </p>
+            <p>
+                <img src="/static/images/ja3.png" style="width:80%" />
+            </p>
+            <p>
+                •	Jasmine has a number of other features, such as custom matchers, spies, and support for asynchronous specifications.
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installation</h4>
+            <p>
+                For the Jasmine NPM module: <a href="https://github.com/jasmine/jasmine-npm" target="_blank">https://github.com/jasmine/jasmine-npm</a>
+            </p>
+            <p>
+                For the Jasmine Ruby Gem: <a href="https://github.com/jasmine/jasmine-gem" target="_blank">https://github.com/jasmine/jasmine-gem</a>
+            </p>
+            <p>
+                For the Jasmine Python Egg: <a href="https://github.com/jasmine/jasmine-py" target="_blank">https://github.com/jasmine/jasmine-py</a>
+            </p>
+            <p>
+                For the Jasmine headless browser gulp plugin: <a href="https://github.com/jasmine/gulp-jasmine-browser" target="_blank">https://github.com/jasmine/gulp-jasmine-browser</a>
+            </p>
+            <p>
+                To install Jasmine standalone on your local box (where {#.#.#} below is substituted by the release number downloaded):
+            </p>
+            <p>
+                •	Download the standalone distribution for your desired release from the releases page
+            </p>
+            <p>
+                •	Create a Jasmine directory in your project - <em style="font-family:'Courier New';">mkdir my-project/jasmine</em>
+            </p>
+            <p>
+                •	Move the dist to your project directory - <em style="font-family:'Courier New';">mv jasmine/dist/jasmine-standalone-{#.#.#}.zip my-project/jasmine</em>
+            </p>
+            <p>
+                •	Change directory - <em style="font-family:'Courier New';">cd my-project/jasmine</em>
+            </p>
+            <p>
+                •	Unzip the dist - <em style="font-family:'Courier New';">unzip jasmine-standalone-{#.#.#}.zip</em>
+            </p>
+            <p>
+                Add the following to your HTML file:
+            </p>
+            <p>
+                <img src="/static/images/ja4.png" style="width:95%" />
+            </p>
+            <h4>Supported environments</h4>
+            <p>
+                Jasmine tests itself across many browsers (Safari, Chrome, Firefox, PhantomJS, and new Internet Explorer) as well as node. To see the exact version tests are run against look at our <a href="https://github.com/jasmine/jasmine/blob/master/.travis.yml" target="_blank">.travis.yml</a>
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Benefits</h4>
+            <p>
+                •	The aim of Jasmine is to be browser, framework, platform and language independent.
+            </p>
+            <p>
+                •	Besides behavioral driven development, Jasmine also supports test driven development
+            </p>
+            <h4>Limitations</h4>
+            <p>
+                •	When comparing two objects, it reports an error which is hard to see and identify where the difference is present (all in one sentence, no structure).
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Jasmine Core 2.0</h4>
+            <p>
+                The <a href="http://jasmine.github.io/2.0/introduction.html" target="_blank">introduction.js</a> page covers the current syntax, highlighting the changes. Here are the known interface changes that are not backwards compatible with 1.x.
+            </p>
+            <p style="font-weight:bold;">
+                Breaking changes
+            </p>
+            <p>
+                •	New syntax for asynchronous specs
+            </p>
+            <p>
+                •	New syntax for spies
+            </p>
+            <p>
+                •	New interface for reporters
+            </p>
+            <p>
+                •	Better Equality testing
+            </p>
+            <p>
+                •	Replaced custom matchers for ease of use
+            </p>
+            <p>
+                •	Change to <b>toThrow</b> matcher
+            </p>
+            <p>
+                •	Clock now remains installed when a spec finishes
+            </p>
+            <p>
+                •	More Jasmine internal variables/functions have been moved into closures
+            </p>
+            <p style="font-weight:bold;">
+                Other changes
+            </p>
+            <p>
+                •	Massive refactoring and better testing
+            </p>
+            <p>
+                •	Environment setup now in <em style="font-family:'Courier New';">boot.js</em>
+            </p>
+            <p>
+                •	Development and Build moved to Grunt
+            </p>
+            <p>
+                •	Changes to how Jasmine is loaded
+            </p>
+            <p>
+                •	Changes to how Jasmine is tested
+            </p>
+            <p>
+                •	Better node.js support
+            </p>
+            <p>
+                •	Better Continuous Integration Environment at Travis
+            </p>
+            <p>
+                •	Support matrix updated
+            </p>
+            <p>
+                •	Removed JsDoc Pages
+            </p>
+            <p>
+                •	Adding Code Climate for JavaScript
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Jasmine Website - <a href="https://jasmine.github.io/" target="_blank">Behaviour Driven Javascript</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

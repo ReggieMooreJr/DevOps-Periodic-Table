@@ -1,0 +1,198 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Mocha</h4><p>
+                Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases. Hosted on GitHub.
+            </p>
+            <h4>Features</h4><p>
+                • 	browser support
+                <br />• 	simple async support, including promises
+                <br />• 	test coverage reporting
+                <br />• 	string diff support
+                <br />• 	javascript API for running tests
+                <br />• 	proper exit status for CI support etc
+                <br />• 	auto-detects and disables coloring for non-ttys
+                <br />• 	maps uncaught exceptions to the correct test case
+                <br />• 	async test timeout support
+                <br />• 	test retry support
+                <br />• 	test-specific timeouts
+                <br />• 	growl notification support
+                <br />• 	reports test durations
+                <br />• 	highlights slow tests
+                <br />• 	file watcher support
+                <br />• 	global variable leak detection
+                <br />• 	optionally run tests that match a regexp
+                <br />• 	auto-exit to prevent “hanging” with an active loop
+                <br />• 	easily meta-generate suites & test-cases
+                <br />• 	mocha.opts file support
+                <br />• 	clickable suite titles to filter test execution
+                <br />• 	node debugger support
+                <br />• 	detects multiple calls to done()
+                <br />• 	use any assertion library you want
+                <br />• 	extensible reporting, bundled with 9+ reporters
+                <br />• 	extensible test DSLs or “interfaces”
+                <br />• 	before, after, before each, after each hooks
+                <br />• 	arbitrary transpiler support (coffee-script etc)
+                <br />• 	TextMate bundle
+                <br />• 	and more!
+
+
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installations</h4>
+
+            <h5>Install with npm globally</h5>
+            <strong>What is npm?</strong><br />
+            <p>
+                npm makes it easy for JavaScript developers to share and reuse code, and makes it easy to update the code that you’re sharing, so you can build amazing things.
+            </p>
+            <p style="font-family:'Courier New'">$ npm install --global mocha</p>
+            <h5>or as a development dependency for your project:</h5>
+            <p style="font-family:'Courier New'">$ npm install --save-dev mocha</p>
+            <p>Mocha can also be installed via Bower (bower install mocha), and is available at cdnjs.</p>
+            <p><strong> Note :</strong>To install Mocha v3.0.0 or newer with npm, you will need npm v1.4.0 or newer. Additionally, to run Mocha, you will need Node.js v0.10 or newer.</p>
+            <h4>Getting Started</h4>
+            <p style="font-family:'Courier New'">
+                $ npm install mocha<br />
+                $ mkdir test<br />
+                $ $EDITOR test/test.js # or open with your favorite editor
+            </p>
+            <h5>In your editor:</h5>
+            <p style="font-family:'Courier New'">
+                var assert = require('assert');<br />
+                describe('Array', function() {<br />
+                describe('#indexOf()', function() {<br />
+                it('should return -1 when the value is not present', function() {<br />
+                assert.equal(-1, [1,2,3].indexOf(4));<br />
+                });<br />
+                });<br />
+                });
+                <h5>Back in the terminal:</h5>
+            </p>
+            <p style="font-family:'Courier New'">
+                $ ./node_modules/mocha/bin/mocha<br /><br />
+
+                Array<br />
+                #indexOf()<br />
+                ✓ should return -1 when the value is not present<br />
+                <br />
+
+                1 passing (9ms)
+            </p>
+            <h5>Set up a test script in package.json:</h5>
+            <p style="font-family:'Courier New'">
+                "scripts": {<br />
+                "test": "mocha"<br />
+                }
+            </p>
+            <h5>Then run tests with:</h5>
+            <p style="font-family:'Courier New'">
+                $ npm test
+
+
+            </p>
+            <h4>Asynchronous Code</h4>
+
+            <p>
+                Testing asynchronous code with Mocha could not be simpler! Simply invoke the callback when your test is complete. By adding a callback (usually named done) to it(), Mocha will know that it should wait for this function to be called to complete the test.
+            </p>
+            <p style="font-family:'Courier New'">
+                describe('User', function() {<br />
+                describe('#save()', function() {<br />
+                it('should save without error', function(done) {<br />
+                var user = new User('Luna');<br />
+                user.save(function(err) {<br />
+                if (err) done(err);<br />
+                else done();<br />
+                });<br />
+                });<br />
+                });<br />
+                });
+            </p>
+            <h4>Synchronous Code</h4>
+            <p>When testing synchronous code, omit the callback and Mocha will automatically continue on to the next test.</p>
+            <p style="font-family:'Courier New'">
+                describe('Array', function() {<br />
+                describe('#indexOf()', function() {<br />
+                it('should return -1 when the value is not present', function() {<br />
+                [1,2,3].indexOf(5).should.equal(-1);<br />
+                [1,2,3].indexOf(0).should.equal(-1);<br />
+                });<br />
+                });<br />
+                });
+
+
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <p>
+                •	Makes Asynchronous testing extremely easy
+            </p>
+            <p>
+                •	Supports different assertion libraries
+            </p>
+            <p>
+                •	Write tests with Behavior Driven Development (BDD)
+            </p>
+            <p>
+                •	Integrates really well with NodeJS
+            </p>
+            <p>
+                •	Runs in Node.js and the browser
+            </p>
+            <p>
+                •	Custom full color test reporters
+            </p>
+            <p>
+                •	Easy to add support for Generators
+            </p>
+            <h4>Disadvantages</h4>
+            <p>
+                • 	Mocha runs all the tests in the same process which means shared memory, and no independence or isolation
+            </p>
+            <p>
+                • 	While some testing frameworks are complete out of the box, Mocha requires developers to select and set up assertion libraries and mocking utilities.
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Mocha v3.4.2 release on 24-05-2017</h4>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Hosted on GitHub - <a href="https://github.com/mochajs/mocha" target="_blank">JavaScript test framework for node.js - Mocha</a>
+                </li>
+                <li>
+                    Mocha Website - <a href="https://mochajs.org/" target="_blank">https://mochajs.org/</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

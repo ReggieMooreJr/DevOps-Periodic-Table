@@ -1,0 +1,557 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Artifactory</h4>
+            <p>
+                As the first, and only, universal Artifact Repository Manager on the market, JFrog Artifactory fully supports software packages created by any language or technology.
+            </p><p>
+                Artifactory is the only enterprise-ready repository manager available today, supporting secure, clustered, High Availability Docker registries.
+            </p><p>
+                Integrating with all major CI/CD and DevOps tools, Artifactory provides an end-to-end, automated and bullet-proof solution for tracking artifacts from development to production.
+            </p>
+            <h4>Features</h4>
+            <p>
+                <b>Reliability</b>
+                As a local proxy to the outside world, Artifactory guarantees consistent access to the components needed by your build tools.
+            </p><p>
+                <b>Efficiency</b>
+                Remote artifacts are cached locally for reuse, so that you don’t have to download them over and over again.
+            </p><p>
+                <b>Security</b>
+                Advanced security features give you control over who can access your artifacts, and where they can deploy them.
+            </p><p>
+                <b>Stability</b>
+                Supports large load bursts with extremely high concurrency and unmatched data integrity.
+            </p><p>
+                <b>Productivity</b>
+                Make it easy for developers to find any artifact with searchable XML metadata and user-defined properties.
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installing Artifactory</h4>
+            <p>
+                1. Installing on Linux, Solaris or Mac OS
+            </p><p>
+                2. Installing on Windows
+            </p><p>
+                3. Installing with Docker
+            </p>
+            <h4>1. Installing on Windows</h4>
+            <h5>
+                Overview
+            </h5>
+            <p>
+                There are three ways to install Artifactory on your Windows system:
+            </p><p>
+                •	Manual Installation
+            </p><p>
+                •	Service Installation
+            </p><p>
+                •	As a Docker Image
+            </p><p>
+                Unzip the Artifactory download file to a location on your file system.
+            </p><p>
+                This will be your <span style="font-family:'Courier New'"> %ARTIFACTORY_HOME% </span>location.
+            </p><p>
+                Define this location as an environment variable called ARTIFACTORY_HOME.
+            </p>
+            <h4>Requirements </h4>
+            <h5>Setting JAVA_HOME</h5>
+            <p>
+                Install JDK 8 or above.Make sure your JAVA_HOME environment variable correctly points to your JDK 8 installation.
+            </p><p>
+                If you also have JRE_HOME defined in your system, this will take precedence over JAVA_HOME and therefore you need to either point JRE_HOME to your JDK 8 installation, or remove the JRE_HOME definition.
+            </p>
+            <h5>
+                Setting Java Memory Parameters
+            </h5>
+            <p>
+                While not a strict requirement, it is recommended to modify the JVM memory parameters used to run Artifactory.
+            </p><p>
+                This is done by modifying the JAVA_OPTIONS variable in artifactory.bat, for a manual installation,  or the JOPTS variable in installService.bat when running Artifactory as a service.
+            </p><p>
+                For your changes to take effect you need to stop Artifactory and then rerun the modified file.
+            </p>
+            <h5>Manual Installation</h5>
+            <p>
+                Browse to <span style="font-family:'Courier New'">%ARTIFACTORY_HOME%\bin</span> and execute the file artifactory.bat. This script searches for the Java executable and runs Artifactory's main class.
+            </p>
+            <p>Depending on the security settings under Windows, you might need to run artifactory.bat using 'Run as administrator'</p>
+            <p>Don't forget to modify your JVM parameters as needed by setting JAVA_OPTIONS in <span style="font-family:'Courier New'">$ARTIFACTORY_HOME/bin/artifactory.bat</span></p>
+            <h5>Service Installation</h5>
+            <p>
+                Artifactory makes use of the  Apache Commons Procrun components allowing you to install the application as a Windows Service.
+            </p><p>
+                To run Artifactory as a Windows service, browse to<span style="font-family:'Courier New'"> %ARTIFACTORY_HOME%\bin</span>, and execute the file InstallService.bat.
+            </p><p>
+                By editing <span style="font-family:'Courier New'">InstallService.bat</span>, you can modify default properties such as <span style="font-family:'Courier New'">JOPTS</span> and the log directory.
+            </p><p>
+                For your changes to take effect you need to stop the currently running Artifactory service and run <span style="font-family:'Courier New'">InstallService.bat</span> again once you have completed your modifications.
+            </p>
+            <h5>Running Artifactory</h5>
+            <p>
+                After installing Artifactory you need to start the service.
+            </p><p>
+                To start or stop Artifactory as a service you can use the following command in a Command Prompt window:
+            </p><p>
+                Starting and stopping the Artifactory service
+            </p><p>
+                <span style="font-family:'Courier New'"> sc start|stop Artifactory</span>
+            </p><p>
+                Checking the status of the Artifactory service
+            </p><p>
+                Once Artifactory is correctly installed, you can check if it is running with:
+            </p><p>
+                <span style="font-family:'Courier New'">  sc query Artifactory</span>
+            </p><p>
+                You can also use any standard text editor to view the artifactory log data found in<span style="font-family:'Courier New'">  $ARTIFACTORY_HOME/logs/artifactory.log</span>
+            </p>
+            <h5>Accessing Artifactory</h5>
+            <p>
+                Artifactory can be accessed using the following URL:
+            </p><p>
+                http://SERVER_DOMAIN:8081/artifactory.
+            </p><p>
+                For example, if you are testing on your local machine you would use:  http://localhost:8081/artifactory
+            </p>
+            <h4>Configuring the Database</h4>
+            <h5>Overview</h5>
+            <p>
+                Artifactory comes with a built-in embedded Derby database that can be reliably used to store data (metadata) for production-level repositories up to hundreds of gigabytes in size.
+            </p><p>
+                However, Artifactory supports pluggable database implementations allowing you to change the default to use other popular databases.
+            </p><p>
+                Artifactory currently supports the following databases:
+            </p><p>
+                •	Derby (The default embedded database)
+            </p><p>
+                •	MySQL v5.5 and above with InnoDB
+            </p><p>
+                •	Oracle version 10g and above
+            </p><p>
+                •	Microsoft SQL Server 2008 and above
+            </p><p>
+                •	PostgreSQL v9.2 and above
+            </p><p>
+                For each of the supported databases you can find the corresponding properties file inside <span style="font-family:'Courier New'"> $ARTIFACTORY_HOME/misc/db </span>.
+            </p>
+            <h5>Modes of Operation</h5>
+            <p>
+                Artifactory supports two modes of operation:
+            </p><p>
+                •	Metadata in the database and binaries stored on the file system (This is the default and recommended configuration).
+            </p><p>
+                •	Metadata and binaries stored as BLOBs in the database
+            </p>
+            <h5>Checksum-Based Storage</h5>
+            <p>
+                Artifactory uniquely stores artifacts using checksum-based storage.
+            </p><p>
+                A file that is uploaded to Artifactory, first has its SHA1 checksum calculated, and is then renamed to its checksum. It is then hosted in the configured filestore in a directory structure made up of the first two characters of the checksum. For example, a file whose checksum is "ac3f5e56..." would be stored in directory "ac"; a file whose checksum is "dfe12a4b..." would be stored in directory "df" and so forth. The example below shows the "d4" directory that contains two files whose checksum begins with "d4"
+            </p>
+            <p>
+                <img src="/static/images/art1.PNG" style="width:60%" />
+            </p>
+            <p>In parallel, Artifactory's creates a database entry mapping the file's checksum to the path it was uploaded to in a repository. This way of storing binaries optimizes many operations in Artifactory since they are implemented through simple database transactions rather than actually manipulating files.</p>
+            <h5>Deduplication</h5>
+            <p>
+                Artifactory stores any binary file only once. This is what we call "once and once only storage". First time a file is uploaded, Artifactory runs the required checksum calculations when storing the file, however, if the file is uploaded again (to a different location, for example), the upload is implemented as a simple database transaction that creates another record mapping the file's checksum to its new location. There is no need to actually store the file again in storage. No matter how many times a file is uploaded, the filestore only hosts a single copy of the file.
+            </p>
+            <h5>Copying and Moving Files</h5>
+            <p>Copying and moving a file is implemented by simply adding and removing database references and, correspondingly, performance of these actions is that of a database transaction.</p>
+            <h5>Deleting Files</h5>
+            <p>Deleting a file is also a simple database transaction in which the corresponding database record is deleted. The file itself is not directly deleted, even if the last database entry pointing to it is removed. So-called "orphaned" files are removed in the background by Artifactory's garbage collection processes.</p>
+            <h5>Upload, download and replication</h5>
+            <p>
+                Before moving files from one location to another, Artifactory sends checksum headers. If the files already exist in the destination, they are not transferred even if they exist under a different path.
+            </p>
+            <h5>Filesystem Performance</h5>
+            <p>
+                Filesystem performance is greatly improved because actions on the filestore are implemented as database transactions, so there is never any need to do a write-lock on the filesystem.
+            </p> <h5> Checksum Search</h5>
+
+            <p>
+                Searching for a file by its checksum is extremely fast since Artifactory is actually searching through the database for the specified checksum.
+            </p> <h5>  Flexible Layout</h5>
+
+            <p>
+                Since the database is a layer of indirection between the filestore and the displayed layout, any layout can be supported, whether for one of the standard packaging formats such as Maven1, Maven2, npm, NuGet etc. or for any custom layout.
+            </p>
+            <h5>Backup Your Current Installation</h5>
+            <p>
+                When changing the database for an existing installation you must import your Artifactory metadata content.
+            </p><p>
+                Make sure to backup your current Artifactory system before updating to a new database.
+            </p>
+            <h4>Setup the New Database</h4>
+            <p>
+                To setup your new database you need to perform the following steps:
+            </p><p>
+                •	Create a database instance
+            </p><p>
+                •	Create an Artifactory user for the database
+            </p><p>
+                •	Install the appropriate JDBC driver
+            </p><p>
+                •	Copy the relevant database configuration file
+            </p><p>
+                •	Configure the corresponding db.properties file.
+            </p>
+            <h5>Advanced Settings</h5>
+            <p>
+                Once you have setup your database, you can configure it to support your expected load with the following two parameters:
+            </p><p>
+                <table>
+                    <tr>
+                        <td>
+                            pool.max.active
+                        </td>
+                        <td>
+                            The maximum number of pooled database connections (default: 100).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            pool.max.idle
+                        </td>
+                        <td>
+                            The maximum number of pooled idle database connections (default: 10).
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h4>Configuring the Filestore</h4>
+            <p>
+                JFrog Artifactory offers flexible filestore management that is configurable to meet a variety of needs in terms of binary storage providers, storage size, and redundancy. Not only are you now able to use different storage providers, but you can also chain a series of providers together to build complex structures of binary providers and support seamless and unlimited growth in storage.
+            </p><p>
+                Artifactory offers flexible filestore management through the <span style="font-family:'Courier New'"> binarystore.xml</span> configuration file located in the <span style="font-family:'Courier New'"> $ARTIFACTORY_HOME/etc</span> folder. By modifying this file you can implement a variety of different binary storage configurations.
+            </p>
+            <h5>Chains and Binary Providers</h5>
+            <p>The <span style="font-family:'Courier New'"> binarystore.xml</span> file specifies a chain with a set of binary providers. A binary provider represents a type of object storage feature such as “cached filesystem”. Binary providers can be embedded into one another to form chains that represent a coherent filestore. Artifactory comes with a built-in set of chains that correspond to the binary.provider.type parameter that was used in previous versions of Artifactory. The built-in set of chains available in Artifactory are:</p>
+            <p>
+                •	file-system
+            </p><p>
+                •	cache-fs
+            </p><p>
+                •	full-db
+            </p><p>
+                •	full-db-direct
+            </p><p>
+                •	s3
+            </p><p>
+                •	google-storage
+            </p><p>
+                •	double-shards
+            </p><p>
+                •	redundant-shards
+            </p><p>
+                •	cluster-file-system
+            </p><p>
+                •	cluster-s3
+            </p><p>
+                •	cluster-google-storage
+            </p>
+            <h5>Configuring a Built-in Filestore</h5>
+            <p>To configure Artifactory to use one of the built-in filestores, you only need some basic configuration elements.</p>
+            <h5>Basic Configuration Elements</h5>
+            <p>
+                For basic filestore configuration, the <span style="font-family:'Courier New'"> binarystore.xml</span> file is quite simple and contains the basic tags or elements that are described below along with the attributes that they may include:
+            </p><p>
+                config tag
+            </p><p>
+                The &lt;config&gt; tag specifies a filestore configuration. It includes a <span style="font-family:'Courier New'">version</span> attribute to allow versioning of configurations.
+            </p>
+            <p>
+                <img src="/static/images/art2.PNG" style="width:85%" />
+            </p>
+            <h5>chain element</h5>
+            <p>The config tag contains a chain element that that defines the structure of the filestore. To use one of the built-in filestores, the chain element needs to include the corresponding template attribute. For example, to use the built-in basic “file system” template, all you need is the following configuration:</p>
+            <p>
+                <img src="/static/images/art3.PNG" style="width:85%" />
+            </p>
+            <h5>Built-in Templates</h5>
+            <p>
+                The following sections describe the basic chain templates come built-in with Artifactory and are ready for you to use out-of-the-box, as well as other binary providers that are included in the default chains.
+            </p><p>
+                Additional information about every template can be found below, under the Built-in Chain Templates section.
+            </p>
+            <table class="table">
+                <tr>
+                    <td>
+                        file-system
+                    </td>
+                    <td>
+                        The most basic filestore configuration for Artifactory used for a local or mounted filestore.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        cache-fs
+                    </td>
+                    <td>
+                        Works the same way as filesystem but also has a binary LRU (Least Recently Used) cache for upload/download requests. Improves performance of instances with high IOPS (I/O Operations) or slow NFS access.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        full-db
+                    </td>
+                    <td>
+                        All the metadata and the binaries are stored as BLOBs in the database with an additional layer of caching.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        full-db-direct
+                    </td>
+                    <td>
+                        All the metadata and the binaries are stored as BLOBs in the database without caching.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        s3
+                    </td>
+                    <td>
+                        This is the setting used for S3 Object Storage using the JetS3t library.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        s3Old
+                    </td>
+                    <td>
+                        This is the setting used for S3 Object Storage using JCloud as the underlying framework.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        google-storage
+                    </td>
+                    <td>
+                        This is the setting used for Google Cloud Storage as the remote filestore.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        double-shards
+                    </td>
+                    <td>
+                        A pure sharding configuration that uses 2 physical mounts with 1 copy (which means each artifact is saved only once).
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        redundant-shards
+                    </td>
+                    <td>
+                        A pure sharding configuration that uses 2 physical mounts with 2 copies (which means each shard stores a copy of each artifact).
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        cluster-file-system
+                    </td>
+                    <td>
+                        A filestore configuration where each node has its own local filestore (just like the file-system chain) and is connected to all other nodes via dynamically allocated Remote Binary Providers using the Sharding-Cluster provider.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        cluster-s3
+                    </td>
+                    <td>
+                        This is the setting used for S3 Object Storage using the JetS3t library. It is based on the sharding and dynamic provider logic that synchronizes the cluster-file-system.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        cluster-google-storage
+                    </td>
+                    <td>
+                        This is the setting used for Google Cloud Storage using the JetS3t library. It is based on the sharding and dynamic provider logic that synchronizes the cluster-file-system.
+                    </td>
+                </tr>
+            </table>
+            <h5>Modifying an Existing Filestore</h5>
+            <p>
+                To accommodate any specific requirements you may have for your filestore, you may modify one of the existing chain templates either by extending it with additional binary providers or by overriding one of its attributes. For example, the built-in filesystem chain template stores binaries under the <span style="font-family:'Courier New'"> $ARTIFACTORY_HOME/data/filestore </span>directory. To modify the template so that it stores binaries under <span style="font-family:'Courier New'">$FILESTORE/binaries</span> you could extend it as follows:
+            </p>
+            <p>
+                <img src="/static/images/art4.PNG" style="width:85%" />
+            </p>
+            <h4>Configuring a Reverse Proxy</h4>
+            <p>In many cases, an organization may provide access to Artifactory through a reverse proxy such as NGINX or Apache. In some cases, for example with Docker, this set up is even mandatory. To simplify configuring a reverse proxy, from version 4.3.1, Artifactory provides a Reverse Proxy Configuration Generator screen in which you can fill in a set of fields to generate the required configuration snippet which you can then download and install directly in the corresponding directory of your reverse proxy server. You can also use the REST API to manage reverse proxy configuration.</p>
+            <h5>Reverse Proxy Settings</h5>
+            <p>
+                To configure a reverse proxy, in the Admin module, select Configuration | Reverse Proxy and execute the following steps:
+            </p>
+            <p>
+                •	Fill in the fields according to your configuration.
+            </p>
+            <p>
+                •	Generate the configuration file. You may click the icons in the top right of the screen to view your configuration (which you may copy) or download it as a text file.
+            </p>
+            <p>
+                •	Place the configuration file in the right place under your reverse proxy server installation and reload the configuration.
+            </p>
+            <p>
+                When using a reverse proxy, we recommend passing it the X-Artifactory-Override-Base-Url header as follows:
+            </p>
+            <p>
+                <img src="/static/images/art5.PNG" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/art6.PNG" style="width:85%" />
+            </p>
+            <table class="table">
+                <tr>
+                    <td>
+                        Web Server Type
+                    </td>
+                    <td>
+                        The reverse proxy type.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Artifactory Server Name
+                    </td>
+                    <td>
+                        The internal server name for Artifactory. If the Web Server is installed on the same machine as Artifactory you can use localhost, otherwise use the IP address or the machine name.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Artifactory Port
+                    </td>
+                    <td>
+                        The port configured for Artifactory. The default value is 8081.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Artifactory Context Path
+                    </td>
+                    <td>
+                        The path which will be used to access Artifactory. If Artifactory is accessible at the root of the server, leave this field empty.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Balance Members (Apache)<br /><br />
+                        Upstream Name (NGINX)
+                    </td>
+                    <td>
+                        Only available in an Artifactory HA installation. Defines the group of servers in the HA cluster for load balancing. (default: artifactory).
+                        <br /> <br /> Multiple Artifactory instances under the same domain
+                        <br />If using multiple Artifactory instances under the same domain, e.g. artdev.mycompany.org and artprod.mycompany.org you must assign a different names for balance members / upstream name to each cluster configuration since the session cockies will be avilable to both clusters and can cause an issue if trying to access both clusters in the same time.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Public Server Name
+                    </td>
+                    <td>
+                        The server name which will be publicly used to access Artifactory within the organization.
+                    </td>
+                </tr>
+                <tr>
+                    <td> Public Context Path	 </td>
+                    <td>
+                        The path which will be publicly used to access Artifactory. If Artifactory is accessible on the root of the server leave this field empty.
+                    </td>
+                </tr>
+            </table>
+            <p>You can configure access to Artifactory via HTTP, HTTPS or both (at least one is required). For each of these check boxes that you set, you need to fill in the corresponding fields as follows:</p>
+            <p>
+                <img src="/static/images/art7.PNG" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/art8.PNG" style="width:85%" />
+            </p>
+            <h4>Docker Reverse Proxy Settings</h4>
+            <p>
+                When using Artifactory as a private Docker registry, the Docker client can only access Artifactory through a reverse proxy (Artifactory SaaS is an exception since it is external to your organization). Therefore, your Docker repositories must be configured with the corresponding Reverse Proxy settings in the Docker Repository Configuration Advanced tab. The Reverse Proxy Configuration screen also sets up your Docker Repository configuration.
+            </p><p>
+                There are two ways to configure Docker repositories to work with a reverse proxy: <b>Port</b> bindings or <b>Subdomain</b>.
+            </p>
+            <h5>Using Subdomain</h5>
+            <p>If you select Subdomain as the Reverse Proxy Method, when configuring a Docker Repository, the Registry Name in the Docker Repository Configuration Advanced tab will be set automatically to the required value, and will use the Repository Key as the Subdomain.</p>
+            <p>
+                <img src="/static/images/art9.PNG" style="width:85%" />
+            </p>
+            <h5>Using Port Bindings</h5>
+            <p>If you select Port as the Reverse Proxy Method, when configuring a Docker Repository, you will need to set the Registry Port in the Docker Repository Configuration Advanced tab. Together with the Public Server Name, this is the port the Docker client will use to pull images from and push images to the repository. Note that in order for all of your Docker repositories to be included in your reverse proxy configuration, you first you need to set the port for each Docker repository defined in your system, and only then generate the reverse proxy configuration. Note also that each repository must be bound to a unique port</p>
+            <p>
+                <img src="/static/images/art10.PNG" style="width:85%" />
+            </p>
+            <h4>REST API</h4>
+            <p>Artifactory also supports managing reverse proxy configuration through the REST API using the following endpoints:</p>
+            <p>
+                <img src="/static/images/art11.PNG" style="width:85%" />
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <p>
+                •	Artifactory offers a universal solution supporting all major package formats including Maven, Gradle, Docker, Vagrant, Debian, YUM, P2, Ivy, NuGet, PHP, NPM, RubyGems, PyPI, Bower, CocoaPods, GitLFS, Opkg, SBT and more.
+            </p><p>
+                •	Through a set of plugins, Artifactory is tightly integrated with all major build tools and CI servers including Maven, Gradle, Ivy/Ant Jenkins, Team City, Bamboo and TFS.
+            </p><p>
+                •	Artifactory provides full metadata for all major package formats for both artifacts and folders. These include metadata that originates with the package itself, custom metadata added by users such as searchable properties and metadata that is automatically generated by tools such as build information and more.
+            </p>
+            <h4>
+                Limitations
+            </h4>
+            <p>
+                •	artifact results don't have restful URLs
+            </p>
+            <p>
+
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4> Artifactory 5.3.1</h4>
+            <p>
+                Feature Enhancements
+            </p><p>
+                1.	Performance of displaying data in the Builds module in Artifactory UI has been significantly improved. This creates a much better user experience, especially for Artifactory instances with many builds or when viewing a project with many builds.
+            </p><p>
+                2.	When importing users via SAML SSO, the users' email addresses are now also fetched and populate the corresponding field in their Artifactory user profile.
+            </p><p>
+                3.	The installation script that installs Artifactory as a service has been enhanced to use systemd on Linux distributions that support it. The script will automatically detect if systemd is supported, and if not, will use init.d as currently implemented.
+            </p><p>
+                4.	In the Tree Browser, when selecting the Effective Permissions tab for the selected repository, you may now view the permission targets associated with that repository.
+            </p><p>
+                5.	Previously, virtual repositories would only provide a General tab with basic information about selected artifacts. Now, virtual repositories provide additional tabs that show all data about artifacts selected similar to the data that is provided when selecting the artifacts directly from the aggregated local or remote repositories.
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Artifactory - <a href="https://www.jfrog.com/artifactory/" target="_blank">https://www.jfrog.com/artifactory/</a>
+                </li>
+                <li>
+                    Artifactory Installation and configuration - <a href="https://www.jfrog.com/confluence/display/RTF/Installing+on+Windows" target="_blank">https://www.jfrog.com/confluence/display/RTF/Installing+on+Windows</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
