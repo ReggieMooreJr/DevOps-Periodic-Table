@@ -1,0 +1,206 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is Ansible ?</h4>
+            <p>
+                Ansible is powerful IT automation that you can learn quickly. It's simple enough for everyone in your IT team to use, yet powerful enough to automate even the most complex deployments. Ansible handles repetitive tasks, giving your team more time to focus on innovation.
+            </p>
+            <p>
+                Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
+            </p>
+            <h5>
+                Simple. Powerful. Agentless.
+            </h5>
+            <p>
+                With Ansible you can start to do real work in just minutes due to its simple, human-readable language. Altogether its powerful capabilities allow orchestration of your entire application lifecycle regardless of where it’s deployed. And Ansible’s agentless architecture means it is one less thing to keep secure.
+            </p>
+            <h5>
+                Control. Knowledge. Delegation.
+            </h5>
+            <p>
+                Ansible Tower expands IT automation to your enterprise adding control, knowledge, and delegation on top of Ansible’s automation engine.
+            </p>
+            <h4>Why Ansible ?</h4>
+            <p>
+                Working in IT, you're likely doing the same tasks over and over. What if you could solve problems once and then automate your solutions going forward? Ansible is here to help.
+            </p>
+            <p>
+                Every business is a digital business. Technology is your innovation engine, and delivering your applications faster helps you win. Historically, that required a lot of manual effort and complicated coordination. But today, there is Ansible - the simple, yet powerful IT automation engine that thousands of companies are using to drive complexity out of their environments and accelerate DevOps initiatives.
+            </p>
+            <h4>Useful Links</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    <a href="https://www.ansible.com/quick-start-video" target="_blank">Start Video</a>
+                </li>
+                <li>
+                    <a href="http://docs.ansible.com/ansible/index.html" target="_blank">Documentation</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Download the Tower Installation Program</h4>
+            <p>
+                Download and then extract the Ansible Tower installation/upgrade tool from <a href="http://releases.ansible.com/ansible-tower/setup/" target="_blank">here</a>.
+            </p>
+            <h4>Useful Links</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    <a href="https://www.ansible.com/quick-start-video" target="_blank">Tower Overview Video</a>
+                </li>
+                <li>
+                    <a href="http://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html" target="_blank">Tower Quick Installation Guide</a>
+                </li>
+                <li>
+                    <a href="http://docs.ansible.com/ansible-tower/latest/html/quickstart/index.html" target="_blank">Tower Quick Setup Guide</a>
+                </li>
+                <li>
+                    <a href="http://docs.ansible.com/ansible-tower/latest/html/release-notes/index.html" target="_blank">Tower Release Notes</a>
+                </li>
+                <li>
+                    <a href="http://docs.ansible.com/ansible-tower/latest/html/upgrade-migration-guide/index.html" target="_blank">Tower Upgrade & Migration Guide</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <ol style="margin-left:25px">
+                <li>
+                    <b> Efficiency</b>
+                    <ul style="margin-left:25px">
+                        <li>
+                            Ansible is loaded up with features that provide many time and resource efficiencies for an IT organization. Some of these features – resource utilization, less management, firewall focus, and no bootstrapping required add up to major efficiencies.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Security</b>
+                    <ul style="margin-left:25px">
+                        <li>
+                            Because Ansible does not require remote server agents, it has tremendously reduced areas that can be attacked, thus making it very secure. Ansible uses the OpenSSH daemon and certificate system, which is the most secure remote management system that is available. OpenSSH can be used for a wide variety of distributions. When OpenSSH has security issues, patches are made quickly.
+                        </li>
+                        <li>
+                            Also, Ansible limits the transfer of potentially sensitive data because it transfers the bare minimum to the machines it manages. With Ansible, it is impossible for a managed host to request files or templates meant for another machine and to access sensitive data not meant for it.  Ansible pushes out only what remote nodes need to see.
+                        </li>
+                        <li>
+                            Additionally, because Ansible does not contain custom file server implementation, it is impossible for a managed host to request files or templates meant for another machine. This makes Ansible ideal for environments where data is extremely sensitive, including when working with social science workloads, healthcare, and government applications.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Scalability</b>
+                    <ul style="margin-left:25px">
+                        <li>
+                            By being push-oriented, Ansible has handled the potential of overwhelming a server due to management agents continually checking. Ansible pushes out changes to remote servers. With many other tools, the management server has to do expensive computations for the remote nodes. But, Ansible has to talk to only a defined number of nodes at one time. Because it offloads a maximum amount of remote computing to remote nodes, the workload is shared among computer systems; even a laptop is a sufficient platform for a control server with Ansible.
+                        </li>
+                        <li>
+                            Ansible unifies configuration, deployment, and complex IT process balance while providing a strong and easily managed architecture. It does not create additional demands and it is transparent and maximizes productivity gains. There are many more features and benefits of Ansible than this article discusses. But, our top three reasons we like it so much are the efficiencies for your organization, the security you can rely on, and the scalability. Just with these three reasons, we hope you can see that Ansible is a top-notch management tool and may fit the needs of your organization.
+                        </li>
+                    </ul>
+                </li>
+
+            </ol>
+
+            <h4>Limitations</h4>
+            <ol style="margin-left:25px">
+                <li>
+                    No way of reusing task output in main play.
+                </li>
+                <li>
+                    Cannot specify multiple fail_when statements.
+                </li>
+                <li>
+                    [*] A play is atomic, i.e. I can't take the output from a command, parse its json then act on it. I need to create an intermediary fact containing the json dict then use that in another play. It's tedious.
+                </li>
+                <li>
+                    If you're missing a variable in a variable file, Ansible won't fail to parse it. It will just tell you "VARIABLE IS NOT DEFINED!," which is ambiguous
+                </li>
+                <li>
+                    Doing anything "complicated" (like looping within a loop for deeply nested Ansible variables) is right out.
+                </li>
+                <li>
+                    selectattr doesn't actually do what you think it does.
+                </li>
+                <li>
+                    Missing vars within tasks or roles can lead to very cryptic errors.
+                </li>
+                <li>
+                    It would be nice if Ansible could tell me the last line read when it crashes hard enough to produce a traceback.
+                </li>
+                <li>
+                    It doesn't seem like there is a good way of aborting the playbook without it NOT continuing onto other hosts. IOW, Ansible doesn't seem to support `continue`.
+                </li>
+                <li>
+                    Some of the error messages are really misleading.
+                </li>
+            </ol>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Ansible 2.0 has arrived</h4>
+            <p>
+                Ansible 2.0 is quite a bit more than a large refactoring effort. The cleaner architecture allowed us to add several new features we had been considering for a while, plus one which became possible directly because of the refactoring.
+            </p>
+            <h4>New Modules</h4>
+            <p>
+                Ansible 2.0 also continues our long “batteries included” tradition by including over 200 new modules. Some of the highlights include:
+            </p>
+            <ul style="margin-left:25px">
+                <li>
+                    A completely new set of modules for managing OpenStack, the leading open source cloud computing framework, developed in concert with the OpenStack community
+                </li>
+                <li>
+                    30 new modules for improving and expanding the support for Amazon Web Services
+                </li>
+                <li>
+                    Greatly expanded support for configuring and managing VMware environments
+                </li>
+                <li>
+                    Expanded support for managing Microsoft Windows environments
+                </li>
+                <li>
+                    Substantial improvements to the Docker module and new Docker connection plugin
+                </li>
+            </ul>
+            <h4>Availability</h4>
+            <p>
+                Ansible 2.0 is available via <a href="https://github.com/ansible/ansible" target="_blank">GitHub</a>, <a href="https://pypi.python.org/pypi/ansible" target="_blank">PyPi</a>, and package manager for most major Linux distributions.
+            </p>
+            <p>
+                For those that need control, security, and delegation for their Ansible deployments, Ansible Tower is available via subscription tiers suitable for everyone from small companies to full-scale, mission-critical enterprise devops teams. Go to <a href="https://www.ansible.com/tower" target="_blank">ansible.com/tower</a> for details.
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Ansible - <a href="https://www.ansible.com" target="_blank">https://www.ansible.com</a>
+                </li>
+                <li>
+                    Ansible Documentation - <a href="http://docs.ansible.com/ansible/latest/index.html" target="_blank">http://docs.ansible.com/</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

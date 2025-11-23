@@ -1,0 +1,166 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is XL Deploy ?</h4>
+            <p>
+                XL Deploy is an application release automation tool that can deploy applications to various environments, all while managing configuration values that are specific to each environment. It's designed to make the process of deploying applications faster, easier, and more reliable. You provide the files and settings that make up your application, and XL Deploy does the rest. No more deployment scripts or workflows.
+            </p>
+            <h4>XL Deploy Key Concepts</h4>
+            <p>
+                •	You supply XL Deploy with your application packaged as a zip file called a deployment package.
+            </p>
+            <p>
+                •	This package contains deployables, which are the files and configuration settings that make up a specific version of your application.
+            </p>
+            <p>
+                •	For example, your package could contain an application binary, database changes, a data source spec, and Web content.
+            </p>
+            <p>
+                •	XL Deploy can deploy your application to environments like development, test, QA, and production. Environments are collections of containers, which are the servers and middleware where your application will run. Deployment packages are intended to be independent of any environment so you can use them unchanged all the way from development to production.
+            </p>
+            <p>
+                •	XL Deploy handles environment-specific values, like database credentials by allowing you to use placeholders anywhere in your deployment packages.
+            </p>
+            <p>
+                •	You store the environment-specific values for these placeholders in dictionaries that are linked to your environments. When XL Deploy deploys your application, it fills in these values based on the environment you're deploying to. This means you can centralize the management of environment settings in one place.
+            </p>
+            <p>
+                •	XL Deploy keeps a version history of items such as deployment packages, environments, and dictionaries, so you won't lose anything.
+            </p>
+            <p>
+                •	XL Deploy offers a variety of plugins that deliver out-of-the-box support for Java, .NET, and other leading middleware. Plugins contain standardized deployment patterns for your target systems so you don't have to script a deployment plan for every application and target environment. And plugins work together automatically without requiring extra configuration effort.
+            </p>
+            <p>
+                •	When you're ready to deploy, simply select a version of your application and choose a target environment. Now, you can map the elements of your application to the containers in the environment, or you can have XL Deploy automatically create a mapping for you based on the type of deployables you have and on tags that you can assign to deployables and containers.
+            </p>
+            <p>
+                •	Using XL Deploy means you don't need to write deployment commands or scripts.
+            </p>
+            <p>
+                •	XL Deploy automatically builds a deployment plan by evaluating which deployables are mapped to which containers, looking at the configuration properties of the deployables, and using configurable rules to add steps to the plan in the right order.
+            </p>
+            <p>
+                •	XL Deploy also offers out-of-the-box options for complex deployment scenarios, like plan optimization, automatic parallel deployments, artifact staging strategies, and more.
+            </p>
+            <p>
+                •	You can easily rollback a full or partially completed deployment with just a few clicks. So, if you run into trouble, you can quickly return to a working state, even in production. No need to write rollback plans or worry about keeping them up to date. You click a button, and XL Deploy takes care of the details.
+            </p>
+            <p>
+                •	XL Deploy's release dashboard makes it easy to see which version of an application is deployed in each environment. It gives you insight into the deployment pipeline for every application and lets you use checklists to ensure that your application is ready to go.
+            </p>
+            <p>
+                •	XL Deploy offers a variety of reports so you can audit your deployment activities.
+            </p>
+            <p>
+                •	XL Deploy offers intelligent deployment automation, a rich content set for enterprise middleware, and seamless integration into your application delivery ecosystem.
+            </p>
+            <h4>Tool Description & Process Flow</h4>
+            <p>
+                •	<a href="Documents/XL Deploy - Description and Process Flow.pdf" download="XL Deploy - Tool Description and Process Flow" target="_blank">XL Deploy - Description and Process Flow</a>
+            </p>
+            <h4>Useful Link(s): Mojo Consultants</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    <a href="https://hubconnect.uhg.com/docs/DOC-59207" target="_blank">Getting Started with XL Deploy & XL Release</a>
+                </li>
+                <li>
+                    <a href="https://hubconnect.uhg.com/groups/xl-deploy-and-xl-release-user-community" target="_blank">XL Deploy and XL Release User Community</a>
+                </li>
+                <li>
+                    <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/continuous-delivery/how-to-request-access-to-an-xl-security-group.html" target="_blank">How To Request Access to an XL Security Group</a>
+                </li>
+                <li>
+                    <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/continuous-delivery/xl-deploy---xl-release-videos.html" target="_blank">XL Deploy & XL Release Videos</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>How to install and configure XL Deploy?</h4>
+            <p>Click on the <b>XL Deploy</b> logo below to download the instructions for <u><i>Installing and Configuring XL Deploy</i></u><p>
+                <a href="Documents/Installing and Configuring XL Deploy.pdf" download="Installing and Configuring XL Deploy" target="_blank">
+                    <img border="0" src="/static/images/XL_Deploy_logo.png" alt="XL Deploy" style="margin-left:1em; width:20%; height:10%;" />
+                </a>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Benefits</h4>
+            <p>With XL Deploy, you don’t need to develop one supreme model that understands every component’s dependency on everything. You only need to understand each app’s local dependencies, and then configure them in XL Deploy.</p>
+            <p>
+                •	<b>Lower failure rate</b>: Managing dependencies using an automated deployment tool reduces production incidents and deployment failures by catching problems before they occur… and reduce wasted effort and unnecessary frustration.
+            </p>
+            <p>
+                •	<b>Simplify the management of components in complex architectures</b>: Cloud and microservices environments amplify application complexity because they often involve many deployments. As well, these architectures tend to have many moving parts, and environments often change frequently.
+            </p>
+            <p>
+                •	<b>No need to commit to a specific implementation or environment</b>: you can have any architecture and any number of complex relationships. XL Deploy is completely agnostic to the underlying technology.
+            </p>
+            <h4>Limitations</h4>
+            <p>
+                •	Incremental deployments are hard to undo.
+            </p>
+            <p>
+                •	It may take one minute or longer to generate a provisioning plan preview if the plan includes many provisioneds.
+            </p>
+            <p>
+                •	When creating an <em style="background-color:aqua; border-radius:5px;">aws.ec2.InstanceSpec</em> CI, you can only enter an AWS security group that already exists. To use a new security group, you must first create it manually in AWS.
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>XL Deploy 7.0.0 new features</h4>
+            <strong>Service wrappers for XL Satellite</strong>
+            <p>You can now install and run XL-Satellite as a service on your Unix or Microsoft Windows machine. The satellite service wrapper requires Java Development Kit 8 or higher to be installed on the target Unix or Windows machine. For more information, refer to <a href="https://docs.xebialabs.com/xl-deploy/how-to/install-satellite-service.html" target="_blank">Install XL Satellite as a service</a>.</p>
+            <strong>Cardinality for provisioning</strong>
+            <p>XL Deploy 7.0.0 supports the cardinality property when provisioning an environment or when crating a provisioning package. Cardinality allows you to create multiple provisioneds based on a single provisionable. For more information, refer to <a href="https://docs.xebialabs.com/xl-deploy/how-to/create-a-provisioning-package.html#cardinality-in-provisionables" target="_blank">Cardinality in provisionables</a>.</p>
+            <strong>Improvements in the HTML User Interface</strong>
+            <p>As of XL Deploy 7.0.0, the HTML-based user interface is the default GUI and has been updated with several features:</p>
+            <p>
+                •	Using the Task Monitor to manage deployment tasks and control tasks that are active in your system
+            </p>
+            <p>
+                •	Deployment improvements that allow you to adjust the mapping of deployables to containers to fit your specific use case, or to schedule a deployment or a rollback to be executed at a future date and time
+            </p>
+            <p>
+                •	Importing and exporting of deployment and provisioning packages
+            </p>
+            <p>
+                •	Improved visibility that includes more detailed search results and ability to easily distinguish among your environments when setting up an initial or update deployment
+            </p>
+            <p>
+                •	Organizing CIs by moving them into directories and comparing two versions of a CI
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    XL Deploy - <a href="https://docs.xebialabs.com/xl-deploy/concept/xl-deploy-for-developers.html" target="_blank">https://docs.xebialabs.com/xl-deploy/concept/xl-deploy-for-developers.html</a>
+                </li>
+                <li>
+                    XL Deploy installation - <a href="https://docs.xebialabs.com/xl-deploy/concept/requirements-for-installing-xl-deploy.html" target="_blank">https://docs.xebialabs.com/xl-deploy/concept/requirements-for-installing-xl-deploy.html</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

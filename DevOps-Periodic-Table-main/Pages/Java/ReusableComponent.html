@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java - Reusable Components</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js"></script>
+
+    <script>
+        $(function () {
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style type="text/css">
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+
+        @media (min-width: 992px) {
+            .equal {
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+            }
+        }
+
+        .panel {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="/static/images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Resuable Components</h2>
+    </section>
+    <div class="container-fluid">
+        <div class="row equal">
+            <div class="col-md-4">
+                <div class="panel-custom panel-primary-custom">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Geo Locator</h1>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                This application provide the geographic location of the nearest avaliable pharmacy stores and provider hospital.
+
+                            </li>
+                            <li class="list-group-item">
+                                Sample Application: <a href="../../SampleApplications/GeoLocator.zip" download="GeoLocator" target="_blank">GeoLocator.zip</a>
+                            </li>
+                            <li class="list-group-item">
+                                Supporting Files: <a href="../../SampleApplications/SupportingFile.zip" download="SupportingFile" target="_blank">SupportingFile.zip</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel-custom panel-primary-custom">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Excel to MySQL</h1>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                This application is used for importing data avaliable in Excel to MySQL database table.
+
+                            </li>
+                            <li class="list-group-item">
+                                Sample Application: <a href="../../SampleApplications/Excel to MySQL.zip" download="Excel to MySQL" target="_blank">Excel to MySQL.zip</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel-custom panel-primary-custom">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">HTML to PDF</h1>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                This application allows us to convert the static or dynamic HTML content into PDF format.
+                            </li>
+                            <li class="list-group-item">
+                                Sample Application: <a href="../../SampleApplications/ItextHtmlToPDFExample.zip" download="ItextHtmlToPDFExample" target="_blank">ItextHtmlToPDFExample.zip</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:20em">
+        <div style="text-align:center; ">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>

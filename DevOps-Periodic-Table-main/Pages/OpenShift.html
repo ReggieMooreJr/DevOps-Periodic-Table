@@ -1,0 +1,285 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is OpenShift ?</h4>
+            <p>
+                OpenShift is a computer software product from Red Hat for container-based software deployment and management. In concrete terms, it is a supported distribution of Kubernetes using Docker containers and DevOps tools for accelerated application development.
+            </p>
+            <h4>Three versions of OpenShift</h4>
+            <p>
+                <img src="/static/images/os1.png" style="width:85%" />
+            </p>
+            <h4>OpenShift(v3) Terminologies</h4>
+            <p>
+                <img src="/static/images/os2.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/os3.png" style="width:85%" />
+            </p>
+            <h4>OpenShift(v3) Stack</h4>
+            <p>
+                <img src="/static/images/os4.png" style="width:85%" />
+            </p>
+            <h4>OpenShift v2 & v3 comparison</h4>
+            <p>
+                <img src="/static/images/os5.png" style="width:85%" />
+            </p>
+            <h4>OpenShift v3 architecture</h4>
+            <p>
+                Reference link : <a href="https://access.redhat.com/documentation/en/openshift-enterprise/version-3.0/openshift-enterprise-30-architecture/" target="_blank">Click Here</a>
+            </p>
+            <p>
+                <img src="/static/images/os6.png" style="width:85%" />
+            </p>
+            <h4>Useful links available at Mojo Consultants</h4>
+            <p>
+                •	<a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/developer-centers/paas-developer-center/devops-java--openshift-enterprise-.html" target="_blank">OpenShift Enterprise</a>
+            </p>
+            <p>
+                •	<a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/news-and-announcements/openshift-tutorial-videos.html" target="_blank">OpenShift Tutorial Videos</a>
+            </p>
+            <h4>Have questions or need support on general topics ?</h4>
+            <p>
+                •	<a href="https://oneconnect.uhg.com/groups/openshift-enterprise-users-group" target="_blank">Visit the one connect community & post your question here.</a>
+            </p>
+            <h4>Useful Link(s): Mojo Consultants</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/developer-centers/paas-developer-center/devops-java--openshift-enterprise-.html" target="_blank">Getting Started</a>
+                </li>
+                <li>
+                    <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/news-and-announcements/2016-openshift-enterprise-pricing.html" target="_blank">Pricing Guide</a>
+                </li>
+                <li>
+                    <a href="https://oneconnect.uhg.com/groups/openshift-enterprise-users-group" target="_blank">One Connect Group</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <p>
+                The first step in getting started with OpenShift is to request access through the <a href="https://servicecatalog.uhc.com" target="_blank">Enterprise Service Catalog</a>.
+            </p>
+            <p>
+                1.	Go to Infrastructure -> Platform Services Find Openshift on the right pane.
+            </p>
+            <p>
+                2.	Fill the self-service form
+            </p>
+            <p>
+                3.	GL would be used for Billing Purposes. (use the billing app GL)
+            </p>
+            <p>
+                4.	Use an application ID if this is for a system account. ( use secure for creating system id prior to this step.)
+            </p>
+            <p>
+                5.	Select the Datacenter, Region, ENV and Zone. This selection must be in accordance with the SLD / application specific requirement. If you are unsure – please reach out to your Systems Engineer / Architects.
+            </p>
+            <p>
+                6.	Select project sizing (Small-5XL) easy way is to select is to ask close to 2.5 times the heap space that you would need on your server. E.g, for 512Mi heap space then ask for 2Gi Small. For AEM type containers, follow the AEM templates sizing. Do not request for more than what you really need.
+            </p>
+            <p>
+                <b>OSE Core:</b> <a href="https://ose-ctc-core.optum.com" target="_blank">Chaska</a> and <a href="https://ose-elr-core.optum.com" target="_blank">Elk River</a>
+            </p>
+            <p>
+                <b>OSE DMZ:</b> <a href="https://ose-ctc-dmz.optum.com" target="_blank">Chaska</a> and <a href="https://ose-elr-dmz.optum.com" target="_blank">Elk River</a>
+            </p>
+            <p>
+                <img src="/static/images/os7.png" style="width:85%" />
+            </p>
+            <p>
+                <b>OpenShift Enterprise Securtiy and Access:</b> <a href="https://servicecatalog.optum.com/sc/catalog.product.aspx?parent_category_id=_X_&category_id=Platform%20Services&product_id=OpenShiftEnterprise" target="_blank">Service Catalog Suite</a>
+            </p>
+            <h4>Request CLI</h4>
+            <p>
+                <img src="/static/images/os8.png" style="width:85%" />
+            </p>
+            <h4>Setup CLI</h4>
+            <p>
+                <img src="/static/images/os9.png" style="width:85%" />
+            </p>
+            <h4>Manage CLI profiles</h4>
+            <p>
+                <img src="/static/images/os10.png" style="width:85%" />
+            </p>
+            <h4>Selecting a context to connect to OSE</h4>
+            <p>
+                <img src="/static/images/os11.png" style="width:85%" />
+            </p>
+            <h4>OC CLI Commands reference</h4>
+            <p>
+                <img src="/static/images/os12.png" style="width:85%" />
+            </p>
+            <h4>OSE Console</h4>
+            <p>
+                <img src="/static/images/os13.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/os14.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/os15.png" style="width:85%" />
+            </p>
+            <h4>Core Objects</h4>
+            <p>
+                <img src="/static/images/os16.png" style="width:85%" />
+            </p>
+            <h4>Build & Deploy</h4>
+            <p>
+                <img src="/static/images/os17.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/os18.png" style="width:85%" />
+            </p>
+            <h4>Build & Deploy your Application using S2I</h4>
+            <p>
+                <img src="/static/images/os19.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/os20.png" style="width:85%" />
+            </p>
+            <h4>Edit Deployment Configuration</h4>
+            <p>
+                <img src="/static/images/os21.png" style="width:85%" />
+            </p>
+            <h4>Checking Build, Routes, Deployment & Pods in project</h4>
+            <p>
+                <img src="/static/images/os22.png" style="width:85%" />
+            </p>
+            <h4>Testing</h4>
+            <p>
+                <img src="/static/images/os23.png" style="width:85%" />
+            </p>
+            <h4>Required Apps</h4>
+            <p>
+                <img src="/static/images/os24.png" style="width:85%" />
+            </p>
+            <h4>JBoss Developer Studio – Creating a Java EE Project for OSE v3</h4>
+            <p>
+                <img src="/static/images/os25.png" style="width:85%" />
+            </p>
+            <h4>JBDS – Creating a Java EE Project for OSE v3</h4>
+            <p>
+                <img src="/static/images/os26.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/os27.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/os28.png" style="width:85%" />
+            </p>
+            <h4>JAX-RS Using JBDS</h4>
+            <p>
+                <img src="/static/images/os29.png" style="width:85%" />
+            </p>
+            <h4>Git Repo & CodeHub</h4>
+            <p>
+                <img src="/static/images/os30.png" style="width:85%" />
+            </p>
+            <h4>Build & Deploy</h4>
+            <p>
+                <img src="/static/images/os31.png" style="width:85%" />
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <p>
+                •	Open Source
+            </p>
+            <p>
+                •	Easy setup and great customer support
+            </p>
+            <p>
+                •	Nodejs, Mongodb, PHP, PostgreSQL, Meteor support
+            </p>
+            <p>
+                •	Well documented, Custom domains & Customizable environments
+            </p>
+            <p>
+                •	Clean and simple architecture
+            </p>
+            <p>
+                •	Ability to run CRON jobs
+            </p>
+            <p>
+                •	Easy deployment & Auto scaling
+            </p>
+            <h4>Disadvantages</h4>
+            <p>
+                •	Not quick and reliable cloud servers
+            </p>
+            <p>
+                •	High cost
+            </p>
+            <p>
+                •	Complex management, low scalability & less flexible
+            </p>
+            <p>
+                •	Less used & is not an Industry Standard
+            </p>
+            <p>
+                •	Lots of configuration options
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Red Hat OpenShift Container Platform 3.5</h4>
+            <p>
+                Using the automation technologies and cloud architecture of Red Hat OpenShift Container Platform to standardize and streamline developer workflows, IT organizations can provision quickly, build efficiently, and get apps to market faster.
+            </p>
+            <p>
+                •	<b>Additional Persistent Storage Options</b>: OpenShift’s ability to support persistent storage makes it an ideal container platform for the enterprise, and we've just added 6 more reasons why that's true. Developers can now access additional storage volume types, including cloud-platform storage from AWS and Google Compute Engine, as well as Red Hat’s Gluster and CEPH. Traditional storage like NFS is now supplemented with support for ISCSI- and Fibre Channel-based volumes.
+            </p>
+            <p>
+                •	<b>Improved Developer Experience</b>: We're taking something great and making it even better. With new streamlined application build and deploy workflows, applications get onto the platform faster, making it take even less time to get from development to production.
+            </p>
+            <p>
+                •	<b>Built-in Operational Management</b>: By including Red Hat CloudForms with OpenShift, platform administrators get valuable real-time usage information at not just the individual container level, but across the entire container application platform.
+            </p>
+            <p>
+                •	<b>Access To Logs From The Console</b>: Get instant insight into exactly what’s happening inside your containers. Application developers and project owners can access as well as track their application logs directly from the web console.
+            </p>
+            <p>
+                •	<b>UI Enhancements</b>: We’ve added tons of new features that makes the web interface more advanced than ever before. Developers have access to detailed metrics, scaling controls, topology views, and more with just a few clicks.
+            </p>
+            <p>
+                •	<b>Access to New Middleware Services</b>: We’ve added JBoss DataGrid and JBoss BRMS to our list of supported middleware services on OpenShift.
+            </p>
+            <p>
+                •	<b>JBoss Developer Studio and Eclipse Plugin</b>: Deploy your application without ever having to leave the console.
+            </p>
+            <p>
+                •	<b>Growing Partner Community</b>: By collaborating with our ever-expanding community of partners, users can employ different types of persistent storage from places like AWS and GCE as well as new pluggable networking solutions.
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Mojo Consultants - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/developer-centers/paas-developer-center/devops-java--openshift-enterprise-.html" target="_blank">OpenShift</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

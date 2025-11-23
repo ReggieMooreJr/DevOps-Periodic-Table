@@ -1,0 +1,936 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EAF4J</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js">    </script>
+
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style>
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="/static/images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Enterprise Application Framework for Java (EAF4J)</h2>
+    </section>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Overview</a></li>
+            <li><a href="#tabs-2">EAF4J Core Framework Components</a></li>
+            <li><a href="#tabs-3">Configuration</a></li>
+        </ul>
+        <div id="tabs-1">
+            <h4> What is EAF4J?</h4>
+            <hr />
+            <ul style="margin-left:20px">
+                <li>The Enterprise Application Framework for Java (EAF4J) is a UHG-owned Java application framework to facilitate rapid, robust, high-quality software delivery by application development groups.</li>
+                <li>It provides extendable components implementing commonly used functionality for construction of POJO based enterprise applications and is aligned with UHG-specific design patterns and technology standards.</li>
+                <li>It is not a scaffolding framework for application auto generation from domain models (e.g. Groovy Grails)</li>
+            </ul>
+            <h4>EAF4J Provides</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Recommended technology stack leveraging industry standards and leading open-source libraries
+                </li>
+                <li>
+                    A set of Java libraries containing
+                    <ul style="margin-left:20px">
+                        <li>
+                            functional components for common functions such as caching, persistence, transaction management, security, validation, and web presentation and flow
+                        </li>
+                        <li>
+                            custom UHG extensions that codify common UHG design patterns and infrastructure standards
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Sample applications illustrating framework use and serving as the basis for custom development
+                </li>
+                <li>
+                    Other Knowledge Resources
+                    <ul style="margin-left:20px">
+                        <li>
+                            Developer guides
+                        </li>
+                        <li>
+                            Formalized training
+                        </li>
+                        <li>
+                            UHG Java Community discussion forums
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>Extensibility</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    EAF4J provides default implementations meeting the requirements of many application teams
+                </li>
+                <li>
+                    Being a framework, EAF4J is extendable, providing architects and developers flexibility to implement application specific requirements when needed
+                </li>
+            </ul>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j1.jpg" style="width:500px" />
+            </div>
+            <h4>Business Benefits</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Avoid time & cost of evaluating frameworks & tools for use in application development efforts
+                </li>
+                <li>
+                    Simplify developer set-up time with pre-defined IDE configuration and plug-ins
+                </li>
+                <li>
+                    Reduce project risk
+                    <ul style="margin-left:20px">
+                        <li>
+                            Using best of breed and proven technologies
+                        </li>
+                        <li>
+                            Easily aligning to enterprise standards
+                        </li>
+                        <li>
+                            Leveraging lessons learned by other groups in UHG
+                        </li>
+                        <li>
+                            Building off of proven solutions instead of starting from scratch
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Internal support of EAF4J framework
+                    <ul style="margin-left:20px">
+                        <li>
+                            Free support via internal discussion forums
+                        </li>
+                        <li>
+                            Dedicated support via impact/engagement in PROMPT
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Modern technologies readily available in the marketplace
+                </li>
+            </ul>
+
+            <h4>EAF4J Technology Stack</h4>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j2.png" style="width:500px" />
+            </div>
+            <h4>EAF4J Packaging</h4>
+            <p>The functionality of EAF4J is packaged as a set of modular Java libraries that allow applications to select only those functional components they require and minimize the open source dependencies. </p>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j3.png" style="width:500px" />
+            </div>
+        </div>
+        <div id="tabs-2">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Core framework components</h4>
+                    <ul style="margin-left:20px">
+                        <li>
+                            Provides entry point to Spring IOC container
+                        </li>
+                        <li>
+                            Foundation of all other framework modules
+                        </li>
+                        <li>
+                            Includes common application components
+                            <ul style="margin-left:20px">
+                                <li>
+                                    Logging, including components for enterprise logging pattern
+                                </li>
+                                <li>
+                                    Exception handling
+                                </li>
+                                <li>
+                                    Encryption in alignment with IRM standards
+                                </li>
+                                <li>
+                                    Spring context loading via JVM parameters
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>EAF4J Cache</h4>
+                    <strong>Storage & access to frequently used data</strong>
+                    <ul style="margin-left:20px">
+                        <li>
+                            Based upon OpenSymphony OS Cache
+                        </li>
+                        <li>
+                            Static cache support
+                            <ul style="margin-left:20px">
+                                <li>
+                                    Frequently-accessed, yet infrequently modified data
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Dynamic caching support via AOP
+                            <ul style="margin-left:20px">
+                                <li>
+                                    Frequently-accessed, frequently modified data
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Support for clustered applications
+                        </li>
+
+                        <li>
+                            Configurable cache loading
+                            <ul style="margin-left:20px">
+                                <li>
+                                    Pre-load cache(s) on startup
+                                </li>
+                                <li>
+                                    Lazy-load caches when first accessed
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="/static/images/eaf4j3.png" style="width:500px" />
+                    <h5 style="margin-left:100px">EAF4J Core framework components</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>EAF4J Security</h4>
+                    <strong>Core security components</strong>
+                    <ul style="margin-left:20px">
+                        <li>
+                            Leverages Spring Security (AKA Acegi)
+                        </li>
+                        <li>
+                            Provides fine-grained role based authorization
+                        </li>
+                        <li>
+                            Pre-defined, common Access Control List objects
+                            <ul style="margin-left:20px">
+                                <li>
+                                    URL
+                                </li>
+                                <li>
+                                    Java method
+                                </li>
+                                <li>
+                                    Page UI elements
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Method level security for services and data beans configurable via Spring AOP
+                        </li>
+                    </ul>
+                    <h4>EAF4J Validation</h4>
+                    <strong>Core Validation Components</strong>
+                    <ul style="margin-left:20px">
+                        <li>Configurable Data Bean validation via Hibernate Validator</li>
+                    </ul>
+                    <h4>EAF4J Web</h4>
+                    <strong>Base components for web applications</strong>
+                    <ul style="margin-left:20px">
+                        <li>
+                            Spring Web MVC and Spring WebFlow
+                        </li>
+                        <li>
+                            UI Table Data display components
+                            <ul style="margin-left:20px">
+                                <li>
+                                    Extension of Display Tag
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Web validation components
+                            <ul style="margin-left:20px">
+                                <li>
+                                    Client side validation through JavaScript generation
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Global Navigation Framework
+                            <ul style="margin-left:20px">
+                                <li>
+                                    Standardized configurable menu and bread crumb navigation system
+                                    <ul style="margin-left:20px">
+                                        <li>
+                                            Integrated with Spring Web Flow
+                                        </li>
+                                        <li>
+                                            Supports Tiles integration.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Extension of StrutsMenu library
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="/static/images/eaf4j2.png" style="width:500px" />
+                    <h5 style="margin-left:150px">EAF4J Technology Stack</h5>
+                </div>
+            </div>
+            <h4>EAF4J Domain</h4>
+            <strong>ORM Database Persistence</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    Apache iBatis data mapping framework
+                    <ul style="margin-left:20px">
+                        <li>
+                            Query results &lt;-&gt; JavaBean field mapping
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Access to data objects through Persistence Manager
+                    <ul style="margin-left:20px">
+                        <li>
+                            Spring-managed data repositories
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Annotation-driven bean persistence via compile-time AOP
+                </li>
+            </ul>
+            <h4>EAF4J Web Security</h4>
+            <strong>Security Enabled Web Components</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    Integrates EAF4J security with Web UI components
+                </li>
+                <li>
+                    Restrict page flow by user roles
+                </li>
+                <li>
+                    Security-enable web elements
+                    <ul style="margin-left:20px">
+                        <li>
+                            Table data components
+                            UI display fields
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    User-friendly exception handling
+                    <ul style="margin-left:20px">
+                        <li>
+                            Display message management
+                            Page flow management
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>EAF4J Web Services</h4>
+            <strong>Web Service Providers and Consumers</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    Spring Web Services
+                </li>
+                <li>
+                    Contract first approach
+                </li>
+                <li>
+                    Native support for JiBX data binding framework
+                    <ul style="margin-left:20px">
+                        <li>
+                            High performance XML marshalling/unmarshalling
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    WS-Security and WS-Addressing support
+                </li>
+            </ul>
+            <h4>EAF4J Integration</h4>
+            <strong>Enterprise Messaging Integration</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    Utilizes Spring Integration
+                </li>
+                <li>
+                    Preconfigured message processing pipeline
+                    <ul style="margin-left:20px">
+                        <li>
+                            Inbound message gateway
+                        </li>
+                        <li>
+                            Message transformation
+                        </li>
+                        <li>
+                            Message parsing and splitting
+                        </li>
+                        <li>
+                            Configurable message to service routing
+                        </li>
+                        <li>
+                            Outbound  message channels
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>EAF4J Batch</h4>
+            <strong>Job and Task Execution + Control Engine</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    Supports Autosys execution, including return codes
+                </li>
+                <li>
+                    Abstract and Default implementation of Batch Jobs and Tasks
+                </li>
+                <li>
+                    Batch jobs can be executed in multiple tiers
+                    <ul style="margin-left:20px">
+                        <li>
+                            database stored procedure for simple data transfer
+                        </li>
+                        <li>
+                            JMS triggered application container for complex cluster distributed processing
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Future support for emerging UHG Job Batch Control technologies
+                    <ul style="margin-left:20px">
+                        <li>
+                            Tivoli Workload Scheduler
+                        </li>
+                        <li>
+                            UniCenter TNG Workload Manager (ScheduleIT)
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>EAF4J Flex</h4>
+            <strong>Dependencies for Flex UI Development</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    Flex UI interfaces with data connections to server via Adobe BlazeDS
+                </li>
+            </ul>
+            <h4>
+                EAF4J CXF
+            </h4>
+            <strong>Dependencies for CXF Webservices Development</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    Support for CXF webservice providers and clients
+                </li>
+                <li>
+                    Development via contract first approach
+                </li>
+                <li>
+                    JAXB for XML binding
+                </li>
+            </ul>
+        </div>
+        <div id="tabs-3">
+            <h4>EAF4J Core</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    JVM parameter controlled Spring context loading
+                    <ul style="margin-left:20px">
+                        <li>
+                            Allows environment specific context configuration files.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Core Exception Handling
+                    <ul style="margin-left:20px">
+                        <li>
+                            Exception severity and handling based upon EAF4J BaseException
+                            <ul style="margin-left:20px">
+                                <li>
+                                    extends java.lang.RuntimeException.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            BaseException links to error messages via Spring Resource Bundle.
+                        </li>
+                        <li>
+                            Extensible ErrorHandler performs standard steps
+                            <ul style="margin-left:20px">
+                                <li>
+                                    Identify the type of exception and get the corresponding error code
+                                </li>
+                                <li>
+                                    Use Spring ResourceBundleMessageSource to get Error messages from properties file for the given error code.
+                                </li>
+                                <li>
+                                    Log the exception. The underlying logging mechanism is hidden and uses EAF4J logging framework for writing logs.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Enterprise Logging Pattern Implementation
+                </li>
+            </ul>
+            <h4>JVM Parameter Spring Context</h4>
+            <p>
+                Specify JVM parameter containing environment.
+                Configure context loader in root parent context file including JVM parameter name and default value specifying environment
+            </p>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j4.png" style="width:650px; " />
+            </div>
+            <h4>Exception Handling Configuration</h4>
+            <p>Configure exception handler to handle Exceptions</p>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j5.png" style="width:650px; " />
+            </div>
+            <p>Configure a message resolver  to resolve error codes to messages</p>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j6.png" style="width:650px; " />
+            </div>
+            <h4>Exception Message Resource Bundles</h4>
+            <p>Configure Message Resource Bundles</p>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j7.png" style="width:650px; " />
+            </div>
+            <h4>Exception Message Configuration</h4>
+            <p>Messages are stored as i18n internationalization property files</p>
+            <ul style="margin-left:20px">
+                <li>
+                    The property key represents the error code which is stored in the MessageDetail field in BaseException
+                </li>
+                <li>
+                    The property value is the message to log/display
+                </li>
+
+            </ul>
+            <p style="font-family: 'Courier New'; margin-left: 20px ">
+                eaf4j.household.createException=Error occurred while adding household: {0}.<br />
+                eaf4j.personsearch.searchException=Error occurred while while performing Person Search: {0}.
+            </p>
+            <h4>Exception Handler Usage</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Inject exception handler into referencing bean.
+                </li>
+                <li>
+                    Use Exception Handler when exceptions occur to log exceptions
+                </li>
+            </ul>
+            <h4>Enterprise Logging Pattern Implementation</h4>
+            <strong>Log using a standard UHG XML Layout</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    com.uhg.eaf4j.core.logging.layout. UHGXMLLayout
+                </li>
+                <li>
+                    Extends log4j XMLLayout adding Application ID and Logtype to header elements.
+                </li>
+            </ul>
+            <strong>Universal Transaction ID Generator</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    com.uhg.eaf4j.core.logging.uid.UniversalTransactionIDGen
+                </li>
+                <li>
+                    Generates a universal id that can be used for logging as a transaction passes between systems, so that each system uses the same id within their logging.
+                </li>
+            </ul>
+            <h4>EAF4J Java API Example</h4>
+            <strong>  EAF4J XML Layout Configuration</strong>
+            <div style="font-family:'Courier New'; margin-left:20px">
+                &lt;layout class="com.uhg.eaf4j.core.logging.layout.UHGXMLLayout">
+                <br />
+                &lt;param name="Properties" value="TRUE" /><br />
+                &lt;param name="ApplicationId" value="ApplicationsID" /><br />
+                &lt;param name="defaultLogType" value="genericLogMessage" /><br />
+                &lt;/layout>
+            </div>
+            <strong> Universal Transaction ID Generation</strong>
+            <div style="font-family: 'Courier New'; margin-left: 20px">
+                &lt;bean id="universalIdGen" class="com.uhg.eaf4j.core.logging.uid.UniversalTransactionIDGen">
+                <br />
+                &lt;property name="applicationId" value=“ApplicationsID" /><br />
+                &lt;/bean><br /><br />
+
+                //Inject Universal Transaction ID bean into idGenor get directly<br />
+                UniversalTransactionIDGen idGen;<br />
+                String transactionType = “Claim";<br />
+                String transactionUid = idGen.getTransactionId(transactionType);
+            </div>
+            <strong> Use Mapped Diagnostic Context (MDC) Values to log proper name & value pairs.</strong>
+            <div style="font-family: 'Courier New'; margin-left: 20px">
+                MDC.put("TransactionUid", transactionUid<br />
+                MDC.put("TransactionType", transactionType);<br />
+                MDC.put("ClaimID", "412b");<br />
+                logger.info("Testing debug level message.");
+            </div>
+            <h4>EAF4J Produced UHG XML Layout Example</h4>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j8.png" style="width:500px; " />
+            </div>
+            <h4>EAF4J Cache</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Cache Manager Configuration
+                </li>
+                <li>
+                    Static cache configuration
+                </li>
+                <li>
+                    Cache loading configuration
+                </li>
+                <li>
+                    Accessing static caches
+                </li>
+                <li>
+                    Dynamic caching support via AOP
+                </li>
+            </ul>
+            <h4>Cache Manager Configuration</h4>
+            <strong>Configure Cache Manager for static and dynamic caches</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j9.png" style="width:650px; " />
+            </div>
+            <h4>Static Cache Configuration</h4>
+            <strong>Cache group configuration</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j10.png" style="width:500px; " />
+            </div>
+            <strong>Refresh Policy</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j11.png" style="width: 500px; " />
+            </div>
+            <strong>Cache configuration</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j12.png" style="width: 500px; " />
+            </div>
+            <h4>Cache Loading Configuration</h4>
+            <strong>Cache loading from database</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j13.png" style="width:650px; " />
+            </div>
+            <strong>Cache loading from delegate</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j14.png" style="width:600px; " />
+            </div>
+            <h4>Cache Loading Trigger</h4>
+            <strong>Trigger cache manager loading of static caches</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j15.png" style="width:600px; " />
+            </div>
+            <h4>Static Cache Manager Usage</h4>
+            <strong>Inject CacheManager into Referencing bean in config file</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j16.png" style="width:550px; " />
+            </div>
+            <strong>Get cache from CacheManager and utilize</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j17.png" style="width:500px; " />
+            </div>
+            <h4>Dynamic Cache Configuration</h4>
+            <strong>AOP Interception Configuration</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j18.png" style="width:750px; " />
+            </div>
+            <h4>EAF4J Security</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Authorization Manager Configuration
+                </li>
+                <li>
+                    Access Control List population
+                </li>
+            </ul>
+            <h4>Security Beans Configuration</h4>
+            <strong>Configure UserDetails Objects for Authentication</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j19.png" style="width:750px; " />
+            </div>
+            <strong>Configure SecurityDAO for access to ACL Database</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j20.png" style="width:750px; " />
+            </div>
+            <h4>Authorization Manager Configuration</h4>
+            <strong>Configure Authorization Manager for checking user permission</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j21.png" style="width:750px; " />
+            </div>
+            <h4>ACL Services Configuration</h4>
+            <strong>Configure ACL Services for Authorization Manager to use</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j22.png" style="width:700px; " />
+            </div>
+            <h4>Security Cache Configuration</h4>
+            <strong>Configure Security Cache</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j23.png" style="width:850px; " />
+            </div>
+            <h4>Loading ACL’s</h4>
+            <strong>Populate the ACL csv with resources to be secured</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j24.png" style="width:750px; " />
+            </div>
+            <strong>Run the ACL Maintenance Script to load the CSV into the DB</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j25.png" style="width:750px; " />
+            </div>
+            <h4>EAF4J Validation</h4>
+            <ul style="margin-left:20px"> <li>Form Bean validation</li></ul>
+            <h4>Form Bean Validation</h4>
+            <strong>Configure Validator</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j26.png" style="width:750px; " />
+            </div>
+            <strong>Inject Validator into SWF Action class</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j27.png" style="width:750px; " />
+            </div>
+            <strong>Annotate Form Bean</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j28.png" style="width:450px; " />
+            </div>
+            <strong>Execute validation inside Action class</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j29.png" style="width:750px; " />
+            </div>
+            <h4>EAF4J Web</h4>
+            <ul style="margin-left:20px"><li>Client side validation through JavaScript generation</li></ul>
+            <h4>GenerateScript tag</h4>
+            <p>Add to JSP after form’s closing tag</p>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j30.png" style="width:600px; " />
+            </div>
+            <strong>Invoke “validate(form)” function on form submit</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j31.png" style="width:750px; " />
+            </div>
+            <h4>EAF4J Domain</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Apache iBatis data mapping framework
+
+                    <ul style="margin-left:20px">
+                        <li>
+                            Query results &lt;-&gt; JavaBean field mapping
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Access to data objects through Persistence Manager
+                    <ul style="margin-left:20px">
+                        <li>
+                            Spring-managed data repositories
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Annotation-driven bean persistence of Domain Objects
+
+                </li>
+            </ul>
+            <h4>iBatis Configuration file</h4>
+            <strong>iBatis SqlMap mapping objects to queries</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j32.png" style="width:700px; " />
+            </div>
+            <h4>Persistence beans</h4>
+            <strong>Repository registry configuration</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j33.png" style="width:600px; " />
+            </div>
+            <strong>Household service, repository and persistence manager configuration</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j34.png" style="width:750px; " />
+            </div>
+            <h4>Service layer & domain object</h4>
+            <strong>Service layer annotations and repository use</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j35.png" style="width:500px; " />
+            </div>
+            <strong>Domain object including child object annotations</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j36.png" style="width:500px; " />
+            </div>
+            <h4>Other configuration</h4>
+            <strong>Aspects and delegate configuration</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j37.png" style="width:550px; " />
+            </div>
+            <strong>Using spring injection to get handle for service layer and invoke its methods to load domain object.</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j38.png" style="width:750px; " />
+            </div>
+            <h4>EAF4J Web Security</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Restrict page flow by user roles
+                </li>
+            </ul>
+            <h4>Security Configuration</h4>
+            <strong>Configure Authorization Manager</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j39.png" style="width:750px; " />
+            </div>
+            <strong>Configure URL Resource ACLs using definition file</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j40.png" style="width:750px; " />
+            </div>
+            <h4>Spring Web Flow Configuration</h4>
+            <strong>Add Flow Execution Listener</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j41.png" style="width:750px; " />
+            </div>
+            <h4>EAF4J CXF Web Services</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    Apache CXF contract (WSDL) first service generation
+                </li>
+                <li>
+                    Service provider configuration
+                </li>
+                <li>
+                    Service consumer configuration
+                </li>
+            </ul>
+            <h4>CXF – Service Provider</h4>
+            <strong>Contract First webservice design using CXF</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    Start with XML schema and WSDL
+                </li>
+                <li>
+                    Ant, command line, or maven can be used.
+                </li>
+                <li>
+                    Maven pom file can be configured to use the CFX plugin
+                </li>
+            </ul>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j42.png" style="width: 550px; " />
+            </div>
+            <h4>Service Provider Configuration</h4>
+            <strong>Spring bean configuration file for endpoint definition</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j43.png" style="width:550px; " />
+            </div>
+            <strong>Web.xml – servlet configuration</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j44.png" style="width:700px; " />
+            </div>
+            <h4>Service Consumer Configuration</h4>
+            <strong>Save the WSDL in a location and use the –client option in wsdl2java to generate the client stubs.</strong>
+            <p>Use the information from WSDL and generated stubs to configure the spring beans.</p>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j45.png" style="width:600px; " />
+            </div>
+            <strong>Logging using interceptor</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j46.png" style="width:600px; " />
+            </div>
+            <h4>EAF4J Integration </h4>
+            <p>Using the preconfigured message processing pipeline</p>
+            <ul style="margin-left:20px">
+                <li>
+                    Message Driven Bean implementation utilizing inbound message gateway
+                </li>
+                <li>
+                    Message to service routing configuration
+                </li>
+                <li>
+                    Outbound JMS message channel configuration
+                </li>
+            </ul>
+            <h4>Utilizing Preconfigured Pipeline</h4>
+            <strong>Message Driven Bean should delegate processing to inbound gateway</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j47.png" style="width:650px; " />
+            </div>
+            <strong>Implement parsers overriding parser adapter</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j48.png" style="width:500px; " />
+            </div>
+            <strong>Create service endpoints extending ServiceAdapter</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j49.png" style="width:550px; " />
+            </div>
+            <strong>Enable Service Adapter beans using ServiceConfig beans configured with parsers and service adapters</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j50.png" style="width:750px; " />
+            </div>
+            <h4>Outbound JMS channel</h4>
+            <strong>Configure outbound channel</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j51.png" style="width:450px; " />
+            </div>
+            <strong>Lookup JMS queue using Spring JEE tags</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j52.png" style="width:750px; " />
+            </div>
+            <strong>Create outbound JMS channel using Spring Integration JMS outbound channel integration tag and inject JMS queue</strong>
+            <div style="margin-left:30px">
+                <img src="/static/images/eaf4j53.png" style="width:750px; " />
+            </div>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+     <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>
+

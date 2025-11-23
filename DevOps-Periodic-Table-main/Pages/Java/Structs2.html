@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Structs 2</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js">
+    </script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js">
+    </script>
+
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style>
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="/static/images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Struts 2</h2>
+    </section>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Overview</a></li>
+            <li><a href="#tabs-2">Architecture</a></li>
+            <li><a href="#tabs-3">Configuration</a></li>
+        </ul>
+        <div id="tabs-1">
+            <h4>Structs 2</h4>
+            <hr />
+            <p>
+                Apache Struts 2 is an elegant, extensible framework for creating enterprise-ready Java web applications. The framework is designed to streamline the full development cycle, from building, to deploying, to maintaining applications over time.
+            </p><p>
+                Apache Struts2 was originally known as WebWork 2. After working independently for several years, the WebWork and Struts communities joined forces to create Struts2. This new version of Struts is simpler to use and closer to how Struts was always meant to be.
+            </p><p>
+                Struts 2 is a pull-MVC framework. i.e. the data that is to be displayed to user has to be pulled from the Action.
+            </p><p>
+                Struts2 supports annotation based configurations which are easy to create and more intuitive. Action class in Struts 2 act as the model in the web application. Unlike Struts, Struts 2 Action class are plain POJO objects thus simplifying the testing of the code. Struts2 also comes with power APIs to configure Interceptors that reduce greatly the coupling in application. The view part of Struts 2 is highly configurable and it supports different result-types such as Velocity, FreeMarker, JSP, etc.
+            </p>
+            <h4>Struts 2 Features </h4>
+            <p>
+                The important features of struts 2 framework are as follows:
+            </p>
+            <ul style="margin-left:20px">
+                <li>
+                    Configurable MVC components
+                </li>
+                <li>
+                    POJO based actions
+                </li>
+                <li>
+                    AJAX support
+                </li>
+                <li>
+                    Integration support
+                </li>
+                <li>
+                    Various Result Types
+                </li>
+                <li>
+                    Various Tag support
+                </li>
+                <li>
+                    Theme and Template support
+                </li>
+            </ul>
+            <b>1) Configurable MVC components</b>
+
+            <p>
+                In struts 2 framework, we provide all the components (view components and action) information in struts.xml file. If we need to change any information, we can simply change it in the xml file.
+            </p><b>
+                2) POJO based actions
+            </b>
+
+            <p>
+                In struts 2, action class is POJO (Plain Old Java Object) i.e. a simple java class. Here, you are not forced to implement any interface or inherit any class.
+            </p><b>
+                3) AJAX support
+            </b>
+
+            <p>
+                Struts 2 provides support to ajax technology. It is used to make asynchronous request i.e. it doesn't block the user. It sends only required field data to the server side not all. So it makes the performance fast.
+            </p><b>
+                4) Integration Support
+            </b>
+
+            <p>
+                We can simply integrate the struts 2 application with hibernate, spring, tiles etc. frameworks.
+            </p><b>
+                5) Various Result Types
+            </b>
+
+            <p>
+                We can use JSP, freemarker, velocity etc. technologies as the result in struts 2.
+            </p><b>
+                6) Various Tag support
+            </b>
+
+            <p>
+                Struts 2 provides various types of tags such as UI tags, Data tags, control tags etc to ease the development of struts 2 application.
+            </p><b>
+                7) Theme and Template support
+            </b>
+
+            <p>
+                Struts 2 provides three types of theme support: xhtml, simple and css_xhtml. The xhtml is default theme of struts 2. Themes and templates can be used for common look and feel.
+            </p>
+            <h4>Core Components</h4>
+            <ul style="margin-left:20px">
+                <li>
+                    <strong>Interceptors :</strong>Interceptor is an object that is invoked at the preprocessing and postprocessing of a request. In Struts 2, interceptor is used to perform operations such as validation, exception handling, internationalization, displaying intermediate result etc.
+                </li>
+                <li>
+                    <strong>ValueStack :</strong>A valueStack is simply a stack that contains application specific objects such as action objects and other model object. At the execution time, action is placed on the top of the stack.
+                    We can put objects in the valuestack, query it and delete it.
+                </li>
+                <li>
+                    <strong>ActionContext :</strong>The ActionContext is a container of objects in which action is executed. The values stored in the ActionContext are unique per thread (i.e. ThreadLocal). So we don't need to make our action thread safe.
+
+                    We can get the reference of ActionContext by calling the getContext() method of ActionContext class. It is a static factory method.
+                </li>
+                <li>
+                    <strong>ActionInvocaion :</strong>The struts framework provides ActionInvocation interface to deal with ActionInvocation. It provides many methods, some of them can be used to get the instance of ValueStack, ActionProxy, ActionContext, Result etc.
+                </li>
+                <li>
+                    <strong>OGNL :</strong>The Object Graph Navigation Language (OGNL) is an expression language. It simplifies the accessibility of data stored in the ActionContext.
+
+                    The struts framework sets the ValueStack as the root object of OGNL. Notice that action object is pushed into the ValueStack. We can direct access the action property.
+                </li>
+            </ul>
+        </div>
+        <div id="tabs-2">
+            <p>
+                The architecture and flow of struts 2 application, is combined with many components such as Controller, ActionProxy, ActionMapper, Configuration Manager, ActionInvocation, Inerceptor, Action, Result etc.
+            </p><p>
+                Here, we are going to understand the struts flow by 2 ways:
+            </p> <ol style="margin-left:20px">
+                <li>
+                    struts 2 basic flow
+                </li>
+                <li>
+                    struts 2 standard architecture and flow provided by apache struts
+                </li>
+            </ol>
+            <h4>Struts 2 basic flow</h4>
+            <p>Let's try to understand the basic flow of struts 2 application by this simple figure:</p>
+            <div style="margin-left:50px">
+                <img src="/static/images/strutsbasicflow.jpg" style="width:650px" />
+            </div>
+            <ul style="margin-left:20px">
+                <li>
+                    User sends a request for the action
+                </li>
+                <li>
+                    Controller invokes the ActionInvocation
+                </li>
+                <li>
+                    ActionInvocation invokes each interceptors and action
+                </li>
+                <li>
+                    A result is generated
+                </li>
+                <li>
+                    The result is sent back to the ActionInvocation
+                </li>
+                <li>
+                    A HttpServletResponse is generated
+                </li>
+                <li>
+                    Response is sent to the user
+                </li>
+            </ul>
+            <h4>Struts 2 standard flow (Struts 2 architecture)</h4>
+            <p>Let's try to understand the standard architecture of struts 2 application by this simple figure:</p>
+            <div style="margin-left:50px">
+                <img src="/static/images/struts2flow.jpg" style="width:650px" />
+            </div>
+            <ul style="margin-left:20px">
+                <li>
+                    User sends a request for the action
+                </li>
+                <li>
+                    Container maps the request in the web.xml file and gets the class name of controller.
+                </li>
+                <li>
+                    Container invokes the controller (StrutsPrepareAndExecuteFilter or FilterDispatcher). Since struts2.1, it is StrutsPrepareAndExecuteFilter. Before 2.1 it was FilterDispatcher.
+                </li>
+                <li>
+                    Controller gets the information for the action from the ActionMapper
+                </li>
+                <li>
+                    Controller invokes the ActionProxy
+                </li>
+                <li>
+                    ActionProxy gets the information of action and interceptor stack from the configuration manager which gets the information from the struts.xml file.
+                </li>
+                <li>
+                    ActionProxy forwards the request to the ActionInvocation
+                </li>
+                <li>
+                    ActionInvocation invokes each interceptors and action
+                </li>
+                <li>
+                    A result is generated
+                </li>
+                <li>
+                    The result is sent back to the ActionInvocation
+                </li>
+                <li>
+                    A HttpServletResponse is generated
+                </li>
+                <li>
+                    Response is sent to the user
+                </li>
+            </ul>
+        </div>
+        <div id="tabs-3">
+            <p>
+                The struts application contains two main configuration files struts.xml file and struts.properties file.
+            </p><p>
+                The struts.properties file is used to override the default values of default.xml file provided by struts framework. So it is not mandatory. Mostly, you will not use struts.properties file. We will learn about it later.
+            </p><p>
+                Here, we are going to learn all about struts.xml file. First of all let us see the simple example of struts.xml file
+            </p><b>
+                struts.xml
+            </b>
+            <div style="margin-left:30px">
+                <img src="/static/images/struct2_1.PNG" style="width:650px; border:1px solid" />
+            </div>
+            <h4>1) package element</h4>
+            <p>
+                We can easily divide our struts application into sub modules. The package element specifies a module. You can have one or more packages in the struts.xml file.
+            </p>    <strong>Attributes of package element</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    <b>name</b> name is must for defining any package.
+                </li>
+                <li>
+                    <b>namespace</b> It is an optional attribute of package. If namespace is not present, / is assumed as the default namespace. In such case, to invoke the action class, you need this URI:
+                </li>
+                <li>
+                    <b>extends</b> The package element mostly extends the <b>struts-default</b> package where interceptors and result types are defined. If you extend struts-default, all the actions of this package can use the interceptors and result-types defined in the <b>struts-default.xml</b> file.
+                </li>
+            </ul>
+            <h4>2) action element</h4>
+            <p>The action is the subelement of package and represents an action.</p>
+            <strong> Attributes of action element</strong>
+            <ul style="margin-left:20px">
+                <li>
+                    <b>name</b> name is must for defining any action.
+                </li>
+                <li>
+                    <b>class</b> class is the optional attribute of action. If you omit the class attribute, <b>ActionSupport</b> will be considered as the default action. A simple action may be as:
+                    <br />
+                    <p style="font-family:'Courier New'"> &lt;action name="product"&gt;</p>
+
+                </li>
+                <li>
+                    method It is an optional attribute. If you don't specify method attribute, execute method will be considered as the method of action class. So this code:
+                    <p style="font-family:'Courier New'">
+                        &lt;action name="product" class="com.javatpoint.Product"&gt;
+                    </p>
+                    will be same as:
+                    <p style="font-family:'Courier New'">
+                        &lt;action name="product" class="com.javatpoint.Product" method="execute"&gt;
+                    </p>
+                    If you want to invoke a particular method of the action, you need to use method attribute.
+                </li>
+            </ul>
+            <h4>3) result element</h4>
+            <p>It is the sub element of action that specifies where to forward the request for this action.</p>
+            <b>
+                Attributes of result element
+            </b><ul style="margin-left:20px">
+                <li>
+                    <b>name</b> is the optional attribute. If you omit the name attribute, success is assumed as the default result name.
+                </li>
+                <li>
+                    <b>type</b> is the optional attribute. If you omit the type attribute, dispatcher is assumed as the default result type.
+                </li>
+            </ul>
+            <h4>Multiple Configuration</h4>
+            <p>
+                For a large application, it is better to use multiple configuration file that one so that it may be easy to manage the application.
+            </p><p>
+                We can create many configuration files but we need to define it in the struts.xml file. The includesub-element of struts is used to define the supported configuration file.
+            </p>
+            <b>Example to create multiple configuration files</b>
+            <h4>1) Define entry of multiple configuration files in struts.xml</h4>
+            <p>
+                In this struts.xml file, we have defined 2 configuration files struts-first.xml file and struts-second.xml file.
+            </p><p>
+                The struts-first.xml file is located inside the first directory and struts-second.xml file is located inside the second directory.
+            </p><b>
+                struts.xml
+            </b>
+            <div style="margin-left:30px">
+                <img src="/static/images/struct2_1.PNG" style="width:650px; border:1px solid" />
+            </div>
+            <h4>2) Create configuration files</h4>
+
+            <p> Let's create two configuration files that defines action with results.</p>
+            <b>struts-first.xml</b>
+            <div style="margin-left:30px">
+                <img src="/static/images/struct2_2.PNG" style="width:650px; border:1px solid" />
+            </div>
+            <b>struts-second.xml</b>
+            <div style="margin-left:30px">
+                <img src="/static/images/struct2_3.PNG" style="width:650px; border:1px solid" />
+            </div>
+            <h4>Other Required Resources</h4>
+            <p>To run this application, we need following resources:</p>
+            <ul style="margin-left:20px">
+                <li>
+                    index.jsp
+                </li>
+                <li>
+                    Action class
+                </li>
+                <li>
+                    2 View Components
+                </li>
+            </ul>
+            <h4>index.jsp </h4>
+            <p> This jsp page creates two links.</p>
+            <b> index.jsp</b>
+            <div style="margin-left:30px">
+                <img src="/static/images/struct2_4.PNG" style="width:650px; border:1px solid" />
+            </div>
+            <h4> Action class</h4>
+            <p>
+                It is the simple Action class containing only execute method.
+            </p>
+            <b>Welcome.java</b>
+            <div style="margin-left:30px">
+                <img src="/static/images/struct2_5.PNG" style="width:650px; border:1px solid" />
+            </div>
+            <h4> 2 view components</h4>
+            <p>
+                The name of 2 view components are same i.e. welcome.jsp but both are located differently.
+            </p>
+            <b> welcome.jsp</b>
+            <br />
+            It is located inside the first directory under root.
+            <div style="margin-left:30px">
+                <img src="/static/images/struct2_6.PNG" style="width:650px; border:1px solid" />
+            </div>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>

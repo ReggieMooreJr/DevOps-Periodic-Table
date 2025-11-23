@@ -1,0 +1,752 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Jenkins</h4>
+            <p class="pagetxt">
+                Jenkins is a software that allows continuous integration. Jenkins will be installed on a server where the central build will take place. The following flowchart demonstrates a very simple workflow of how Jenkins works.
+            </p>
+            <p>
+                <img src="/static/images/JenkinFlowChart.PNG" style="width:28%; margin-left:100px" />
+            </p>
+            <h4>What is Continuous Integration?</h4>
+            <p class="pagetxt">Continuous Integration is a development practice that requires developers to integrate code into a shared repository at regular intervals. This concept was meant to remove the problem of finding later occurrence of issues in the build lifecycle. Continuous integration requires the developers to have frequent builds. The common practice is that whenever a code commit occurs, a build should be triggered.</p>
+            <h4>System Requirements</h4>
+            <table class="table table-border">
+                <tr>
+                    <td>JDK</td>
+                    <td>JDK 1.5 or above</td>
+                </tr>
+                <tr>
+                    <td>Memory</td>
+                    <td>2 GB RAM (recommended)</td>
+                </tr>
+                <tr>
+                    <td>Disk Space</td>
+                    <td>No minimum requirement. Note that since all builds will be stored on the Jenkins machines, it has to be ensured that sufficient disk space is available for build storage.</td>
+                </tr>
+                <tr>
+                    <td>Operating System Version</td>
+                    <td>Jenkins can be installed on Windows, Ubuntu/Debian, Red Hat/Fedora/CentOS, Mac OS X, openSUSE, FReeBSD, OpenBSD, Gentoo.</td>
+                </tr>
+                <tr>
+                    <td>Java Container</td>
+                    <td>The WAR file can be run in any container that supports Servlet 2.4/JSP 2.0 or later.(An example is Tomcat 5).</td>
+                </tr>
+            </table>
+            <h4>Useful Link(s): Mojo Consultants</h4>
+            <p>
+                For additional best practices, supporting documentation and collaboration on using Jenkins please visit the <a href="https://hubconnect.uhg.com/groups/jenkins-build-service" target="_blank">Hub Connect Community of Practice</a>.
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>1. Installing</h4>
+            <p>•	Open the United Health Group’s Secure portal by clicking <a href="https://secure.uhc.com/RequestAccess">here</a>.</p>
+            <p>•	Select/Fill the field as shown below for the new access/request.</p>
+            <p>
+                <img src="/static/images/jn1.png" style="width:85%" />
+            </p>
+            <p>
+                •	At last, kindly provide the business justification/description of why access is required and click submit.
+            </p>
+            <p>
+                •	Once the new access/request is approved, the installation will start automatically. You may check the approved request <a href="https://secure.uhc.com/Access/CurrentAccess"></a> here.
+            </p>
+            <p>
+                •	Post successful installation on our machine, one can access Jenkins from the link – http://localhost:8080/domainname/ (this is just a sample link and it may vary from system to system)
+            </p>
+            <p>
+                •	Login using MS-ID & Password and it will bring up the Jenkins dashboard. Now configure the Jenkins as per your project requirements.
+            </p>
+            <p>
+                <img src="/static/images/jn2.png" style="width:85%" />
+            </p>
+            <h4>2. Configuration</h4>
+            <p>
+                •	For configuring the global settings we need to click on Manage Jenkins Link.
+            </p>
+            <p>
+                •	You can find the below screen after clicking on the manage Jenkins link. Then click on the Configure System link.
+            </p>
+            <p>
+                <img src="/static/images/jn3.png" style="width:85%" />/>
+            </p>
+            <p>
+                <img src="/static/images/jn4.png" style="width:85%" />
+            </p>
+            <p>
+                For Every project we need to set jdk and maven settings initially.
+                Remaining settings are optional and need to be set depends on the project requirement.
+            </p>
+            <p>
+                For Project we have only configured the below settings
+            <p>1. JDK</p>
+            <p>
+                2. Maven
+            </p>
+            <p>
+                3. Email Notification
+            </p>
+            <p>
+                4. Artifactory
+            </p>
+            <p>
+                5. Jenkins Location
+            </p>
+            </p>
+            <h5>2.1. JDK configuration</h5>
+            <p>
+                Based on project requirement use JSK version here we are directly getting it from Oracle (By Creating oracle account to download ) using Install automatically option.
+            </p>
+            <p>
+                <img src="/static/images/jn5.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/jn6.png" style="width:85%" />
+            </p>
+            <h5>
+                2.2. Maven configuration:
+            </h5>
+            <p>For Maven also we have used install automatically option and installed 3.0.4 version of maven as following.</p>
+            <p>
+                <img src="/static/images/jn7.png" style="width:85%" />
+            </p>
+            <p>Or we can provide Mavan directory path</p>
+            <p>
+                <img src="/static/images/jn8.png" style="width:85%" />
+            </p>
+            <h5>
+                2.3. Extended E-mail Notification configuration:
+            </h5>
+            <p>To get the email notification for Jenkins builds success/failure. Configure the SMTP server details and project details as shown below screenshot.</p>
+            <p>
+                <img src="/static/images/jn9.png" style="width:85%" />
+            </p>
+            <h5>
+                2.4. Artifactory configuration:
+            </h5>
+            <p>
+                •	To get this setting we have installed Artifactory plugin to Jenkins.
+            </p>
+            <p>•	To install we need to click on Manage Jenkins after that we can find manage plugins as following.</p>
+            <p>
+                <img src="/static/images/jn10.png" style="width:85%" />
+
+            </p>
+            <p>•	After clicking on the manage plugins we can find the below screen.</p>
+            <p>
+                <img src="/static/images/jn11.png" style="width:85%" />
+            </p>
+            <p>
+                •	Inside available plugins we can find any plugin. depends on our project requirement we can install those plugins and we can configure it accordingly.
+            </p>
+            <p>
+                •	For Artifactory plugin we need to set as follows:
+            </p>
+            <p>
+                <img src="/static/images/jn12.png" style="width:85%" />
+            </p>
+            <p>
+                •	We need to set the Artifactory URL which we are using for the project as below http://repo1.uhc.com/artifactory .
+            </p>
+            <p>
+                •	And also need to be set the credentials to access the repo.
+            </p> <p>
+                •	(We can use add button to add the credentials).
+
+            </p>
+            <h5>
+                2.5. Jenkins Location:
+            </h5>
+            <p>Jenkins URL need to be set to   http://jenkins.optum.com/projectname/ </p>
+            <p>
+                <img src="/static/images/jn13.png" style="width:85%" />
+            </p>
+            <h4>3. Plugins Installation for Jenkins</h4>
+            <p>To install plugin in Jenkins we need to click on Manage Jenkins after that we can find manage plugins as following.</p>
+            <p>
+                <img src="/static/images/jn14.png" style="width:85%" />
+            </p>
+            <p>After clicking on the manage plugins we can find the below screen.</p>
+            <p>
+                <img src="/static/images/jn15.png" style="width:85%" />
+            </p>
+            <p>
+                •	Inside available plugins we can find any plugin. depends on our project requirement we can install those plugins and we can configure it accordingly.
+                Following plugins are used for Jenkins projects.
+            </p>
+            <p>
+                <span style="font-weight:bold">1. Cobertura Plugin – </span> This plugin integrates Cobertura coverage reports to Jenkins.
+            </p><p>
+                <span style="font-weight:bold">2. Deploy to container Plugin - </span>  This plugin allows you to deploy a war to a container after a successful build.
+                Glassfish 3.x, jboss, apache tomcat remote deployment
+            </p><p>
+                <span style="font-weight:bold">3. Email Extension Plugin -</span>  This plugin is a replacement for Jenkins's email publisher
+            </p><p>
+                <span style="font-weight:bold">4. HTML Publisher plugin -</span>  This plugin publishes HTML reports.
+            </p><p>
+                <span style="font-weight:bold">5. TestNG Results Plugin -</span>  This plugin integrates TestNG test reports to Jenkins.
+            </p><p>
+                <span style="font-weight:bold"> 6. Pipeline -</span>  A suite of plugins that lets you orchestrate automation, simple or complex. See Pipeline as Code with Jenkins for more details.
+            </p>
+            <h4>4. Create new job Configuration for Project Build:</h4>
+            <p>
+                •	Click on New Item you can find the below screen.
+            </p><p>
+                •	Select the folder option and given the name as folder name and click on ok button.
+            </p>
+            <p>
+                <img src="/static/images/jn16.png" style="width:85%" />
+            </p>
+            <p>Verify the folder details and Click on save button</p>
+            <p>
+                <img src="/static/images/jn17.png" style="width:85%" />
+            </p>
+            <p>After clicking on the save button, you can find the below screen.</p>
+            <p>
+                <img src="/static/images/jn18.png" style="width:85%" />
+            </p>
+            <p>Need to click on create new jobs link to create the job. We need to give our project name, select the maven project type and click on ok</p>
+            <p>
+                <img src="/static/images/jn19.png" style="width:85%" />
+            </p>
+            <p>•	We can find our project under the created folder as follows.</p>
+            <p>
+                <img src="/static/images/jn20.png" style="width:85%" />
+            </p>
+            <p>
+                •	After clicking on the project (pharmacy search) we can find configure link in the page need to click on the configure.
+            </p>
+            <p>
+                <img src="/static/images/jn21.png" style="width:85%" />
+            </p>
+            <p>
+                •	After that we can find below screen.
+            </p>
+            <p>
+                <img src="/static/images/jn22.png" style="width:85%" />
+            </p>
+            <h5>
+                4.1 Source Code Management
+            </h5>
+            <p> •	Under Source code Management, select appropriate version control based on project.(Ex: selecting GIT)</p>
+            <p>
+                <img src="/static/images/jn23.png" style="width:85%" />
+            </p><p>
+                •	Inside Repository URL we need to set the SVN Url for the clinician search project.
+            </p><p>
+                •	And need to set the credentials to access the repository.
+            </p><p>
+                •	If we want Jenkins need to check the repo for code commits and build it automatically we need to set the below configuration.
+            </p><p>
+                •	Under Build Triggers setting need to select Build whenever snapshot is ready and need to select PollSCM
+            </p>
+            <p>
+                <img src="/static/images/jn24.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/jn25.png" style="width:85%" />
+            </p>
+            <p>
+                •	Need to schedule the build time using the above configuration.
+            </p><p>
+                •	In the above screen we set the time as for every 5 mins Jenkins will check the code for commits and if there is a code change it will build automatically.
+            </p>
+            <h5>4.2 Build Configuration</h5>
+            <p>
+                •	After that we need to configure under Build section.
+            </p>
+            <p>
+                <img src="/static/images/jn26.png" style="width:85%" />
+            </p>
+            <p>
+                •	Here inside root pom we need to give the exact path for the pom.xml as above.
+            </p><p>
+                •	For Goals and options :clean install –X
+            </p>
+            <h5>4.3 Code coverage and TestNG Result configuration</h5>
+            <p>
+                •	After the build configuration, Click on Add post-build step drop  down  we can find the Publish Cobertura Coverage Report.
+            </p><p>
+                •	By using this option we can configure the code coverage. Provide the cobertura.xml file path in coverage report plugin as below.
+            </p>
+            <p>
+                <img src="/static/images/jn27.png" style="width:85%" />
+            </p>
+            <p>
+                •	Again Click on Add post-build step drop  down  we can find the Publish TestNG Results.
+            </p><p>
+                •	By using this option we can configure the unit test cases report. Provide the testng.xml file path in TestNG plugin as below.
+            </p>
+            <p>
+                <img src="/static/images/jn28.png" style="width:85%" />
+            </p>
+            <h4>5. Create new Job for Project Deployment:</h4>
+            <p>
+                •	Click on New Item you can find the below screen.
+            </p><p>
+                •	We need to give deployment project name, select the FreeStyle project type and click on ok
+            </p>
+            <p>
+                <img src="/static/images/jn29.png" style="width:85%" />
+            </p>
+            <p>After that we need to configure the deployment configuration.</p>
+            <p>
+                <img src="/static/images/jn30.png" style="width:85%" />
+            </p>
+            <p>
+                •	Click on  Add post-build step drop  down  we can find the Deploy war/ear to container.
+            </p><p>
+                •	Provide the server details and war file location in below fields.
+            </p>
+            <p>
+                <img src="/static/images/jn31.png" style="width:85%" />
+            </p>
+            <p>Note: Based on Requirement and server we need to use deploy plugin.</p>
+            <h4>6. Create Job for Selenium </h4>
+            <p>
+                •	Click on New Item you can find the below screen.
+            </p><p>
+                •	We need to give selenium project name, select the Freestyle project type and click on ok
+            </p>
+            <p>
+                <img src="/static/images/jn32.png" style="width:85%" />
+            </p>
+            <p>
+                •	Copy the selenium project into Jenkins instance.
+            </p>
+            <h5>6.1 Configure selenium project</h5>
+            <p>Click on Advanced Project Options and click on use custom workspace check box and provide the selenium project path as shown below.</p>
+            <p>
+                <img src="/static/images/jn33.png" style="width:85%" />
+            </p>
+            <p>•	Click on  Build drop  down  we can find the Execute windows batch command and enter the selenium script command.(Note: For unix system select Execute shell )</p>
+            <p>
+                <img src="/static/images/jn34.png" style="width:85%" />
+            </p>
+            <p>
+                •	Click on Add post-build step drop down we can find the Publish HTML Reports.
+            </p>
+            <p>
+                •	Provide the selenium report directory path and file name as shown in below
+            </p>
+            <p>
+                <img src="/static/images/jn35.png" style="width:85%" />
+            </p>
+            <h4>7. Create Pipeline for Project:</h4>
+            <p>To create pipeline, click on the pluse sign of the tab on dashboard </p>
+            <p>
+                <img src="/static/images/jn36.png" style="width:85%" />
+            </p>
+            <p>
+                •	Once you click on new tab you can find the below screen.
+            </p>
+            <p>
+                •	We need to give pipeline name, select the Build pipeline view  type and click on ok
+            </p>
+            <p>
+                <img src="/static/images/jn37.png" style="width:85%" />
+            </p>
+            <p>•	After that we can find below screen</p>
+            <p>
+                <img src="/static/images/jn38.png" style="width:85%" />
+            </p>
+            <p>Select the initial job from the initial job drop down as your maven project and click on Ok button then pipeline plugin will automatically create the complete pipeline.</p>
+            <p>
+                <img src="/static/images/jn39.png" style="width:85%" />
+            </p>
+            <p>After that we can find below screen</p>
+            <p>
+                <img src="/static/images/jn40.png" style="width:85%" />
+            </p>
+            <h4>8. Jenkins Configuration For AEM:</h4>
+            <p>
+                •	To Get the Jenkins Instance of enterprise version need to raise the request in secure to the following global group "ohbs_portal_jenkins_admin"
+            </p><p>
+                •	With the access to the above group we can configure Jenkins for our project.
+            </p><p>
+                •	We have used  <a href="http://jenkins.optum.com/ohbsportals/" target="_blank">ohbsportals</a>  Jenkins instance for  AEM Clinician Search Project.
+            </p><p>
+                •	We can login to the Jenkins using  MSId/Password to configure or create a new job for the project.
+            </p><p>
+                •	After Login you can find the below screen
+            </p>
+            <p>
+                <img src="/static/images/jn41.png" style="width:85%" />
+            </p>
+            <h5> Global settings for the project:</h5>
+            <p>
+                •	For configuring the  global settings we need to click on Manage Jenkins Link.
+            </p><p>
+                •	You can find the below screen after clicking on the manage Jenkins link. Then click on the Configure System link.
+            </p>
+            <p>
+                <img src="/static/images/jn42.png" style="width:85%" />
+            </p>
+            <p>After clicking on configure system  we can find the below screen.</p>
+            <p>
+                <img src="/static/images/jn43.png" style="width:85%" />
+            </p>
+            <p>
+                •	For Every project we need to set jdk and maven settings initially.
+                Remaining settings are optional and need to be set depends on the project requirement.
+                For AEM Project we have only configured the below settings
+            </p>
+            <p>1.JDK</p>
+            <p>For AEM we have used jdk 7 version here we are directly getting it from Oracle (By Creating oracle account to download ) using Install automatically option.</p>
+
+            <p>
+                <img src="/static/images/jn44.png" style="width:85%" />
+            </p>
+            <p>2.Maven</p>
+            <p>For Maven also we have used install automatically option and installed 3.0.4 version of maven as following.</p>
+            <p>
+                <img src="/static/images/jn45.png" style="width:85%" />
+            </p>
+            <p>
+                3.Jenkins Location
+            </p>
+            <p>
+                Jenkins Url need to be set to <a href="http://jenkins.optum.com/ohbsportals/" target="_blank">ohbsportals</a>.
+            </p>
+            <p>
+                <img src="/static/images/jn46.png" style="width:85%" />
+            </p>
+            <p>
+                4.Artifactory
+            </p>
+            <p>
+                To get this setting we have installed Artifactory plugin to Jenkins.
+                To install we need to click on Manage Jenkins after that we can find manage plugins as following.
+            </p>
+            <p>
+                <img src="/static/images/jn47.png" style="width:85%" />
+            </p>
+            <p>After clicking on the manage plugins we can find the below screen.</p>
+            <p>
+                <img src="/static/images/jn48.png" style="width:85%" />
+            </p>
+            <p>
+                •	Inside available plugins we can find any plugin. depends on our project requirement we can install those plugins and we can configure it accordingly.
+            </p>
+            <p>
+                •	For Artifactory plugin we need to set as follows:
+            </p>
+            <p>
+                <img src="/static/images/jn49.png" style="width:85%" />
+            </p>
+            <p>
+                •	We need to set the Artifactory Url which we are using for the project as below http://repo1.uhc.com/artifactory .
+            </p>
+            <p>
+                •	And also need to be set the credentials to access the repo.
+            </p>
+            <p>
+                •	(We can use add button to add the credentials).
+            </p>
+            <p>
+                •	For AEM Deployments we have added one more plugin Called
+            </p>
+            <p>
+                •	CRX Content Package Deployer - HTTP Client.
+            </p>
+            <p>
+                •	CRX Content Package Deployer - HTTP Client:
+            </p>
+            <p>
+                •	We have configured only the default credentials for the project deployment inside this plugin configurations.
+            </p>
+            <p>
+                •	For remaining settings we can use the default values.
+            </p>
+            <p>
+                <img src="/static/images/jn50.png" style="width:85%" />
+            </p>
+            <p>
+                •	After setting everything in the global settings need to click on save .
+            </p>
+            <p>
+                •	This settings will be used for every job configured in this Jenkins instance.
+            </p>
+            <p>
+                •	Create new job Configuration for AEM Clinician Search Project:
+            </p>
+            <p>
+                •	We have created a new folder for clinician search project.
+            </p>
+            <p>
+                •	Click on New Item you can find the below screen.
+            </p>
+            <p>
+                •	Selected the folder option and given the name as Clinician Search and clicked in on ok.
+            </p>
+            <p>
+                <img src="/static/images/jn51.png" style="width:85%" />
+            </p>
+            <p>You can find the Clinician search folder on the dashboard as below.</p>
+            <p>
+                <img src="/static/images/jn52.png" style="width:85%" />
+            </p>
+            <p>After clicking on the Clinician Search folder you can find the below screen. Need to click on New Item again.</p>
+            <p>
+                <img src="/static/images/jn53.png" style="width:85%" />
+            </p>
+            <p>
+                <img src="/static/images/jn54.png" style="width:85%" />
+            </p>
+            <p>
+                •	We need to give our project name ,select the maven project type and  click on ok.
+            </p>
+            <p>
+                •	We can find our project under the ClinicianSearch folder as follows.
+            </p>
+            <p>
+                <img src="/static/images/jn55.png" style="width:85%" />
+            </p>
+            <p>
+                •	After clicking on the project (clinician search-parent) we can find configure link in the page need to click on the configure.
+            </p>
+            <p>
+                •	After that we can find below screen.
+            </p>
+            <p>
+                <img src="/static/images/jn56.png" style="width:85%" />
+            </p>
+            <p>
+                •	Under Source code Management  we need to select subversion because we are using svn for cliniciansearch.
+            </p>
+            <p>
+                <img src="/static/images/jn57.png" style="width:85%" />
+            </p>
+            <p>
+                •	Inside Repository URL we need to set the SVN Url for the clinician search project.
+            </p>
+            <p>
+                •	And need to set the credentials to access the repository.
+            </p>
+            <p>
+                •	If we want Jenkins need to check the repo for code commits and build it automatically we need to set the below configuration.
+            </p>
+            <p>
+                •	Under Build Triggers setting need to select Build whenever snapshot is ready and need to select PollSCM
+            </p>
+            <p>
+                <img src="/static/images/jn58.png" style="width:85%" />
+            </p>
+            <p>
+                •	Need to schedule the build time using the above configuration.
+            </p>
+            <p>
+                •	In the above screen we set the time as for every 5 mins Jenkins will check the code for commits and if there is a code change it will build automatically.
+            </p>
+            <p>
+                •	After that we need to configure under Build section.
+            </p>
+            <p>
+                <img src="/static/images/jn59.png" style="width:85%" />
+            </p>
+            <p>
+                •	Here inside root pom we need to give the exact path for the pom.xml as above .
+            </p>
+            <p>
+                •	For Goals and options :clean install –X
+            </p>
+            <p>
+                •	After that Add post-build step drop  down  we can find the Deploy Content to CRX option.
+            </p>
+            <p>
+                •	By using this option we can deploy our packages to crx package manager automatically after every build.
+            </p>
+            <p>
+                •	Find the below screen:
+            </p>
+            <p>
+                <img src="/static/images/jn60.png" style="width:85%" />
+            </p>
+            <p>
+                Base Url: This is the url on which  server (Author instance url) we need to deploy the package .
+            </p>
+            <p>
+                Package Id: Need to mention the package Id like group:name:version.
+            </p>
+            <p>
+                We can find the above details from crx package manager.
+            </p>
+            <p>
+                <img src="/static/images/jn61.png" style="width:85%" />
+            </p>
+            <p>
+                •	And we can set remaining options depends on the requirement.
+            </p>
+            <p>
+                •	After setting all configurations need to click on save.
+            </p>
+            <p>
+                •	In the same way we can do it for other aem projects by creating new item link in the Jenkins.
+            </p>
+            <p>
+                •	The global settings need not to be changed, one time configuration will work for all projects or jobs created  in Jenkins.
+            </p>
+            <h4>9. Jenkins and OSE build & deploy:</h4>
+            <p>Give service account edit rights on OSE using oc</p>
+            <p>Add the edit role to the default service account in the test project:</p>
+            <p style="font-family: 'Courier New';">$ oc policy add-role-to-user edit system:serviceaccount:test:default </p>
+            <p>
+                This will allow the service account Jenkins uses to run builds and tag images.
+            </p><p>
+                If you are going to run Jenkins somewhere other than as a deployment within your same project you will need to provide an access token to Jenkins to access your project.
+            </p><p>
+                1.	Identify the service account token secret:
+            </p>
+            <p style="font-family: 'Courier New';">
+                $ oc describe serviceaccount default
+            </p><p>
+                Example output:
+            </p><p style="font-family: 'Courier New';">
+                Name:       default
+            </p><p style="font-family: 'Courier New';">
+                Labels:     <none>
+            </p><p style="font-family: 'Courier New';">
+                Secrets:    {  default-token-uyswp    }
+            </p><p style="font-family: 'Courier New';">
+                {  default-dockercfg-xcr3d    }
+            </p><p style="font-family: 'Courier New';">
+                Tokens:     default-token-izv1u
+            </p><p style="font-family: 'Courier New';">
+                default-token-uyswp
+            </p><p>
+                In this case the secret name is default-token-uyswp. Two secrets are created for a service account, one for docker and the one we need that doesn’t have docker in the name.
+            </p>
+            <p>
+                2.	Retrieve the token from the secret:
+            </p><p style="font-family: 'Courier New';">
+                $ oc describe secret &lt; name from above &gt; # e.g. default-token-uyswp
+            </p><p>
+                Example output:
+            </p><p style="font-family: 'Courier New';">
+                Name:       default-token-uyswp
+            </p><p style="font-family: 'Courier New';">
+                Labels:     <none>
+            </p><p style="font-family: 'Courier New';">
+                Annotations:    kubernetes.io/service-account.name=default,kubernetes.io/service-account.uid=32f5b661-2a8f-11e5-9528-3c970e3bf0b7
+            </p><p style="font-family: 'Courier New';">
+                Type:   kubernetes.io/service-account-token
+            </p><p style="font-family: 'Courier New';">
+                Data
+            </p><p style="font-family: 'Courier New';">
+                ====
+            </p><p style="font-family: 'Courier New';">
+                ca.crt: 1066 bytes
+            </p><p style="font-family: 'Courier New';">
+                token:  eyJhbGc..&lt;content cut&gt;....wRA
+            </p><p>
+                Copy the value from the token field, it will be used later in Enterprise Jenkins.
+            </p>
+            <p>
+                <a href="https://oneconnect.uhg.com/docs/DOC-54880" target="_blank">Jenkins Configuration</a>
+            </p><p>
+                After clicking the link above, click on the image and it will be shown in full, otherwise the right side is cut off.
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <p>
+                •	Jenkins is an open source tool with much support from its community.
+            </p><p>
+                •	Installation is easier.
+            </p><p>
+                •	It has more than 1000 plug-in to make the work easier.
+            </p><p>
+                •	It is easy to create new Jenkins plugin if one is not available.
+            </p><p>
+                •	It is a tool which is written in Java. Hence it can be portable to almost all major platforms.
+            </p>
+            <h4>Disadvantages</h4>
+            <p>
+                •	<span style="font-weight:bold"> Analytics:</span> Jenkins does not provide visibility into the end-to-end metrics.
+            </p><p>
+                •	<span style="font-weight:bold"> Solve salesforce specific issues:</span>  Jenkins is not made for Salesforce and Jenkins does not understand Salesforce metadata types.
+            </p><p>
+                •	<span style="font-weight:bold"> Governance:</span>  Customers using Jenkins have a lot of problems in the tracking and accountability of the changes made by the various members of the development team.
+            </p><p>
+                •	<span style="font-weight:bold"> Collaboration and visibility:</span>  Jenkins does not allow developers to see the changes made by other team members.
+            </p><p>
+                •	<span style="font-weight:bold"> Customizing the processes:</span>  Most customers have specific nuances to their application lifecycle management processes. While Jenkins provides continuous integration functionality, the framework cannot be customized beyond a certain extent.
+            </p>
+
+        </div>
+        <div id="New" class="tab-pane fade">
+            <p>
+                <span style="font-weight:bold"> Blue Ocean</span> rethinks the user experience of Jenkins. Designed from the ground up for Jenkins Pipeline, but still compatible with Freestyle jobs, Blue Ocean reduces clutter and increases clarity for every member of the team.
+            </p>
+            <p>
+                <span style="font-weight:bold">Improved usability:</span> For new users, Jenkins 2 starts up with suggested plugins to get them started with the right set of tools to use Jenkins effectively from day one. There are a number of user interface improvements, such as the improved job configuration page, to make configuring jobs easier.
+            </p>
+            <p>
+                <span style="font-weight:bold">Fully backwards compatible: </span> 2 is a drop-in replacement of the Jenkins 1.x series of releases and fully backward compatible. There is practically no reason not to upgrade.
+            </p>
+            <p>
+                <span style="font-weight:bold">
+                    •	Sophisticated visualizations
+                </span> of continuous delivery (CD) Pipelines, allowing for fast and intuitive comprehension of pipeline’s status.
+            </p>
+            <p>
+                <span style="font-weight:bold">
+                    •	Pipeline editor
+                </span> makes creation of Pipelines approachable by guiding the user through an intuitive and visual process to create a Pipeline.
+            </p>
+            <p>
+                <span style="font-weight:bold">
+                    •	Personalization
+                </span>to suit the role-based needs of each member of the team.
+            </p>
+            <p>
+                <span style="font-weight:bold">
+                    •	Pinpoint precision
+                </span> when intervention is needed and/or issues arise. Blue Ocean shows where in the pipeline attention is needed, facilitating exception handling and increasing productivity.
+            </p>
+            <p>
+                <span style="font-weight:bold">
+                    •	Native integration for branch and pull requests
+                </span>
+                enables maximum developer productivity when collaborating on code with others in GitHub and Bitbucket.
+            </p>
+
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Mojo Consultants - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/quality-tools/jenkins.html" target="_blank">Continuous Integration & Continuous Delivery</a>
+                </li>
+                <li>
+                    Jenkins Documentation - <a href="https://jenkins.io/doc/" target="_blank">https://jenkins.io/doc/</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

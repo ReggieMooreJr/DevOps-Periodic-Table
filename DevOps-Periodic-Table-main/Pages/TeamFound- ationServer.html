@@ -1,0 +1,361 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Team Foundation Server </h4>
+            <p class="pagetxt">
+                Team Foundation Server (commonly abbreviated to TFS) is a Microsoft product that provides source code management (either with Team Foundation Version Control or Git),
+                reporting, requirements management, project management (for both agile software development and waterfall teams), automated builds, lab management, testing and release management capabilities.
+                It covers the entire application lifecycle, and enables DevOps capabilities.
+                TFS can be used as a back-end to numerous integrated development environments (IDEs) but is tailored for Microsoft Visual Studio and Eclipse on all platforms.
+            </p>
+            <h4>On-premises vs. online</h4>
+            <p class="pagetxt">
+                Team Foundation Server is available in two different forms: on-premises and online. The latter form is called Visual Studio Team Services (formerly Visual Studio Online). The cloud service is backed by Microsoft’s cloud platform, Microsoft Azure. It uses the same code as the on-premises version of TFS, with minor modifications, and implements the most recent features. Visual Studio Team Services requires no setup. A user signs in using a Microsoft account to set up an environment, creating projects and adding team members.
+            </p>
+            <h4>Architecture</h4>
+            <p>
+                <img src="/static/images/TFSAchitecture.png" style="margin-left:50px" />
+            </p>
+            <h4>Source control</h4>
+            <p>
+                Team Foundation Server supports two different types of source control - its original source control engine called Team Foundation Version Control (TFVC) and with the release of TFS 2013, it supports Git as a core source control repository.
+            </p>
+            <h5>Team Foundation Version Control</h5>
+            <p class="pagetxt">
+                TFVC is a centralized version control system allowing teams to store any type of artifact within its repository.
+                TFVC supports two different types of workspaces when working with client tools - Server Workspaces and Local Workspaces.
+                Server workspaces allow developers to lock files for check-out and provide notification to other developers that files are being edited.
+                A frequent complaint for this model is that files on the development machine are marked as read-only.
+                It also requires developers to "go offline" when the server can't be contacted. Local workspaces were designed to avoid these problems.
+                In a local workspace scenario files are not read-only and they do not have to be checked out before working on them.
+                As long as the files are on the developer's local machine, it doesn't matter if the server is connected or not. Conflicts are dealt with at check-in time.
+            </p>
+            <h5>Git</h5>
+            <p class="pagetxt">
+                With the release of TFS 2013, Microsoft added native support for Git. This is not a Microsoft specific implementation but a standard implementation based on the libgit2 library.
+                This is the same library that powers the popular GitHub and the code is freely available from GitHub.
+                Because Microsoft took the approach of using a standard library, any Git client can now be used natively with TFS (in other words, developers can use their favorite tools and never install the standard TFS clients).
+                This allows tools on any platform and any IDE that support Git to connect to TFS. For example, both Xcode and Android Studio support Git plug-ins.
+                In addition, if developers do not want to use Microsoft's Team Explorer Everywhere plug-in for Eclipse, they can choose to use eGit to connect to TFS.
+            </p>
+            <h4>Reporting</h4>
+            <p class="pagetxt">
+                Reporting has been a core component of TFS since its initial release in 2005. The reporting infrastructure consists of a data warehouse (Tfs_Warehouse) which is a relational database and a SQL Server Analysis Services data cube. Both of these sources are available for reporting through SQL Server Reporting Services when this option is installed. Since these are standard database and cube structures, any tool which can point to these data sources can report from them. This includes tools such as Cognos, Tableau, Excel and other reporting tools.
+            </p>
+            <p class="pagetxt">TFS 2013 introduced a new feature called "light-weight reporting" which provides for the ability to create real-time reports based on query results and which do not rely on the warehouse or cube. TFS 2012 (and continuing into 2013) offers real-time burndown, velocity and CFD diagrams directly within Team Web Access.</p>
+            <h4>Team Build</h4>
+            <p class="pagetxt">Team Build (Prior to TFS 2015) is a build server application included with Team Foundation Server. Two components make up Team Build - MSBuild and Windows Workflow Foundation. MSBuild is a declarative XML language similar to Apache Ant. WF was added to the build process starting with TFS 2010, prior to that only MSBuild was available. The build capabilities have continued to evolve with each subsequent release of TFS. In TFS 2010 and 2012, the WF templates (Extensible Application Markup Language) files were stored in source control and could be edited and versioned directly from source control. In TFS 2013, these files were removed to eliminate clutter and streamline the build process. The WF templates can still be downloaded, edited and stored in source control if desired and TFS 2013 does not break existing TFS 2010 or 2012 build process templates. With the support of Git in TFS 2013, Team Build has been enhanced to allow automated building of Git projects as well as TFVC projects.</p>
+            <h4>Release management</h4>
+            <p class="pagetxt">In mid-2013 Microsoft purchased a product called InRelease from InCycle Software. InRelease was fully incorporated into Team Foundation Server 2013. This capability complemented the automated build and testing processes by allowing a true continuous deployment solution. The tools were re-branded "Release Management" for TFS 2013. The Release Management capabilities give teams the ability to perform a controlled, workflow (provided by Windows Workflow Foundation) driven release to Dev, Test and Production environments and provides dashboards for monitoring the progress of one or more releases.</p>
+            <p class="pagetxt">Microsoft has rebuilt Release Management for Visual Studio Team Services and on-premise version of Team Foundation Server with the new changes in 2015 Update 2. The new version of Release Management leverages the web browser as the client, and relies on the same agent architecture as Team Foundation Build. Release Management enables DevOps capabilities for Team Foundation Server.</p>
+            <h4>Useful Link(s): Mojo Consultants</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    <a href="https://oneconnect.uhg.com/docs/DOC-23651" target="_blank">TFS FAQ – How to request TFS Team Project</a>        
+                </li>
+                <li>
+                    <a href="http://goto.optum.com/tfs" target="_blank">TFS Community of Practice</a>  
+                </li>
+                <li>
+                    <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/getting-started/getting-started-with--net/getting-started-with-team-foundation-server--tfs-.html" target="_blank">Getting Started with Team Foundation Server (TFS)</a>  
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installation</h4>
+            <p>
+                1.	Download TFS. You can install TFS on a client or on a server operating system. For clients, use Windows 7 or Windows 8, 32-bit or 64-bit. For servers, you have to use 64-bit.
+            </p>
+            <p>
+                2.	Use the Basic configuration wizard for a quick and simple installation.
+            </p>
+            <p>
+                <img src="/static/images/tfs1.png" />
+            </p>
+            <p>3.	After finishing, close the basic configuration wizard.</p>
+            <p>
+                <img src="/static/images/tfs2.png" />
+            </p>
+            <h4>Install the build service</h4>
+            <p>1.	After finishing the basic configuration wizard, you can install the build service on the same server. The build service automates builds of your software projects. Launch the build service configuration wizard.</p>
+            <p>
+                <img src="/static/images/tfs3.png" />
+            </p>
+            <p>2.	Close the wizard after it finishes. Now your build server is ready to go.</p>
+            <p>
+                <img src="/static/images/tfs4.png" />
+            </p>
+            <h4>Install Team Explorer </h4>
+            <p>
+                Team Explorer installs with each version of Visual Studio, or you can download it for free. Although Team Explorer isn't necessary for most administration tasks, it is required to create team projects, which your software teams will require, and to support work item tracking customization. Installing it on the server is a convenient way to ensure that you can create team projects whenever necessary without having to go to another computer.
+            </p>
+            <p>
+                •	If you downloaded the DVD5 ISO image, browse the directory where you downloaded the image files, open the Team Explorer folder, and run the vs_TeamExplorer application.
+            </p>
+            <p>
+                •	If you ran the tfs_server application to install TFS, then you’ll need to download Team Explorer from the Visual Studio downloads page.
+            </p>
+            <h4>Configure and customize in Visual Studio TFS</h4>
+            <p>
+                With Visual Studio Team Foundation Server (TFS), you have an integrated toolset to manage your software projects from planning through deployment. You’ll configure most of the tools using one of the client interfaces. To support specific workflow or business processes used by your organization, you might need to customize some objects. This topic provides a road map for what you can configure and what requires customization.
+            </p>
+            <p>
+                The following picture shows many, but not all, of the elements that you can configure or customize. All configurations can be performed for both Visual Studio Online and TFS on-premises deployments. You need to run a command-line tool or edit an XML file to make most customizations. These types of customizations can be made for TFS on-premises deployments only.
+            </p>
+            <p><img src="/static/images/tfs5.png" /></p>
+            <p>
+                You have access to the Test Plan and Test Suite work item types (WITs) only if you’ve upgraded your application-tier to TFS 2013.3. You can now customize these objects in the same way you customize other WITs. To learn more about how to update your team project, go here.
+            </p>
+            <p>
+                Backlog items refer to Product Backlog Items, User Stories, or Requirements, depending on the process template used to create your team project. You can define Bugs to track code defects using Visual Studio and Test Manager.
+            </p>
+            <p>
+                The starting point to accessing these tools and managing your application lifecycle is to create a team project based on a process template. Process templates provide the default configuration of objects used to support all Application Lifecycle Management (ALM) features and functions. You can customize a process template before you create a team project, or you can customize objects afterwards.
+            </p>
+            <p>
+                The plug-ins and object files that you can customize are shown in the following picture. Plug-ins define the tasks to perform when you create a team project, most of which configure defaults, set permissions, and upload object files.
+            </p>
+            <p>
+                <img src="/static/images/tfs6.png" />
+            </p>
+            <p>If you plan to create several team projects and want them to standardize them around the same set of objects and processes, then customize the process template before you create the team project.</p>
+            <h5>Version control </h5>
+            <p>
+                You can manage source code using Team Foundation version control (TFVC) or Git. Go here for details on the differences between TFVC and Git.
+            </p><p>
+                Here is a view into the areas you can configure when working with source code. All of these areas are made after you have created a team project
+            </p>
+
+            <img src="/static/images/tfs11.PNG" style="width:80%" />
+            <h5>Plan and track work </h5>
+            <p>
+                Teams use work items, Agile planning tools, queries, and reports to plan and track work. Many elements are configurable through Team Web Access (TWA), the web client interface to Visual Studio TFS.
+            </p>
+
+            <strong> Work item tracking and Agile planning tools</strong> <br />
+            <p>
+                Each team project provides several work item types (WITs) to track work. For example, the Visual Studio Scrum template provides six WITs.
+            </p>
+
+            <p>
+                <img src="/static/images/tfs7.png" />
+            </p>
+            <p>
+                WITs provide the foundation for all tracking and reporting of the software development project. You can customize the fields tracked, the workflow, and form. To learn more, see:
+            </p>
+            <p>
+                •	Modify or add a field to support queries, reports, and workflow
+            </p>
+            <p>
+                •	Modify or add a custom WIT
+            </p>
+            <p>
+                To get the most out of using the Agile planning tools, you’ll want to configure them in ways that support your team’s processes. You configure several features as shown in the following illustration.
+            </p>
+            <p>
+                <img src="/static/images/tfs8.png" />
+            </p>
+            <h5>Teams </h5>
+            <p>You can define as many teams as you need. Each team can work independently from other teams while still providing visibility on progress across the organization. You configure the following objects for each individual team. </p>
+
+            <img src="/static/images/tfs12.PNG" style="width:90%" />
+            <h5>Queries, tags, filters, and reports</h5>
+            <p>
+                To list and filter work items and report progress, you can use the features listed in the following table. As indicated, you can customize queries and reports before you create a team project.
+            </p>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>
+                            <p>Configure through UI</p>
+                        </th>
+                        <th>
+                            <p>Customize the process template</p>
+                        </th>
+                        <th>
+                            <p>Description</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Queries
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                Queries
+                            </p>
+                        </td>
+                        <td>
+                            <p>Supports finding work items and generating reports. </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Query-based charts
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+
+                            </p>
+                        </td>
+                        <td>
+                            <p>View the status of work in progress by charting the results of a flat-list query as a pie, bar, column, or stacked column chart.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Query-based charts (Excel)
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+
+                            </p>
+                        </td>
+                        <td>
+                            <p>Create status or trend reports based on a query.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Reports (SQL Server Reporting Services (SSRS)
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                Reports
+                            </p>
+                        </td>
+                        <td>
+                            <p>To add reports to a team project that currently has no SSRS reports, see Add reports to a team project.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Tags
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+
+                            </p>
+                        </td>
+                        <td>
+                            <p>Add keywords to work items to quickly categorize and filter a work item list. You can add and assign tags to work items using TWA. You can then filter the product backlog or a work item query based on the tags you select.</p>
+                            <p>Tags are defined for a team project. </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <strong>Team project portal</strong>
+            <p>
+                You can share information and support how your team works using a team project portal. Portals provide the ability to share documents, data, process guidance, and other SharePoint features
+            </p>
+            <h5>Build</h5>
+            <p>
+                To define software builds, you can configure the following areas after you create a team project.
+            </p>
+
+            <img src="/static/images/tfs13.PNG" style="width:90%" />
+            <h5>Test and lab management </h5>
+            <p>
+                If you’ve updated your team project with the Test Plan and Test Suite WITs that TFS 2013.3 provides, you can now customize these objects in the same way you customize other WITs. With these updates, as well as those provided with TFS 2012.2, you have access to the following WITs: Test Plan, Test Suite, Test Case, Shared Steps, and Shared Parameters
+            </p>
+            <p>
+                <img src="/static/images/tfs9.png" />
+            </p>
+            <p>Using Team Web Access or Test Manager, you can view which test cases are defined for a test suite, and which test suites are defined for a test plan. However, these objects aren’t connected to each other through link types. </p>
+
+            <img src="/static/images/tfs14.PNG" style="width:90%" />
+            <h5>Deploy using Release Management </h5>
+            <p>Deploy your working software to your internal development, test, staging, or production servers. You configure all objects through the Release Management client. </p>
+
+            <img src="/static/images/tfs15.PNG" style="width:90%" />
+            <h5>Permissions, groups, and security </h5>
+            <p>
+                TFS defines a number of default groups and permissions within the process template that is used to create a team project. You can use default groups and their associated permissions to manage most users and meet their needs.
+            </p>
+            <p>
+                <img src="/static/images/tfs10.png" />
+            </p>
+
+            <img src="/static/images/tfs16.PNG" style="width:90%" />
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <p>
+                •	Great branching and merging support, which is great for teams supporting multiple versions of software concurrently.
+            </p><p>
+                •	Custom check-in policies to help enforce a stable codebase in your source control.
+            </p><p>
+                •	Built in support for your QA team via work items which can be accessed via a SharePoint 2007 portal which TFS creates for you, or via TFS Explorer in Visual Studio.
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Team Foundation Server 2017 Update 2 RC1 </h4>
+            <p>
+                Summary of Updates in this Release<br><br />
+                We've added a lot of new value to Team Foundation Server 2017 Update 2 RC1. Some of the highlights include:<br />
+                •	Work items now have icons associated with each work item type.<br />
+                •	We have introduced Delivery Plans.<br />
+                •	You can search for work items using Work Item Search.<br />
+                •	There is a new branch policies configuration experience.<br />
+                •	There have been many pull request improvements.<br />
+                •	There are now Git graphs to visualize your Git history.<br />
+                •	You can now add and view Git tags.<br />
+                •	We have a new Package Management experience.<br />
+                •	There is a new build definition editor experience.<br />
+                •	Various updates when deploying to Azure Web Apps.<br />
+                •	Many improvements when deploying containers.<br />
+                •	We have introduced conditional build tasks.<br />
+                •	There are now out-of-the-box notifications.<br />
+
+
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Team Foundation Server - <a href="https://en.wikipedia.org/wiki/Team_Foundation_Server" target="_blank">https://en.wikipedia.org/wiki/Team_Foundation_Server</a>
+                </li>
+                <li>
+                    Team Foundation Server Installation - <a href="https://msdn.microsoft.com/en-us/library/hh561426(v=vs.120).aspx" target="_blank">https://msdn.microsoft.com/en-us/library/hh561426(v=vs.120).aspx</a>
+                </li>
+                <li>
+                    Team Foundation Server configuration - <a href="https://msdn.microsoft.com/en-us/library/dd286521.aspx" target="_blank">https://msdn.microsoft.com/en-us/library/dd286521.aspx</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

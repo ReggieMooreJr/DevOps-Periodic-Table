@@ -1,0 +1,176 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Gatling</h4>
+            <p>
+                Gatling is a highly capable load testing tool. It is designed for ease of use, maintainability and high performance.
+            </p><p>
+                Out of the box, Gatling comes with excellent support of the HTTP protocol that makes it a tool of choice for load testing any HTTP server. As the core engine is actually protocol agnostic, it is perfectly possible to implement support for other protocols. For example, Gatling currently also ships JMS support.
+            </p><p>
+                Having scenarios that are defined in code and are resource efficient are the two requirements that motivated us to create Gatling. Based on an expressive DSL, the scenarios are self explanatory. They are easy to maintain and can be kept in a version control system.
+            </p><p>
+                Gatling’s architecture is asynchronous as long as the underlying protocol, such as HTTP, can be implemented in a non blocking way. This kind of architecture lets us implement virtual users as messages instead of dedicated threads, making them very resource cheap. Thus, running thousands of concurrent virtual users is not an issue.
+            </p>
+            <strong>The Project's aims include:</strong>
+            <ul style="margin-left:25px">
+                <li>
+                    High performance
+                </li>
+                <li>
+                    Ready-to-present HTML reports
+                </li>
+                <li>
+                    Scenario recorder and developer-friendly DSL
+                </li>
+            </ul>
+            <strong>It officially supports the following protocols:</strong>
+            <ul style="margin-left:25px">
+                <li>
+                    HTTP
+                </li>
+                <li>
+                    WebSockets
+                </li>
+                <li>
+                    Server-sent events
+                </li>
+                <li>
+                    JMS
+                </li>
+            </ul>
+            <h4>Features of Gatling</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Tool for performance testing
+                </li>
+                <li>
+                    Free and open-source (developed in Java / Scala)
+                </li>
+                <li>
+                    The scripting language is Scala, with its own DSL
+                </li>
+                <li>
+                    It works with whichever operating system and any browser
+                </li>
+                <li>
+                    It supports HTTP/S, JMS, and JDBC protocols
+                </li>
+                <li>
+                    Colorful reports in HTML
+                </li>
+            </ul>
+            <h4>Flow Diagram</h4>
+            <div>
+                <img src="/static/images/GatlingProcessFlow.png" style="width:80%" />
+            </div>
+            <h4>Useful Link(s): Mojo Consultants</h4>
+            <ul style="margin-left:2em;">
+                <li>
+                    <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/developer-centers/apis/api-development-platforms-/hbs-overview/api-testing-frameworks.html" target="_blank">API Testing Frameworks</a>
+                </li>
+                <li>
+                    <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/developer-centers/apis/api-development-platforms-/api-engine.html" target="_blank">HBS API Engine</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installation and Configuration</h4>
+            <p>Click on the <b>Gatling</b> logo below to download the instructions for <u><i>Installation and Configuration</i></u><p>
+                <a href="Documents/GatlingSetupGuide.pdf" download="Gatling Setup Guide" target="_blank">
+                    <img src="/static/images/Gatling-logo.png" alt="Gatling" style="width:30%" />
+                </a>
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages of Gatling</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    It provide us an elegant and meaningful reports that are easy to analyze and understand what exactly is going on with the application.
+                </li>
+                <li>
+                    It integrates easily with Jenkins through the Jenkins-plugin and runs your tests through Gradle and Maven with the help of maven-plugin and gradle-plugin.
+                </li>
+                <li>
+                    It’s installation process is simple and doesn’t require machine-by-machine basis installation. Gatling libraries are available from a Maven repository.
+                </li>
+                <li>
+                    It is built on Scala, and the simulations also must be written in Scala
+                </li>
+                <li>
+                    It's open source, provides high performance and load testing
+                </li>
+                <li>
+                    Better scenario recorder and developer-friendly DSL
+                </li>
+            </ul>
+            <h4>Advantages of Gatling Report</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    Are in HTML with easy navigation, with an index and organized
+                </li>
+                <li>
+                    Graphically show the information in a well grouped and very well processed and related way
+                </li>
+                <li>
+                    Include a graphic of the quantity of virtual users during the test
+                </li>
+                <li>
+                    You can zoom in on the graphics to focus and analyze them with more detail in certain areas
+                </li>
+                <li>
+                    Graph the requests per second and the responses per second, including the comparison of the quantity of active users
+                </li>
+                <li>
+                    You can see each request in detail, in order to refine your analysis
+                </li>
+                <li>
+                    Separate the response times for the ones that were “ok” and the ones that failed
+                </li>
+                <li>
+                    Handle of the concept of percentiles
+                </li>
+                <li>
+                    Have a log of errors found
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Gatling 2.2.5 is out!</h4>
+            <p>This is a fix release, with the most critical one fixing user time series in the HTML reports.<a href="https://github.com/gatling/gatling/milestone/72?closed=1" target="_blank">See full release note on Github.</a></p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Mojo Consultants - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/development-tools-and-standards/quality-tools/gatling.html" target="_blank">Load Testing Framework - Gatling</a>
+                </li>
+                <li>
+                    Gatling Documentation - <a href="http://gatling.io/docs/current/" target="_blank">http://gatling.io/docs/current/</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

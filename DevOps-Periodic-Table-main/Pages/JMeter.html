@@ -1,0 +1,355 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>JMeter </h4>
+            <p>
+                JMeter is an Open Source testing software. It is 100% pure Java application for load and performance testing. jMeter is designed to cover categories of tests like load, functional, performance, regression, etc., and it requires JDK 5 or higher. This tutorial will give you great understanding on jMeter framework needed to test an enterprise level application to deliver it with robustness and reliability.
+            </p>
+            <p>
+                Before going into the details of JMeter, let us first understand a few jargons associated with the testing of any application.
+            </p>
+            <ul style="margin-left:20px;">
+                <li>
+                    Performance Test − This test sets the best possible performance expectation under a given configuration of infrastructure. It also highlights early in the testing process if any changes need to be made before the application goes into production.
+                </li>
+                <li>
+                    Load Test − This test is basically used for testing the system under the top load it was designed to operate under.
+                </li>
+                <li>
+                    Stress Test − This test is an attempt to break the system by overwhelming its resources.
+                </li>
+            </ul>
+            <h4>What is JMeter?</h4>
+            <p>
+                JMeter is a software that can perform load test, performance-oriented business (functional) test, regression test, etc., on different protocols or technologies.
+            </p>
+            <p>
+                Stefano Mazzocchi of the Apache Software Foundation was the original developer of JMeter. He wrote it primarily to test the performance of Apache JServ (now called as Apache Tomcat project). Apache later redesigned JMeter to enhance the GUI and to add functional testing capabilities.
+            </p>
+            <p>
+                JMeter is a Java desktop application with a graphical interface that uses the Swing graphical API. It can therefore run on any environment / workstation that accepts a Java virtual machine, for example − Windows, Linux, Mac, etc.
+            </p>
+            <p>
+                The protocols supported by JMeter are −
+            </p>
+            <p>
+                •	Web − HTTP, HTTPS sites 'web 1.0' web 2.0 (ajax, flex and flex-ws-amf)
+            </p>
+            <p>
+                •	Web Services − SOAP / XML-RPC
+            </p>
+            <p>
+                •	Database via JDBC drivers
+            </p>
+            <p>
+                •	Directory − LDAP
+            </p>
+            <p>
+                •	Messaging Oriented service via JMS
+            </p>
+            <p>
+                •	Service − POP3, IMAP, SMTP
+            </p>
+            <p>
+                •	FTP Service
+            </p>
+            <h4>JMeter Features</h4>
+            <p>
+                Following are some of the features of JMeter −
+            </p>
+            <p>
+                •	Being an open source software, it is freely available.
+            </p>
+            <p>
+                •	It has a simple and intuitive GUI.
+            </p>
+            <p>
+                •	JMeter can conduct load and performance test for many different server types − Web - HTTP, HTTPS, SOAP, Database via JDBC, LDAP, JMS, Mail - POP3, etc.
+            </p>
+            <p>
+                •	It is a platform-independent tool. On Linux/Unix, JMeter can be invoked by clicking on JMeter shell script. On Windows, it can be invoked by starting the jmeter.bat file.
+            </p>
+            <p>
+                •	It has full Swing and lightweight component support (precompiled JAR uses packages javax.swing.* ).
+            </p>
+            <p>
+                •	JMeter store its test plans in XML format. This means you can generate a test plan using a text editor.
+            </p>
+            <p>
+                •	Its full multi-threading framework allows concurrent sampling by many threads and simultaneous sampling of different functions by separate thread groups.
+            </p>
+            <p>
+                •	It is highly extensible.
+            </p>
+            <p>
+                •	It can also be used to perform automated and functional testing of the applications.
+            </p>
+            <h4>How JMeter Works?</h4>
+            <p>
+                JMeter simulates a group of users sending requests to a target server, and returns statistics that show the performance/functionality of the target server/application via tables, graphs, etc.
+            </p>
+            <p>
+                Take a look at the following figure that depicts how JMeter works −
+            </p>
+            <p>
+                <img src="/static/images/jm16.jpg" style="width:85%" />
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Installation</h4>
+            <p> To install the JMeter on your machine, raise the request in <b> App Store</b> by clicking  <a href="http://appstore.uhc.com/AppInfo/AppVersionId/13949?BackToList=/AppList/AppList" target="_blank">here</a></p>
+            <h4>Configuration</h4>
+            <p>
+                •	Go to JMETER_HOME/bin and start JMeter with jmeterw.cmd on Windows and jmeter on Linux/Unix
+            </p><p>
+                •	Select “Test Plan” on the tree
+            </p><p>
+                •	Right click on the “Test Plan” and add a new thread group: Add > Threads (Users) >Thread Group
+            </p>
+            <p>
+                <img src="/static/images/jm1.png" style="width:85%" />
+            </p>
+            <p>
+                •	 Select the Thread Group
+            </p>
+            <p>
+                •	Right click “Add -> Config Element -> HTTP Request Defaults”
+            </p>
+            <p>
+                <img src="/static/images/jm2.png" style="width:85%" />
+            </p>
+            <p>
+                •	In new HTTP Request Defaults element: Server name – enter “jmeter.apache.org”
+            </p>
+            <p>
+                •	Path – leave blank
+            </p>
+            <p>
+                <img src="/static/images/jm3.png" style="width:85%" />
+            </p>
+            <p>
+                •	Right click on the “Thread Group” and add a recording controller: Add > Logic Controller > Recording Controller
+            </p>
+            <p>
+                <img src="/static/images/jm4.png" style="width:85%" />
+            </p>
+            <p>
+                •	Next, select WorkBench
+            </p>
+            <p>
+                •	Right click on WorkBench and add the recorder: Add -> Non-Test Elements -> HTTP(S) Test Script Recorder
+            </p>
+            <p>
+                <img src="/static/images/jm5.png" style="width:85%" />
+            </p>
+            <p>•	On HTTP(S) Test Script Recorder, click the “Add” button in “URL Patterns to Include”. This will create a blank entry; enter “.*\.html”.</p>
+            <p>
+                <img src="/static/images/jm6.png" style="width:85%" />
+            </p>
+            <p>•	Right click on “HTTP(S) Test Script Recorder” and add a listener: Add -> Listener -> View Results Tree</p>
+            <p>
+                <img src="/static/images/jm7.png" style="width:85%" />
+            </p>
+            <p>•	Return to HTTP(S) Test Script Recorder, and click the “Start” button at the bottom.</p>
+            <p>
+                This will start the JMeter proxy server which is used to intercept the browser requests.
+                A file called ApacheJMeterTemporaryRootCA.crt will be generated in jmeter/bin folder.
+                Install this certificate in your browser, if you don't know how to do it, read “Installing the
+                JMeter CA certificate for HTTPS recording” in :
+            </p>
+            <p>
+                • <a href="http://jmeter.apache.org/usermanual/component_reference.html#HTTP%28S%29_Test_Script_Recorder" target="_blank">http://jmeter.apache.org/usermanual/component_reference.html#HTTP%28S%29_Test_Script_Recorder</a>
+            </p>
+            <h4>Configure your browser to use the JMeter Proxy</h4>
+            <p>At this point, JMeter's proxy is running. For this, we will use Iceweasel/Firefox to view some pages on the JMeter website.</p>
+            <p>
+                •	Start Iceweasel/Firefox, but do not close JMeter.
+            </p>
+            <p>
+                •	From the tool bar, click “Edit -> Preferences” (or “Tools > Preferences”). This should bring up the options.
+            </p>
+            <p>
+                •	Select the “Advanced” tab, and “Network” tab
+            </p>
+            <p>
+                •	Click “Settings” button near the bottom.
+            </p>
+            <p>
+                <img src="/static/images/jm8.png" style="width:85%" />
+            </p>
+            <p>
+                •	On the new pop-up, check “Manual proxy configuration”. The address and port fields should be enabled now.
+            </p>
+            <p>
+                •	Address – enter “localhost” or the IP address of your system
+            </p>
+            <p>
+                •	Port – enter “8080”.
+            </p>
+            <p>
+                •	Check “Use this proxy server for all protocols”
+            </p>
+            <p>
+                <img src="/static/images/jm9.png" style="width:85%" />
+            </p>
+            <p>
+                •	Click “OK” button
+            </p>
+            <p>
+                •	Click “OK” button again. This should return you to the browser
+            </p>
+            <h4>Record your navigation</h4>
+            <p>
+                •	With your browser, in the “Address” bar at the top, enter <a href="http://jmeter.apache.org/index.html" target="_blank">http://jmeter.apache.org/index.html</a> and hit the “enter” key.
+            </p>
+            •	Click on a few links on JMeter's pages.
+            </p>
+            <p>
+                •	Close your browser and bring up the JMeter window.
+            </p>
+            <p>
+                Expand the thread group and there should be several samplers. At this point, the test plan can
+                be saved as is. If you forget to add default HTTP Request settings, you will have to manually
+                delete the server name, and port.
+            </p>
+            <p>
+                <img src="/static/images/jm10.png" style="width:85%" />
+            </p>
+            <p>
+                In this sample, there aren't any default request parameters. If a particular request parameter
+                is required by all pages, the request defaults is where one would add the entries.
+            </p>
+            <p>
+                •	Select “Thread Group”
+            </p>
+            <p>
+                •	Right click “Add -> Listener -> Summary Report” to add an summary listener.
+            </p>
+            <p>
+                <img src="/static/images/jm11.png" style="width:85%" />
+            </p>
+            <p>•	The summary listener will show some basic statistics.</p>
+            <p>
+                <img src="/static/images/jm12.png" style="width:85%" />
+            </p>
+            <p>
+                •	Select “Thread Group”
+            </p>
+            <p>
+                •	Number of Threads – enter “5”
+            </p>
+            <p>
+                •	Ramp up Period – do not change
+            </p>
+            <p>
+                •	Loop Count – enter 100
+            </p>
+            <p>
+                <img src="/static/images/jm13.png" style="width:85%" />
+            </p>
+            <h4>Start the test</h4>
+            <p>
+                At this point, we are ready to run our test plan and see what happens. Save the test plan.
+                When you're ready to run the test, there's two ways:
+            </p>
+            <p>
+                1. Run -> Start
+            </p>
+            <p>
+                2. Ctrl–R
+            </p>
+            <p>
+                Before you start the test, select “Summary Report”. As the test runs, the statistics will change
+                until the test is done. At the end of the test, the summary report should look like this.
+            </p>
+            <p>
+                <img src="/static/images/jm14.png" style="width:85%" />
+            </p>
+            <p>
+                While the test is running, in the upper right-hand corner, there should be a green square.
+                When the test is done, the box should be grey.
+            </p>
+            <p>
+                <img src="/static/images/jm15.png" style="width:85%" />
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <p>
+                •	It is free
+            </p>
+            <p>
+                •	Easy to install and use
+            </p>
+            <p>
+                •	Compared to other load and performance testing tools, it is not only for web application, but also for other servers or objects
+            </p>
+            <p>
+                •	Test results can be shown in different formats
+            </p>
+            <p>
+                •	Highly extensible
+            </p>
+            <h4>
+                Limitations
+            </h4>
+            <p>
+                •	JMeter is not a browser as it does not perform all the actions supported by browsers.
+            </p><p>
+                •	It does not execute the JavaScript present in HTML pages nor does it render the html page as a browser does.
+            </p><p>
+                •	It has limited support for JavaScript, AJAX and complicated frameworks.
+            </p><p>
+                •	The total number of threads (virtual users) generated by the test plan should be less than 300 per engine.
+            </p><p>
+                •	One of the major limitation is that everything goes through a single console. Under heavy load the GUI consumes a lot of memory and the console server alone cannot sustain such a heavy load which leads to out of memory and disconnection logs.
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>
+                JMeter Version 3.2
+            </h4>
+            <p>
+                JMeter now requires Java 8. Ensure you use the most up to date version.
+            </p><p>
+                JMeter logging has been migrated to SLF4J and Log4j 2. This affects configuration and 3rd party plugins, see below "Logging changes".
+            </p><p>
+                Starting with JMeter version 3.2 the number of results in View Results Tree is limited by default to 500 entries. If you want more entries, you have to set the property view.results.tree.max_results to a higher value, or to 0, if you don't want to impose any limit. You can set the property in bin/user.properties.
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Mojo Consultants - <a href="https://www.optumdeveloper.com/content/odv-optumdev/optum-developer/en/developer-centers/database/marklogic/development-resources/performance-testing-using-jmeter.html" target="_blank">Performance testing using JMeter</a>
+                </li>
+                <li>
+                    Apache JMeter Documentation - <a href="http://jmeter.apache.org/usermanual/" target="_blank">http://jmeter.apache.org/usermanual/</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
