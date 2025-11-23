@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DotNet Framework</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style type="text/css">
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="/static/images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">DotNet Framework</h2>
+    </section>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Overview</a></li>
+            <li><a href="#tabs-2">Architecture</a></li>
+            <li><a href="#tabs-3">Design Principles</a></li>
+        </ul>
+        <div id="tabs-1">
+            <div class="row">
+                <h4>.NET Framework</h4>
+                <hr />
+                <div class="col-md-8">
+                    <p>
+                        .NET Framework (pronounced dot net) is a software framework developed by Microsoft that runs primarily on Microsoft Windows. It includes a large class library named Framework Class Library (FCL) and provides language interoperability (each language can use code written in other languages) across several programming languages. Programs written for .NET Framework execute in a software environment (in contrast to a hardware environment) named Common Language Runtime (CLR), an application virtual machine that provides services such as security, memory management, and exception handling. (As such, computer code written using .NET Framework is called "managed code".) FCL and CLR together constitute .NET Framework.
+                    </p><p>
+                        FCL provides user interface, data access, database connectivity, cryptography, web application development, numeric algorithms, and network communications. Programmers produce software by combining their source code with .NET Framework and other libraries. The framework is intended to be used by most new applications created for the Windows platform. Microsoft also produces an integrated development environment largely for .NET software called Visual Studio.
+                    </p><p>
+                        .NET Framework began as proprietary software, although the firm worked to standardize the software stack almost immediately, even before its first release. Despite the standardization efforts, developers, mainly those in the free and open-source software communities, expressed their unease with the selected terms and the prospects of any free and open-source implementation, especially regarding software patents. Since then, Microsoft has changed .NET development to more closely follow a contemporary model of a community-developed software project, including issuing an update to its patent promising to address the concerns.
+                    </p><p>
+                        .NET Framework led to a family of .NET platforms targeting mobile computing, embedded devices, alternative operating systems, and web browser plug-ins. A reduced version of the framework, .NET Compact Framework, is available on Windows CE platforms, including Windows Mobile devices such as smartphones. .NET Micro Framework is targeted at very resource-constrained embedded devices. Silverlight was available as a web browser plugin. Mono is available for many operating systems and is customized into popular smartphone operating systems (Android and iOS) and game engines. .NET Core targets the Universal Windows Platform (UWP), and cross-platform and cloud computing workloads.
+                    </p>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <img src="/static/images/dotnetstack.png" style="width:70%" class="pull-center" />
+
+                </div>
+            </div>
+            <strong>.NET Framework release</strong>
+            <p>
+                <img src="/static/images/dotnetversionhistory.PNG" style="width:40%" />
+            </p>
+        </div>
+        <div id="tabs-2">
+            <h4>Architecture</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-7">
+                    <strong>Common Language Infrastructure</strong>
+                    <p>
+                        Common Language Infrastructure (CLI) provides a language-neutral platform for application development and execution, including functions for exception handling, garbage collection, security, and interoperability. By implementing the core aspects of .NET Framework within the scope of CLI, these functions will not be tied to one language but will be available across the many languages supported by the framework. Microsoft's implementation of CLI is Common Language Runtime (CLR). It serves as the execution engine of .NET Framework. All .NET programs execute under the supervision of CLR, guaranteeing many properties and behaviors in the areas of memory management, security, and exception handling.
+                    </p><p>
+                        For computer programs to run on CLI, they need to be compiled into Common Intermediate Language (CIL) – as opposed to being compiled into machine code. Upon execution, an architecture-specific just-in-time compiler (JIT) turns the CIL code into machine code. To improve performance, however, .NET Framework comes with Native Image Generator (NGEN), which performs ahead-of-time compilation.
+                    </p>
+                    <strong>Assemblies</strong>
+                    <p>
+                        Compiled CIL code is stored in CLI assemblies. As mandated by the specification, assemblies are stored in Portable Executable (PE) file format, common on Windows platform for all dynamic-link library (DLL) and executable EXE files. Each assembly consists of one or more files, one of which must contain a manifest bearing the metadata for the assembly. The complete name of an assembly (not to be confused with the file name on disk) contains its simple text name, version number, culture, and public key token. Assemblies are considered equivalent if they share the same complete name.
+                    </p><p>
+                        A private key can also be used by the creator of the assembly for strong naming. The public key token identifies which private key an assembly is signed with. Only the creator of the keypair (typically .NET developer signing the assembly) can sign assemblies that have the same strong name as a prior version assembly, since the creator possesses the private key. Strong naming is required to add assemblies to Global Assembly Cache.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p>
+                        <img src="/static/images/dotnetarc.jpg" />
+                    </p>
+                </div>
+            </div>
+            <strong>Class library</strong>
+            <p>
+                .NET Framework includes a set of standard class libraries. The class library is organized in a hierarchy of namespaces. Most of the built-in application programming interfaces (APIs) are part of either System.* or Microsoft.* namespaces. These class libraries implement many common functions, such as file reading and writing, graphic rendering, database interaction, and XML document manipulation. The class libraries are available for all CLI compliant languages. The class library is divided into two parts (with no clear boundary): Base Class Library (BCL) and Framework Class Library (FCL).
+            </p><p>
+                BCL includes a small subset of the entire class library and is the core set of classes that serve as the basic API of CLR. For .NET Framework most classes considered being part of BCL reside in mscorlib.dll, System.dll and System.core.dll. BCL classes are available in .NET Framework as well as its alternative implementations including .NET Compact Framework, Microsoft Silverlight, .NET Core and Mono.
+            </p><p>
+                FCL is a superset of BCL and refers to the entire class library that ships with .NET Framework. It includes an expanded set of libraries, including the Windows Forms, ASP.NET, and Windows Presentation Foundation (WPF) but also extensions to the base class libraries ADO.NET, Language Integrated Query (LINQ), Windows Communication Foundation (WCF), and Workflow Foundation (WF). FCL is much larger in scope than standard libraries for languages like C++, and comparable in scope to standard libraries of Java.
+            </p><p>
+                With the introduction of alternative implementations (e.g., Silverlight), Microsoft introduced the concept of Portable Class Libraries (PCL) allowing a consuming library to run on more than one platform. With the further proliferation of .NET platforms, the PCL approach failed to scale (PCLs are defined intersections of API surface between two or more platforms). As the next evolutionary step of PCL, the .NET Standard Library was created retroactively based on the System.Runtime.dll based APIs found in UWP and Silverlight. New .NET platforms are encouraged to implement a version of the standard library allowing them to re-use extant third-party libraries to run without new versions of them. The .NET Standard Library allows an independent evolution of the library and app model layers within the .NET architecture.
+            </p><p>
+                NuGet is the package manager for all .NET platforms. It is used to retrieve third-party libraries into a .NET project with a global library feed at NuGet.org. Private feeds can be maintained separately, e.g., by a build server or a file system directory.
+            </p>
+            <strong>App models</strong>
+            <p>
+                Atop the class libraries, multiple app models are used to create applications. .NET Framework supports Console, Windows Forms, Windows Presentation Foundation, ASP.NET and ASP.NET Core applications by default. Other app models are offered by alternative implementations of the .NET Framework. Console, UWP and ASP.NET Core are available on .NET Core. Mono is used to power Xamarin app models for Android, iOS, and macOS. The retroactive architectural definition of app models showed up in early 2015 and was also applied to prior technologies like Windows Forms or WPF.
+            </p>
+            <strong> C++/CLI </strong>
+            <p>
+                Microsoft introduced C++/CLI in Visual Studio 2005, which is a language and means of compiling Visual C++ programs to run within the .NET Framework. Some parts of the C++ program still run within an unmanaged Visual C++ Runtime, while specially modified parts are translated into CIL code and run with the .NET Framework's CLR.
+            </p><p>
+                Assemblies compiled using the C++/CLI compiler are termed mixed-mode assemblies, since they contain native and managed code in the same DLL. Such assemblies are also difficult to reverse engineer, since .NET decompilers such as .NET Reflector reveal only the managed code.
+            </p>
+
+        </div>
+        <div id="tabs-3">
+            <h4>Design principles</h4>
+            <hr />
+            <strong>Interoperability</strong>
+            <br />
+            <p>
+                Because computer systems commonly require interaction between newer and older applications, .NET Framework provides means to access functions implemented in newer and older programs that execute outside .NET environment. Access to Component Object Model (COM) components is provided in System.Runtime.InteropServices and System.EnterpriseServices namespaces of the framework. Access to other functions is via Platform Invocation Services (P/Invoke). Access to .NET functions from native applications is via reverse P/Invoke function.
+            </p>
+            <br />
+            <strong>Language independence</strong>
+            <br />
+            <p>
+                .NET Framework introduces a Common Type System (CTS) that defines all possible data types and programming constructs supported by CLR and how they may or may not interact with each other conforming to CLI specification. Because of this feature, .NET Framework supports the exchange of types and object instances between libraries and applications written using any conforming .NET language.
+
+            </p>
+            <br />
+            <strong>
+                Type safety
+            </strong>
+            <br />
+            <p>
+                CTS and the CLR used in .NET Framework also enforce type safety. This prevents ill-defined casts, wrong method invocations, and memory size issues when accessing an object. This also makes most CLI languages statically typed (with or without type inference). However, starting with .NET Framework 4.0, the Dynamic Language Runtime extended the CLR, allowing dynamically typed languages to be implemented atop the CLI.
+            </p>
+            <br />
+            <strong>
+                Portability
+            </strong>
+            <br />
+            <p>
+                While Microsoft has never implemented the full framework on any system except Microsoft Windows, it has engineered the framework to be cross-platform, and implementations are available for other operating systems (see Silverlight and § Alternative implementations). Microsoft submitted the specifications for CLI (which includes the core class libraries, CTS, and CIL), C#, and C++/CLI to both Ecma International (ECMA) and International Organization for Standardization (ISO), making them available as official standards. This makes it possible for third parties to create compatible implementations of the framework and its languages on other platforms.
+            </p> <br />
+            <strong>
+                Security
+            </strong>
+            <br /><p>
+                .NET Framework has its own security mechanism with two general features: Code Access Security (CAS), and validation and verification. CAS is based on evidence that is associated with a specific assembly. Typically the evidence is the source of the assembly (whether it is installed on the local machine or has been downloaded from the Internet). CAS uses evidence to determine the permissions granted to the code. Other code can demand that calling code be granted a specified permission. The demand causes CLR to perform a call stack walk: every assembly of each method in the call stack is checked for the required permission; if any assembly is not granted the permission a security exception is thrown.
+            </p><p>
+                Managed CIL bytecode is easier to reverse-engineer than native code, unless obfuscated. .NET decompiler programs enable developers with no reverse-engineering skills to view the source code behind unobfuscated .NET assemblies. In contrast, apps compiled to native machine code are much harder to reverse-engineer, and source code is almost never produced successfully, mainly because of compiler optimizations and lack of reflection. This creates concerns in the business community over the possible loss of trade secrets and the bypassing of license control mechanisms. To mitigate this, Microsoft has included Dotfuscator Community Edition with Visual Studio .NET since 2002. Third-party obfuscation tools are also available from vendors such as VMware, V.i. Labs, Xenocode, and Red Gate Software. Method-level encryption tools for .NET code are available from vendors such as SafeNet.
+            </p> <br /><strong>
+                Memory management
+            </strong><br />
+            <p>
+                CLR frees the developer from the burden of managing memory (allocating and freeing up when done); it handles memory management itself by detecting when memory can be safely freed. Instantiations of .NET types (objects) are allocated from the managed heap; a pool of memory managed by CLR. As long as a reference to an object exists, which may be either direct, or via a graph of objects, the object is considered to be in use. When no reference to an object exists, and it cannot be reached or used, it becomes garbage, eligible for collection.
+            </p><p>
+                .NET Framework includes a garbage collector (GC) which runs periodically, on a separate thread from the application's thread, that enumerates all the unusable objects and reclaims the memory allocated to them. It is a non-deterministic, compacting, mark-and-sweep garbage collector. GC runs only when a set amount of memory has been used or there is enough pressure for memory on the system. Since it is not guaranteed when the conditions to reclaim memory are reached, GC runs are non-deterministic. Each .NET application has a set of roots, which are pointers to objects on the managed heap (managed objects). These include references to static objects and objects defined as local variables or method parameters currently in scope, and objects referred to by CPU registers. When GC runs, it pauses the application and then, for each object referred to in the root, it recursively enumerates all the objects reachable from the root objects and marks them as reachable. It uses CLI metadata and reflection to discover the objects encapsulated by an object, and then recursively walk them. It then enumerates all the objects on the heap (which were initially allocated contiguously) using reflection. All objects not marked as reachable are garbage. This is the mark phase. Since the memory held by garbage is of no consequence, it is considered free space. However, this leaves chunks of free space between objects which were initially contiguous. The objects are then compacted together to make free space on the managed heap contiguous again. Any reference to an object invalidated by moving the object is updated by GC to reflect the new location. The application is resumed after garbage collection ends. The latest version of .NET framework uses concurrent garbage collection along with user code, making pauses unnoticeable, because it is done in the background.
+            </p><p>
+                GC used by .NET Framework is also generational. Objects are assigned a generation. Newly created objects are tagged Generation 0. Objects that survive a garbage collection are tagged Generation 1. Generation 1 objects that survive another collection are Generation 2. The framework uses up to Generation 2 objects. Higher generation objects are garbage collected less often than lower generation objects. This raises the efficiency of garbage collection, as older objects tend to have longer lifetimes than newer objects. Thus, by eliminating older (and thus more likely to survive a collection) objects from the scope of a collection run, fewer objects need checking and compacting.
+            </p><br /><strong>
+                Performance
+            </strong><br />
+            <p>
+                When an application is first launched, the .NET Framework compiles the CIL code into executable code using its just-in-time compiler, and caches the executable program into the .NET Native Image Cache. Due to caching, the application launches faster for subsequent launches, although the first launch is usually slower. To speed up the first launch, developers may use the Native Image Generator utility to manually ahead-of-time compile and cache any .NET application.
+            </p><p>
+                The garbage collector, which is integrated into the environment, can introduce unanticipated delays of execution over which the developer has little direct control. "In large applications, the number of objects that the garbage collector needs to work with can become very large, which means it can take a very long time to visit and rearrange all of them."
+            </p><p>
+                .NET Framework provides support for calling Streaming SIMD Extensions (SSE) via managed code from April 2014 in Visual Studio 2013 Update 2. However, Mono has provided support for SIMD Extensions as of version 2.2 within the Mono.Simd namespace in 2009. Mono's lead developer Miguel de Icaza has expressed hope that this SIMD support will be adopted by CLR's ECMA standard.Streaming SIMD Extensions have been available in x86 CPUs since the introduction of the Pentium III. Some other architectures such as ARM and MIPS also have SIMD extensions. In case the CPU lacks support for those extensions, the instructions are simulated in software.
+            </p>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Coming Soon !!</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            font: 20px Helvetica, sans-serif;
+            color: white;
+            background-image: url('../../Images/himalayas.jpg');
+            text-align: center;
+            padding: 150px;
+        }
+
+        article {
+            display: block;
+            text-align: left;
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>This page is under construction.</h1>
+        <div>
+            <p>Sorry for the inconvinience caused. We&rsquo;re currently working on something awesome. Be patient & stay tuned !</p>
+        </div>
+    </article>
+</body>
+</html>-->

@@ -1,0 +1,437 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>UrbanCode Deploy</h4>
+            <p>
+                IBM UrbanCode Deploy is a tool for automating application deployments through your environments. It is designed to facilitate rapid feedback and continuous delivery in agile development while providing the audit trails, versioning and approvals needed in production.
+            </p>
+            <h4>IBM UrbanCode Deploy provides</h4>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Automated, consistent deployments and rollbacks of applications
+                </li>
+                <li>
+                    Automated provisioning, updating, and de-provisioning of cloud environments
+                </li>
+                <li>
+                    Orchestration of changes across servers, tiers and components
+                </li>
+                <li>
+                    Configuration and security differences across environments
+                </li>
+                <li>
+                    Clear visibility: what is deployed where and who changed what
+                </li>
+                <li>
+                    Integrated with middleware, provisioning and service virtualization
+                </li>
+            </ul>
+            <h4>Uses</h4>
+            <ul style="margin-left: 20px;">
+                <li>
+                    <b>Continuous Delivery:</b> Integrate with build and test tools to automatically deploy, test and promote new builds
+                </li>
+                <li>
+                    <b> Production Deployments:</b> Orchestrate a complex production deployments of applications and configuration
+                </li>
+                <li>
+                    <b>Self-Service:</b> Grant different teams rights to “push the go button” for different applications and environments
+                </li>
+                <li>
+                    <b>Incremental Updates:</b> Deploy only the changes components or missing incremental (patch) versions
+                </li>
+            </ul>
+            <h4>Features</h4>
+            <ul style="margin-left: 20px;">
+                <li>Multi-Tier Application Models</li>
+                <li>
+                    Easy Process Designer
+                </li>
+                <li>
+                    Deploy to Public, Private, and Hybrid Cloud
+                </li>
+                <li>
+                    Track What is Where: Inventory
+                </li>
+                <li>
+                    Scalable Distributed Automation
+                </li>
+                <li>
+                    Quality Gates and Approvals
+                </li>
+                <li>
+                    Integrations Replace Custom Scripting
+                </li>
+            </ul>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4> System requirements and performance considerations</h4>
+            <p>
+                The IBM® UrbanCode™ Deploy server runs on Windows and UNIX systems. Following some guidelines can improve the performance of the server and agents.
+            </p>
+            <p>
+                Beginning in version 6.2.2, the IBM UrbanCode Deploy server and agent relays require Java™ Runtime Environment (JRE) or Java Development Kit (JDK) version 8.
+            </p>
+            <p>
+                The server must have network access to the following ports:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    The server must be able to initiate connections to the license server. The default port for Rational Common Licensing is 27000. However, in some situations, the server uses different ports to connect to the license server. For more information, or to change the port, see http://www-01.ibm.com/support/docview.wss?uid=swg21454410.
+                </li>
+                <li>
+                    The server must be able to accept connections from agents and agent relays. By default, agents and relays connect on port 7918.
+                </li>
+                <li>
+                    Users and agents that do not use a relay must be able to initiate connections to the server through HTTP or HTTPS. The default ports are 8080 for HTTP and 8443 for HTTPS.
+                </li>
+                <li>
+                    Installing agents remotely on Linux or UNIX systems requires the server to initiate connections to the SSH port of the agent computer. The default port for SSH is 22.
+                </li>
+                <li>
+                    Remote discovery of agents requires the server to initiate connections to port 22 for Linux agents and port 135 for Windows agents. See Discovering agents automatically.
+                </li>
+                <li>
+                    The server might require access to other ports if you connect to external systems, such as an SMTP server for notifications or to cloud systems that use virtual system patterns, like PureApplication® System or IBM Cloud Orchestrator.
+                </li>
+            </ul>
+            <p>
+                If your agents connect to the server through an agent relay, you must configure your networks and firewalls to allow the following communication. In this case, you install the agent relay on the same network and the same side of the firewall as the agents.
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Agents must be able to open network connections on the agent relay JMS port. The default agent relay JMS port is 7916.
+                </li>
+                <li>
+                    Agents must be able to open network connections on the agent relay HTTP proxy port. The default agent relay HTTP proxy port is 20080.
+                </li>
+                <li>
+                    Agents must be able to open a network connection to the Agent Relay CodeStation proxy port (HTTP_proxy + 1, by default 20081).
+                </li>
+                <li>
+                    Installing agents remotely on Windows systems requires the WinRS agent to initiate connections on ports 80 and 5985 on the target computer.
+                </li>
+                <li>
+                    If you are using artifact caching as described in Agent security and communication, agents must be able to open network connections on the agent relay artifact caching port. The agent relay artifact caching port is 20081.
+                </li>
+                <li>
+                    Agents run steps from automation plug-ins and source configuration plug-ins. Some of these steps require that agents create network connections to an external system.
+                </li>
+                <li>
+                    Agent relays must be able to open network connections on the server JMS port. The default server JMS port is 7918.
+                </li>
+                <li>
+                    Agent relays must be able to open network connections on the server HTTP and HTTPs ports. The default HTTP(S) ports are 8080 and 8443. It is not possible to reverse the direction of this connection.
+                </li>
+            </ul>
+            <p>
+                For example, if your server is on an internal network and your agents are on an external network such as a public cloud, you install the agent relay on the cloud and have the agents connect to the agent relay. Then, the agent relay connects through the firewall to the internal network.
+            </p><p>
+                If your agents connect directly to the server, you must configure your networks and firewalls to allow the following communication:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Agents must be able to open network connections on the server JMS port. The default server JMS port is 7918.
+                </li>
+                <li>
+                    Agents must be able to open network connections on the server HTTP and HTTPS ports. The default HTTP(S) ports are 8080 and 8443.
+                </li>
+                <li>
+                    Agents run steps from automation plug-ins and source configuration plug-ins. Some of these steps require that agents create network connections to an external system.
+                </li>
+            </ul>
+            <p>
+                The blueprint design server must meet the following requirements:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    You can install the blueprint design server on Windows or Linux operating systems. Linux operating systems must have access to repositories for installing required packages. The operating system must have the most recent package updates. For more information, see Installing and Managing Software in the Red Hat Enterprise Linux customer portal. In most cases, the blueprint design server needs access to the Internet to download prerequisites, but you can also configure an internal package manager for these required packages. The cloud discovery service is automatically installed as part of the blueprint design server installation process.
+                </li>
+                <li>
+                    Make sure that the appropriate ports are open. See Ports, protocols, and services.
+                </li>
+                <li>
+
+                    You need an OpenStack Keystone server. See http://keystone.openstack.org.
+                </li>
+                <li>
+                    If you install the blueprint design server on a Windows operating system, your paths cannot contain more than 250 characters.
+                </li>
+                <li>
+                    Virtual images must meet the requirements in Configuring images for use with the blueprint designer.
+                </li>
+                <li>
+                    The blueprint design server requires a Heat orchestration engine. By default, the blueprint design server uses port 8004 to communicate with the engine.
+                </li>
+            </ul>
+            <p>
+                The Heat orchestration engine must meet the following requirements:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    You must install the engine on a host that runs a specific version of Red Hat Enterprise Linux (RHEL).
+                    <br />
+                    In version 6.2.2 and later, the IBM UrbanCode Deploy installer can install engines for the blueprint design server only on RHEL version 7. No other operating system is supported, including RHEL version 6 or earlier.
+                    <br />
+                    To use a different operating system, you can install an OpenStack Heat engine manually on that operating system and then extend that engine for use with the blueprint design server;
+                </li>
+                <li>
+                    The engine installer installs only a specific version of the OpenStack Heat orchestration engine.
+                    <br />In version 6.2.2 and later, the installer installs only OpenStack Kilo engines.
+                    <br />To use a different version of the OpenStack Heat orchestration engine, you can extend an existing engine of that version; see Extending Heat orchestration engines. You can extend OpenStack Icehouse, Juno, Kilo, Liberty, and Mitaka engines for use with the blueprint design server.
+                </li>
+                <li>
+                    The operating system must have the most recent package updates. For more information, see Installing and Managing Software in the Red Hat Enterprise Linux customer portal.
+                </li>
+                <li>
+                    You can install the engine and blueprint design server on the same computer or on different computers.
+                </li>
+                <li>
+                    The operating system must have access to Yum repositories for installing required packages. In most cases, the engine needs access to the Internet to download prerequisites, but you can also configure an internal package manager for these required packages.
+
+                </li>
+                <li>
+                    You must install the engine on a host that runs a specific version of Red Hat Enterprise Linux (RHEL).
+                    <br />In version 6.2.2 and later, the IBM UrbanCode Deploy installer can install engines for the blueprint design server only on RHEL version 7. No other operating system is supported, including RHEL version 6 or earlier.
+                    <br />To use a different operating system, you can install an OpenStack Heat engine manually on that operating system and then extend that engine for use with the blueprint design server; see Extending Heat orchestration engines.
+                </li>
+                <li>
+                    The engine installer installs only a specific version of the OpenStack Heat orchestration engine.
+                    <br />In version 6.2.2 and later, the installer installs only OpenStack Kilo engines.
+                    <br />To use a different version of the OpenStack Heat orchestration engine, you can extend an existing engine of that version; see Extending Heat orchestration engines. You can extend OpenStack Icehouse, Juno, Kilo, Liberty, and Mitaka engines for use with the blueprint design server.
+                </li>
+                <li>
+                    The operating system must have the most recent package updates. For more information, see Installing and Managing Software in the Red Hat Enterprise Linux customer portal.
+                </li>
+                <li>
+                    You can install the engine and blueprint design server on the same computer or on different computers.
+                </li>
+                <li>
+                    The operating system must have access to Yum repositories for installing required packages. In most cases, the engine needs access to the Internet to download prerequisites, but you can also configure an internal package manager for these required packages.
+                </li>
+            </ul>
+            <p>  The blueprint designer is compatible with the following cloud systems:</p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    IBM SoftLayer®
+                </li>
+                <li>
+                    Amazon Elastic Compute Cloud
+                </li>
+                <li>
+                    VMware vCenter Server 5.5 to 6.0. To model network resources, VMware NSX is required; see Modeling new network resources.
+                </li>
+
+                <li>
+                    VMware vRealize Automation 7.0 and 7.1
+                </li>
+                <li>
+                    OpenStack and clouds that are based on OpenStack, such as IBM Cloud Orchestrator, version 2.4. The blueprint design server supports OpenStack and OpenStack-based clouds on the Icehouse, Juno, and Kilo levels. To provision environments on these clouds, an engine that has the matching OpenStack version is required.
+                </li>
+                <li>
+                    Microsoft Azure
+                </li>
+                <li>
+                    Google Cloud Platform
+                </li>
+            </ul>
+            <p>
+                You must configure virtual images in supported clouds for communication with IBM UrbanCode Deploy:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Virtual images must be able to open network connections on the server HTTP and HTTPs ports. The default HTTP(S) ports are 8080 and 8443. It is not possible to reverse the direction of this connection.
+                </li>
+                <li>
+                    The agent that is installed on the virtual image must be able to open network connections on the agent relay JMS port. The default agent relay JMS port is 7916.
+                </li>
+                <li>
+                    Virtual images must be able to open network communication ports to the Heat engine. The default Heat engine ports are 8000 and 8003.
+                </li>
+                <li>
+                    If the virtual image contains a Chef role, it must be able to open network communication ports to the Chef server. The default Chef server communication port is 443.
+                </li>
+            </ul>
+            <p>
+                For best performance, follow these guidelines:
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Because agent activity can sometimes become resource intensive, agents are usually installed on systems other than the one where the IBM UrbanCode Deploy server is located.
+                </li>
+                <li>
+                    When possible, install the server as a dedicated user account. However, IBM UrbanCode Deploy runs well as a root user (or local system user on Windows), and running this way is the easiest method to avoid permission errors.
+                </li>
+                <li>
+                    Install the agent as dedicated system account. Ideally, the account is dedicated to IBM UrbanCode Deploy. Because IBM UrbanCode Deploy agents run remote commands, it is best to create a user specifically for the agent and grant this user only the appropriate privileges.
+                </li>
+                <li>
+                    Installing multiple agents on the same system is not necessary because a single agent can run parallel deployments as different users. While idle agents use minimal resources, many agents on the same system might have a noticeable impact.
+                </li>
+                <li>
+                    For best server performance, install the server on a system that is dedicated to the server and does not run any other major software.
+                </li>
+                <li>
+                    For servers on Linux or UNIX, if the server is connected to many agents (400 or more), increase the process and file limit for the server. For example, for Red Hat Enterprise Linux, version 7, use the /etc/security/limits.conf file. For AIX, use the /etc/security/limits.d/90-nproc.conf file. Add the following lines to the appropriate file and then restart the server computer:
+                    <br />
+                    deployUser             soft    nofile          60000
+                    <br />
+                    deployUser             hard    nofile          60000
+                    <br />
+                    deployUser             soft    nproc           65535
+                    <br />
+                    deployUser             hard    nproc           65535
+                    <br />
+                    Use the name of the operating system user that is running the server for deployUser.
+                </li>
+            </ul>
+            <h4>
+                Installing IBM UrbanCode Deploy usually involves the following steps:
+            </h4>
+            <ol style="margin-left:25px">
+                <li>
+                    Review the system requirements.
+                </li>
+                <li>
+                    Install a Rational® Common Licensing server.
+                </li>
+                <li>
+                    Add licenses to the server.
+                </li>
+                <li>
+                    If you are using a database other than Apache Derby, install the database before you install the server. Apache Derby is appropriate for evaluation installations only. If you choose Apache Derby, the server installation steps install Derby automatically, so you do not need to install it manually.
+                </li>
+                <li>
+                    Install the server.
+                </li>
+                <li>
+                    Optional: Install agent relays.
+                </li>
+                <li>
+                    Install one or more agents.
+                </li>
+                <li>
+                    Start the server.
+                </li>
+                <li>
+                    Optional: Install plug-ins.
+                </li>
+                <li>
+                    Optional: Install and configure the blueprint design server. To use the blueprint designer, you must complete the following steps:
+                    <ul style="margin-left: 20px;">
+                        <li>
+                            Install a Heat orchestration engine. If you currently use a Heat orchestration engine, you can extend it.
+                        </li>
+                        <li>
+                            Configure a database for the blueprint design server.
+                        </li>
+                        <li>
+                            Install the blueprint design server.
+                        </li>
+                        <li>
+                            Connect the blueprint design server to the server.
+                        </li>
+                        <li>
+                            Integrate with the cloud.
+                        </li>
+                        <li>
+                            Set up access control.
+                        </li>
+                    </ul>
+            </ol>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages of using Deployment agents</h4>
+            <h5> Simplicity and Ease of Use</h5>
+            <p>
+                An agent is a process that is running on a target server as some user. There is no need to maintain credentials to that machine for connectivity or script connections. Deployment actions are executed as though you are on the machine because your agent is.
+            </p><p>
+                Deployment scripts, in the form of plug-ins, are automatically cached on the target server and have their versions managed without any user effort.
+            </p><h5> Security</h5>
+            <p>
+                Deployments through agents are as secure as, if not more secure than, deployments through other means. Any deployment requires a facility to install or upgrade software on a target. When comparing deployments through listeners such as web services, the usage profile of agented and agentless deployments is similar enough to be wash.
+            </p><p>
+                The security issues surrounding SSH and related tools are pretty clear. These facilities are listening for connections, most likely on standard ports. An attacker would expect this tool to be present, and could use off the shelf strategies to attack it.
+            </p><p>
+                With an agent that reaches out to its master server for instructions, there are no ports opened on the deployment target to attack the agent. A man in the middle attack (trying to get the agent to connect to a rogue master) is the most likely threat. With IBM UrbanCode Deploy this can be mitigated through a simple exchange of SSL certificates between agent and master. Further, the agent should be installed as a non-root service account so that it is limited to only touching the applications it manages in case the master server is compromised. This is also a best practice to help avoid accidents.
+            </p> <h5>Scalability</h5>
+            <p>
+                Offloading the work of performing a deployment from the Deploy Server to agents reduces the load on that master server allowing a single master to execute deployments that are more concurrent.
+            </p><p>
+                Further, in environments with particularly heavy usage, tools that establish a new connection for each deployment can run out of ports if the operating system is too slow to return ports used by terminated connections to the available pool.
+            </p><p>
+                Another issue arises when multiple network segments are in use, with firewalls between them. This is very normal when deploying to multiple data centers. In an agentless approach, a firewall exception allowing the master server to connect to each target would need to be requested, approved and configured. In IBM UrbanCode Deploy’s approach with agents, an Agent Relay pair is configured for each network segment. With a couple fast and limited firewall exceptions, networking issues are resolved for the entire network segment in a secure way.
+            </p>  <h5>
+                Reliability
+            </h5>
+            <p>
+                If the central deployment server suffers an outage during a deployment, an agentless system will know a command started, but will not know the status. Generally, all deployments that were running at the start of the outage will be considered to have failed with the results of the most recent commands unknown. This is not a good situation to be in.
+            </p><p>
+                With agents, each step is ordered as a unit. With the work done by the agent, an outage of the central deployment server has no impact until the step is complete. If the server is down, the agent waits for it to come back, reports the results, passes back the logs, and accepts the next command. If the central servers are configured in a multi-master high availability configuration, the agent is directed to a different master and reports the results without skipping a beat.
+            </p>
+            <h4>Limitations</h4>
+
+            <h5> Installing Agents</h5>
+            <p>
+                Installing something on dozens, hundreds, or thousands of targets is a concern. Even if the installation is easy—and it is—any task multiplied by thousands could be painful. With UrbanCode Deploy, we have made sure that the agent’s installation can be automated.
+            </p><p>
+                If SSH is still active on the target host, you can list targets to push the agent to, through the UI, and it will install itself. Alternately, if you have a different automation agent already installed to manage the server infrastructure, the installer is designed to be run headless through automation. We even have a Puppet module and a Script Package for Pure Systems and SmartCloud Orchestrator.
+            </p><p>
+                Other customers have used built the built in agent installer steps to expose installing new agents as an UrbanCode Deploy process that can be invoked from within the tool or command line client.
+            </p> <h5> Performance Impacts</h5>
+            <p>
+                Any additional process should be inspected for performance impacts. We have worked hard to keep the agents minimally invasive. They consume a small amount of memory, and nearly no processor power when active. Customers have installed our agents on trading systems where a performance impact of a millisecond could be extremely expensive only after carefully monitoring the agents. The impact of an idle agent is close to zero. A working agent will consume resources as it performs the deployment.
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>What's New in UrbanCode Deploy 6.2.5.0</h4>
+            <h5> Snapshot Cleanup</h5>
+            <p>
+                Snapshots can now be automatically cleaned up. General settings can be set on the system settings page and can also be specified on a per environment basis.
+            </p><h5>Execute Permissions on Agents</h5>
+            <p>
+                Running component and generic processes will now require the new resource execute and agent execute permissions. All Roles will automatically have these permissions added to them on upgrade to version 6.2.5.0
+            </p><h5>
+                Multi-Environment Comparison
+            </h5>
+            <p>
+                A new view has been added to allow users to compare the properties of many environments at once.
+            </p><h5>
+                DS_AUDIT entry setting to not audit reads
+            </h5>
+            <p>
+                A new setting has been added on the system settings page to prevent audit read attempts to objects.
+            </p><h5>
+                LDAP/SSO
+            </h5>
+            <p>
+                Support for LDAP Authorization with SSO Authentication
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px">
+                <li>
+                    UrbanCode - <a href="https://developer.ibm.com/urbancode/products/urbancode-deploy/" target="_blank">https://developer.ibm.com/urbancode/products/urbancode-deploy/</a>
+                </li>
+                <li>
+                    UrbanCode installation - <a href="https://www.ibm.com/support/knowledgecenter/en/SS4GSP_6.2.3/com.ibm.udeploy.install.doc/topics/sysRequire.html" target="_blank">https://www.ibm.com/support/knowledgecenter/en/SS4GSP_6.2.3/com.ibm.udeploy.install.doc/topics/sysRequire.html</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>

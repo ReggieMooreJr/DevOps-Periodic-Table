@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IBM Mainframe - Sub-systems</title>
+    <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/jquery-ui-1.9.1.min.js"></script>
+
+    <script>
+        $(function () {
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+
+        function close_window() {
+            if (confirm("Do you really want to close this window?")) {
+                var objWin = window.self;
+                objWin.open('', '_self', '');
+                objWin.close();
+            }
+        }
+    </script>
+    <style type="text/css">
+        h4 {
+            font-weight: bold;
+            font-style: normal;
+            color: brown;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <section class="section">
+        <img src="/static/images/logo.PNG" style="width: 8%; height:3%;" />
+        <h2 style="text-align:center;">Sub-systems</h2>
+    </section>
+    <div style="background-color:white; padding:10px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>CICS</h4>
+                <hr style="height:1px; background-color:black;" />
+                <p>
+                    CICS stands for Customer Information Control System. It allows users to develop and execute online application in an MVS environment. CICS allows users to communicate with the back-end system to get the desired information. CICS is an operating system in itself, as it manages its own processor storage, has its own task manager which handles execution of multiple programs, and provides its own file management functions.
+                </p>
+                <p>
+                    A CICS program is invoked through a transaction. The whole application could be logically divided into several transactions. Users invoke an application by using one of the transaction identifiers. CICS looks up the transaction identifier to find out which program to invoke first to do the work requested. It creates a task to do the work, and transfers control to the mentioned program. The difference between a transaction and a task is that several users can invoke a transaction but each user initiates their own task.
+                </p>
+                <p>
+                    CICS maintains control functions to manage the allocation or de-allocation of resources within the system which are as follows:
+                </p>
+                <ul style="margin-left:30px">
+                    <li><strong>Task Control</strong>: Task control provides task scheduling and multitasking features. It takes care of the status of all CICS tasks. Task Control allocates the processor time among concurrent CICS tasks.</li>
+                    <li><strong>Program Control</strong>: Program Control manages loading and releasing of application programs. As soon as a task begins, it becomes necessary to associate the task with the appropriate application program. Although many tasks may need to use the same application program, CICS loads only one copy of the code into memory. Each task threads its way through this code independently, so many users can all be running transactions that are concurrently using the same physical copy of an application program.</li>
+                    <li><strong>Storage Control</strong>: Storage Control manages acquiring and releasing of main storage. Storage control acquires, controls, and frees dynamic storage. Dynamic storage is used for input/output areas, programs, etc.</li>
+                    <li><strong>Interval Control</strong>: Interval Control offers timer services.</li>
+                </ul>
+                <p>
+                    CICS has five major services:
+                </p>
+                <ol style="margin-left:30px">
+                    <li><strong>System Services</strong>: Controls allocation of programs and storage.</li>
+                    <li><strong>Data Communication Services</strong>: Data Communication Services interface with telecommunication access methods such as BTAM, VTAM, and TCAM for handling data communication requests from application programs.</li>
+                    <li><strong>Data Handling Services</strong>: Data Handling Services interface with data access methods such as BDAM, VSAM, etc.</li>
+                    <li><strong>Application Programming Services</strong>: Application Programming Services interface with application programs. The application programming services of CICS provide features such as command level translation, CEDF (the debug facility) and CECI (the command interpreter facility).</li>
+                    <li><strong>Monitoring Services</strong>: Monitoring Services monitor various events within CICS address space. It provides series of statistical information that can be used for system tuning.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="scrollToTop" title="Back to top"></a>
+    <section class="section" style="margin-top:10px">
+        <div style="text-align:center;">
+            <button onclick="close_window(); return false;" class="btn btn-warning btn-lg">Close</button>
+        </div>
+    </section>
+</body>
+</html>
+

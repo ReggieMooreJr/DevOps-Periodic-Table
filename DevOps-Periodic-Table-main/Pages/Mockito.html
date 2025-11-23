@@ -1,0 +1,153 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+        <li><a href="#References">References</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>What is Mockito ?</h4>
+            <p>
+                •	Mockito is a mocking framework, JAVA-based library that is used for effective unit testing of JAVA applications. Mockito is used to mock interfaces so that a dummy functionality can be added to a mock interface that can be used in unit testing.
+            </p>
+            <p>
+                •	Mockito facilitates creating mock objects seamlessly. It uses Java Reflection in order to create mock objects for a given interface. Mock objects are nothing but proxy for actual implementations.
+            </p>
+            <p>
+                •	If you use Mockito in tests you typically:
+            </p>
+            <p style="margin-left:2.5em;">
+                - Mock away external dependencies and insert the mocks into the code under test
+            </p>
+            <p style="margin-left:2.5em;">
+                - Execute the code under test
+            </p>
+            <p style="margin-left:2.5em;">
+                - Validate that the code executed correctly
+            </p>
+            <p>
+                <img src="/static/images/mockito_steps.png" />
+            </p>
+            <h4>Mockito - First Application</h4>
+            <p>
+                •	<a href="Documents/Mockito - First Application Example.pdf">Mockito - First Application Example</a>
+            </p>
+            <h4>Useful Links on Mockito</h4>
+            <p>
+                •	<a href="https://en.wikipedia.org/wiki/Mockito" target="_blank">Mockito Wiki</a> − Wikipedia Reference for Mockito.
+            </p>
+            <p>
+                •	<a href="http://mockito.org/" target="_blank">Mockito Official Site</a> − Your main resource for Mockito latest versions, plug-ins, tutorials, news, and blogs etc.
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>Mockito - Environmental Setup</h4>
+            <p>Click on the <b>Mockito</b> logo below to download the instructions for <u><i>Installing and Configuring Mockito</i></u><p>
+                <a href="Documents/Mockito - Environmental Setup.pdf" download="Mockito - Environmental Setup" target="_blank">
+                    <img border="0" src="/static/images/mockito_logo.png" alt="Mockito" style="margin-left:1em; width:20%; height:10%;" />
+                </a>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Benefits</h4>
+            <p>
+                •	<b>No Handwriting</b> − No need to write mock objects on your own.
+            </p>
+            <p>
+                •	<b>Refactoring Safe</b> − Renaming interface method names or reordering parameters will not break the test code as Mocks are created at runtime.
+            </p>
+            <p>
+                •	<b>Return value support</b> − Supports return values.
+            </p>
+            <p>
+                •	<b>Exception support</b> − Supports exceptions.
+            </p>
+            <p>
+                •	<b>Order check support</b> − Supports check on order of method calls.
+            </p>
+            <p>
+                •	<b>Annotation support</b> − Supports creating mocks using annotation.
+            </p>
+            <h4>Limitations</h4>
+            <p>
+                •	Requires Java 6+
+            </p>
+            <p>
+                •	Cannot mock static methods
+            </p>
+            <p>
+                •	Cannot mock constructors
+            </p>
+            <p>
+                •	Cannot mock equals(), hashCode(). Firstly, you should not mock those methods. Secondly, Mockito defines and depends upon a specific implementation of these methods. Redefining them might break Mockito.
+            </p>
+            <p>
+                •	Mocking is only possible on VMs that are supported by Objenesis.
+            </p>
+            <p>
+                •	Spying on real methods where real implementation references outer Class via OuterClass.this is impossible.
+            </p>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4>Mockito 2 - Noteworthy Improvements</h4>
+            <p>
+                •	Changed the mock maker engine from CGLIB to <a href="http://bytebuddy.net/" target="_blank">ByteBuddy</a>. This allows Mockito to fix some long standing bugs we had with CGLIB, and pick up byte-code related improvements much quicker (so needed for Java 8 and Java 9). ByteBuddy is a great library and Mockito team is excited to use it now as the default mock-creation engine!
+            </p>
+            <p>
+                •	To avoid Hamcrest version conflicts that our users reported, Mockito does not depend on Hamcrest anymore. There's still <b style="background-color:aqua;">org.mockito.hamcrest.MockitoHamcrest</b> if you need to integrate with Hamcrest.
+            </p>
+            <p>
+                •	Preliminary Java 8 support.
+            </p>
+            <p>
+                •	Mockito JUnit runner and rule can now detect unused stubs. It is possible to revert this behaviour.
+            </p>
+            <p>
+                •	New API for framework integrators and advanced users: <b style="background-color:aqua;">org.mockito.listeners.MockitoListener</b> We use this API internally to detect unused stubs.
+            </p>
+            <p>
+                •	Better support of generic types in deep stubs
+            </p>
+            <p>
+                •	Mockito can spy abstract classes (with no argument constructor)
+            </p>
+            <p>
+                •	Various improvements from mock injection, to variable printing, code cleanup
+            </p>
+            <p>
+                •	Mockito Continuous Integration and Deployment improvements
+            </p>
+            <p>
+                •	Improved generics signatures in several places. That should come handy for matchers especially. These methods are more Java 8 friendly. However note that some matchers that helped with generics for Java prior version 8 are now deprecated and will be removed in Mockito 3.
+            </p>
+        </div>
+        <div id="References" class="tab-pane fade">
+            <h4>References</h4>
+            <ul style="margin-left:25px;">
+                <li>
+                    Mockito Framework Site - <a href="http://site.mockito.org/" target="_blank">Mocking framework for unit tests in Java</a>
+                </li>
+                <li>
+                    Mockito Documentation - <a href="https://github.com/mockito/mockito" target="_blank">https://github.com/mockito/mockito</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

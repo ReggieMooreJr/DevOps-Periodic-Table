@@ -1,0 +1,219 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-justified" role="tablist">
+        <li class="active"><a href="#About">About</a></li>
+        <li><a href="#Configuration">Configuration/Installation</a></li>
+        <li><a href="#Advantages">Advantages/Limitations</a></li>
+        <li><a href="#New">What's new?</a></li>
+    </ul>
+    <div class="tab-content tabheight">
+        <div id="About" class="tab-pane fade in active">
+            <h4>Rkt</h4>
+            <p>
+                Rkt is an application container engine developed for modern production cloud-native environments. It features a pod-native approach, a pluggable execution environment, and a well-defined surface area that makes it ideal for integration with other systems.
+            </p><p>
+                The core execution unit of Rkt is the pod, a collection of one or more applications executing in a shared context (Rkt's pods are synonymous with the concept in the Kubernetes orchestration system). Rkt allows users to apply different configurations (like isolation parameters) at both pod-level and at the more granular per-application level. Rkt's architecture means that each pod executes directly in the classic Unix process model (i.e. there is no central daemon), in a self-contained, isolated environment. Rkt implements a modern, open, standard container format, the App Container (appc) spec, but can also execute other container images, like those created with Docker.
+            </p><p>
+                Since its introduction by CoreOS in December 2014, the Rkt project has greatly matured and is widely used. It is available for most major Linux distributions and every Rkt release builds self-contained rpm/deb packages that users can install. These packages are also available as part of the Kubernetes repository to enable testing of the Rkt + Kubernetes integration. Rkt also plays a central role in how Google Container Image and CoreOS Container Linux run Kubernetes.
+
+            </p>
+            <h4>Features</h4>
+            <p>
+                •	Pod-native: Rkt's basic unit of execution is a pod, linking together resources and user applications in a self-contained environment.
+            </p><p>
+                •	Security: Rkt is developed with a principle of "secure-by-default", and includes a number of important security features like support for SELinux, TPM measurement, and running app containers in hardware-isolated VMs.
+            </p><p>
+                •	Composability: Rkt is designed for first-class integration with init systems (like systemd, upstart) and cluster orchestration tools (like Kubernetes and Nomad), and supports swappable execution engines.
+            </p><p>
+                •	Open standards and compatibility: Rkt implements the appc specification, supports the Container Networking Interface specification, and can run Docker images and OCI images. Broader native support for OCI images and runtimes is in development.
+            </p>
+        </div>
+        <div id="Configuration" class="tab-pane fade">
+            <h4>
+                Installing Rkt on popular Linux distributions
+            </h4>
+            <p>
+                •	Arch
+            </p><p>
+                •	CentOS
+            </p><p>
+                •	Container Linux by CoreOS
+            </p><p>
+                •	Debian
+            </p><p>
+                •	Fedora
+            </p><p>
+                •	Gentoo
+            </p><p>
+                •	NixOS
+            </p><p>
+                •	openSUSE
+            </p><p>
+                •	Ubuntu
+            </p><p>
+                •	Void
+            </p>
+            <h4> Upstream-maintained packages (manual installation from Rkt project)</h4>
+            •	rpm-based<br />
+            •	deb-based<br />
+            <h4>Distribution-maintained packages (automatic installation from repositories)</h4>
+            <p>
+                If your distribution packages Rkt, then you should generally use their version. However, if you need a newer version, you may choose to manually install the Rkt-provided rpm and deb packages.
+            </p>
+            <h5>Arch</h5>
+            Rkt is available in the Community Repository and can be installed using pacman:
+            <br />
+            <span style="font-family:'Courier New'">sudo pacman -S Rkt</span>
+            <h5>CentOS</h5>
+            <p>
+                Rkt is available in the CentOS Community Build Service for CentOS 7. However, this is not yet ready for production use due to pending systemd upgrade issues.
+            </p><h5>Container Linux</h5>
+            <p>
+                Rkt is an integral part of Container Linux, installed with the operating system. The CoreOS releases page lists the version of Rkt available in each CoreOS release channel.
+            </p><p>
+                If the version of Rkt included in Container Linux is too old, it's fairly trivial to fetch the desired version via a systemd unit.
+            </p>
+            <h5>Debian</h5>
+            <p>
+                Rkt is currently packaged in Debian sid (unstable).
+            </p>
+            <span style="font-family:'Courier New'">
+                sudo apt-get install Rkt
+            </span>
+            <br /><br />
+            If you don't run sid, or wish for a newer version, you can install manually.
+            <br />
+            <h5> Fedora</h5>
+            <p>
+                Since Fedora version 24, Rkt packages are available in the main repository. We recommend using recent Fedora releases or a manually installed package in order to have an up-to-date Rkt binary.
+            </p>
+            <span style="font-family:'Courier New'">
+                sudo dnf install Rkt
+            </span><br /><br />
+
+            Rkt's entry in the Fedora package database tracks packaging work for this distribution.
+
+            <strong> Caveat: SELinux</strong>
+            Rkt does not work with the SELinux policies currently shipped with Fedora versions 24 and 25.
+            <br />
+            As a workaround, SELinux can be temporarily disabled:<br /><br />
+            <span style="font-family:'Courier New'">
+                sudo setenforce Permissive
+            </span><br /><br />
+            Or permanently disabled by editing /etc/selinux/config:<br /><br />
+            <span style="font-family:'Courier New'">
+                SELINUX=permissive
+            </span><br /><br />
+            <strong> Caveat: firewalld</strong><br />
+            Fedora uses firewalld to dynamically define firewall zones. Rkt is not yet fully integrated with firewalld. The default firewalld rules may interfere with the network connectivity of Rkt pods. To work around this, add a firewalld rule to allow pod traffic:
+            <br /><br /> <span style="font-family:'Courier New'">
+                sudo firewall-cmd --add-source=172.16.28.0/24 --zone=trusted
+            </span>
+            <br /><br />
+            172.16.28.0/24 is the subnet of the default pod network. The command must be adapted when Rkt is configured to use a different network with a different subnet.
+            <br />
+            <h5>Gentoo</h5>
+            Rkt is packaged for gentoo and available via portage.<br /><br />
+            <span style="font-family:'Courier New'">
+                sudo emerge Rkt
+            </span>
+            <br /><br />
+            <h5>
+                NixOS
+            </h5>
+            <br />
+            Rkt can be installed on NixOS using the following command:
+            <br /><br /><span style="font-family:'Courier New'">
+                nix-env -iA Rkt
+            </span><br /><br />
+            The source for the Rkt.nix expression can be found on GitHub<br />
+            <h5>openSUSE</h5>
+
+            Rkt is available in the Virtualization:containers project on openSUSE Build Service. Before installing, the appropriate repository needs to be added (usually Tumbleweed or Leap):
+            <br /><p style="font-family: 'Courier New'">
+                sudo zypper ar -f obs://Virtualization:containers/openSUSE_Tumbleweed/ virtualization_containers<br />
+                sudo zypper ar -f obs://Virtualization:containers/openSUSE_Leap_42.1/ virtualization_containers
+            </p>
+            Install Rkt using zypper:<br /><br />
+            <span style="font-family:'Courier New'">
+                sudo zypper in Rkt
+            </span><br /><br />
+            <h5> Ubuntu</h5><br />
+            Rkt is not packaged currently in Ubuntu. Instead, install manually using the Rkt debian package.<br />
+            <h5>    Void</h5><br />
+            Rkt is available in the official binary packages for the Void Linux distribution. The source for these packages is hosted on GitHub.
+            <br />
+            <h4> Rkt-maintained packages</h4>
+            <p>
+                As part of the Rkt build process, rpm and deb packages are built. If you need to use the latest Rkt version, or your distribution does not bundle Rkt, these are available.
+            </p><p>
+                Currently the Rkt upstream project does not maintain its own repository, so users of these packages must upgrade manually.
+            </p><h5> rpm-based</h5>
+            <p style="font-family: 'Courier New'">
+                gpg --recv-key 18AD5014C99EF7E3BA5F6CE950BDD3E0FC8A365E<br />
+                wget https://github.com/Rkt/Rkt/releases/download/v1.26.0/Rkt-1.26.0-1.x86_64.rpm <br />
+                wget https://github.com/Rkt/Rkt/releases/download/v1.26.0/Rkt-1.26.0-1.x86_64.rpm.asc <br />
+                gpg --verify Rkt-1.26.0-1.x86_64.rpm.asc
+                sudo rpm -Uvh Rkt-1.26.0-1.x86_64.rpm
+            </p>
+            <h5>   deb-based</h5>
+            <p style="font-family: 'Courier New'">
+                gpg --recv-key 18AD5014C99EF7E3BA5F6CE950BDD3E0FC8A365E<br />
+                wget https://github.com/Rkt/Rkt/releases/download/v1.26.0/rkt_1.26.0-1_amd64.deb <br />
+                wget https://github.com/Rkt/Rkt/releases/download/v1.26.0/rkt_1.26.0-1_amd64.deb.asc <br />
+                gpg --verify rkt_1.26.0-1_amd64.deb.asc<br />
+                sudo dpkg -i rkt_1.26.0-1_amd64.deb
+            </p>
+        </div>
+        <div id="Advantages" class="tab-pane fade">
+            <h4>Advantages</h4>
+            <ul style="margin-left:20px;">
+                <li>
+                    <strong>Speed</strong>  | Generally, containers are significantly faster than virtual machines. This is because virtual machines have to retrieve 10-20GBs from storage, whereas in a container the workload is focused on the operating system kernel. With this speed, development teams are able to activate project code quickly and even carry out testing in different ways.
+                </li>
+                <li>
+                    <strong>Lightweight</strong> | Whereas dozens of virtual machines can be placed on to a host server, it can be possible to load 100s or, in some cases, even 1,000s of containers on to one host server. Therefore they offer an intense form of computing but without using too much power or space.
+                </li>
+                <li>
+                    <strong>Proven</strong> | If you’re worried about whether something relatively new really works, take a look at Google Search as the ultimate example. Of course Google is the world’s most popular search platform and it takes advantage of Linux containers for its internal operations. With Google Search, around 7,000 containers are launched during each second – meaning around two billion a week. It could be argued that containers are the secret to the smooth and fast results you achieve with Google.
+                </li>
+            </ul>
+            <h4>Disadvantages</h4>
+            <ul style="margin-left:20px;">
+                <li>
+                    <strong>Security concerns</strong> | As of yet there has perhaps not been a significant level of research into how safe it is to run thousands of containers. For example, if two containers are permitted to talk to each other and one of them is packed with malicious code then it might only be a matter of time before malware traps something valuable in its net. It is also possible, in theory, for malware to build up a picture of what the containers are doing. While this shouldn’t be the case because containers are meant to be isolated, it’s not yet been proven that no form of malware snoop can occur.
+                </li>
+                <li>
+                    <strong>Reliance on a single host</strong> | At the moment, Docker and containers rely on a single host platform – but what if an application needed 10 or 100 servers?
+                </li>
+            </ul>
+        </div>
+        <div id="New" class="tab-pane fade">
+            <h4> RKT - v1.26.0</h4>
+            <p>
+                This minor release contains bugfixes and other improvements. It also adds better support for the arm architecture to Rkt, so that you can now fetch images via autodiscovery and have the correct seccomp whitelist to run them. Also notable is the new possibilty to pass extra kernel parameters to kvm, and last but not least a significant prepare/run speedup in stage0. This also introduces stricter validation on volume names, now rejecting duplicate ones.
+            </p> <h5>New Features</h5>
+
+            •	stage1: improve duplicate mount-volume detection (#3666). Breaking change: volumes with duplicate names are now rejected.
+            <br /> •	stage0/{run,prepare}: remove ondisk verification (#3623). For backwards compatibility, specifying 'insecure-options=ondisk' will still run without error, however it will also not do anything.
+            <br />•	kvm/qemu: add extra kernel parameters (#3644).
+
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".nav-pills a").click(function () {
+            $(this).tab('show');
+        });
+    });
+</script>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:GCCTags msdt:dt="string"></mso:GCCTags>
+<mso:DocumentStatus msdt:dt="string">Draft</mso:DocumentStatus>
+<mso:ContentType msdt:dt="string">Document</mso:ContentType>
+<mso:Project_x0020_ID msdt:dt="string">1;#PRJ84657</mso:Project_x0020_ID>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
